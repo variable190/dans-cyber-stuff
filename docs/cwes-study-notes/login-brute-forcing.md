@@ -100,7 +100,9 @@ for password in passwords:
 
 ## Brute-Forcing Tools
 
-## Hydra Parameters
+### Hydra
+
+#### Hydra Parameters
 
 | Parameter             | Explanation                                      | Usage Example                          |
 |-----------------------|--------------------------------------------------|----------------------------------------|
@@ -114,8 +116,6 @@ for password in passwords:
 | /OPT                  | Service-specific options                         | `hydra http-get://example.com/login.php -m "POST:user=^USER^&pass=^PASS^"` |
 
 #### Hydra Service
-
-## Hydra Services
 
 | Service | Description | Example Command |
 |---------|-------------|-----------------|
@@ -156,9 +156,7 @@ hydra -l basic-auth-user -P 2023-200_most_used_passwords.txt 127.0.0.1 http-get 
 | -n PORT                | Port: Non-default port                           | `medusa -n 2222 ...`                   |
 | -v LEVEL               | Verbose: Detailed progress (LEVEL up to 6)       | `medusa -v 4 ...`                      |
 
-#### Medusa Module
-
-## Medusa Modules
+#### Medusa Modules
 
 | Module          | Service/Protocol         | Description                                      | Usage Example                          |
 |-----------------|--------------------------|--------------------------------------------------|----------------------------------------|
