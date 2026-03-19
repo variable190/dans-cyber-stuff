@@ -27,6 +27,10 @@ nav:
     - Additional Cheat Sheets:
       - FTP: cwes-study-notes/ftp-cheat.md
       - Gobuster: cwes-study-notes/gobuster-cheat.md
+  - BSCP Study Notes:
+    - Contents: bscp-study-notes/index.md
+    - Burp Suite Academy Learning Path Study Notes:
+      - SQL Injection: bscp-study-notes/sql-injection.md
 
 theme:
   name: material
