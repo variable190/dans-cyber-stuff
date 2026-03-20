@@ -1,6 +1,10 @@
 site_name: Dan's Cyber Stuff
 nav:
   - Home: index.md
+  - BSCP Study Notes:
+    - Contents: bscp-study-notes/index.md
+    - Burp Suite Academy Learning Path Study Notes:
+      - SQL Injection: bscp-study-notes/sql-injection.md
   - CWES Study Notes:
     - Contents: cwes-study-notes/index.md
     - Web Penetration Tester Course Module Notes:
@@ -27,10 +31,6 @@ nav:
     - Additional Cheat Sheets:
       - FTP: cwes-study-notes/ftp-cheat.md
       - Gobuster: cwes-study-notes/gobuster-cheat.md
-  - BSCP Study Notes:
-    - Contents: bscp-study-notes/index.md
-    - Burp Suite Academy Learning Path Study Notes:
-      - SQL Injection: bscp-study-notes/sql-injection.md
 
 theme:
   name: material
