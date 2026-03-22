@@ -5,6 +5,9 @@ nav:
     - Contents: bscp-study-notes/index.md
     - Burp Suite Academy Learning Path Study Notes:
       - SQL Injection: bscp-study-notes/sql-injection.md
+      - Authentication vulnerabilities: bscp-study-notes/authentication-vulnerabilities.md
+    - Other Client-side Topics:
+      - Cross-site Scripting: bscp-study-notes/cross-site-scripting.md
   - CWES Study Notes:
     - Contents: cwes-study-notes/index.md
     - Web Penetration Tester Course Module Notes:

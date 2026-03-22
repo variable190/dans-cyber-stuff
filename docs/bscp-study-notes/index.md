@@ -6,3 +6,7 @@ Revision materials and notes for the Burp Suite Certified Practitioner exam.
 
 ### Learning Paths
 - [SQL Injection](./sql-injection.md)
+- [Authentication vulnerabilities](./authentication-vulnerabilities.md)
+
+### Other Client-side Topics
+- [Cross-site Scripting](./cross-site-scripting.md)
