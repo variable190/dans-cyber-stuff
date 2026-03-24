@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../attacking-common-applications/">
+        <link rel="prev" href="../authentication-vulnerabilities/">
       
       
-        <link rel="next" href="../ftp-cheat/">
+        <link rel="next" href="../cross-site-scripting/">
       
       
         
@@ -23,7 +23,7 @@
     
     
       
-        <title>Bug Bounty Hunting Process - Dan's Cyber Stuff</title>
+        <title>Path Traversal - Dan's Cyber Stuff</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#bug-bounty-reporting" class="md-skip">
+        <a href="#path-traversal" class="md-skip">
           Skip to content
         </a>
       
@@ -110,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Bug Bounty Hunting Process
+              Path Traversal
             
           </span>
         </div>
@@ -256,18 +256,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
@@ -288,7 +290,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -306,7 +308,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../bscp-study-notes/" class="md-nav__link">
+      <a href="../" class="md-nav__link">
         
   
   
@@ -331,18 +333,20 @@
                 
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
@@ -363,7 +367,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -381,7 +385,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../bscp-study-notes/sql-injection/" class="md-nav__link">
+      <a href="../sql-injection/" class="md-nav__link">
         
   
   
@@ -409,7 +413,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../bscp-study-notes/authentication-vulnerabilities/" class="md-nav__link">
+      <a href="../authentication-vulnerabilities/" class="md-nav__link">
         
   
   
@@ -434,10 +438,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../bscp-study-notes/path-traversal/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Path Traversal
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -453,6 +484,37 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Testing
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -520,7 +582,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../bscp-study-notes/cross-site-scripting/" class="md-nav__link">
+      <a href="../cross-site-scripting/" class="md-nav__link">
         
   
   
@@ -560,20 +622,18 @@
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -594,7 +654,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -612,7 +672,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../" class="md-nav__link">
+      <a href="../../cwes-study-notes/" class="md-nav__link">
         
   
   
@@ -637,20 +697,18 @@
                 
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
         
           
           <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
@@ -671,7 +729,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -689,7 +747,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../web-requests/" class="md-nav__link">
+      <a href="../../cwes-study-notes/web-requests/" class="md-nav__link">
         
   
   
@@ -717,7 +775,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../introduction-to-web-applications/" class="md-nav__link">
+      <a href="../../cwes-study-notes/introduction-to-web-applications/" class="md-nav__link">
         
   
   
@@ -745,7 +803,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../using-web-proxies/" class="md-nav__link">
+      <a href="../../cwes-study-notes/using-web-proxies/" class="md-nav__link">
         
   
   
@@ -773,7 +831,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../information-gathering-web-edition/" class="md-nav__link">
+      <a href="../../cwes-study-notes/information-gathering-web-edition/" class="md-nav__link">
         
   
   
@@ -801,7 +859,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../web-fuzzing/" class="md-nav__link">
+      <a href="../../cwes-study-notes/web-fuzzing/" class="md-nav__link">
         
   
   
@@ -829,7 +887,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../javascript-deobfuscation/" class="md-nav__link">
+      <a href="../../cwes-study-notes/javascript-deobfuscation/" class="md-nav__link">
         
   
   
@@ -857,7 +915,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cross-site-scripting-%28xss%29/" class="md-nav__link">
+      <a href="../../cwes-study-notes/cross-site-scripting-%28xss%29/" class="md-nav__link">
         
   
   
@@ -885,7 +943,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../sql-injection-fundamentals/" class="md-nav__link">
+      <a href="../../cwes-study-notes/sql-injection-fundamentals/" class="md-nav__link">
         
   
   
@@ -913,7 +971,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../sqlmap-essentials/" class="md-nav__link">
+      <a href="../../cwes-study-notes/sqlmap-essentials/" class="md-nav__link">
         
   
   
@@ -941,7 +999,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../command-injections/" class="md-nav__link">
+      <a href="../../cwes-study-notes/command-injections/" class="md-nav__link">
         
   
   
@@ -969,7 +1027,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../file-upload-attacks/" class="md-nav__link">
+      <a href="../../cwes-study-notes/file-upload-attacks/" class="md-nav__link">
         
   
   
@@ -997,7 +1055,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../server-side-attacks/" class="md-nav__link">
+      <a href="../../cwes-study-notes/server-side-attacks/" class="md-nav__link">
         
   
   
@@ -1025,7 +1083,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../login-brute-forcing/" class="md-nav__link">
+      <a href="../../cwes-study-notes/login-brute-forcing/" class="md-nav__link">
         
   
   
@@ -1053,7 +1111,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../broken-authentication/" class="md-nav__link">
+      <a href="../../cwes-study-notes/broken-authentication/" class="md-nav__link">
         
   
   
@@ -1081,7 +1139,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../web-attacks/" class="md-nav__link">
+      <a href="../../cwes-study-notes/web-attacks/" class="md-nav__link">
         
   
   
@@ -1109,7 +1167,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../file-inclusion/" class="md-nav__link">
+      <a href="../../cwes-study-notes/file-inclusion/" class="md-nav__link">
         
   
   
@@ -1137,7 +1195,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../attacking-graphql/" class="md-nav__link">
+      <a href="../../cwes-study-notes/attacking-graphql/" class="md-nav__link">
         
   
   
@@ -1165,7 +1223,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../api-attacks/" class="md-nav__link">
+      <a href="../../cwes-study-notes/api-attacks/" class="md-nav__link">
         
   
   
@@ -1193,7 +1251,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../attacking-common-applications/" class="md-nav__link">
+      <a href="../../cwes-study-notes/attacking-common-applications/" class="md-nav__link">
         
   
   
@@ -1218,37 +1276,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Bug Bounty Hunting Process
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../cwes-study-notes/bug-bounty-hunting-process/" class="md-nav__link">
         
   
   
@@ -1264,48 +1295,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#report-sections" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Report Sections
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#examples" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Examples
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1373,7 +1362,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ftp-cheat/" class="md-nav__link">
+      <a href="../../cwes-study-notes/ftp-cheat/" class="md-nav__link">
         
   
   
@@ -1401,7 +1390,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../gobuster-cheat/" class="md-nav__link">
+      <a href="../../cwes-study-notes/gobuster-cheat/" class="md-nav__link">
         
   
   
@@ -1464,21 +1453,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#report-sections" class="md-nav__link">
+  <a href="#testing" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Report Sections
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#examples" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Examples
+        Testing
       
     </span>
   </a>
@@ -1502,51 +1480,15 @@
 
 
 
-<h1 id="bug-bounty-reporting">Bug Bounty Reporting</h1>
-<h2 id="report-sections">Report Sections</h2>
-<table>
-<thead>
-<tr>
-<th>Section</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Vulnerability Title</td>
-<td>Including vulnerability type, affected domain/parameter/endpoint, impact etc</td>
-</tr>
-<tr>
-<td>CWE &amp; CVSS score</td>
-<td>For communicating the characteristics and severity of the vulnerability</td>
-</tr>
-<tr>
-<td>Vulnerability Description</td>
-<td>Better understanding of the vulnerability cause</td>
-</tr>
-<tr>
-<td>Impact</td>
-<td>Elaborate more on what an attacker can achieve by fully exploiting the vulnerability. Business impact and maximum damage should be included in the impact statement</td>
-</tr>
-<tr>
-<td>Proof of Concept (POC)</td>
-<td>Steps to reproduce exploiting the identified vulnerability clearly and concisely</td>
-</tr>
-<tr>
-<td>CVSS score breakdown</td>
-<td>The options you chose for the calculatoer and why <a href="https://www.first.org/cvss/calculator/3.1">CVSS v3.1 calculator</a></td>
-</tr>
-<tr>
-<td>Remediation</td>
-<td>Optional in bug bounty programs, but good to have</td>
-</tr>
-</tbody>
-</table>
-<h2 id="examples">Examples</h2>
+<h1 id="path-traversal">Path Traversal</h1>
+<p><code>..\..\..\windows\win.ini</code> windows equivalvent to <code>../../../etc/passwd</code></p>
+<h2 id="testing">Testing</h2>
 <ul>
-<li><a href="https://academy.hackthebox.com/module/161/section/1507">Example 1: Reporting Stored XSS</a></li>
-<li><a href="https://academy.hackthebox.com/module/161/section/1510">Example 2: Reporting CSRF</a></li>
-<li><a href="https://academy.hackthebox.com/module/161/section/1511">Example 3: Reporting RCE</a></li>
+<li>Try without path traversal <code>/etc/passwd</code></li>
+<li>Find additional requests in the target tab</li>
+<li>Try <code>Fuzzing - Path Traversal</code> word list in intruder</li>
+<li>Try including the required base folder <code>filename=/var/www/images/../../../etc/passwd</code></li>
+<li>Try null byte if user-supplied filename required <code>filename=../../../etc/passwd%00.png</code></li>
 </ul>
 
 
