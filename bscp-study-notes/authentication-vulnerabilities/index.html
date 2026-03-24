@@ -494,6 +494,39 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#bypass-mfa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bypass MFA
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cookies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cookies
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#password-reset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Password reset
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1457,6 +1490,39 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#bypass-mfa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bypass MFA
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cookies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cookies
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#password-reset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Password reset
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1487,6 +1553,22 @@
 <li>Randomise X-Forward-For header IP if rate limited for one IP</li>
 <li>Iterate between successful login and bruteforce attempt</li>
 <li>Correct login details may recieve a different or no login rate limit message</li>
+</ul>
+<h2 id="bypass-mfa">Bypass MFA</h2>
+<ul>
+<li>Adjust verify cookie to target to send code to them, then bruteforce code</li>
+</ul>
+<h2 id="cookies">Cookies</h2>
+<ul>
+<li>Check if stay logged in cookie is easily decrypted</li>
+<li>XSS to gain the users session cookie</li>
+</ul>
+<h2 id="password-reset">Password reset</h2>
+<ul>
+<li>Check if reset URL token is easily decrypted</li>
+<li>Check if reset URL token is required to reset password, after following URL</li>
+<li>Set X-Forward-Host header to your own vulnerable server and send password reset request to target</li>
+<li>Test if different error messages are sent when new password fields do not match, could be used to brute force a victim</li>
 </ul>
 
 
