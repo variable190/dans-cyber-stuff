@@ -1,20 +1,22 @@
 site_name: Dan's Cyber Stuff
 nav:
   - Home: index.md
+  - CWEE Study Notes:
+    - Contents: cwee-study-notes/index.md
+    - Senior Web Penetration Tester Course Notes:
   - BSCP Study Notes:
     - Contents: bscp-study-notes/index.md
-    - Burp Suite Academy Learning Path Study Notes:
+    - Serever-side Topics:
       - SQL Injection: bscp-study-notes/sql-injection.md
       - Authentication Vulnerabilities: bscp-study-notes/authentication-vulnerabilities.md
       - Path Traversal: bscp-study-notes/path-traversal.md
-    - Other Serever-side Topics:
       - Command Injection: bscp-study-notes/command-injection.md
       - Business Logic Vulnerabilities: bscp-study-notes/business-logic-vulnerabilities.md
-    - Other Client-side Topics:
+    - Client-side Topics:
       - Cross-site Scripting: bscp-study-notes/cross-site-scripting.md
   - CWES Study Notes:
     - Contents: cwes-study-notes/index.md
-    - Web Penetration Tester Course Module Notes:
+    - Web Penetration Tester Course Notes:
       - Web Requests: cwes-study-notes/web-requests.md
       - Introduction to Web Applications: cwes-study-notes/introduction-to-web-applications.md
       - Using Web Proxies: cwes-study-notes/using-web-proxies.md

@@ -1,4 +1,4 @@
-# Bug Bounty Guide
+# Certified Web Exploitation Specialist Study Notes
 
 Revision materials and notes from the HTB Academy Web Pentration Tester course.
 
