@@ -4,6 +4,7 @@ nav:
   - CWEE Study Notes:
     - Contents: cwee-study-notes/index.md
     - Senior Web Penetration Tester Course Notes:
+      - Injection Attacks: cwee-study-notes/injection-attacks.md
   - BSCP Study Notes:
     - Contents: bscp-study-notes/index.md
     - Serever-side Topics:
