@@ -10,7 +10,8 @@ Revision materials and notes for the Burp Suite Certified Practitioner exam.
 - [Path Traversal](./path-traversal.md)
 
 ### Other Server-side Topics
-- [Cross-site Scripting](./command-injection.md)
+- [Command Injection](./command-injection.md)
+- [Business Logic Vulnerabilities](./business-logic-vulnerabilities.md)
 
 ### Other Client-side Topics
 - [Cross-site Scripting](./cross-site-scripting.md)

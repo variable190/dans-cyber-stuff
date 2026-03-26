@@ -8,7 +8,8 @@ nav:
       - Authentication Vulnerabilities: bscp-study-notes/authentication-vulnerabilities.md
       - Path Traversal: bscp-study-notes/path-traversal.md
     - Other Serever-side Topics:
-      - Cross-site Scripting: bscp-study-notes/command-injection.md
+      - Command Injection: bscp-study-notes/command-injection.md
+      - Business Logic Vulnerabilities: bscp-study-notes/business-logic-vulnerabilities.md
     - Other Client-side Topics:
       - Cross-site Scripting: bscp-study-notes/cross-site-scripting.md
   - CWES Study Notes:
