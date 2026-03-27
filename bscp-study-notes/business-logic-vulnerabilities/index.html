@@ -1717,6 +1717,13 @@
 <li>Try removing one parameter at a time from requests and observe the results</li>
 <li>Try navigating the site in an unexpected fashion with forced browsing (example: send to cart &gt; order confirmed)</li>
 <li>Try dropping random requests (skip role selecter requests for example)</li>
+<li>Look for anywhere that user input is encoded/decoded, can it be used to decode anything else like session cookies or stay logged in tokens</li>
+<li><a href="https://portswigger.net/research/splitting-the-email-atom">Email parser discrepencies</a>, try various encodings:<ul>
+<li><code>=?iso-8859-1?q?=61=62=63?=foo@ginandjuice.shop</code></li>
+<li><code>=?utf-8?q?=61=62=63?=foo@ginandjuice.shop</code></li>
+<li><code>=?utf-7?q?&amp;AGEAYgBj-?=foo@ginandjuice.shop</code></li>
+</ul>
+</li>
 </ul>
 
 
