@@ -5,3 +5,4 @@ Revision materials and notes from the HTB Academy Senior Web Pentration Tester c
 ## Contents
 
 ### Senior Web Pentration Tester Modules
+- [Injection Attacks](./cwee-study-notes/injection-attacks.md)

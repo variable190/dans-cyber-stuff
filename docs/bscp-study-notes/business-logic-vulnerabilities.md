@@ -13,3 +13,8 @@
 - Try removing one parameter at a time from requests and observe the results
 - Try navigating the site in an unexpected fashion with forced browsing (example: send to cart > order confirmed)
 - Try dropping random requests (skip role selecter requests for example)
+- Look for anywhere that user input is encoded/decoded, can it be used to decode anything else like session cookies or stay logged in tokens
+- [Email parser discrepencies](https://portswigger.net/research/splitting-the-email-atom), try various encodings:
+    - `=?iso-8859-1?q?=61=62=63?=foo@ginandjuice.shop`
+    - `=?utf-8?q?=61=62=63?=foo@ginandjuice.shop`
+    - `=?utf-7?q?&AGEAYgBj-?=foo@ginandjuice.shop`
