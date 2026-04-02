@@ -41,6 +41,10 @@ nav:
     - Additional Cheat Sheets:
       - FTP: cwes-study-notes/ftp-cheat.md
       - Gobuster: cwes-study-notes/gobuster-cheat.md
+  - Android Application Penetration Test Study Notes:
+    - Contents: android-application-pentesting/index.md
+    - HTB Academy Modules:
+      - Android Fundamentals: android-application-pentesting/android-fundamentals.md
 
 theme:
   name: material
