@@ -1,6 +1,8 @@
 site_name: Dan's Cyber Stuff
 nav:
   - Home: index.md
+  - Guides:
+    - OWASP Top 10 Bug Bounty Process Guide: bb-process.md
   - CWEE Study Notes:
     - Contents: cwee-study-notes/index.md
     - Senior Web Penetration Tester Course Notes:
@@ -45,6 +47,7 @@ nav:
     - Contents: android-application-pentesting/index.md
     - HTB Academy Modules:
       - Android Fundamentals: android-application-pentesting/android-fundamentals.md
+      - Android Application Static Analysis: android-application-pentesting/android-application-static-analysis.md
 
 theme:
   name: material

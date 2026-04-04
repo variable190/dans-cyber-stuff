@@ -2,6 +2,9 @@
 
 Welcome to Dan's Cyber Stuff!
 
+## Guides
+- [OWASP Top 10 Bug Bounty Process Guide](bb-process.md)
+
 ## Certification Study Notes
 - [HTB Certified Web Exploitation Expert](./cwee-study-notes/index.md)
 - [Burp Suite Certified Practitioner](./bscp-study-notes/index.md)
