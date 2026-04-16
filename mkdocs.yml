@@ -48,6 +48,7 @@ nav:
     - HTB Academy Modules:
       - Android Fundamentals: android-application-pentesting/android-fundamentals.md
       - Android Application Static Analysis: android-application-pentesting/android-application-static-analysis.md
+      - Android Application Dynamic Analysis: android-application-pentesting/android-application-dynamic-analysis.md)
 
 theme:
   name: material
