@@ -5,10 +5,11 @@ Welcome to Dan's Cyber Stuff!
 ## Guides
 - [OWASP Top 10 Bug Bounty Process Guide](bb-process.md)
 
-## Certification Study Notes
-- [HTB Certified Web Exploitation Expert](./cwee-study-notes/index.md)
-- [Burp Suite Certified Practitioner](./bscp-study-notes/index.md)
+## Certifications
 - [HTB Certified Web Exploitation Specialist](./cwes-study-notes/index.md)
+    - [Exam Feedback](./cwes-study-notes/feedback.md)
+- [Burp Suite Certified Practitioner](./bscp-study-notes/index.md)
+- [HTB Certified Web Exploitation Expert](./cwee-study-notes/index.md)
 
 ## Other Study Notes
 - [Android Application Penetration Testing](./android-application-pentesting/index.md)
