@@ -173,9 +173,13 @@ Try or and
 (&(uid=htb-stdnt)(|(description=a*)(password=invalid)))
 (&(uid=htb-stdnt)(|(description=da*)(password=invalid)))
 ```
-- In burp this would be `username=htb-stdnt)(|(description=a*&password=Invalid)`
+- In a POST request this might be `username=htb-stdnt)(|(description=a*&password=Invalid)`
 - We can also determine valid attributes with the OR clause
 ```bash
 (&(uid=htb-stdnt)(|(InvalidAttribute=*)(password=invalid)))
 (&(uid=htb-stdnt)(|(ValidAttribute=*)(password=invalid)))
 ```
+
+## PDF Generation Vulnerabilities
+
+- `exiftool invoice.pdf` - use exiftool to gain information about the library used to generate the PDF after downloading from the target
