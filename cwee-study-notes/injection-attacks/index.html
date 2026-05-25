@@ -19,7 +19,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
@@ -1972,6 +1972,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#pdf-generation-vulnerabilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PDF Generation Vulnerabilities
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2493,6 +2504,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#pdf-generation-vulnerabilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PDF Generation Vulnerabilities
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2865,12 +2887,16 @@
 <span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><span class="o">(</span><span class="p">&amp;</span><span class="o">(</span><span class="nv">uid</span><span class="o">=</span>htb-stdnt<span class="o">)(</span><span class="p">|</span><span class="o">(</span><span class="nv">description</span><span class="o">=</span>a*<span class="o">)(</span><span class="nv">password</span><span class="o">=</span>invalid<span class="o">)))</span>
 </span><span id="__span-3-2"><span class="o">(</span><span class="p">&amp;</span><span class="o">(</span><span class="nv">uid</span><span class="o">=</span>htb-stdnt<span class="o">)(</span><span class="p">|</span><span class="o">(</span><span class="nv">description</span><span class="o">=</span>da*<span class="o">)(</span><span class="nv">password</span><span class="o">=</span>invalid<span class="o">)))</span>
 </span></code></pre></div></td></tr></table></div></li>
-<li>In burp this would be <code>username=htb-stdnt)(|(description=a*&amp;password=Invalid)</code></li>
+<li>In a POST request this might be <code>username=htb-stdnt)(|(description=a*&amp;password=Invalid)</code></li>
 <li>We can also determine valid attributes with the OR clause
 <div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><span class="o">(</span><span class="p">&amp;</span><span class="o">(</span><span class="nv">uid</span><span class="o">=</span>htb-stdnt<span class="o">)(</span><span class="p">|</span><span class="o">(</span><span class="nv">InvalidAttribute</span><span class="o">=</span>*<span class="o">)(</span><span class="nv">password</span><span class="o">=</span>invalid<span class="o">)))</span>
 </span><span id="__span-4-2"><span class="o">(</span><span class="p">&amp;</span><span class="o">(</span><span class="nv">uid</span><span class="o">=</span>htb-stdnt<span class="o">)(</span><span class="p">|</span><span class="o">(</span><span class="nv">ValidAttribute</span><span class="o">=</span>*<span class="o">)(</span><span class="nv">password</span><span class="o">=</span>invalid<span class="o">)))</span>
 </span></code></pre></div></td></tr></table></div></li>
+</ul>
+<h2 id="pdf-generation-vulnerabilities">PDF Generation Vulnerabilities</h2>
+<ul>
+<li><code>exiftool invoice.pdf</code> - use exiftool to gain information about the library used to generate the PDF after downloading from the target</li>
 </ul>
 
 
