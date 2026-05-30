@@ -44,6 +44,7 @@ nav:
     - Contents: cwee-study-notes/index.md
     - Senior Web Penetration Tester Course Notes:
       - Injection Attacks: cwee-study-notes/injection-attacks.md
+      - Intro to Whitebox Pentesting: cwee-study-notes/intro-to-whitebox-pentesting.md
   - Android Application Penetration Test Study Notes:
     - Contents: android-application-pentesting/index.md
     - HTB Academy Modules:
