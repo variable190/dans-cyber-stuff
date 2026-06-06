@@ -9,28 +9,28 @@
       
       
       
-        <link rel="prev" href="../cwes-study-notes/feedback/">
+        <link rel="prev" href="../injection-attacks/">
       
       
-        <link rel="next" href="sql-injection/">
+        <link rel="next" href="../intro-to-whitebox-pentesting/">
       
       
         
       
       
-      <link rel="icon" href="../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
-        <title>Contents - Dan's Cyber Stuff</title>
+        <title>Introduction to NoSQL Injection - Dan's Cyber Stuff</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -49,7 +49,7 @@
       
     
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#burp-suite-learning-path-notes" class="md-skip">
+        <a href="#introduction-to-nosql-injection" class="md-skip">
           Skip to content
         </a>
       
@@ -90,7 +90,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="Dan&#39;s Cyber Stuff" class="md-header__button md-logo" aria-label="Dan's Cyber Stuff" data-md-component="logo">
+    <a href="../.." title="Dan&#39;s Cyber Stuff" class="md-header__button md-logo" aria-label="Dan's Cyber Stuff" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -110,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Contents
+              Introduction to NoSQL Injection
             
           </span>
         </div>
@@ -214,7 +214,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Dan&#39;s Cyber Stuff" class="md-nav__button md-logo" aria-label="Dan's Cyber Stuff" data-md-component="logo">
+    <a href="../.." title="Dan&#39;s Cyber Stuff" class="md-nav__button md-logo" aria-label="Dan's Cyber Stuff" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -232,7 +232,7 @@
   
   
     <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -306,7 +306,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../bb-process/" class="md-nav__link">
+      <a href="../../bb-process/" class="md-nav__link">
         
   
   
@@ -388,7 +388,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cwes-study-notes/" class="md-nav__link">
+      <a href="../../cwes-study-notes/" class="md-nav__link">
         
   
   
@@ -463,7 +463,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cwes-study-notes/web-requests/" class="md-nav__link">
+      <a href="../../cwes-study-notes/web-requests/" class="md-nav__link">
         
   
   
@@ -491,7 +491,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cwes-study-notes/introduction-to-web-applications/" class="md-nav__link">
+      <a href="../../cwes-study-notes/introduction-to-web-applications/" class="md-nav__link">
         
   
   
@@ -519,7 +519,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cwes-study-notes/using-web-proxies/" class="md-nav__link">
+      <a href="../../cwes-study-notes/using-web-proxies/" class="md-nav__link">
         
   
   
@@ -547,7 +547,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cwes-study-notes/information-gathering-web-edition/" class="md-nav__link">
+      <a href="../../cwes-study-notes/information-gathering-web-edition/" class="md-nav__link">
         
   
   
@@ -575,7 +575,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cwes-study-notes/web-fuzzing/" class="md-nav__link">
+      <a href="../../cwes-study-notes/web-fuzzing/" class="md-nav__link">
         
   
   
@@ -603,7 +603,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cwes-study-notes/javascript-deobfuscation/" class="md-nav__link">
+      <a href="../../cwes-study-notes/javascript-deobfuscation/" class="md-nav__link">
         
   
   
@@ -631,7 +631,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cwes-study-notes/cross-site-scripting-%28xss%29/" class="md-nav__link">
+      <a href="../../cwes-study-notes/cross-site-scripting-%28xss%29/" class="md-nav__link">
         
   
   
@@ -659,7 +659,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cwes-study-notes/sql-injection-fundamentals/" class="md-nav__link">
+      <a href="../../cwes-study-notes/sql-injection-fundamentals/" class="md-nav__link">
         
   
   
@@ -687,7 +687,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cwes-study-notes/sqlmap-essentials/" class="md-nav__link">
+      <a href="../../cwes-study-notes/sqlmap-essentials/" class="md-nav__link">
         
   
   
@@ -715,7 +715,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cwes-study-notes/command-injections/" class="md-nav__link">
+      <a href="../../cwes-study-notes/command-injections/" class="md-nav__link">
         
   
   
@@ -743,7 +743,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cwes-study-notes/file-upload-attacks/" class="md-nav__link">
+      <a href="../../cwes-study-notes/file-upload-attacks/" class="md-nav__link">
         
   
   
@@ -771,7 +771,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cwes-study-notes/server-side-attacks/" class="md-nav__link">
+      <a href="../../cwes-study-notes/server-side-attacks/" class="md-nav__link">
         
   
   
@@ -799,7 +799,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cwes-study-notes/login-brute-forcing/" class="md-nav__link">
+      <a href="../../cwes-study-notes/login-brute-forcing/" class="md-nav__link">
         
   
   
@@ -827,7 +827,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cwes-study-notes/broken-authentication/" class="md-nav__link">
+      <a href="../../cwes-study-notes/broken-authentication/" class="md-nav__link">
         
   
   
@@ -855,7 +855,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cwes-study-notes/web-attacks/" class="md-nav__link">
+      <a href="../../cwes-study-notes/web-attacks/" class="md-nav__link">
         
   
   
@@ -883,7 +883,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cwes-study-notes/file-inclusion/" class="md-nav__link">
+      <a href="../../cwes-study-notes/file-inclusion/" class="md-nav__link">
         
   
   
@@ -911,7 +911,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cwes-study-notes/attacking-graphql/" class="md-nav__link">
+      <a href="../../cwes-study-notes/attacking-graphql/" class="md-nav__link">
         
   
   
@@ -939,7 +939,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cwes-study-notes/api-attacks/" class="md-nav__link">
+      <a href="../../cwes-study-notes/api-attacks/" class="md-nav__link">
         
   
   
@@ -967,7 +967,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cwes-study-notes/attacking-common-applications/" class="md-nav__link">
+      <a href="../../cwes-study-notes/attacking-common-applications/" class="md-nav__link">
         
   
   
@@ -995,7 +995,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cwes-study-notes/bug-bounty-hunting-process/" class="md-nav__link">
+      <a href="../../cwes-study-notes/bug-bounty-hunting-process/" class="md-nav__link">
         
   
   
@@ -1078,7 +1078,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cwes-study-notes/ftp-cheat/" class="md-nav__link">
+      <a href="../../cwes-study-notes/ftp-cheat/" class="md-nav__link">
         
   
   
@@ -1106,7 +1106,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cwes-study-notes/gobuster-cheat/" class="md-nav__link">
+      <a href="../../cwes-study-notes/gobuster-cheat/" class="md-nav__link">
         
   
   
@@ -1142,7 +1142,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cwes-study-notes/feedback/" class="md-nav__link">
+      <a href="../../cwes-study-notes/feedback/" class="md-nav__link">
         
   
   
@@ -1174,20 +1174,18 @@
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
           
           <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
@@ -1208,7 +1206,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1223,37 +1221,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Contents
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../bscp-study-notes/" class="md-nav__link">
         
   
   
@@ -1269,65 +1240,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#contents" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Contents
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Contents">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#server-side-topics" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Server-side Topics
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#other-client-side-topics" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Other Client-side Topics
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1387,7 +1299,7 @@
   
   
     <li class="md-nav__item">
-      <a href="sql-injection/" class="md-nav__link">
+      <a href="../../bscp-study-notes/sql-injection/" class="md-nav__link">
         
   
   
@@ -1415,7 +1327,7 @@
   
   
     <li class="md-nav__item">
-      <a href="authentication-vulnerabilities/" class="md-nav__link">
+      <a href="../../bscp-study-notes/authentication-vulnerabilities/" class="md-nav__link">
         
   
   
@@ -1443,7 +1355,7 @@
   
   
     <li class="md-nav__item">
-      <a href="path-traversal/" class="md-nav__link">
+      <a href="../../bscp-study-notes/path-traversal/" class="md-nav__link">
         
   
   
@@ -1471,7 +1383,7 @@
   
   
     <li class="md-nav__item">
-      <a href="command-injection/" class="md-nav__link">
+      <a href="../../bscp-study-notes/command-injection/" class="md-nav__link">
         
   
   
@@ -1499,7 +1411,7 @@
   
   
     <li class="md-nav__item">
-      <a href="business-logic-vulnerabilities/" class="md-nav__link">
+      <a href="../../bscp-study-notes/business-logic-vulnerabilities/" class="md-nav__link">
         
   
   
@@ -1582,7 +1494,7 @@
   
   
     <li class="md-nav__item">
-      <a href="cross-site-scripting/" class="md-nav__link">
+      <a href="../../bscp-study-notes/cross-site-scripting/" class="md-nav__link">
         
   
   
@@ -1622,18 +1534,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
@@ -1654,7 +1568,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1672,7 +1586,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cwee-study-notes/" class="md-nav__link">
+      <a href="../" class="md-nav__link">
         
   
   
@@ -1697,18 +1611,20 @@
                 
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" checked>
         
           
           <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
@@ -1729,7 +1645,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1747,7 +1663,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cwee-study-notes/injection-attacks/" class="md-nav__link">
+      <a href="../injection-attacks/" class="md-nav__link">
         
   
   
@@ -1772,10 +1688,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../cwee-study-notes/introduction-to-nosql-injection/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction to NoSQL Injection
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1791,6 +1734,87 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#types-of-nosql-db" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Types of NoSQL DB
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mongodb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MongoDB
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="MongoDB">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Basic Commands
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#query-operators" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Query Operators
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#updating-documents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Updating Documents
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1803,7 +1827,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cwee-study-notes/intro-to-whitebox-pentesting/" class="md-nav__link">
+      <a href="../intro-to-whitebox-pentesting/" class="md-nav__link">
         
   
   
@@ -1893,7 +1917,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../android-application-pentesting/" class="md-nav__link">
+      <a href="../../android-application-pentesting/" class="md-nav__link">
         
   
   
@@ -1968,7 +1992,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../android-application-pentesting/android-fundamentals/" class="md-nav__link">
+      <a href="../../android-application-pentesting/android-fundamentals/" class="md-nav__link">
         
   
   
@@ -1996,7 +2020,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../android-application-pentesting/android-application-static-analysis/" class="md-nav__link">
+      <a href="../../android-application-pentesting/android-application-static-analysis/" class="md-nav__link">
         
   
   
@@ -2024,7 +2048,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../android-application-pentesting/android-application-dynamic-analysis/" class="md-nav__link">
+      <a href="../../android-application-pentesting/android-application-dynamic-analysis/" class="md-nav__link">
         
   
   
@@ -2087,22 +2111,33 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#contents" class="md-nav__link">
+  <a href="#types-of-nosql-db" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Contents
+        Types of NoSQL DB
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Contents">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mongodb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MongoDB
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="MongoDB">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#server-side-topics" class="md-nav__link">
+  <a href="#basic-commands" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Server-side Topics
+        Basic Commands
       
     </span>
   </a>
@@ -2110,10 +2145,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#other-client-side-topics" class="md-nav__link">
+  <a href="#query-operators" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Other Client-side Topics
+        Query Operators
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#updating-documents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Updating Documents
       
     </span>
   </a>
@@ -2142,21 +2188,189 @@
 
 
 
-<h1 id="burp-suite-learning-path-notes">Burp Suite Learning Path Notes</h1>
-<p>Revision materials and notes for the Burp Suite Certified Practitioner exam.</p>
-<h2 id="contents">Contents</h2>
-<h3 id="server-side-topics">Server-side Topics</h3>
-<ul>
-<li><a href="sql-injection/">SQL Injection</a></li>
-<li><a href="authentication-vulnerabilities/">Authentication vulnerabilities</a></li>
-<li><a href="path-traversal/">Path Traversal</a></li>
-<li><a href="command-injection/">Command Injection</a></li>
-<li><a href="business-logic-vulnerabilities/">Business Logic Vulnerabilities</a></li>
-</ul>
-<h3 id="other-client-side-topics">Other Client-side Topics</h3>
-<ul>
-<li><a href="cross-site-scripting/">Cross-site Scripting</a></li>
-</ul>
+<h1 id="introduction-to-nosql-injection">Introduction to NoSQL Injection</h1>
+<h2 id="types-of-nosql-db">Types of NoSQL DB</h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+<th>Top 3 Engines (as of November 2022)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Document-Oriented Database</td>
+<td>Stores data in documents which contain pairs of fields and values These documents are typically encoded in formats such as JSON or XML</td>
+<td>MongoDB, Amazon DynamoDB, Google Firebase - Cloud Firestore</td>
+</tr>
+<tr>
+<td>Key-Value Database</td>
+<td>A data structure that stores data in key:value pairs, also known as a dictionary</td>
+<td>Redis, Amazon DynamoDB, Azure Cosmos DB</td>
+</tr>
+<tr>
+<td>Wide-Column Store</td>
+<td>Used for storing enormous amounts of data in tables, rows, and columns like a relational database, but with the ability to handle more ambiguous data types</td>
+<td>Apache Cassandra, Apache HBase, Azure Cosmos DB</td>
+</tr>
+<tr>
+<td>Graph Database</td>
+<td>Stores data in nodes and uses edges to define relationships</td>
+<td>Neo4j, Azure Cosmos DB, Virtuoso</td>
+</tr>
+</tbody>
+</table>
+<h2 id="mongodb">MongoDB</h2>
+<h3 id="basic-commands">Basic Commands</h3>
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1">mongosh<span class="w"> </span>mongodb://127.0.0.1:27017<span class="w"> </span><span class="c1"># connect to DB on default TCP port</span>
+</span><span id="__span-0-2">show<span class="w"> </span>databases
+</span><span id="__span-0-3">use<span class="w"> </span>academy<span class="w"> </span><span class="c1"># databases created once data first stored</span>
+</span><span id="__span-0-4">show<span class="w"> </span>collections<span class="w"> </span><span class="c1"># list all collections in a database</span>
+</span><span id="__span-0-5">db.apples.insertOne<span class="o">({</span>type:<span class="w"> </span><span class="s2">&quot;Granny Smith&quot;</span>,<span class="w"> </span>price:<span class="w"> </span><span class="m">0</span>.65<span class="o">})</span><span class="p">;</span><span class="w"> </span><span class="c1"># collection when a document first inserted into it</span>
+</span><span id="__span-0-6">db.apples.insertMany<span class="o">([{</span>type:<span class="w"> </span><span class="s2">&quot;Golden Delicious&quot;</span>,<span class="w"> </span>price:<span class="w"> </span><span class="m">0</span>.79<span class="o">}</span>,<span class="w"> </span><span class="o">{</span>type:<span class="w"> </span><span class="s2">&quot;Pink Lady&quot;</span>,<span class="w"> </span>price:<span class="w"> </span><span class="m">0</span>.90<span class="o">}])</span><span class="p">;</span><span class="w"> </span><span class="c1"># add multiple documents to collection</span>
+</span><span id="__span-0-7">db.apples.find<span class="o">({</span>type:<span class="w"> </span><span class="s2">&quot;Granny Smith&quot;</span><span class="o">})</span><span class="p">;</span><span class="w"> </span><span class="c1"># selecting data</span>
+</span><span id="__span-0-8">db.apples.find<span class="o">({})</span><span class="p">;</span><span class="w"> </span><span class="c1"># list all documents in a collection</span>
+</span></code></pre></div></td></tr></table></div>
+<h3 id="query-operators">Query Operators</h3>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Operator</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Comparison</td>
+<td>$eq</td>
+<td>Matches values which are equal to a specified value</td>
+<td Lady_="Lady&quot;" _Pink="&quot;Pink" _eq:="$eq:">type:</td>
+</tr>
+<tr>
+<td>Comparison</td>
+<td>$gt</td>
+<td>Matches values which are greater than a specified value</td>
+<td 0.30="0.30" _gt:="$gt:">price:</td>
+</tr>
+<tr>
+<td>Comparison</td>
+<td>$gte</td>
+<td>Matches values which are greater than or equal to a specified value</td>
+<td 0.50="0.50" _gte:="$gte:">price:</td>
+</tr>
+<tr>
+<td>Comparison</td>
+<td>$in</td>
+<td>Matches values which exist in the specified array</td>
+<td Lady_="Lady&quot;]" Smith_="Smith&quot;," _Granny="[&quot;Granny" _Pink="&quot;Pink" _in:="$in:">type:</td>
+</tr>
+<tr>
+<td>Comparison</td>
+<td>$lt</td>
+<td>Matches values which are less than a specified value</td>
+<td 0.60="0.60" _lt:="$lt:">price:</td>
+</tr>
+<tr>
+<td>Comparison</td>
+<td>$lte</td>
+<td>Matches values which are less than or equal to a specified value</td>
+<td 0.75="0.75" _lte:="$lte:">price:</td>
+</tr>
+<tr>
+<td>Comparison</td>
+<td>$nin</td>
+<td>Matches values which are not in the specified array</td>
+<td Delicious_="Delicious&quot;," Smith_="Smith&quot;]" _Golden="[&quot;Golden" _Granny="&quot;Granny" _nin:="$nin:">type:</td>
+</tr>
+<tr>
+<td>Logical</td>
+<td>$and</td>
+<td>Matches documents which meet the conditions of both specified queries</td>
+<td>$and: [{type: 'Granny Smith'}, {price: 0.65}]</td>
+</tr>
+<tr>
+<td>Logical</td>
+<td>$not</td>
+<td>Matches documents which do not meet the conditions of a specified query</td>
+<td>type: {$not: {$eq: "Granny Smith"}}</td>
+</tr>
+<tr>
+<td>Logical</td>
+<td>$nor</td>
+<td>Matches documents which do not meet the conditions of any of the specified queries</td>
+<td>$nor: [{type: 'Granny Smith'}, {price: 0.79}]</td>
+</tr>
+<tr>
+<td>Logical</td>
+<td>$or</td>
+<td>Matches documents which meet the conditions of one of the specified queries</td>
+<td>$or: [{type: 'Granny Smith'}, {price: 0.79}]</td>
+</tr>
+<tr>
+<td>Evaluation</td>
+<td>$mod</td>
+<td>Matches values which divided by a specific divisor have the specified remainder</td>
+<td 0_="0]" _4_="[4," _mod:="$mod:">price:</td>
+</tr>
+<tr>
+<td>Evaluation</td>
+<td>$regex</td>
+<td>Matches values which match a specified RegEx</td>
+<td _G._="/^G.*/" _regex:="$regex:">type:</td>
+</tr>
+<tr>
+<td>Evaluation</td>
+<td>$where</td>
+<td>Matches documents which satisfy a JavaScript expression</td>
+<td>$where: 'this.type.length === 9'</td>
+</tr>
+</tbody>
+</table>
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><span class="c1"># select all apples whose type starts with a &#39;G&#39; and whose price is less than 0.70</span>
+</span><span id="__span-1-2">db.apples.find<span class="o">({</span>
+</span><span id="__span-1-3"><span class="w">    </span><span class="nv">$and</span>:<span class="w"> </span><span class="o">[</span>
+</span><span id="__span-1-4"><span class="w">        </span><span class="o">{</span><span class="w"> </span>type:<span class="w"> </span><span class="o">{</span><span class="w"> </span><span class="nv">$regex</span>:<span class="w"> </span>/^G/<span class="w"> </span><span class="o">}</span><span class="w"> </span><span class="o">}</span>,
+</span><span id="__span-1-5"><span class="w">        </span><span class="o">{</span><span class="w"> </span>price:<span class="w"> </span><span class="o">{</span><span class="w"> </span><span class="nv">$lt</span>:<span class="w"> </span><span class="m">0</span>.70<span class="w"> </span><span class="o">}</span><span class="w"> </span><span class="o">}</span>
+</span><span id="__span-1-6"><span class="w">    </span><span class="o">]</span>
+</span><span id="__span-1-7"><span class="o">})</span><span class="p">;</span>
+</span><span id="__span-1-8">
+</span><span id="__span-1-9"><span class="c1"># same but with where clause</span>
+</span><span id="__span-1-10">db.apples.find<span class="o">({</span><span class="nv">$where</span>:<span class="w"> </span><span class="sb">`</span>this.type.startsWith<span class="o">(</span><span class="s1">&#39;G&#39;</span><span class="o">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>this.price<span class="w"> </span>&lt;<span class="w"> </span><span class="m">0</span>.70<span class="sb">`</span><span class="o">})</span><span class="p">;</span>
+</span><span id="__span-1-11">
+</span><span id="__span-1-12"><span class="c1">#select the top two apples sorted by price in descending order</span>
+</span><span id="__span-1-13">db.apples.find<span class="o">({})</span>.sort<span class="o">({</span>price:<span class="w"> </span>-1<span class="o">})</span>.limit<span class="o">(</span><span class="m">2</span><span class="o">)</span>
+</span></code></pre></div></td></tr></table></div>
+<h3 id="updating-documents">Updating Documents</h3>
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1">db.apples.updateOne<span class="o">({</span>type:<span class="w"> </span><span class="s2">&quot;Granny Smith&quot;</span><span class="o">}</span>,<span class="w"> </span><span class="o">{</span><span class="nv">$set</span>:<span class="w"> </span><span class="o">{</span>price:<span class="w"> </span><span class="m">1</span>.99<span class="o">}})</span><span class="w"> </span><span class="c1"># update operations take a filter and an update operation</span>
+</span><span id="__span-2-2">db.apples.updateMany<span class="o">({}</span>,<span class="w"> </span><span class="o">{</span><span class="nv">$inc</span>:<span class="w"> </span><span class="o">{</span>quantity:<span class="w"> </span><span class="m">1</span>,<span class="w"> </span><span class="s2">&quot;price&quot;</span>:<span class="w"> </span><span class="m">1</span><span class="o">}})</span><span class="w"> </span><span class="c1"># increase the prices of all apples at the same time</span>
+</span><span id="__span-2-3">db.apples.replaceOne<span class="o">({</span>type:<span class="s1">&#39;Pink Lady&#39;</span><span class="o">}</span>,<span class="w"> </span><span class="o">{</span>name:<span class="w"> </span><span class="s1">&#39;Pink Lady&#39;</span>,<span class="w"> </span>price:<span class="w"> </span><span class="m">0</span>.99,<span class="w"> </span>color:<span class="w"> </span><span class="s1">&#39;Pink&#39;</span><span class="o">})</span><span class="w"> </span><span class="c1"># completely replace the document</span>
+</span><span id="__span-2-4">db.apples.remove<span class="o">({</span>price:<span class="w"> </span><span class="o">{</span><span class="nv">$lt</span>:<span class="w"> </span><span class="m">0</span>.8<span class="o">}})</span><span class="w"> </span><span class="c1"># remove matched documents</span>
+</span></code></pre></div></td></tr></table></div>
 
 
 
@@ -2206,10 +2420,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>
