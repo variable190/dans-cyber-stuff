@@ -45,6 +45,7 @@ nav:
     - Senior Web Penetration Tester Course Notes:
       - Injection Attacks: cwee-study-notes/injection-attacks.md
       - Introduction to NoSQL Injection: cwee-study-notes/introduction-to-nosql-injection.md
+      - Attacking Authentication Mechanisms: cwee-study-notes/attacking-authentication-mechanisms.md
       - Intro to Whitebox Pentesting: cwee-study-notes/intro-to-whitebox-pentesting.md
   - Android Application Penetration Test Study Notes:
     - Contents: android-application-pentesting/index.md
