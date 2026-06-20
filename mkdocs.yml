@@ -1,58 +1,31 @@
 site_name: Dan's Cyber Stuff
 nav:
   - Home: index.md
-  - Guides:
-    - OWASP Top 10 Bug Bounty Process Guide: bb-process.md
-  - CWES Study Notes:
-    - Contents: cwes-study-notes/index.md
-    - Web Penetration Tester Course Notes:
-      - Web Requests: cwes-study-notes/web-requests.md
-      - Introduction to Web Applications: cwes-study-notes/introduction-to-web-applications.md
-      - Using Web Proxies: cwes-study-notes/using-web-proxies.md
-      - Information Gathering Web Edition: cwes-study-notes/information-gathering-web-edition.md
-      - Web Fuzzing: cwes-study-notes/web-fuzzing.md
-      - JavaScript Deobfuscation: cwes-study-notes/javascript-deobfuscation.md
-      - Cross-Site Scripting (XSS): cwes-study-notes/cross-site-scripting-(xss).md
-      - SQL Injection Fundamentals: cwes-study-notes/sql-injection-fundamentals.md
-      - SQLMap Essentials: cwes-study-notes/sqlmap-essentials.md
-      - Command Injections: cwes-study-notes/command-injections.md
-      - File Upload Attacks: cwes-study-notes/file-upload-attacks.md
-      - Server-side Attacks: cwes-study-notes/server-side-attacks.md
-      - Login Brute Forcing: cwes-study-notes/login-brute-forcing.md
-      - Broken Authentication: cwes-study-notes/broken-authentication.md
-      - Web Attacks: cwes-study-notes/web-attacks.md
-      - File Inclusion: cwes-study-notes/file-inclusion.md
-      - Attacking GraphQL: cwes-study-notes/attacking-graphql.md
-      - API Attacks: cwes-study-notes/api-attacks.md
-      - Attacking Common Applications: cwes-study-notes/attacking-common-applications.md
-      - Bug Bounty Hunting Process: cwes-study-notes/bug-bounty-hunting-process.md
-    - Additional Cheat Sheets:
-      - FTP: cwes-study-notes/ftp-cheat.md
-      - Gobuster: cwes-study-notes/gobuster-cheat.md
-    - Exam Report Feedback: cwes-study-notes/feedback.md
-  - BSCP Study Notes:
-    - Contents: bscp-study-notes/index.md
-    - Serever-side Topics:
-      - SQL Injection: bscp-study-notes/sql-injection.md
-      - Authentication Vulnerabilities: bscp-study-notes/authentication-vulnerabilities.md
-      - Path Traversal: bscp-study-notes/path-traversal.md
-      - Command Injection: bscp-study-notes/command-injection.md
-      - Business Logic Vulnerabilities: bscp-study-notes/business-logic-vulnerabilities.md
-    - Client-side Topics:
-      - Cross-site Scripting: bscp-study-notes/cross-site-scripting.md
-  - CWEE Study Notes:
-    - Contents: cwee-study-notes/index.md
-    - Senior Web Penetration Tester Course Notes:
-      - Injection Attacks: cwee-study-notes/injection-attacks.md
-      - Introduction to NoSQL Injection: cwee-study-notes/introduction-to-nosql-injection.md
-      - Attacking Authentication Mechanisms: cwee-study-notes/attacking-authentication-mechanisms.md
-      - Intro to Whitebox Pentesting: cwee-study-notes/intro-to-whitebox-pentesting.md
-  - Android Application Penetration Test Study Notes:
-    - Contents: android-application-pentesting/index.md
-    - HTB Academy Modules:
-      - Android Fundamentals: android-application-pentesting/android-fundamentals.md
-      - Android Application Static Analysis: android-application-pentesting/android-application-static-analysis.md
-      - Android Application Dynamic Analysis: android-application-pentesting/android-application-dynamic-analysis.md
+  - Bug Bounty Hunting:
+    - Bug Bounty Methodology: bug-bounty-methodology.md
+    - Reconnaissance: reconnaissance.md
+    - Reporting & POC: reporting-and-poc.md
+    - Tools: tools.md
+    - Resources: resources.md
+    - Web Application Testing:
+      - Web Fundamentals: web-application-testing/web-fundamentals.md
+      - Broken Access Control: web-application-testing/broken-access-control.md
+      - SQL Injection: web-application-testing/sql-injection.md
+      - Command Injection: web-application-testing/command-injection.md
+      - NoSQL Injection: web-application-testing/nosql-injection.md
+      - XSS: web-application-testing/xss.md
+      - CSRF: web-application-testing/csrf.md
+      - SSRF: web-application-testing/ssrf.md
+      - XXE: web-application-testing/xxe.md
+      - Security Misconfiguration: web-application-testing/security-misconfiguration.md
+      - Authentication: web-application-testing/authentication.md
+      - Business Logic Vulnerabilities: web-application-testing/business-logic-vulnerabilities.md
+      - Insecure Deserialization: web-application-testing/insecure-deserialization.md
+      - Path Traversal: web-application-testing/path-traversal.md
+    - Android Application Testing:
+      - Android Fundamentals: android-application-testing/android-fundamentals.md
+      - Static Testing: android-application-testing/static-testing.md
+      - Dynamic Testing: android-application-testing/dynamic-testing.md
 
 theme:
   name: material
