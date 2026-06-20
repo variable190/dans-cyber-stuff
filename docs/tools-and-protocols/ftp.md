@@ -1,4 +1,4 @@
-# FTP Cheat Sheet
+# FTP
 
 ## Overview
 FTP (File Transfer Protocol) is used to transfer files between a client and server. In bug bounty hunting, it can be leveraged for reconnaissance (e.g., discovering open FTP servers), exploitation (e.g., uploading malicious files), or data exfiltration.
@@ -19,8 +19,6 @@ FTP (File Transfer Protocol) is used to transfer files between a client and serv
 | `bye` or `quit` | Disconnect from the FTP server | `bye` |
 
 **Tip:** `ftp ftp://username:password\!@localhost` local connection with known credentials, after connection through ssh for example.
-
-
 
 ## Commonly Used Flags
 | Flag | Purpose |

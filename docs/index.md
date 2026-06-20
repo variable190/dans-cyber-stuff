@@ -7,7 +7,6 @@ Welcome to Dan's Cyber Stuff!
 - [OWASP Top 10 2025](owasp-top-10-2025.md)
 - [Reconnaissance](reconnaissance.md)
 - [Reporting & POC](reporting-and-poc.md)
-- [Tools](tools.md)
 - [Resources](resources.md)
 
 ### Web Application Testing
@@ -32,3 +31,9 @@ Welcome to Dan's Cyber Stuff!
 - [Android Fundamentals](android-application-testing/android-fundamentals.md)
 - [Static Testing](android-application-testing/static-testing.md)
 - [Dynamic Testing](android-application-testing/dynamic-testing.md)
+
+### Tools and Protocols
+
+- [ftp](tools-and-protocols/ftp.md)
+- [gobuster](tools-and-protocols/gobuster.md)
+- [nmap](tools-and-protocols/nmap.md)
