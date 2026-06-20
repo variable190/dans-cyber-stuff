@@ -345,6 +345,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reconnaissance
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -361,6 +379,571 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#web-reconnaissance-goals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Web Reconnaissance Goals
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#passive-reconnaissance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Passive Reconnaissance
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#active-reconnaissance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Active Reconnaissance
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#internal-scans" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Internal Scans
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#methods-and-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Methods and Tools
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Methods and Tools">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        nmap
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="nmap">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scan-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scan Types
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#commonly-used-flags" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Commonly Used Flags
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#whois" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        WHOIS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DNS
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="DNS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dns-record-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DNS Record Types
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dns-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DNS Tools
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subdomains" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Subdomains
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Subdomains">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#subdomain-enumeration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Subdomain Enumeration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#brute-force-enumeration-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Brute-Force Enumeration Tools
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dns-zone-transfers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DNS Zone Transfers
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#virtual-hosts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Virtual Hosts
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Virtual Hosts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#virtual-host-discovery-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Virtual Host Discovery Tools
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#certificate-transparency-ct-logs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Certificate Transparency (CT) Logs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Certificate Transparency (CT) Logs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#searching-ct-logs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Searching CT Logs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fingerprinting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fingerprinting
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Fingerprinting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#techniques" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Techniques
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tools
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#banner-grabbing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Banner Grabbing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wafw00f" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wafw00f
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nikto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nikto
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#robotstxt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        robots.txt
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="robots.txt">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#robotstxt-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        robots.txt Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#common-directives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Directives
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#well-known-uris" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Well-Known URIs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Well-Known URIs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Examples
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#web-crawling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Web Crawling
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Web Crawling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#popular-web-crawlers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Popular Web Crawlers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scrapy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scrapy:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spider-code-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Spider code example
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#search-engine-discovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Search Engine Discovery
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Search Engine Discovery">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#google-dorking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Google Dorking
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#web-archives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Web Archives
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#automating-recon" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Automating Recon
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Automating Recon">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#finalrecon" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FinalRecon
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="FinalRecon">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common-flagsoptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Flags/Options
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -382,34 +965,6 @@
     
   
     Reporting & POC
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../tools/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Tools
   
 
     
@@ -466,10 +1021,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
         
           
-          <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
             
   
   
@@ -487,8 +1042,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_6">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -913,10 +1468,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" >
         
           
-          <label class="md-nav__link" for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
             
   
   
@@ -934,8 +1489,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_7">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1037,6 +1592,145 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tools and Protocols
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tools and Protocols
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tools-and-protocols/ftp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FTP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tools-and-protocols/gobuster/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    gobuster
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tools-and-protocols/nmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    nmap
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1064,6 +1758,560 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#web-reconnaissance-goals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Web Reconnaissance Goals
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#passive-reconnaissance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Passive Reconnaissance
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#active-reconnaissance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Active Reconnaissance
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#internal-scans" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Internal Scans
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#methods-and-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Methods and Tools
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Methods and Tools">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        nmap
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="nmap">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scan-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scan Types
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#commonly-used-flags" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Commonly Used Flags
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#whois" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        WHOIS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DNS
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="DNS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dns-record-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DNS Record Types
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dns-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DNS Tools
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subdomains" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Subdomains
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Subdomains">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#subdomain-enumeration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Subdomain Enumeration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#brute-force-enumeration-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Brute-Force Enumeration Tools
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dns-zone-transfers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DNS Zone Transfers
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#virtual-hosts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Virtual Hosts
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Virtual Hosts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#virtual-host-discovery-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Virtual Host Discovery Tools
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#certificate-transparency-ct-logs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Certificate Transparency (CT) Logs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Certificate Transparency (CT) Logs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#searching-ct-logs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Searching CT Logs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fingerprinting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fingerprinting
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Fingerprinting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#techniques" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Techniques
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tools
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#banner-grabbing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Banner Grabbing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wafw00f" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wafw00f
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nikto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nikto
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#robotstxt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        robots.txt
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="robots.txt">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#robotstxt-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        robots.txt Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#common-directives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Directives
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#well-known-uris" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Well-Known URIs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Well-Known URIs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Examples
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#web-crawling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Web Crawling
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Web Crawling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#popular-web-crawlers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Popular Web Crawlers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scrapy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scrapy:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spider-code-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Spider code example
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#search-engine-discovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Search Engine Discovery
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Search Engine Discovery">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#google-dorking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Google Dorking
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#web-archives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Web Archives
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#automating-recon" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Automating Recon
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Automating Recon">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#finalrecon" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FinalRecon
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="FinalRecon">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common-flagsoptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Flags/Options
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1080,6 +2328,1116 @@
 
 
 <h1 id="reconnaissance">Reconnaissance</h1>
+<h2 id="overview">Overview</h2>
+<ul>
+<li>Work from quietest to loudest (passive, active, internal)</li>
+<li>Ensure correct rate limiting of scans</li>
+<li>Ensure any requests contain required headers to notify the target per target scope</li>
+</ul>
+<h3 id="web-reconnaissance-goals">Web Reconnaissance Goals</h3>
+<ul>
+<li><strong>Identify Assets</strong>: Discovering all associated domains, subdomains, and IP addresses provides a map of the target's online presence.</li>
+<li><strong>Uncover Hidden Information</strong>: Web reconnaissance aims to uncover directories, files, and technologies that are not readily apparent and could serve as entry points for an attacker.</li>
+<li><strong>Analyse the Attack Surface</strong>: By identifying open ports, running services, and software versions, you can assess the potential vulnerabilities and weaknesses of the target.</li>
+<li><strong>Gather Intelligence</strong>: Collecting information about employees, email addresses, and technologies used can aid in social engineering attacks or identifying specific vulnerabilities associated with certain software.</li>
+</ul>
+<h2 id="passive-reconnaissance">Passive Reconnaissance</h2>
+<table>
+<thead>
+<tr>
+<th>Technique</th>
+<th>Description</th>
+<th>Example</th>
+<th>Tools</th>
+<th>Risk</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Search Engine Queries</td>
+<td>Uncovers public data.</td>
+<td>Google for employee names.</td>
+<td>Google, Shodan</td>
+<td>Very Low</td>
+</tr>
+<tr>
+<td>WHOIS Lookups</td>
+<td>Retrieves domain details.</td>
+<td>whois on example.com.</td>
+<td>whois, online</td>
+<td>Very Low</td>
+</tr>
+<tr>
+<td>DNS Analysis</td>
+<td>Identifies DNS records.</td>
+<td>dig for subdomains.</td>
+<td>dig, dnsenum</td>
+<td>Very Low</td>
+</tr>
+<tr>
+<td>Web Archive Analysis</td>
+<td>Reviews historical sites.</td>
+<td>Wayback for old pages.</td>
+<td>Wayback Machine</td>
+<td>Very Low</td>
+</tr>
+<tr>
+<td>Social Media Analysis</td>
+<td>Gathers social profiles.</td>
+<td>LinkedIn for employees.</td>
+<td>LinkedIn, OSINT</td>
+<td>Very Low</td>
+</tr>
+<tr>
+<td>Code Repositories</td>
+<td>Analyzes public code.</td>
+<td>GitHub for credentials.</td>
+<td>GitHub, GitLab</td>
+<td>Very Low</td>
+</tr>
+</tbody>
+</table>
+<h2 id="active-reconnaissance">Active Reconnaissance</h2>
+<table>
+<thead>
+<tr>
+<th>Technique</th>
+<th>Description</th>
+<th>Example</th>
+<th>Tools</th>
+<th>Risk</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Port Scanning</td>
+<td>Identifies open ports.</td>
+<td>Nmap scans ports 80, 443.</td>
+<td>Nmap, Masscan</td>
+<td>High</td>
+</tr>
+<tr>
+<td>Vulnerability Scanning</td>
+<td>Probes for vulnerabilities.</td>
+<td>Nessus checks for XSS.</td>
+<td>Nessus, Nikto</td>
+<td>High</td>
+</tr>
+<tr>
+<td>Network Mapping</td>
+<td>Maps network topology.</td>
+<td>Traceroute tracks hops.</td>
+<td>Traceroute, Nmap</td>
+<td>Medium-High</td>
+</tr>
+<tr>
+<td>Banner Grabbing</td>
+<td>Retrieves service banners.</td>
+<td>curl checks HTTP version.</td>
+<td>Netcat, curl</td>
+<td>Low</td>
+</tr>
+<tr>
+<td>OS Fingerprinting</td>
+<td>Detects OS type.</td>
+<td>Nmap uses -O.</td>
+<td>Nmap, Xprobe2</td>
+<td>Low</td>
+</tr>
+<tr>
+<td>Service Enumeration</td>
+<td>Identifies service versions.</td>
+<td>Nmap -sV on port 80.</td>
+<td>Nmap</td>
+<td>Low</td>
+</tr>
+<tr>
+<td>Web Spidering</td>
+<td>Crawls website structure.</td>
+<td>Burp Spider maps pages.</td>
+<td>Burp, ZAP Spider</td>
+<td>Low-Medium</td>
+</tr>
+</tbody>
+</table>
+<h2 id="internal-scans">Internal Scans</h2>
+<p>Once initial foothold gained (ssh creds for example)
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1">netstat<span class="w"> </span>-tulpn<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>LISTEN
+</span><span id="__span-0-2">nmap<span class="w"> </span>localhost
+</span></code></pre></div></td></tr></table></div></p>
+<h2 id="methods-and-tools">Methods and Tools</h2>
+<h3 id="nmap"><a href="../tools-and-protocols/nmap/">nmap</a></h3>
+<h4 id="scan-types">Scan Types</h4>
+<p>Common Nmap scan types and flags with examples:</p>
+<table>
+<thead>
+<tr>
+<th>Scan Type</th>
+<th>Description</th>
+<th>Flag</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TCP SYN Scan</td>
+<td>Stealthy half-open scan for TCP ports. Example: <code>nmap -sS -T4 192.168.1.1</code></td>
+<td>-sS</td>
+</tr>
+<tr>
+<td>TCP Connect Scan</td>
+<td>Full TCP connection scan. Example: <code>nmap -sT -p 1-1000 192.168.1.1</code></td>
+<td>-sT</td>
+</tr>
+<tr>
+<td>UDP Scan</td>
+<td>Scan for UDP ports. Example: <code>nmap -sU -sV 192.168.1.1</code></td>
+<td>-sU</td>
+</tr>
+<tr>
+<td>Ping Scan</td>
+<td>Host discovery without port scanning. Example: <code>nmap -sn 192.168.1.0/24</code></td>
+<td>-sn (or -sP)</td>
+</tr>
+<tr>
+<td>Version Detection</td>
+<td>Identify service versions on open ports. Example: <code>nmap -sV -p 80,443 192.168.1.1</code></td>
+<td>-sV</td>
+</tr>
+<tr>
+<td>OS Detection</td>
+<td>Fingerprint operating system. Example: <code>nmap -O 192.168.1.1</code></td>
+<td>-O</td>
+</tr>
+<tr>
+<td>Script Scan</td>
+<td>Run NSE scripts for additional info. Example: <code>nmap -sC 192.168.1.1</code></td>
+<td>-sC</td>
+</tr>
+<tr>
+<td>Aggressive Scan</td>
+<td>Combines version, OS, script, and traceroute. Example: <code>nmap -A 192.168.1.1</code></td>
+<td>-A</td>
+</tr>
+<tr>
+<td>Idle/Zombie Scan</td>
+<td>Stealth scan using spoofed IP. Example: <code>nmap -sI zombie.host 192.168.1.1</code></td>
+<td>-sI</td>
+</tr>
+</tbody>
+</table>
+<h4 id="commonly-used-flags">Commonly Used Flags</h4>
+<p>Additional flags to customize Nmap scans:</p>
+<table>
+<thead>
+<tr>
+<th>Flag</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-p</code></td>
+<td>Defines a port range or specific ports to scan (e.g., <code>-p 1-1000</code> for ports 1-1000, <code>-p 80,443</code> for specific ports).</td>
+</tr>
+<tr>
+<td><code>-T&lt;0-5&gt;</code></td>
+<td>Sets timing template (0=paranoid to 5=insane) to control scan speed (e.g., <code>-T4</code> for faster scans).</td>
+</tr>
+<tr>
+<td><code>-A</code></td>
+<td>Enables aggressive scan features (version detection, OS detection, scripting, traceroute).</td>
+</tr>
+<tr>
+<td><code>-oN</code></td>
+<td>Outputs scan results to a normal file (e.g., <code>-oN scan.txt</code>).</td>
+</tr>
+<tr>
+<td><code>-v</code></td>
+<td>Increases verbosity for detailed output during the scan.</td>
+</tr>
+<tr>
+<td><code>-Pn</code></td>
+<td>Treats all hosts as online, skipping host discovery (useful for firewalls).</td>
+</tr>
+<tr>
+<td><code>-iL</code></td>
+<td>Reads targets from a file (e.g., <code>-iL targets.txt</code> for a list of IPs).</td>
+</tr>
+</tbody>
+</table>
+<h3 id="whois">WHOIS</h3>
+<p><div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1">whois<span class="w"> </span>example.com
+</span></code></pre></div></td></tr></table></div>
+<strong>Note</strong>: WHOIS data can be inaccurate or intentionally obscured, so verify from multiple sources. Privacy services may mask the true owner.</p>
+<h3 id="dns">DNS</h3>
+<p><div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1">dig<span class="w"> </span>example.com<span class="w"> </span>A
+</span></code></pre></div></td></tr></table></div>
+This retrieves the A record (hostname to IPv4 address). The output includes the IP address and query details.</p>
+<h4 id="dns-record-types">DNS Record Types</h4>
+<table>
+<thead>
+<tr>
+<th>Record Type</th>
+<th>Full Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>Address Record</td>
+<td>Maps a hostname to its IPv4 address.</td>
+</tr>
+<tr>
+<td>AAAA</td>
+<td>IPv6 Address Record</td>
+<td>Maps a hostname to its IPv6 address.</td>
+</tr>
+<tr>
+<td>CNAME</td>
+<td>Canonical Name Record</td>
+<td>Creates an alias for a hostname, pointing to another hostname.</td>
+</tr>
+<tr>
+<td>MX</td>
+<td>Mail Exchange Record</td>
+<td>Specifies the mail server(s) responsible for handling email.</td>
+</tr>
+<tr>
+<td>NS</td>
+<td>Name Server Record</td>
+<td>Delegates a DNS zone to an authoritative name server.</td>
+</tr>
+<tr>
+<td>TXT</td>
+<td>Text Record</td>
+<td>Stores arbitrary text information, often for verification or policies.</td>
+</tr>
+<tr>
+<td>SOA</td>
+<td>Start of Authority Record</td>
+<td>Specifies administrative details about a DNS zone.</td>
+</tr>
+<tr>
+<td>SRV</td>
+<td>Service Record</td>
+<td>Defines hostname and port for specific services.</td>
+</tr>
+<tr>
+<td>PTR</td>
+<td>Pointer Record</td>
+<td>Used for reverse DNS lookups, mapping an IP to a hostname.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="dns-tools">DNS Tools</h4>
+<table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>Key Features</th>
+<th>Use Cases</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dig</td>
+<td>Versatile DNS lookup, multiple query types</td>
+<td>Manual queries, zone transfers, troubleshooting</td>
+</tr>
+<tr>
+<td>nslookup</td>
+<td>Simple DNS lookup for A, AAAA, MX</td>
+<td>Basic resolution, mail checks</td>
+</tr>
+<tr>
+<td>host</td>
+<td>Concise DNS lookup</td>
+<td>Quick A, AAAA, MX checks</td>
+</tr>
+<tr>
+<td>dnsenum</td>
+<td>Automated enumeration, brute-forcing</td>
+<td>Subdomain discovery, DNS data</td>
+</tr>
+<tr>
+<td>fierce</td>
+<td>Subdomain enumeration, wildcard detection</td>
+<td>DNS recon, target identification</td>
+</tr>
+<tr>
+<td>dnsrecon</td>
+<td>Multi-technique enumeration, various outputs</td>
+<td>Comprehensive subdomain analysis</td>
+</tr>
+<tr>
+<td>theHarvester</td>
+<td>OSINT from DNS and other sources</td>
+<td>Email, employee data collection</td>
+</tr>
+<tr>
+<td>Online DNS Lookup</td>
+<td>User-friendly lookup interfaces</td>
+<td>Quick lookups, domain checks</td>
+</tr>
+</tbody>
+</table>
+<h3 id="subdomains">Subdomains</h3>
+<h4 id="subdomain-enumeration">Subdomain Enumeration</h4>
+<table>
+<thead>
+<tr>
+<th>Approach</th>
+<th>Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Passive Enumeration</td>
+<td>Certificate Transparency (CT) logs, search engine queries</td>
+</tr>
+<tr>
+<td>Active Enumeration</td>
+<td>Brute-forcing, DNS zone transfers</td>
+</tr>
+</tbody>
+</table>
+<h4 id="brute-force-enumeration-tools">Brute-Force Enumeration Tools</h4>
+<table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dnsenum</td>
+<td>Comprehensive DNS enumeration</td>
+</tr>
+<tr>
+<td>fierce</td>
+<td>User-friendly subdomain discovery</td>
+</tr>
+<tr>
+<td>dnsrecon</td>
+<td>Versatile multi-technique enumeration</td>
+</tr>
+<tr>
+<td>amass</td>
+<td>Actively maintained subdomain tool</td>
+</tr>
+<tr>
+<td>assetfinder</td>
+<td>Lightweight subdomain finder</td>
+</tr>
+<tr>
+<td>puredns</td>
+<td>Powerful DNS brute-forcing</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Examples:</strong></p>
+<p><div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1">dnsenum<span class="w"> </span>--enum<span class="w"> </span>inlanefreight.com:55209<span class="w"> </span>-f<span class="w"> </span>/usr/share/seclists/Discovery/DNS/subdomains-top1million-20000.txt<span class="w"> </span>-r
+</span></code></pre></div></td></tr></table></div>
+<strong>Note:</strong> -r enables recursive subdomain brute-forcing.</p>
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1">ffuf<span class="w"> </span>-w<span class="w"> </span>/usr/share/seclists/Discovery/DNS/subdomains-top1million-110000.txt:FUZZ<span class="w"> </span>-u<span class="w"> </span>http://FUZZ:inlanefreight.htb:55291<span class="w"> </span>
+</span></code></pre></div></td></tr></table></div>
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1">gobuster<span class="w"> </span>dns<span class="w"> </span>-do<span class="w"> </span>http://inlanefreight.htb:55291<span class="w"> </span>-w<span class="w"> </span>/usr/share/seclists/Discovery/DNS/subdomains-top1million-110000.txt
+</span></code></pre></div></td></tr></table></div>
+<h4 id="dns-zone-transfers">DNS Zone Transfers</h4>
+<p><div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-6-1">dig<span class="w"> </span>@nsztm1.digi.ninja<span class="w"> </span>zonetransfer.me<span class="w"> </span>axfr
+</span></code></pre></div></td></tr></table></div>
+- dig: DNS lookup utility.
+- @ns1.example.com: Specifies the nameserver to query (e.g., ns1.example.com).
+- example.com: Domain to perform the lookup on.
+- axfr: Requests a zone transfer, retrieving all DNS records for the domain.</p>
+<p><strong>Note</strong>
+- Many DNS servers restrict zone transfers to authorized servers.
+- zonetransfer.me is a service specifically setup to demonstrate the risks of zone transfers so that the dig command will return the full zone record.</p>
+<h3 id="virtual-hosts">Virtual Hosts</h3>
+<h4 id="virtual-host-discovery-tools">Virtual Host Discovery Tools</h4>
+<table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>Description</th>
+<th>Features</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../tools-and-protocols/gobuster/">gobuster</a></td>
+<td>Multi-purpose brute-forcer</td>
+<td>Fast, custom wordlists</td>
+</tr>
+<tr>
+<td>Feroxbuster</td>
+<td>Rust-based fuzzer</td>
+<td>Recursion, filters</td>
+</tr>
+<tr>
+<td>ffuf</td>
+<td>Fast web fuzzer</td>
+<td>Custom input, filtering</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Examples:</strong>
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-7-1">gobuster<span class="w"> </span>vhost<span class="w"> </span>-u<span class="w"> </span>http://192.0.2.1<span class="w"> </span>-w<span class="w"> </span>/usr/share/seclists/Discovery/DNS/subdomains-top1million-110000.txt<span class="w"> </span>--append-domain
+</span><span id="__span-7-2">gobuster<span class="w"> </span>vhost<span class="w"> </span>-u<span class="w"> </span>http://web1337.inlanefreight.htb:8888<span class="w"> </span>-w<span class="w"> </span>/usr/share/seclists/Discovery/DNS/subdomains-top1million-110000.txt<span class="w"> </span>-t<span class="w"> </span><span class="m">60</span><span class="w"> </span>--append-domain
+</span></code></pre></div></td></tr></table></div></p>
+<p><strong>Common flags:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Flag</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-t</td>
+<td>Increase threads for faster scanning</td>
+</tr>
+<tr>
+<td>-k</td>
+<td>Ignore SSL/TLS certificate errors</td>
+</tr>
+<tr>
+<td>-o</td>
+<td>Save output to a file</td>
+</tr>
+</tbody>
+</table>
+<h3 id="certificate-transparency-ct-logs">Certificate Transparency (CT) Logs</h3>
+<p>CT logs record SSL/TLS certificates, revealing subdomains.</p>
+<h4 id="searching-ct-logs">Searching CT Logs</h4>
+<table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>Key Features</th>
+<th>Use Cases</th>
+<th>Pros</th>
+<th>Cons</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>crt.sh</td>
+<td>User-friendly interface, domain search, SAN details</td>
+<td>Quick subdomain checks, certificate history</td>
+<td>Free, no registration</td>
+<td>Limited filtering</td>
+</tr>
+<tr>
+<td>Censys</td>
+<td>Advanced filtering, IP/certificate search</td>
+<td>In-depth analysis, misconfigurations</td>
+<td>Extensive data, API</td>
+<td>Requires registration</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example:</strong>
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-8-1">curl<span class="w"> </span>-s<span class="w"> </span><span class="s2">&quot;https://crt.sh/?q=facebook.com&amp;output=json&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>jq<span class="w"> </span>-r<span class="w"> </span><span class="s1">&#39;.[].name_value&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sed<span class="w"> </span><span class="s1">&#39;s/\*\.//g&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sort<span class="w"> </span>-u
+</span></code></pre></div></td></tr></table></div></p>
+<h3 id="fingerprinting">Fingerprinting</h3>
+<h4 id="techniques">Techniques</h4>
+<table>
+<thead>
+<tr>
+<th>Technique</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Banner Grabbing</td>
+<td>Analyzes server banners for software and version details.</td>
+</tr>
+<tr>
+<td>Analysing HTTP Headers</td>
+<td>Examines headers (e.g., Server, X-Powered-By) for tech info.</td>
+</tr>
+<tr>
+<td>Probing for Responses</td>
+<td>Sends crafted requests to elicit unique tech-specific responses.</td>
+</tr>
+<tr>
+<td>Analysing Page Content</td>
+<td>Reviews page elements (e.g., copyright) for tech clues.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="tools">Tools</h4>
+<table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>Description</th>
+<th>Features</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Wappalyzer</td>
+<td>Browser extension for tech profiling</td>
+<td>Identifies CMSs, frameworks, analytics</td>
+</tr>
+<tr>
+<td>BuiltWith</td>
+<td>Web tech profiler with reports</td>
+<td>Free/paid plans, detailed stacks</td>
+</tr>
+<tr>
+<td>WhatWeb</td>
+<td>Command-line website fingerprinting</td>
+<td>Uses signature database</td>
+</tr>
+<tr>
+<td>Nmap</td>
+<td>Versatile network scanner</td>
+<td>NSE for specialised fingerprinting</td>
+</tr>
+<tr>
+<td>Netcraft</td>
+<td>Web security and fingerprinting</td>
+<td>Tech, hosting, security reports</td>
+</tr>
+<tr>
+<td>wafw00f</td>
+<td>WAF identification tool</td>
+<td>Detects WAF type and configuration</td>
+</tr>
+</tbody>
+</table>
+<h4 id="banner-grabbing">Banner Grabbing</h4>
+<p><div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-9-1">curl<span class="w"> </span>-I<span class="w"> </span>inlanefreight.com
+</span></code></pre></div></td></tr></table></div>
+<strong>Find CMS info:</strong>
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-10-1">curl<span class="w"> </span>-s<span class="w"> </span>http://app.inlanefreight.local/index.php<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s1">&#39;&lt;meta name=&quot;generator&quot;&#39;</span>
+</span></code></pre></div></td></tr></table></div></p>
+<h4 id="wafw00f">Wafw00f</h4>
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-11-1">pip3<span class="w"> </span>install<span class="w"> </span>git+https://github.com/EnableSecurity/wafw00f
+</span><span id="__span-11-2">wafw00f<span class="w"> </span>inlanefreight.com
+</span></code></pre></div></td></tr></table></div>
+<h4 id="nikto">Nikto</h4>
+<p><div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-12-1">sudo<span class="w"> </span>apt<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>perl
+</span><span id="__span-12-2">git<span class="w"> </span>clone<span class="w"> </span>https://github.com/sullo/nikto
+</span><span id="__span-12-3"><span class="nb">cd</span><span class="w"> </span>nikto/program
+</span><span id="__span-12-4">chmod<span class="w"> </span>+x<span class="w"> </span>./nikto.pl
+</span><span id="__span-12-5">nikto<span class="w"> </span>-h<span class="w"> </span>inlanefreight.com<span class="w"> </span>-Tuning<span class="w"> </span>b
+</span></code></pre></div></td></tr></table></div>
+- -h specifies the target host.
+- -Tuning b flag tells Nikto to only run the Software Identification modules.</p>
+<h3 id="robotstxt">robots.txt</h3>
+<h4 id="robotstxt-structure">robots.txt Structure</h4>
+<p>The robots.txt file is a plain text file in the website's root, using records separated by blank lines.</p>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>User-agent</td>
+<td>Specifies crawler or bot the rules apply to (e.g., * for all, Googlebot, Bingbot).</td>
+</tr>
+<tr>
+<td>Directives</td>
+<td>Instructions for the specified user-agent.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="common-directives">Common Directives</h4>
+<table>
+<thead>
+<tr>
+<th>Directive</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Disallow</td>
+<td>Blocks bot from paths or patterns.</td>
+<td>Disallow: /admin/</td>
+</tr>
+<tr>
+<td>Allow</td>
+<td>Permits specific paths despite Disallow.</td>
+<td>Allow: /public/</td>
+</tr>
+<tr>
+<td>Crawl-delay</td>
+<td>Sets delay (seconds) between requests.</td>
+<td>Crawl-delay: 10</td>
+</tr>
+<tr>
+<td>Sitemap</td>
+<td>Provides XML sitemap URL.</td>
+<td>Sitemap: sitemap.xml</td>
+</tr>
+</tbody>
+</table>
+<h3 id="well-known-uris">Well-Known URIs</h3>
+<p>The .well-known standard (RFC 8615) centralizes website metadata in /.well-known/.</p>
+<h4 id="examples">Examples</h4>
+<table>
+<thead>
+<tr>
+<th>URI Suffix</th>
+<th>Description</th>
+<th>Status</th>
+<th>Reference</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>security.txt</td>
+<td>Contact info for vulnerability reports</td>
+<td>Permanent</td>
+<td>RFC 9116</td>
+</tr>
+<tr>
+<td>change-password</td>
+<td>URL for password change</td>
+<td>Provisional</td>
+<td>https://w3c.github.io/webappsec-change-password-url/</td>
+</tr>
+<tr>
+<td>openid-configuration</td>
+<td>OpenID Connect configuration</td>
+<td>Permanent</td>
+<td>http://openid.net/specs/openid-connect-discovery-1_0.html</td>
+</tr>
+<tr>
+<td>assetlinks.json</td>
+<td>Verifies digital asset ownership</td>
+<td>Permanent</td>
+<td>https://github.com/google/digitalassetlinks/blob/master/well-known/specification.md</td>
+</tr>
+<tr>
+<td>mta-sts.txt</td>
+<td>SMTP MTA-STS security policy</td>
+<td>Permanent</td>
+<td>RFC 8461</td>
+</tr>
+</tbody>
+</table>
+<p><a href="https://www.iana.org/assignments/well-known-uris/well-known-uris.xhtml">All well-known URIs</a></p>
+<h3 id="web-crawling">Web Crawling</h3>
+<p>Web crawling maps a website's structure by following links. Analyze <code>robots.txt</code> for hidden directories.</p>
+<h4 id="popular-web-crawlers">Popular Web Crawlers</h4>
+<table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Burp Suite Spider</td>
+<td>Active crawler for mapping and vulnerability discovery.</td>
+</tr>
+<tr>
+<td>OWASP ZAP</td>
+<td>Open-source scanner with spider for vulnerability checks.</td>
+</tr>
+<tr>
+<td>Scrapy</td>
+<td>Python framework for custom, scalable crawling.</td>
+</tr>
+<tr>
+<td>Apache Nutch</td>
+<td>Scalable Java crawler for large-scale recon.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="scrapy">Scrapy:</h4>
+<p>Using custom Scrapy spider, ReconSpider, output will be in JSON:</p>
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-13-1">pip3<span class="w"> </span>install<span class="w"> </span>scrapy
+</span><span id="__span-13-2">wget<span class="w"> </span>-O<span class="w"> </span>ReconSpider.zip<span class="w"> </span>https://academy.hackthebox.com/storage/modules/144/ReconSpider.v1.2.zip
+</span><span id="__span-13-3">unzip<span class="w"> </span>ReconSpider.zip<span class="w"> </span>
+</span><span id="__span-13-4">python3<span class="w"> </span>ReconSpider.py<span class="w"> </span>http://inlanefreight.com
+</span></code></pre></div></td></tr></table></div>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>emails</td>
+<td>Lists email addresses found on the domain.</td>
+</tr>
+<tr>
+<td>links</td>
+<td>Lists URLs of links found within the domain.</td>
+</tr>
+<tr>
+<td>external_files</td>
+<td>Lists URLs of external files such as PDFs.</td>
+</tr>
+<tr>
+<td>js_files</td>
+<td>Lists URLs of JavaScript files used by the website.</td>
+</tr>
+<tr>
+<td>form_fields</td>
+<td>Lists form fields found on the domain (empty in this example).</td>
+</tr>
+<tr>
+<td>images</td>
+<td>Lists URLs of images found on the domain.</td>
+</tr>
+<tr>
+<td>videos</td>
+<td>Lists URLs of videos found on the domain (empty in this example).</td>
+</tr>
+<tr>
+<td>audio</td>
+<td>Lists URLs of audio files found on the domain (empty in this example).</td>
+</tr>
+<tr>
+<td>comments</td>
+<td>Lists HTML comments found in the source code.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Searching Results:</strong>
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-14-1">cat<span class="w"> </span>results.json<span class="w"> </span><span class="p">|</span><span class="w"> </span>jq<span class="w"> </span><span class="s1">&#39;.emails&#39;</span>
+</span><span id="__span-14-2">cat<span class="w"> </span>results.json<span class="w"> </span><span class="p">|</span><span class="w"> </span>jq<span class="w"> </span><span class="s1">&#39;.comments&#39;</span>
+</span></code></pre></div></td></tr></table></div></p>
+<h4 id="spider-code-example">Spider code example</h4>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-15-1"><span class="kn">import</span><span class="w"> </span><span class="nn">scrapy</span>
+</span><span id="__span-15-2">
+</span><span id="__span-15-3"><span class="k">class</span><span class="w"> </span><span class="nc">ExampleSpider</span><span class="p">(</span><span class="n">scrapy</span><span class="o">.</span><span class="n">Spider</span><span class="p">):</span>
+</span><span id="__span-15-4">    <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;example&quot;</span>
+</span><span id="__span-15-5">    <span class="n">start_urls</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;http://example.com/&#39;</span><span class="p">]</span>
+</span><span id="__span-15-6">
+</span><span id="__span-15-7">    <span class="k">def</span><span class="w"> </span><span class="nf">parse</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">response</span><span class="p">):</span>
+</span><span id="__span-15-8">        <span class="k">for</span> <span class="n">link</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">css</span><span class="p">(</span><span class="s1">&#39;a::attr(href)&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">getall</span><span class="p">():</span>
+</span><span id="__span-15-9">            <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="n">link</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="n">ext</span><span class="p">)</span> <span class="k">for</span> <span class="n">ext</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">interesting_extensions</span><span class="p">):</span>
+</span><span id="__span-15-10">                <span class="k">yield</span> <span class="p">{</span><span class="s2">&quot;file&quot;</span><span class="p">:</span> <span class="n">link</span><span class="p">}</span>
+</span><span id="__span-15-11">            <span class="k">elif</span> <span class="ow">not</span> <span class="n">link</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;#&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">link</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;mailto:&quot;</span><span class="p">):</span>
+</span><span id="__span-15-12">                <span class="k">yield</span> <span class="n">response</span><span class="o">.</span><span class="n">follow</span><span class="p">(</span><span class="n">link</span><span class="p">,</span> <span class="n">callback</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">parse</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+<p><strong>Extract links:</strong>
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-16-1">jq<span class="w"> </span>-r<span class="w"> </span><span class="s1">&#39;.[] | select(.file != null) | .file&#39;</span><span class="w"> </span>example_data.json<span class="w"> </span><span class="p">|</span><span class="w"> </span>sort<span class="w"> </span>-u
+</span></code></pre></div></td></tr></table></div></p>
+<h3 id="search-engine-discovery">Search Engine Discovery</h3>
+<h4 id="google-dorking">Google Dorking</h4>
+<table>
+<thead>
+<tr>
+<th>Operator</th>
+<th>Description</th>
+<th>Example</th>
+<th>Example Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>site:</td>
+<td>Limits results to a domain.</td>
+<td>site:example.com</td>
+<td>Find all pages on example.com.</td>
+</tr>
+<tr>
+<td>inurl:</td>
+<td>Finds term in URL.</td>
+<td>inurl:login</td>
+<td>Search for login pages.</td>
+</tr>
+<tr>
+<td>filetype:</td>
+<td>Searches for specific file types.</td>
+<td>filetype:pdf</td>
+<td>Find downloadable PDFs.</td>
+</tr>
+<tr>
+<td>intitle:</td>
+<td>Finds term in title.</td>
+<td>intitle:"confidential report"</td>
+<td>Look for pages titled "confidential report".</td>
+</tr>
+<tr>
+<td>intext:</td>
+<td>Searches term in body text.</td>
+<td>intext:"password reset"</td>
+<td>Identify pages with "password reset".</td>
+</tr>
+<tr>
+<td>cache:</td>
+<td>Shows cached webpage version.</td>
+<td>cache:example.com</td>
+<td>View cached content of example.com.</td>
+</tr>
+<tr>
+<td>link:</td>
+<td>Finds pages linking to URL.</td>
+<td>link:example.com</td>
+<td>Identify sites linking to example.com.</td>
+</tr>
+<tr>
+<td>related:</td>
+<td>Finds similar websites.</td>
+<td>related:example.com</td>
+<td>Discover sites like example.com.</td>
+</tr>
+<tr>
+<td>info:</td>
+<td>Shows webpage summary.</td>
+<td>info:example.com</td>
+<td>Get details about example.com.</td>
+</tr>
+<tr>
+<td>define:</td>
+<td>Provides word/phrase definitions.</td>
+<td>define:phishing</td>
+<td>Get "phishing" definitions.</td>
+</tr>
+<tr>
+<td>numrange:</td>
+<td>Searches within number range.</td>
+<td>site:example.com numrange:1000-2000</td>
+<td>Find numbers 1000-2000 on example.com.</td>
+</tr>
+<tr>
+<td>allintext:</td>
+<td>Requires all words in body.</td>
+<td>allintext:admin password reset</td>
+<td>Find pages with "admin" and "password reset".</td>
+</tr>
+<tr>
+<td>allinurl:</td>
+<td>Requires all words in URL.</td>
+<td>allinurl:admin panel</td>
+<td>Find URLs with "admin" and "panel".</td>
+</tr>
+<tr>
+<td>allintitle:</td>
+<td>Requires all words in title.</td>
+<td>allintitle:confidential report 2023</td>
+<td>Find titles with "confidential report 2023".</td>
+</tr>
+<tr>
+<td>AND</td>
+<td>Requires all terms.</td>
+<td>site:example.com AND (inurl:admin OR inurl:login)</td>
+<td>Find admin/login on example.com.</td>
+</tr>
+<tr>
+<td>OR</td>
+<td>Includes any of the terms.</td>
+<td>"linux" OR "ubuntu" OR "debian"</td>
+<td>Search for Linux, Ubuntu, or Debian pages.</td>
+</tr>
+<tr>
+<td>NOT</td>
+<td>Excludes specified term.</td>
+<td>site:bank.com NOT inurl:login</td>
+<td>Find bank.com pages excluding login.</td>
+</tr>
+<tr>
+<td>* (wildcard)</td>
+<td>Represents any character/word.</td>
+<td>site:socialnetwork.com filetype:pdf user* manual</td>
+<td>Find user manuals in PDFs.</td>
+</tr>
+<tr>
+<td>... (range)</td>
+<td>Finds results in numerical range.</td>
+<td>site:ecommerce.com "price" 100..500</td>
+<td>Find products priced 100-500.</td>
+</tr>
+<tr>
+<td>" " (quotes)</td>
+<td>Searches exact phrase.</td>
+<td>"information security policy"</td>
+<td>Find exact "information security policy".</td>
+</tr>
+<tr>
+<td>- (minus)</td>
+<td>Excludes terms.</td>
+<td>site:news.com -inurl:sports</td>
+<td>Find news.com pages excluding sports.</td>
+</tr>
+</tbody>
+</table>
+<p><a href="https://www.exploit-db.com/google-hacking-database">Google Hacking Database</a></p>
+<h3 id="web-archives">Web Archives</h3>
+<p>Web archives like the Wayback Machine store historical website snapshots:</p>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Description</th>
+<th>Use Case in Reconnaissance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Historical Snapshots</td>
+<td>View past versions of websites.</td>
+<td>Identify past content or functionality.</td>
+</tr>
+<tr>
+<td>Hidden Directories</td>
+<td>Explore removed or hidden directories.</td>
+<td>Discover sensitive information or backups.</td>
+</tr>
+<tr>
+<td>Content Changes</td>
+<td>Track changes in content.</td>
+<td>Assess security posture evolution.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="automating-recon">Automating Recon</h3>
+<p>These frameworks provide a complete suite of tools for web reconnaissance.</p>
+<table>
+<thead>
+<tr>
+<th>Framework</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FinalRecon</td>
+<td>Python tool for SSL, Whois, headers, and crawling.</td>
+</tr>
+<tr>
+<td>Recon-ng</td>
+<td>Python framework for DNS, subdomains, and exploits.</td>
+</tr>
+<tr>
+<td>theHarvester</td>
+<td>Python tool for emails, subdomains, and banners.</td>
+</tr>
+<tr>
+<td>SpiderFoot</td>
+<td>OSINT tool for IPs, domains, emails, and scanning.</td>
+</tr>
+<tr>
+<td>OSINT Framework</td>
+<td>Collection of tools for social media and records.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="finalrecon">FinalRecon</h4>
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-17-1">git<span class="w"> </span>clone<span class="w"> </span>https://github.com/thewhiteh4t/FinalRecon.git
+</span><span id="__span-17-2"><span class="nb">cd</span><span class="w"> </span>FinalRecon
+</span><span id="__span-17-3">pip3<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+</span><span id="__span-17-4">chmod<span class="w"> </span>+x<span class="w"> </span>./finalrecon.py
+</span></code></pre></div></td></tr></table></div>
+<h5 id="common-flagsoptions">Common Flags/Options</h5>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Argument</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-h, --help</td>
+<td></td>
+<td>Show the help message and exit.</td>
+</tr>
+<tr>
+<td>--url</td>
+<td>URL</td>
+<td>Specify the target URL.</td>
+</tr>
+<tr>
+<td>--headers</td>
+<td></td>
+<td>Retrieve header information.</td>
+</tr>
+<tr>
+<td>--sslinfo</td>
+<td></td>
+<td>Get SSL certificate information.</td>
+</tr>
+<tr>
+<td>--whois</td>
+<td></td>
+<td>Perform a Whois lookup.</td>
+</tr>
+<tr>
+<td>--crawl</td>
+<td></td>
+<td>Crawl the target website.</td>
+</tr>
+<tr>
+<td>--dns</td>
+<td></td>
+<td>Perform DNS enumeration.</td>
+</tr>
+<tr>
+<td>--sub</td>
+<td></td>
+<td>Enumerate subdomains.</td>
+</tr>
+<tr>
+<td>--dir</td>
+<td></td>
+<td>Search for directories.</td>
+</tr>
+<tr>
+<td>--wayback</td>
+<td></td>
+<td>Retrieve Wayback URLs.</td>
+</tr>
+<tr>
+<td>--ps</td>
+<td></td>
+<td>Perform a fast port scan.</td>
+</tr>
+<tr>
+<td>--full</td>
+<td></td>
+<td>Perform a full reconnaissance scan.</td>
+</tr>
+</tbody>
+</table>
 
 
 
