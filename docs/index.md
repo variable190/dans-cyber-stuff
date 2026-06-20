@@ -4,7 +4,7 @@ Welcome to Dan's Cyber Stuff!
 
 ## Bug Bounty Hunting
 
-- [Bug Bounty Methodology](bug-bounty-methodology.md)
+- [OWASP Top 10 2025](owasp-top-10-2025.md)
 - [Reconnaissance](reconnaissance.md)
 - [Reporting & POC](reporting-and-poc.md)
 - [Tools](tools.md)
