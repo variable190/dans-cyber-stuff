@@ -25,6 +25,7 @@ nav:
       - Static Testing: android-application-testing/static-testing.md
       - Dynamic Testing: android-application-testing/dynamic-testing.md
     - Tools and Protocols:
+      - cURL: tools-and-protocols/curl.md
       - ftp: tools-and-protocols/ftp.md
       - gobuster: tools-and-protocols/gobuster.md
       - nmap: tools-and-protocols/nmap.md

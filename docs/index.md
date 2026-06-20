@@ -33,6 +33,7 @@ Welcome to Dan's Cyber Stuff!
 
 ### Tools and Protocols
 
+- [cURL](tools-and-protocols/curl.md)
 - [ftp](tools-and-protocols/ftp.md)
 - [gobuster](tools-and-protocols/gobuster.md)
 - [nmap](tools-and-protocols/nmap.md)
