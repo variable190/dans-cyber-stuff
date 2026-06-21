@@ -4,8 +4,8 @@
 - Test for IDOR by modifying user IDs, object references in requests
 - Check horizontal/vertical privilege escalation (e.g., admin functions as low-priv user)
 - Bypass role checks via parameter tampering or forced browsing
-- Test direct object references without proper authorization
-- Verify if SSRF or path traversal allows unauthorized access
+- Test direct object references without proper authorisation
+- Verify if SSRF or path traversal allows unauthorised access
 
 ## A02:2025 - Security Misconfiguration
 - Scan for default credentials on admin panels, databases, or services
@@ -36,10 +36,10 @@
 - Use payloads from SQLMap or Burp Intruder
 
 ## A06:2025 - Insecure Design
-- Analyze business logic for flaws (e.g., missing rate limits on sensitive actions)
+- Analyse business logic for flaws (e.g., missing rate limits on sensitive actions)
 - Test for race conditions or improper workflow enforcement
 - Check if design allows insecure defaults or bypassable flows
-- Verify lack of threat modeling in features like password reset
+- Verify lack of threat modelling in features like password reset
 - Look for insufficient input validation in multi-step processes
 
 ## A07:2025 - Authentication Failures
