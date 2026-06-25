@@ -46,7 +46,7 @@ nmap localhost
 
 ## Methods and Tools
 
-### [nmap](tools-and-protocols/nmap.md)
+### nmap
 
 #### Scan Types
 
