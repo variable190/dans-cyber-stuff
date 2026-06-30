@@ -15,7 +15,7 @@ Server-Side Request Forgery (SSRF) vulnerabilities allow an attacker to make the
 - Locate functionality that makes outbound requests based on user input.
 - Test by pointing the parameter at an attacker-controlled server (Burp Collaborator or netcat listener).
 - Try `http://127.0.0.1/` or internal IPs to see if responses differ.
-- Change protocols (`file://`, `gopher://`) and observe behavior.
+- Change protocols (`file://`, `gopher://`) and observe behaviour.
 - Look for error messages that reveal internal network details.
 
 ## Exploitation

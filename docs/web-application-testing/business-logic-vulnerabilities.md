@@ -2,7 +2,7 @@
 
 ## Overview
 
-Business logic vulnerabilities arise when an application fails to properly enforce its intended business rules, workflows, or constraints. Unlike technical vulnerabilities (e.g., injection flaws), these often stem from flawed assumptions in how the application should behave under different conditions. Attackers exploit them by manipulating inputs, skipping steps, or abusing edge cases to achieve unintended outcomes such as unauthorized discounts, privilege changes, or data manipulation.
+Business logic vulnerabilities arise when an application fails to properly enforce its intended business rules, workflows, or constraints. Unlike technical vulnerabilities (e.g., injection flaws), these often stem from flawed assumptions in how the application should behave under different conditions. Attackers exploit them by manipulating inputs, skipping steps, or abusing edge cases to achieve unintended outcomes such as unauthorised discounts, privilege changes, or data manipulation.
 
 These issues can exist even in applications with strong authentication and input validation because the logic itself is the problem.
 
@@ -18,7 +18,7 @@ Business logic flaws commonly appear in:
 
 ## Identification
 
-- Analyze the application's intended workflow and look for places where assumptions are made about user behavior or data.
+- Analyse the application's intended workflow and look for places where assumptions are made about user behaviour or data.
 - Intercept requests and experiment with unconventional values (negative numbers, extremely large values, unexpected data types).
 - Remove or reorder parameters in requests to see if backend logic still accepts the action.
 - Test forced browsing: navigate directly to later steps in a process without completing prerequisites.
@@ -61,7 +61,7 @@ See the [PortSwigger research on email atom splitting](https://portswigger.net/r
 
 Successful exploitation can lead to:
 
-- Unauthorized financial transactions or discounts
+- Unauthorised financial transactions or discounts
 - Privilege escalation or account takeover via workflow abuse
 - Data leakage or corruption
 - Circumvention of business rules (e.g., exceeding purchase limits, bypassing approvals)
@@ -71,9 +71,9 @@ Successful exploitation can lead to:
 
 - Implement all critical business rules and validations on the server side — never trust the client.
 - Enforce strict state management and sequence checks for multi-step processes.
-- Use server-side authorization checks at every sensitive action, not just at entry points.
+- Use server-side authorisation checks at every sensitive action, not just at entry points.
 - Validate and sanitize all inputs against business constraints (ranges, formats, relationships between fields).
-- Perform thorough threat modeling during design to identify assumptions that could be abused.
+- Perform thorough threat modelling during design to identify assumptions that could be abused.
 - Consider using established frameworks that provide built-in protections for common workflows.
 - Log and monitor for anomalous sequences or out-of-order actions.
 

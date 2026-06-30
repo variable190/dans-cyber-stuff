@@ -87,7 +87,7 @@ When anti-CSRF tokens are present:
 
 ## Impact
 
-- Unauthorized changes to user accounts or settings
+- Unauthorised changes to user accounts or settings
 - Financial transactions or transfers performed on the victim's behalf
 - Privilege escalation
 - Data deletion or modification
@@ -104,7 +104,7 @@ When anti-CSRF tokens are present:
 
 ## Tools & Payloads
 
-- Burp Suite to capture and analyze requests/tokens
+- Burp Suite to capture and analyse requests/tokens
 - Simple HTML + JavaScript proof-of-concept pages
 - Local HTTP server to host malicious pages
 - MD5 or other hash libraries when testing weak token generation

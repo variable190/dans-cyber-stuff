@@ -22,7 +22,7 @@
 | DNS Analysis          | Identifies DNS records.| dig for subdomains.      | dig, dnsenum    | Very Low      |
 | Web Archive Analysis  | Reviews historical sites. | Wayback for old pages.  | Wayback Machine | Very Low      |
 | Social Media Analysis | Gathers social profiles.| LinkedIn for employees.  | LinkedIn, OSINT | Very Low      |
-| Code Repositories     | Analyzes public code.  | GitHub for credentials.  | GitHub, GitLab  | Very Low      |
+| Code Repositories     | Analyses public code.  | GitHub for credentials.  | GitHub, GitLab  | Very Low      |
 
 ## Active Reconnaissance
 
@@ -66,7 +66,7 @@ Common Nmap scan types and flags with examples:
 
 #### Commonly Used Flags
 
-Additional flags to customize Nmap scans:
+Additional flags to customise Nmap scans:
 
 | Flag | Purpose |
 |------|----------|
@@ -165,7 +165,7 @@ dig @nsztm1.digi.ninja zonetransfer.me axfr
 - axfr: Requests a zone transfer, retrieving all DNS records for the domain.
 
 **Note**
-- Many DNS servers restrict zone transfers to authorized servers.
+- Many DNS servers restrict zone transfers to authorised servers.
 - zonetransfer.me is a service specifically setup to demonstrate the risks of zone transfers so that the dig command will return the full zone record.
 
 ### Virtual Hosts
@@ -213,7 +213,7 @@ curl -s "https://crt.sh/?q=facebook.com&output=json" | jq -r '.[].name_value' | 
 
 | Technique             | Description                                      |
 |-----------------------|--------------------------------------------------|
-| Banner Grabbing       | Analyzes server banners for software and version details. |
+| Banner Grabbing       | Analyses server banners for software and version details. |
 | Analysing HTTP Headers| Examines headers (e.g., Server, X-Powered-By) for tech info. |
 | Probing for Responses | Sends crafted requests to elicit unique tech-specific responses. |
 | Analysing Page Content| Reviews page elements (e.g., copyright) for tech clues. |
@@ -294,7 +294,7 @@ The .well-known standard (RFC 8615) centralizes website metadata in /.well-known
 
 ### Web Crawling
 
-Web crawling maps a website's structure by following links. Analyze `robots.txt` for hidden directories.
+Web crawling maps a website's structure by following links. Analyse `robots.txt` for hidden directories.
 
 #### Popular Web Crawlers
 

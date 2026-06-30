@@ -103,7 +103,7 @@ Advanced detection payloads:
 
 - Encode/escape all user-controlled output according to context (HTML, JavaScript, CSS, URLs, attributes).
 - Use modern frameworks that provide automatic escaping (React, Angular, etc.).
-- Implement a strong Content-Security-Policy (CSP) as defense in depth.
+- Implement a strong Content-Security-Policy (CSP) as defence in depth.
 - Sanitize rich HTML input with well-maintained libraries (e.g., DOMPurify).
 - Avoid inserting user input into dangerous contexts (innerHTML without sanitization, `eval()`, etc.).
 - Validate and encode on both client and server.

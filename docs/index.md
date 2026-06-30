@@ -22,7 +22,7 @@ Welcome to Dan's Cyber Stuff!
 - [XXE](web-application-testing/xxe.md)
 - [Security Misconfiguration](web-application-testing/security-misconfiguration.md)
 - [Business Logic Vulnerabilities](web-application-testing/business-logic-vulnerabilities.md)
-- [Insecure Deserialization](web-application-testing/insecure-deserialization.md)
+- [Insecure Deserialisation](web-application-testing/insecure-deserialisation.md)
 - [Path Traversal](web-application-testing/path-traversal.md)
 - [File Inclusion](web-application-testing/file-inclusion.md)
 - [File Upload Attacks](web-application-testing/file-upload-attacks.md)

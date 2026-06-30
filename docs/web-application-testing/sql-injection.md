@@ -19,7 +19,7 @@ SQL Injection (SQLi) is a code injection technique that exploits vulnerabilities
 - Inject a single quote `'` and look for database errors, different responses, or anomalies.
 - Use comment sequences to truncate queries: `-- ` (note the space for MySQL) or `#`.
 - Test time-based conditions or OAST (out-of-band) to detect blind injection.
-- Observe differences in application behavior for TRUE vs FALSE conditions in blind scenarios.
+- Observe differences in application behaviour for TRUE vs FALSE conditions in blind scenarios.
 - Check error messages when syntax is valid vs invalid.
 
 ## Exploitation
@@ -160,7 +160,7 @@ statement.setString(1, input);
 - When parameterized queries cannot be used (column names, ORDER BY), implement strict whitelisting of allowed values.
 - Apply the principle of least privilege to database accounts.
 - Use ORM frameworks carefully (many still allow raw queries).
-- Input validation as a defense-in-depth layer, not the primary control.
+- Input validation as a defence-in-depth layer, not the primary control.
 - Web Application Firewalls (WAF) as an additional control.
 
 ## Tools & Payloads

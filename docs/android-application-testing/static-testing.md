@@ -78,7 +78,7 @@ Look for encrypt/decrypt functions and hardcoded keys/IVs.
 ## Native Code (Shared Objects / SO files)
 
 - `strings lib/... | grep ...`
-- Ghidra for analysis (import, analyze, use Symbol Tree / Decompiler).
+- Ghidra for analysis (import, analyse, use Symbol Tree / Decompiler).
 - DLLs (Xamarin etc.): use pyxamstore, ILSpy.
 
 ## Patching and Rebuilding

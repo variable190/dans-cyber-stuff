@@ -39,7 +39,7 @@ Depicts the conditions beyond the attackers' control and must be present to expl
 
 Show the level of privileges the attacker must have to exploit the vulnerability successfully.
 
-- **None (N)**: No special access related to settings or files is required to exploit the vulnerability successfully. The vulnerability can be exploited from an unauthorized perspective.
+- **None (N)**: No special access related to settings or files is required to exploit the vulnerability successfully. The vulnerability can be exploited from an unauthorised perspective.
 - **Low (L)**: Attackers should possess standard user privileges to exploit the vulnerability successfully. The exploitation in this case usually affects files and settings owned by a user or non-sensitive assets.
 - **High (H)**: Attackers should possess admin-level privileges to exploit the vulnerability successfully. The exploitation in this case usually affects the entire vulnerable system.
 
@@ -59,7 +59,7 @@ Shows if successful exploitation of the vulnerability can affect components othe
 
 #### Confidentiality
 
-Shows how much the vulnerable component's confidentiality is affected upon successfully exploiting the vulnerability. Confidentiality limits information access and disclosure to authorized users only and prevents unauthorized users from accessing information.
+Shows how much the vulnerable component's confidentiality is affected upon successfully exploiting the vulnerability. Confidentiality limits information access and disclosure to authorised users only and prevents unauthorised users from accessing information.
 
 - **None (N)**: The confidentiality of the vulnerable component does not get impacted.
 - **Low (L)**: The vulnerable component will experience some loss of confidentiality upon successful exploitation of the vulnerability. In this case, the attackers do not have control over what information is obtained.
