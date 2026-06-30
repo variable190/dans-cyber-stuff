@@ -26,21 +26,21 @@ Weaknesses often arise from insufficient server-side validation, predictable or 
 
 ## Identification
 
-1. Analyse login, reset, or MFA responses for differences that indicate valid vs. invalid usernames/accounts (varying error messages, HTTP status codes, response delays/timing, or account lockout behaviour).
+- Analyse login, reset, or MFA responses for differences that indicate valid vs. invalid usernames/accounts (varying error messages, HTTP status codes, response delays/timing, or account lockout behaviour).
   - Status code changes between valid and invalid usernames.
   - Different (sometimes subtle) error messages.
   - Delayed responses for certain inputs.
   - Correct usernames may receive a lockout message after a certain number of failed login attempts (while invalid usernames do not).
-2. Probe for absence of rate limiting or weak protections on authentication actions such as login attempts, password resets, and 2FA code submission.
+- Probe for absence of rate limiting or weak protections on authentication actions such as login attempts, password resets, and 2FA code submission.
   - Correct/successful login details may receive a different rate limit response (or none) compared to failed attempts.
-3. Examine session cookies or other tokens for patterns: insufficient entropy, sequential/incrementing values, encoding of user data (e.g. base64), or large fixed portions with only small varying components.
+- Examine session cookies or other tokens for patterns: insufficient entropy, sequential/incrementing values, encoding of user data (e.g. base64), or large fixed portions with only small varying components.
   - Check "stay logged in" or persistent cookies to see if they are easily decrypted or contain predictable data.
-4. Attempt direct navigation to protected URLs and observe whether authentication/authorisation is properly enforced server-side.
-5. Review password reset and recovery flows for guessable tokens, logic issues (e.g. token not required after initial step), or information leakage.
+- Attempt direct navigation to protected URLs and observe whether authentication/authorisation is properly enforced server-side.
+- Review password reset and recovery flows for guessable tokens, logic issues (e.g. token not required after initial step), or information leakage.
   - Check if a reset URL token is easily decrypted or predictable.
   - Verify whether the reset token is actually required to complete the password reset after the initial link is followed.
   - Test for different error messages when new password fields do not match (these differences can sometimes be abused to brute-force values for a victim's account during reset).
-6. Test whether client-side controls, parameter values, or response status codes can be manipulated to bypass authentication.
+- Test whether client-side controls, parameter values, or response status codes can be manipulated to bypass authentication.
 
 ## Exploitation
 
@@ -85,22 +85,25 @@ ffuf -w ./tokens.txt -u http://bf_2fa.htb/2fa.php -X POST -H "Content-Type: appl
 
 ### Password Attacks
 
-**Default Credentials**
-  - [CIRT.net](https://cirt.net/passwords/)
-  - SecLists Default Credentials (SecLists\Passwords\Default-Credentials\)
-  - [SCADA](https://github.com/scadastrangelove/SCADAPASS/tree/master)
-**Vulnerable Password Reset**
-  - Guessable Security Questions (for example brute force [world cities](https://github.com/datasets/world-cities/blob/main/data/world-cities.csv))
-  ```bash
-  cat world-cities.csv | cut -d ',' -f1 > city_wordlist.txt # all world cities
-  cat world-cities.csv | grep Germany | cut -d ',' -f1 > german_cities.txt # just german cities
-  ffuf -w ./city_wordlist.txt -u http://pwreset.htb/security_question.php -X POST -H "Content-Type: application/x-www-form-urlencoded" -b "PHPSESSID=39b54j201u3rhu4tab1pvdb4pv" -d "security_response=FUZZ" -fr "Incorrect response."
-  ```
-  - Check if reset URL tokens are easily decrypted or contain predictable data.
-  - Username Injection in Password Reset Request (check post parameters in http request).
-  - Test whether the reset token from the initial request URL is actually enforced when submitting the new password (some flows only check it on the first step).
-  - **Host header poisoning on reset**: Set the `X-Forward-Host` header (pointing to an attacker-controlled server) when submitting a password reset request. This can cause the reset link/token to be sent to the attacker's server instead of (or in addition to) the legitimate user.
-  - During the final password reset step, observe whether different error messages are returned when the two "new password" fields do not match. These discrepancies can sometimes be used to brute-force a victim's password (or other values) in the reset flow.
+#### Default Credentials
+
+- [CIRT.net](https://cirt.net/passwords/)
+- SecLists Default Credentials (SecLists\Passwords\Default-Credentials\)
+- [SCADA](https://github.com/scadastrangelove/SCADAPASS/tree/master)
+
+#### Vulnerable Password Reset
+
+- Guessable Security Questions (for example brute force [world cities](https://github.com/datasets/world-cities/blob/main/data/world-cities.csv))
+```bash
+cat world-cities.csv | cut -d ',' -f1 > city_wordlist.txt # all world cities
+cat world-cities.csv | grep Germany | cut -d ',' -f1 > german_cities.txt # just german cities
+ffuf -w ./city_wordlist.txt -u http://pwreset.htb/security_question.php -X POST -H "Content-Type: application/x-www-form-urlencoded" -b "PHPSESSID=39b54j201u3rhu4tab1pvdb4pv" -d "security_response=FUZZ" -fr "Incorrect response."
+```
+- Check if reset URL tokens are easily decrypted or contain predictable data.
+- Username Injection in Password Reset Request (check post parameters in http request).
+- Test whether the reset token from the initial request URL is actually enforced when submitting the new password (some flows only check it on the first step).
+- **Host header poisoning on reset**: Set the `X-Forward-Host` header (pointing to an attacker-controlled server) when submitting a password reset request. This can cause the reset link/token to be sent to the attacker's server instead of (or in addition to) the legitimate user.
+- During the final password reset step, observe whether different error messages are returned when the two "new password" fields do not match. These discrepancies can sometimes be used to brute-force a victim's password (or other values) in the reset flow.
 
 ### Authentication Bypasses
 
