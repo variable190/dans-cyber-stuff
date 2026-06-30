@@ -940,14 +940,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../insecure-deserialization/" class="md-nav__link">
+      <a href="../insecure-deserialisation/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Insecure Deserialization
+    Insecure Deserialisation
   
 
     
@@ -1527,12 +1527,12 @@
 
 <h1 id="broken-access-control">Broken Access Control</h1>
 <h2 id="overview">Overview</h2>
-<p>Broken Access Control occurs when users can access resources or perform actions they are not authorized for. This includes Insecure Direct Object References (IDOR), missing function level access control, and broken object/property level authorization in APIs.</p>
+<p>Broken Access Control occurs when users can access resources or perform actions they are not authorised for. This includes Insecure Direct Object References (IDOR), missing function level access control, and broken object/property level authorisation in APIs.</p>
 <p>It is distinct from authentication issues: the user may be authenticated, but the application fails to properly enforce what that user is allowed to do.</p>
 <p>Common manifestations:
 - IDOR: accessing other users' data by changing identifiers
 - Verb tampering and HTTP method abuse
-- Horizontal and vertical privilege escalation via authorization flaws
+- Horizontal and vertical privilege escalation via authorisation flaws
 - API-specific issues (BOLA, BFLA)</p>
 <h2 id="attack-surface">Attack Surface</h2>
 <ul>
@@ -1549,7 +1549,7 @@
 <li>Look for IDs, UUIDs, filenames, or other references in URLs, forms, AJAX, cookies, or JWT payloads.</li>
 <li>Compare functionality available to different user roles.</li>
 <li>Test changing identifiers (numeric, hashed, encoded) in requests.</li>
-<li>Look for hidden parameters in requests that control authorization (uid, role, is_admin, etc.).</li>
+<li>Look for hidden parameters in requests that control authorisation (uid, role, is_admin, etc.).</li>
 <li>Check for predictable patterns in object references (sequential IDs, simple hashes of filenames).</li>
 </ul>
 <h2 id="exploitation">Exploitation</h2>
@@ -1601,9 +1601,9 @@
 APIs often expose more data or actions. Look for hidden fields like uid, uuid, role in JSON or form data. Changing them (even via GET instead of PUT) can allow access to other users' data or admin functions.</p>
 <h3 id="api-specific-broken-access-control">API-Specific Broken Access Control</h3>
 <ul>
-<li><strong>Broken Object Level Authorization (BOLA / IDOR in APIs)</strong>: Authenticate as low-priv user, then iterate object IDs in API calls.</li>
-<li><strong>Broken Function Level Authorization (BFLA)</strong>: Discover admin-only endpoints and call them as a regular user.</li>
-<li><strong>Broken Object Property Level Authorization</strong>: Modify sensitive properties (e.g., <code>isAdmin</code>, <code>role</code>) that should not be controllable by the user.</li>
+<li><strong>Broken Object Level Authorisation (BOLA / IDOR in APIs)</strong>: Authenticate as low-priv user, then iterate object IDs in API calls.</li>
+<li><strong>Broken Function Level Authorisation (BFLA)</strong>: Discover admin-only endpoints and call them as a regular user.</li>
+<li><strong>Broken Object Property Level Authorisation</strong>: Modify sensitive properties (e.g., <code>isAdmin</code>, <code>role</code>) that should not be controllable by the user.</li>
 </ul>
 <p>Example automation for BOLA:
 <div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
@@ -1614,7 +1614,7 @@ APIs often expose more data or actions. Look for hidden fields like uid, uuid, r
 </span></code></pre></div></td></tr></table></div></p>
 <h2 id="impact">Impact</h2>
 <ul>
-<li>Unauthorized access to other users' data (PII, financial records, messages)</li>
+<li>Unauthorised access to other users' data (PII, financial records, messages)</li>
 <li>Privilege escalation (horizontal and vertical)</li>
 <li>Data modification or deletion belonging to other accounts</li>
 <li>Complete account takeover or administrative control in severe cases</li>
@@ -1624,11 +1624,11 @@ APIs often expose more data or actions. Look for hidden fields like uid, uuid, r
 <ul>
 <li>Implement access control checks on every request, on the server side.</li>
 <li>Use indirect object references or GUIDs that cannot be guessed or enumerated.</li>
-<li>Enforce authorization at the object and function level, not just the UI.</li>
+<li>Enforce authorisation at the object and function level, not just the UI.</li>
 <li>For APIs: validate that the authenticated user owns or is permitted to access the requested object for every operation.</li>
 <li>Avoid exposing internal IDs when possible; use ACLs or capability-based tokens.</li>
 <li>Apply the principle of least privilege.</li>
-<li>Regularly test authorization logic with different user roles.</li>
+<li>Regularly test authorisation logic with different user roles.</li>
 </ul>
 <h2 id="tools-payloads">Tools &amp; Payloads</h2>
 <ul>

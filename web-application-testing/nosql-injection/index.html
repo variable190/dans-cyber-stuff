@@ -951,14 +951,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../insecure-deserialization/" class="md-nav__link">
+      <a href="../insecure-deserialisation/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Insecure Deserialization
+    Insecure Deserialisation
   
 
     
@@ -1550,7 +1550,7 @@
 <h1 id="nosql-injection">NoSQL Injection</h1>
 <h2 id="overview">Overview</h2>
 <p>NoSQL databases (such as MongoDB) use query languages and data models that differ from traditional SQL. Injection vulnerabilities arise when user input is used unsafely in database queries, often through operators that can alter the intended logic of the query (e.g., <code>$ne</code>, <code>$gt</code>, <code>$regex</code>).</p>
-<p>These can allow authentication bypass, data exfiltration, and other unauthorized operations without traditional SQL syntax.</p>
+<p>These can allow authentication bypass, data exfiltration, and other unauthorised operations without traditional SQL syntax.</p>
 <h2 id="attack-surface">Attack Surface</h2>
 <ul>
 <li>Login and authentication endpoints that use NoSQL backends</li>
@@ -1622,7 +1622,7 @@
 <h2 id="impact">Impact</h2>
 <ul>
 <li>Authentication bypass and account takeover</li>
-<li>Unauthorized data access or modification</li>
+<li>Unauthorised data access or modification</li>
 <li>Full database exfiltration in some cases</li>
 <li>Potential for further compromise depending on application logic</li>
 </ul>

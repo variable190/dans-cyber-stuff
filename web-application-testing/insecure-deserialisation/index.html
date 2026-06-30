@@ -23,7 +23,7 @@
     
     
       
-        <title>Insecure Deserialization - Dan's Cyber Stuff</title>
+        <title>Insecure Deserialisation - Dan's Cyber Stuff</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#insecure-deserialization" class="md-skip">
+        <a href="#insecure-deserialisation" class="md-skip">
           Skip to content
         </a>
       
@@ -110,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Insecure Deserialization
+              Insecure Deserialisation
             
           </span>
         </div>
@@ -793,7 +793,7 @@
   <span class="md-ellipsis">
     
   
-    Insecure Deserialization
+    Insecure Deserialisation
   
 
     
@@ -811,7 +811,7 @@
   <span class="md-ellipsis">
     
   
-    Insecure Deserialization
+    Insecure Deserialisation
   
 
     
@@ -893,10 +893,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#php-example-phar-deserialization-via-upload-lfi" class="md-nav__link">
+  <a href="#php-example-phar-deserialisation-via-upload-lfi" class="md-nav__link">
     <span class="md-ellipsis">
       
-        PHP Example (Phar Deserialization via Upload + LFI)
+        PHP Example (Phar Deserialisation via Upload + LFI)
       
     </span>
   </a>
@@ -1449,10 +1449,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#php-example-phar-deserialization-via-upload-lfi" class="md-nav__link">
+  <a href="#php-example-phar-deserialisation-via-upload-lfi" class="md-nav__link">
     <span class="md-ellipsis">
       
-        PHP Example (Phar Deserialization via Upload + LFI)
+        PHP Example (Phar Deserialisation via Upload + LFI)
       
     </span>
   </a>
@@ -1525,9 +1525,9 @@
 
 
 
-<h1 id="insecure-deserialization">Insecure Deserialization</h1>
+<h1 id="insecure-deserialisation">Insecure Deserialisation</h1>
 <h2 id="overview">Overview</h2>
-<p>Insecure deserialization vulnerabilities arise when an application deserializes untrusted data without sufficient validation. Attackers can craft malicious serialized objects that, when deserialized, execute arbitrary code, modify application logic, or lead to denial of service.</p>
+<p>Insecure deserialisation vulnerabilities arise when an application deserialises untrusted data without sufficient validation. Attackers can craft malicious serialised objects that, when deserialised, execute arbitrary code, modify application logic, or lead to denial of service.</p>
 <p>This is a language-specific issue (common in Java, PHP, Python, .NET, Node.js) and is often referred to as "object injection."</p>
 <h2 id="attack-surface">Attack Surface</h2>
 <ul>
@@ -1537,19 +1537,19 @@
 <h2 id="identification">Identification</h2>
 <ul>
 <li>Look for parameters, cookies, or files containing base64 or binary data that looks like serialized objects.</li>
-<li>Test by modifying serialized data and observing application behavior or errors.</li>
+<li>Test by modifying serialized data and observing application behaviour or errors.</li>
 <li>Use known gadget chains for the target language/framework.</li>
-<li>Monitor for exceptions or unusual processing during deserialization.</li>
+<li>Monitor for exceptions or unusual processing during deserialisation.</li>
 </ul>
 <h2 id="exploitation">Exploitation</h2>
 <h3 id="general-approach">General Approach</h3>
 <ol>
-<li>Identify where serialized data is accepted and deserialized.</li>
-<li>Obtain or generate a valid serialized object for the target (often by serializing a legitimate object first).</li>
-<li>Modify or replace the object with a malicious payload (gadget chain) that executes code on deserialization.</li>
+<li>Identify where serialised data is accepted and deserialised.</li>
+<li>Obtain or generate a valid serialised object for the target (often by serialising a legitimate object first).</li>
+<li>Modify or replace the object with a malicious payload (gadget chain) that executes code on deserialisation.</li>
 <li>Deliver the payload.</li>
 </ol>
-<h3 id="php-example-phar-deserialization-via-upload-lfi">PHP Example (Phar Deserialization via Upload + LFI)</h3>
+<h3 id="php-example-phar-deserialisation-via-upload-lfi">PHP Example (Phar Deserialisation via Upload + LFI)</h3>
 <p>From file upload techniques:
 <div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1">php<span class="w"> </span>--define<span class="w"> </span>phar.readonly<span class="o">=</span><span class="m">0</span><span class="w"> </span>shell.php<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>mv<span class="w"> </span>shell.phar<span class="w"> </span>shell.jpg
 </span></code></pre></div></td></tr></table></div>
@@ -1557,32 +1557,32 @@ Then trigger via LFI:
 <code>/index.php?language=phar://./uploads/shell.jpg/shell.txt&amp;cmd=id</code></p>
 <h3 id="other-common-vectors">Other Common Vectors</h3>
 <ul>
-<li>Cookie or session manipulation with serialized user objects.</li>
-<li>API endpoints that accept serialized data for caching or state.</li>
-<li>File processing that internally deserializes content.</li>
+<li>Cookie or session manipulation with serialised user objects.</li>
+<li>API endpoints that accept serialised data for caching or state.</li>
+<li>File processing that internally deserialises content.</li>
 </ul>
-<p><strong>Note:</strong> Detailed gadget chains and language-specific payloads are extensive. See resources such as PayloadsAllTheThings (Insecure Deserialization section) and ysoserial for Java.</p>
+<p><strong>Note:</strong> Detailed gadget chains and language-specific payloads are extensive. See resources such as PayloadsAllTheThings (Insecure Deserialisation section) and ysoserial for Java.</p>
 <h2 id="impact">Impact</h2>
 <ul>
 <li>Remote code execution</li>
 <li>Authentication bypass or privilege escalation</li>
 <li>Data tampering</li>
-<li>Denial of service (via resource exhaustion during deserialization)</li>
+<li>Denial of service (via resource exhaustion during deserialisation)</li>
 </ul>
 <h2 id="prevention">Prevention</h2>
 <ul>
-<li>Avoid deserializing untrusted data whenever possible.</li>
-<li>Use safe, language-native data formats like JSON with strict schemas instead of native serialization.</li>
-<li>Implement integrity checks (signing/hashing) on serialized data.</li>
-<li>Use whitelisting of allowed classes during deserialization (where supported).</li>
+<li>Avoid deserialising untrusted data whenever possible.</li>
+<li>Use safe, language-native data formats like JSON with strict schemas instead of native serialisation.</li>
+<li>Implement integrity checks (signing/hashing) on serialised data.</li>
+<li>Use whitelisting of allowed classes during deserialisation (where supported).</li>
 <li>Run applications with least privilege.</li>
-<li>Keep all libraries and runtimes updated (many deserialization gadgets rely on vulnerable dependencies).</li>
+<li>Keep all libraries and runtimes updated (many deserialisation gadgets rely on vulnerable dependencies).</li>
 </ul>
 <h2 id="tools-payloads">Tools &amp; Payloads</h2>
 <ul>
 <li>ysoserial (Java)</li>
 <li>Custom scripts to generate/modify serialized objects</li>
-<li>Burp extensions for deserialization testing</li>
+<li>Burp extensions for deserialisation testing</li>
 <li>Phar creation tools for PHP scenarios (combined with LFI/File Upload)</li>
 </ul>
 <p>See the <a href="../file-upload-attacks/">File Upload Attacks</a> and <a href="../file-inclusion/">File Inclusion</a> pages for practical PHP phar and wrapper chaining examples. OWASP Top 10 also highlights this as a recurring risk area.</p>

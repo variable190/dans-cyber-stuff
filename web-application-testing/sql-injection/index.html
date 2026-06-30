@@ -1001,14 +1001,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../insecure-deserialization/" class="md-nav__link">
+      <a href="../insecure-deserialisation/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Insecure Deserialization
+    Insecure Deserialisation
   
 
     
@@ -1664,7 +1664,7 @@
 <li>Inject a single quote <code>'</code> and look for database errors, different responses, or anomalies.</li>
 <li>Use comment sequences to truncate queries: <code>--</code> (note the space for MySQL) or <code>#</code>.</li>
 <li>Test time-based conditions or OAST (out-of-band) to detect blind injection.</li>
-<li>Observe differences in application behavior for TRUE vs FALSE conditions in blind scenarios.</li>
+<li>Observe differences in application behaviour for TRUE vs FALSE conditions in blind scenarios.</li>
 <li>Check error messages when syntax is valid vs invalid.</li>
 </ul>
 <h2 id="exploitation">Exploitation</h2>
@@ -1773,7 +1773,7 @@
 <li>When parameterized queries cannot be used (column names, ORDER BY), implement strict whitelisting of allowed values.</li>
 <li>Apply the principle of least privilege to database accounts.</li>
 <li>Use ORM frameworks carefully (many still allow raw queries).</li>
-<li>Input validation as a defense-in-depth layer, not the primary control.</li>
+<li>Input validation as a defence-in-depth layer, not the primary control.</li>
 <li>Web Application Firewalls (WAF) as an additional control.</li>
 </ul>
 <h2 id="tools-payloads">Tools &amp; Payloads</h2>

@@ -729,10 +729,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#analyzing-decoding-session-tokens" class="md-nav__link">
+  <a href="#analysing-decoding-session-tokens" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Analyzing / Decoding Session Tokens
+        Analysing / Decoding Session Tokens
       
     </span>
   </a>
@@ -1084,14 +1084,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../insecure-deserialization/" class="md-nav__link">
+      <a href="../insecure-deserialisation/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Insecure Deserialization
+    Insecure Deserialisation
   
 
     
@@ -1737,10 +1737,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#analyzing-decoding-session-tokens" class="md-nav__link">
+  <a href="#analysing-decoding-session-tokens" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Analyzing / Decoding Session Tokens
+        Analysing / Decoding Session Tokens
       
     </span>
   </a>
@@ -1815,7 +1815,7 @@
 
 <h1 id="broken-authentication">Broken Authentication</h1>
 <h2 id="overview">Overview</h2>
-<p>Broken authentication refers to flaws in the implementation of authentication mechanisms that allow attackers to bypass or defeat authentication controls, leading to unauthorized access or account compromise.</p>
+<p>Broken authentication refers to flaws in the implementation of authentication mechanisms that allow attackers to bypass or defeat authentication controls, leading to unauthorised access or account compromise.</p>
 <h3 id="categories-of-authentication-factors">Categories of Authentication Factors</h3>
 <ul>
 <li><strong>Knowledge</strong>: passwords, PINs, Answer to Security Question</li>
@@ -1836,7 +1836,7 @@
 <p>Weaknesses often arise from insufficient server-side validation, predictable or low-entropy tokens, lack of rate limiting, overly verbose error messages, or missing access checks that rely only on client-side redirects.</p>
 <h2 id="identification">Identification</h2>
 <ul>
-<li>Analyze login, reset, or MFA responses for differences that indicate valid vs. invalid usernames/accounts (varying error messages, HTTP status codes, response delays/timing, or account lockout behavior).</li>
+<li>Analyse login, reset, or MFA responses for differences that indicate valid vs. invalid usernames/accounts (varying error messages, HTTP status codes, response delays/timing, or account lockout behaviour).</li>
 <li>Status code changes between valid and invalid usernames.</li>
 <li>Different (sometimes subtle) error messages.</li>
 <li>Delayed responses for certain inputs.</li>
@@ -1845,7 +1845,7 @@
 <li>Correct/successful login details may receive a different rate limit response (or none) compared to failed attempts.</li>
 <li>Examine session cookies or other tokens for patterns: insufficient entropy, sequential/incrementing values, encoding of user data (e.g. base64), or large fixed portions with only small varying components.</li>
 <li>Check "stay logged in" or persistent cookies to see if they are easily decrypted or contain predictable data.</li>
-<li>Attempt direct navigation to protected URLs and observe whether authentication/authorization is properly enforced server-side.</li>
+<li>Attempt direct navigation to protected URLs and observe whether authentication/authorisation is properly enforced server-side.</li>
 <li>Review password reset and recovery flows for guessable tokens, logic issues (e.g. token not required after initial step), or information leakage.</li>
 <li>Check if a reset URL token is easily decrypted or predictable.</li>
 <li>Verify whether the reset token is actually required to complete the password reset after the initial link is followed.</li>
@@ -1958,7 +1958,7 @@
 <p>Successful exploitation of broken authentication can result in:</p>
 <ul>
 <li>Complete compromise of user accounts</li>
-<li>Unauthorized access to sensitive data and application functionality</li>
+<li>Unauthorised access to sensitive data and application functionality</li>
 <li>Privilege escalation (e.g. from regular user to administrator)</li>
 <li>Session hijacking and full user impersonation</li>
 <li>Circumvention of other security controls</li>
@@ -1970,8 +1970,8 @@
 <li>Require and correctly implement multi-factor authentication (MFA/2FA) for sensitive accounts or actions.</li>
 <li>Use cryptographically secure, high-entropy session identifiers. Regenerate the session ID after successful login and on privilege elevation. Apply <code>HttpOnly</code>, <code>Secure</code>, and <code>SameSite</code> cookie attributes. Enforce reasonable idle and absolute timeouts.</li>
 <li>Protect password reset and recovery flows with high-entropy, single-use, time-limited tokens delivered out-of-band. Avoid (or strongly secure) security questions.</li>
-<li>Do not differentiate error messages or behavior between valid and invalid usernames or credentials.</li>
-<li>Perform all authentication and authorization decisions server-side. Never trust client-side logic, hidden fields, or simple redirect responses (e.g. 302) for protection.</li>
+<li>Do not differentiate error messages or behaviour between valid and invalid usernames or credentials.</li>
+<li>Perform all authentication and authorisation decisions server-side. Never trust client-side logic, hidden fields, or simple redirect responses (e.g. 302) for protection.</li>
 <li>Ensure logout fully invalidates sessions server-side.</li>
 <li>Prefer well-tested authentication libraries/frameworks over custom implementations.</li>
 <li>Consider additional controls such as device fingerprinting, IP reputation, or anomaly detection for high-value applications.</li>
@@ -1987,7 +1987,7 @@
 <h3 id="filtering-wordlists-to-match-password-policies">Filtering Wordlists to Match Password Policies</h3>
 <div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-8-1">grep<span class="w"> </span><span class="s1">&#39;[[:upper:]]&#39;</span><span class="w"> </span>/usr/share/seclists/Passwords/Leaked-Databases/rockyou.txt<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s1">&#39;[[:lower:]]&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s1">&#39;[[:digit:]]&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-E<span class="w"> </span><span class="s1">&#39;.{10}&#39;</span><span class="w"> </span>&gt;<span class="w"> </span>custom_wordlist.txt
 </span></code></pre></div></td></tr></table></div>
-<h3 id="analyzing-decoding-session-tokens">Analyzing / Decoding Session Tokens</h3>
+<h3 id="analysing-decoding-session-tokens">Analysing / Decoding Session Tokens</h3>
 <div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-9-1"><span class="nb">echo</span><span class="w"> </span>-n<span class="w"> </span>dXNlcj1odGItc3RkbnQ7cm9sZT11c2Vy<span class="w"> </span><span class="p">|</span><span class="w"> </span>base64<span class="w"> </span>-d
@@ -2010,7 +2010,7 @@
 <li><code>ffuf</code> (fuzzing/brute force)</li>
 <li><code>seq</code> (generate number sequences)</li>
 <li><code>grep</code> (wordlist filtering)</li>
-<li>Burp Suite / browser dev tools (intercept and modify responses, analyze cookies, tamper with MFA/verify cookies, test host headers)</li>
+<li>Burp Suite / browser dev tools (intercept and modify responses, analyse cookies, tamper with MFA/verify cookies, test host headers)</li>
 <li>Base64 / hex / other decoding tools (for token analysis, including stay-logged-in and reset tokens)</li>
 <li>Manual header manipulation (X-Forwarded-For, X-Forward-Host) for rate limit evasion and password reset poisoning</li>
 </ul>

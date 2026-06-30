@@ -12,7 +12,7 @@
         <link rel="prev" href="../security-misconfiguration/">
       
       
-        <link rel="next" href="../insecure-deserialization/">
+        <link rel="next" href="../insecure-deserialisation/">
       
       
         
@@ -940,14 +940,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../insecure-deserialization/" class="md-nav__link">
+      <a href="../insecure-deserialisation/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Insecure Deserialization
+    Insecure Deserialisation
   
 
     
@@ -1527,7 +1527,7 @@
 
 <h1 id="business-logic-vulnerabilities">Business Logic Vulnerabilities</h1>
 <h2 id="overview">Overview</h2>
-<p>Business logic vulnerabilities arise when an application fails to properly enforce its intended business rules, workflows, or constraints. Unlike technical vulnerabilities (e.g., injection flaws), these often stem from flawed assumptions in how the application should behave under different conditions. Attackers exploit them by manipulating inputs, skipping steps, or abusing edge cases to achieve unintended outcomes such as unauthorized discounts, privilege changes, or data manipulation.</p>
+<p>Business logic vulnerabilities arise when an application fails to properly enforce its intended business rules, workflows, or constraints. Unlike technical vulnerabilities (e.g., injection flaws), these often stem from flawed assumptions in how the application should behave under different conditions. Attackers exploit them by manipulating inputs, skipping steps, or abusing edge cases to achieve unintended outcomes such as unauthorised discounts, privilege changes, or data manipulation.</p>
 <p>These issues can exist even in applications with strong authentication and input validation because the logic itself is the problem.</p>
 <h2 id="attack-surface">Attack Surface</h2>
 <p>Business logic flaws commonly appear in:</p>
@@ -1540,7 +1540,7 @@
 </ul>
 <h2 id="identification">Identification</h2>
 <ul>
-<li>Analyze the application's intended workflow and look for places where assumptions are made about user behavior or data.</li>
+<li>Analyse the application's intended workflow and look for places where assumptions are made about user behaviour or data.</li>
 <li>Intercept requests and experiment with unconventional values (negative numbers, extremely large values, unexpected data types).</li>
 <li>Remove or reorder parameters in requests to see if backend logic still accepts the action.</li>
 <li>Test forced browsing: navigate directly to later steps in a process without completing prerequisites.</li>
@@ -1578,7 +1578,7 @@
 <h2 id="impact">Impact</h2>
 <p>Successful exploitation can lead to:</p>
 <ul>
-<li>Unauthorized financial transactions or discounts</li>
+<li>Unauthorised financial transactions or discounts</li>
 <li>Privilege escalation or account takeover via workflow abuse</li>
 <li>Data leakage or corruption</li>
 <li>Circumvention of business rules (e.g., exceeding purchase limits, bypassing approvals)</li>
@@ -1588,9 +1588,9 @@
 <ul>
 <li>Implement all critical business rules and validations on the server side — never trust the client.</li>
 <li>Enforce strict state management and sequence checks for multi-step processes.</li>
-<li>Use server-side authorization checks at every sensitive action, not just at entry points.</li>
+<li>Use server-side authorisation checks at every sensitive action, not just at entry points.</li>
 <li>Validate and sanitize all inputs against business constraints (ranges, formats, relationships between fields).</li>
-<li>Perform thorough threat modeling during design to identify assumptions that could be abused.</li>
+<li>Perform thorough threat modelling during design to identify assumptions that could be abused.</li>
 <li>Consider using established frameworks that provide built-in protections for common workflows.</li>
 <li>Log and monitor for anomalous sequences or out-of-order actions.</li>
 </ul>
