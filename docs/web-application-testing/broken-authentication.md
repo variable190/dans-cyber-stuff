@@ -127,7 +127,7 @@ echo -n dXNlcj1odGItc3RkbnQ7cm9sZT11c2Vy | base64 -d
 echo -n 'user=htb-stdnt;role=admin' | base64 # base64 encode
 echo -n 'user=htb-stdnt;role=admin' | xxd -p # hex encode
 ```
-- XSS can be used to steal session cookies from other users (see related [XSS](docs/web-application-testing/xss.md) documentation).
+- XSS can be used to steal session cookies from other users (see related [XSS](./xss.md) documentation).
 
 #### [Session Fixation](https://owasp.org/www-community/attacks/Session_fixation)
 
