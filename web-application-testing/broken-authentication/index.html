@@ -763,17 +763,6 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#enumeration-and-brute-forcing-with-ffuf" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Enumeration and Brute Forcing with ffuf
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#generating-sequential-test-values" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -818,17 +807,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#useful-resources-for-default-credentials" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Useful Resources for Default Credentials
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#common-testing-tools" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -840,10 +818,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#types-of-brute-forcing-authentication-context" class="md-nav__link">
+  <a href="#types-of-brute-forcing" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Types of Brute Forcing (Authentication Context)
+        Types of Brute Forcing
       
     </span>
   </a>
@@ -1838,17 +1816,6 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#enumeration-and-brute-forcing-with-ffuf" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Enumeration and Brute Forcing with ffuf
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#generating-sequential-test-values" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1893,17 +1860,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#useful-resources-for-default-credentials" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Useful Resources for Default Credentials
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#common-testing-tools" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1915,10 +1871,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#types-of-brute-forcing-authentication-context" class="md-nav__link">
+  <a href="#types-of-brute-forcing" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Types of Brute Forcing (Authentication Context)
+        Types of Brute Forcing
       
     </span>
   </a>
@@ -2121,8 +2077,6 @@
 <li>Consider additional controls such as device fingerprinting, IP reputation, or anomaly detection for high-value applications.</li>
 </ul>
 <h2 id="tools-payloads">Tools &amp; Payloads</h2>
-<h3 id="enumeration-and-brute-forcing-with-ffuf">Enumeration and Brute Forcing with ffuf</h3>
-<p>User enumeration, password brute-forcing, reset token brute-forcing, and 2FA brute-forcing examples are shown in the Exploitation section.</p>
 <h3 id="generating-sequential-test-values">Generating Sequential Test Values</h3>
 <div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-7-1">seq<span class="w"> </span>-w<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">9999</span><span class="w"> </span>&gt;<span class="w"> </span>tokens.txt<span class="w"> </span><span class="c1"># -w pads numbers with prepending zeros (useful for 4-digit codes)</span>
@@ -2143,12 +2097,6 @@
 <span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-10-1">cat<span class="w"> </span>world-cities.csv<span class="w"> </span><span class="p">|</span><span class="w"> </span>cut<span class="w"> </span>-d<span class="w"> </span><span class="s1">&#39;,&#39;</span><span class="w"> </span>-f1<span class="w"> </span>&gt;<span class="w"> </span>city_wordlist.txt<span class="w"> </span><span class="c1"># all world cities</span>
 </span><span id="__span-10-2">cat<span class="w"> </span>world-cities.csv<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>Germany<span class="w"> </span><span class="p">|</span><span class="w"> </span>cut<span class="w"> </span>-d<span class="w"> </span><span class="s1">&#39;,&#39;</span><span class="w"> </span>-f1<span class="w"> </span>&gt;<span class="w"> </span>german_cities.txt<span class="w"> </span><span class="c1"># just german cities</span>
 </span></code></pre></div></td></tr></table></div>
-<h3 id="useful-resources-for-default-credentials">Useful Resources for Default Credentials</h3>
-<ul>
-<li><a href="https://cirt.net/passwords/">CIRT.net</a></li>
-<li>SecLists Default Credentials (<code>SecLists/Passwords/Default-Credentials/</code>)</li>
-<li><a href="https://github.com/scadastrangelove/SCADAPASS/tree/master">SCADAPASS</a></li>
-</ul>
 <h3 id="common-testing-tools">Common Testing Tools</h3>
 <ul>
 <li><code>ffuf</code> (fuzzing/brute force)</li>
@@ -2158,7 +2106,7 @@
 <li>Base64 / hex / other decoding tools (for token analysis, including stay-logged-in and reset tokens)</li>
 <li>Manual header manipulation (X-Forwarded-For, X-Forward-Host) for rate limit evasion and password reset poisoning</li>
 </ul>
-<h3 id="types-of-brute-forcing-authentication-context">Types of Brute Forcing (Authentication Context)</h3>
+<h3 id="types-of-brute-forcing">Types of Brute Forcing</h3>
 <table>
 <thead>
 <tr>
@@ -2200,11 +2148,6 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Default Credentials Resources</strong>:
-- Common device defaults (Linksys/D-Link/Netgear admin/admin or admin/password, etc.)
-- SecLists <code>Passwords/Default-Credentials/</code>
-- SCADAPASS and similar lists for specialized systems</p>
-<p>Fold these into rate limit and password reset testing where relevant.</p>
 
 
 
