@@ -1835,7 +1835,7 @@
 </ul>
 <p>Weaknesses often arise from insufficient server-side validation, predictable or low-entropy tokens, lack of rate limiting, overly verbose error messages, or missing access checks that rely only on client-side redirects.</p>
 <h2 id="identification">Identification</h2>
-<ul>
+<ol>
 <li>Analyse login, reset, or MFA responses for differences that indicate valid vs. invalid usernames/accounts (varying error messages, HTTP status codes, response delays/timing, or account lockout behaviour).</li>
 <li>Status code changes between valid and invalid usernames.</li>
 <li>Different (sometimes subtle) error messages.</li>
@@ -1851,7 +1851,7 @@
 <li>Verify whether the reset token is actually required to complete the password reset after the initial link is followed.</li>
 <li>Test for different error messages when new password fields do not match (these differences can sometimes be abused to brute-force values for a victim's account during reset).</li>
 <li>Test whether client-side controls, parameter values, or response status codes can be manipulated to bypass authentication.</li>
-</ul>
+</ol>
 <h2 id="exploitation">Exploitation</h2>
 <h3 id="brute-force-attacks">Brute-Force Attacks</h3>
 <ul>
@@ -1884,34 +1884,30 @@
 <ul>
 <li><strong>Rate Limit</strong>: X-Forwarded-For HTTP Header can be randomised (or use other headers such as X-Forward-Host in some flows).</li>
 <li><strong>Iterate logins</strong>: Alternate between a successful login (using known good credentials) and brute-force attempts to reset or avoid rate limit counters.</li>
-<li><strong>Different rate limit responses</strong>: Successful or correct login attempts may trigger a different (or absent) rate limit message compared to failures; use this to identify valid credentials without triggering lockouts as quickly.</li>
 <li><strong>CAPTCHAs</strong>: Look for CAPTCHA solution in HTML code.</li>
 </ul>
 <h3 id="mfa-attacks">MFA Attacks</h3>
 <ul>
-<li><strong>Bypass MFA via cookie manipulation</strong>: Adjust or tamper with a "verify" or MFA cookie on the target account to cause the one-time code to be sent to the attacker (or the attacker's controlled target), then brute-force the code as normal.</li>
-<li>Brute-forcing 2FA codes is also possible when codes have low entropy (see Brute-Force Attacks above).</li>
+<li>Brute-forcing 2FA codes is possible when codes have low entropy and there is no rate limiting or it can be bypassed (see Brute-Force Attacks above).</li>
 </ul>
 <h3 id="password-attacks">Password Attacks</h3>
-<ul>
-<li><strong>Default Credentials</strong></li>
-<li><a href="https://cirt.net/passwords/">CIRT.net</a></li>
-<li>SecLists Default Credentials (SecLists\Passwords\Default-Credentials)</li>
-<li><a href="https://github.com/scadastrangelove/SCADAPASS/tree/master">SCADA</a></li>
-<li><strong>Vulnerable Password Reset</strong></li>
-<li>Guessable Security Questions (for example brute force <a href="https://github.com/datasets/world-cities/blob/main/data/world-cities.csv">world cities</a>)
+<p><strong>Default Credentials</strong>
+  - <a href="https://cirt.net/passwords/">CIRT.net</a>
+  - SecLists Default Credentials (SecLists\Passwords\Default-Credentials)
+  - <a href="https://github.com/scadastrangelove/SCADAPASS/tree/master">SCADA</a>
+<strong>Vulnerable Password Reset</strong>
+  - Guessable Security Questions (for example brute force <a href="https://github.com/datasets/world-cities/blob/main/data/world-cities.csv">world cities</a>)
   <div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1">cat<span class="w"> </span>world-cities.csv<span class="w"> </span><span class="p">|</span><span class="w"> </span>cut<span class="w"> </span>-d<span class="w"> </span><span class="s1">&#39;,&#39;</span><span class="w"> </span>-f1<span class="w"> </span>&gt;<span class="w"> </span>city_wordlist.txt<span class="w"> </span><span class="c1"># all world cities</span>
 </span><span id="__span-4-2">cat<span class="w"> </span>world-cities.csv<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>Germany<span class="w"> </span><span class="p">|</span><span class="w"> </span>cut<span class="w"> </span>-d<span class="w"> </span><span class="s1">&#39;,&#39;</span><span class="w"> </span>-f1<span class="w"> </span>&gt;<span class="w"> </span>german_cities.txt<span class="w"> </span><span class="c1"># just german cities</span>
 </span><span id="__span-4-3">ffuf<span class="w"> </span>-w<span class="w"> </span>./city_wordlist.txt<span class="w"> </span>-u<span class="w"> </span>http://pwreset.htb/security_question.php<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/x-www-form-urlencoded&quot;</span><span class="w"> </span>-b<span class="w"> </span><span class="s2">&quot;PHPSESSID=39b54j201u3rhu4tab1pvdb4pv&quot;</span><span class="w"> </span>-d<span class="w"> </span><span class="s2">&quot;security_response=FUZZ&quot;</span><span class="w"> </span>-fr<span class="w"> </span><span class="s2">&quot;Incorrect response.&quot;</span>
-</span></code></pre></div></td></tr></table></div></li>
-<li>Check if reset URL tokens are easily decrypted or contain predictable data.</li>
-<li>Username Injection in Password Reset Request (check post parameters in http request).</li>
-<li>Test whether the reset token from the initial request URL is actually enforced when submitting the new password (some flows only check it on the first step).</li>
-<li><strong>Host header poisoning on reset</strong>: Set the <code>X-Forward-Host</code> header (pointing to an attacker-controlled server) when submitting a password reset request. This can cause the reset link/token to be sent to the attacker's server instead of (or in addition to) the legitimate user.</li>
-<li>During the final password reset step, observe whether different error messages are returned when the two "new password" fields do not match. These discrepancies can sometimes be used to brute-force a victim's password (or other values) in the reset flow.</li>
-</ul>
+</span></code></pre></div></td></tr></table></div>
+  - Check if reset URL tokens are easily decrypted or contain predictable data.
+  - Username Injection in Password Reset Request (check post parameters in http request).
+  - Test whether the reset token from the initial request URL is actually enforced when submitting the new password (some flows only check it on the first step).
+  - <strong>Host header poisoning on reset</strong>: Set the <code>X-Forward-Host</code> header (pointing to an attacker-controlled server) when submitting a password reset request. This can cause the reset link/token to be sent to the attacker's server instead of (or in addition to) the legitimate user.
+  - During the final password reset step, observe whether different error messages are returned when the two "new password" fields do not match. These discrepancies can sometimes be used to brute-force a victim's password (or other values) in the reset flow.</p>
 <h3 id="authentication-bypasses">Authentication Bypasses</h3>
 <ul>
 <li>Accessing the protected page directly</li>
