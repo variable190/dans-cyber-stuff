@@ -258,3 +258,24 @@ Contain representation-independent information about payload data, including con
 | [CTRL+SHIFT+E]| Open Network Panel    |
 | [CTRL+SHIFT+J]| Open Console          |
 | [CTRL+U]      | View Page Source      |
+
+## Web Fuzzing
+
+Fuzzing systematically injects large sets of inputs to discover hidden resources, parameters, or vulnerabilities.
+
+Common targets:
+- Hidden directories and files
+- Insecure or undocumented API endpoints
+- Injection points (SQLi, XSS, command injection, etc.)
+
+**Tools and Setup:**
+- ffuf, gobuster, wfuzz (install Go, Python, pipx as prerequisites)
+- Use high-quality wordlists from SecLists (Discovery/Web-Content, Fuzzing, etc.)
+
+**Example:**
+```bash
+ffuf -w wordlist.txt -u http://target/FUZZ
+ffuf -w params.txt -u 'http://target/page?FUZZ=value'
+```
+
+Fuzzing is used across all testing categories.

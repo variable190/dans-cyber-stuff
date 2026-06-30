@@ -11,6 +11,7 @@ Welcome to Dan's Cyber Stuff!
 ### Web Application Testing
 
 - [Web Fundamentals](web-application-testing/web-fundamentals.md)
+- [Broken Authentication](web-application-testing/broken-authentication.md)
 - [Broken Access Control](web-application-testing/broken-access-control.md)
 - [SQL Injection](web-application-testing/sql-injection.md)
 - [Command Injection](web-application-testing/command-injection.md)
@@ -20,10 +21,11 @@ Welcome to Dan's Cyber Stuff!
 - [SSRF](web-application-testing/ssrf.md)
 - [XXE](web-application-testing/xxe.md)
 - [Security Misconfiguration](web-application-testing/security-misconfiguration.md)
-- [Authentication](web-application-testing/authentication.md)
 - [Business Logic Vulnerabilities](web-application-testing/business-logic-vulnerabilities.md)
 - [Insecure Deserialization](web-application-testing/insecure-deserialization.md)
 - [Path Traversal](web-application-testing/path-traversal.md)
+- [File Inclusion](web-application-testing/file-inclusion.md)
+- [File Upload Attacks](web-application-testing/file-upload-attacks.md)
 
 ### Android Application Testing
 
