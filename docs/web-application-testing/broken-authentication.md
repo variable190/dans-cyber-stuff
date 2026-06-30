@@ -165,10 +165,6 @@ Successful exploitation of broken authentication can result in:
 
 ## Tools & Payloads
 
-### Enumeration and Brute Forcing with ffuf
-
-User enumeration, password brute-forcing, reset token brute-forcing, and 2FA brute-forcing examples are shown in the Exploitation section.
-
 ### Generating Sequential Test Values
 
 ```bash
@@ -197,12 +193,6 @@ cat world-cities.csv | cut -d ',' -f1 > city_wordlist.txt # all world cities
 cat world-cities.csv | grep Germany | cut -d ',' -f1 > german_cities.txt # just german cities
 ```
 
-### Useful Resources for Default Credentials
-
-- [CIRT.net](https://cirt.net/passwords/)
-- SecLists Default Credentials (`SecLists/Passwords/Default-Credentials/`)
-- [SCADAPASS](https://github.com/scadastrangelove/SCADAPASS/tree/master)
-
 ### Common Testing Tools
 
 - `ffuf` (fuzzing/brute force)
@@ -212,7 +202,7 @@ cat world-cities.csv | grep Germany | cut -d ',' -f1 > german_cities.txt # just 
 - Base64 / hex / other decoding tools (for token analysis, including stay-logged-in and reset tokens)
 - Manual header manipulation (X-Forwarded-For, X-Forward-Host) for rate limit evasion and password reset poisoning
 
-### Types of Brute Forcing (Authentication Context)
+### Types of Brute Forcing 
 
 | Attack Type          | Description                                                                 | Best Used When |
 |----------------------|-----------------------------------------------------------------------------|----------------|
@@ -222,10 +212,3 @@ cat world-cities.csv | grep Germany | cut -d ',' -f1 > german_cities.txt # just 
 | Credential Stuffing  | Uses leaked credentials from other breaches                                 | Password reuse suspected |
 | Password Spraying    | Common passwords across many accounts                                       | Lockout policies in place |
 | Reverse Brute Force  | Known password against many usernames                                       | Password reuse across accounts |
-
-**Default Credentials Resources**:
-- Common device defaults (Linksys/D-Link/Netgear admin/admin or admin/password, etc.)
-- SecLists `Passwords/Default-Credentials/`
-- SCADAPASS and similar lists for specialized systems
-
-Fold these into rate limit and password reset testing where relevant.
