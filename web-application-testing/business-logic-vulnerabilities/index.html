@@ -9,7 +9,7 @@
       
       
       
-        <link rel="prev" href="../authentication/">
+        <link rel="prev" href="../security-misconfiguration/">
       
       
         <link rel="next" href="../insecure-deserialization/">
@@ -19,7 +19,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
@@ -469,6 +469,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../broken-authentication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Broken Authentication
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../broken-access-control/" class="md-nav__link">
         
   
@@ -718,34 +746,6 @@
                 
   
   
-  
-  
-    <li class="md-nav__item">
-      <a href="../authentication/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Authentication
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
     
   
   
@@ -850,6 +850,45 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Exploitation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#manipulating-data-and-limits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Manipulating Data and Limits
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workflow-and-sequence-bypass" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Workflow and Sequence Bypass
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#email-parser-and-encoding-discrepancies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Email Parser and Encoding Discrepancies
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -937,6 +976,62 @@
     
   
     Path Traversal
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../file-inclusion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    File Inclusion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../file-upload-attacks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    File Upload Attacks
   
 
     
@@ -1339,6 +1434,45 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Exploitation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#manipulating-data-and-limits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Manipulating Data and Limits
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workflow-and-sequence-bypass" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Workflow and Sequence Bypass
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#email-parser-and-encoding-discrepancies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Email Parser and Encoding Discrepancies
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1393,12 +1527,81 @@
 
 <h1 id="business-logic-vulnerabilities">Business Logic Vulnerabilities</h1>
 <h2 id="overview">Overview</h2>
+<p>Business logic vulnerabilities arise when an application fails to properly enforce its intended business rules, workflows, or constraints. Unlike technical vulnerabilities (e.g., injection flaws), these often stem from flawed assumptions in how the application should behave under different conditions. Attackers exploit them by manipulating inputs, skipping steps, or abusing edge cases to achieve unintended outcomes such as unauthorized discounts, privilege changes, or data manipulation.</p>
+<p>These issues can exist even in applications with strong authentication and input validation because the logic itself is the problem.</p>
 <h2 id="attack-surface">Attack Surface</h2>
+<p>Business logic flaws commonly appear in:</p>
+<ul>
+<li>Multi-step processes (e.g., shopping carts, checkout flows, account registration, password resets)</li>
+<li>Financial or transactional operations (pricing, transfers, quantity limits)</li>
+<li>Role-based or state-based workflows</li>
+<li>Email or notification handling</li>
+<li>API endpoints that assume certain sequences or validations occur on the client or previous steps</li>
+</ul>
 <h2 id="identification">Identification</h2>
+<ul>
+<li>Analyze the application's intended workflow and look for places where assumptions are made about user behavior or data.</li>
+<li>Intercept requests and experiment with unconventional values (negative numbers, extremely large values, unexpected data types).</li>
+<li>Remove or reorder parameters in requests to see if backend logic still accepts the action.</li>
+<li>Test forced browsing: navigate directly to later steps in a process without completing prerequisites.</li>
+<li>Look for locations where user input is encoded/decoded — this can sometimes leak or be abused for other purposes like tokens.</li>
+<li>Monitor for discrepancies between client-side limits and server-side enforcement.</li>
+</ul>
 <h2 id="exploitation">Exploitation</h2>
+<h3 id="manipulating-data-and-limits">Manipulating Data and Limits</h3>
+<ul>
+<li>Change product IDs, prices, quantities, or other values in intercepted requests.</li>
+<li>Submit unconventional values:</li>
+<li>Negative values (e.g., negative transfer amounts)</li>
+<li>Exceptionally high values</li>
+<li>Check what happens when limits are reached or exceeded.</li>
+<li>Repeatedly add the maximum allowed quantity using tools like Burp Intruder or Repeater to exceed intended stock or limits.</li>
+<li>Create accounts or records with extremely long values to test for truncation or buffer issues.</li>
+<li>Test whether changing an email address (or other attribute) to one associated with higher privileges grants access without proper verification.</li>
+</ul>
+<h3 id="workflow-and-sequence-bypass">Workflow and Sequence Bypass</h3>
+<ul>
+<li>Remove one parameter at a time from requests and observe if the application still processes the action.</li>
+<li>Navigate the site in unexpected ways (forced browsing). Example: directly access "order confirmed" after adding to cart without going through payment.</li>
+<li>Drop or skip intermediate requests (e.g., skip role selector steps).</li>
+<li>Test second-order effects: data stored in one place (e.g., username set to a path traversal string) may be processed unsafely elsewhere.</li>
+</ul>
+<h3 id="email-parser-and-encoding-discrepancies">Email Parser and Encoding Discrepancies</h3>
+<p>Certain email parsers can be abused for spoofing or bypasses. Test various encodings:</p>
+<div class="language-html highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">HTML</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1">=?iso-8859-1?q?=61=62=63?=foo@ginandjuice.shop
+</span><span id="__span-0-2">=?utf-8?q?=61=62=63?=foo@ginandjuice.shop
+</span><span id="__span-0-3">=?utf-7?q?<span class="err">&amp;</span>AGEAYgBj-?=foo@ginandjuice.shop
+</span></code></pre></div></td></tr></table></div>
+<p>See the <a href="https://portswigger.net/research/splitting-the-email-atom">PortSwigger research on email atom splitting</a> for more details and examples.</p>
 <h2 id="impact">Impact</h2>
+<p>Successful exploitation can lead to:</p>
+<ul>
+<li>Unauthorized financial transactions or discounts</li>
+<li>Privilege escalation or account takeover via workflow abuse</li>
+<li>Data leakage or corruption</li>
+<li>Circumvention of business rules (e.g., exceeding purchase limits, bypassing approvals)</li>
+<li>Reputational and monetary damage to the organization</li>
+</ul>
 <h2 id="prevention">Prevention</h2>
+<ul>
+<li>Implement all critical business rules and validations on the server side — never trust the client.</li>
+<li>Enforce strict state management and sequence checks for multi-step processes.</li>
+<li>Use server-side authorization checks at every sensitive action, not just at entry points.</li>
+<li>Validate and sanitize all inputs against business constraints (ranges, formats, relationships between fields).</li>
+<li>Perform thorough threat modeling during design to identify assumptions that could be abused.</li>
+<li>Consider using established frameworks that provide built-in protections for common workflows.</li>
+<li>Log and monitor for anomalous sequences or out-of-order actions.</li>
+</ul>
 <h2 id="tools-payloads">Tools &amp; Payloads</h2>
+<ul>
+<li>Burp Suite (Repeater for manual testing, Intruder for automation of repeated actions or parameter tampering)</li>
+<li>Browser developer tools for observing client-side assumptions</li>
+<li>Custom scripts for mass enumeration or forced browsing</li>
+<li>Proxy tools to drop or reorder requests</li>
+</ul>
+<p><strong>Tip:</strong> When testing, always document the "happy path" first, then systematically deviate from it.</p>
 
 
 

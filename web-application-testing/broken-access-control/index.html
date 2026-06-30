@@ -9,7 +9,7 @@
       
       
       
-        <link rel="prev" href="../web-fundamentals/">
+        <link rel="prev" href="../broken-authentication/">
       
       
         <link rel="next" href="../sql-injection/">
@@ -19,7 +19,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
@@ -466,6 +466,34 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../broken-authentication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Broken Authentication
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -569,6 +597,45 @@
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Exploitation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#http-verb-tampering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTTP Verb Tampering
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#insecure-direct-object-referencing-idor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Insecure Direct Object Referencing (IDOR)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#api-specific-broken-access-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API-Specific Broken Access Control
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -845,34 +912,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../authentication/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Authentication
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../business-logic-vulnerabilities/" class="md-nav__link">
         
   
@@ -937,6 +976,62 @@
     
   
     Path Traversal
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../file-inclusion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    File Inclusion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../file-upload-attacks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    File Upload Attacks
   
 
     
@@ -1339,6 +1434,45 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Exploitation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#http-verb-tampering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTTP Verb Tampering
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#insecure-direct-object-referencing-idor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Insecure Direct Object Referencing (IDOR)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#api-specific-broken-access-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API-Specific Broken Access Control
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1393,12 +1527,121 @@
 
 <h1 id="broken-access-control">Broken Access Control</h1>
 <h2 id="overview">Overview</h2>
+<p>Broken Access Control occurs when users can access resources or perform actions they are not authorized for. This includes Insecure Direct Object References (IDOR), missing function level access control, and broken object/property level authorization in APIs.</p>
+<p>It is distinct from authentication issues: the user may be authenticated, but the application fails to properly enforce what that user is allowed to do.</p>
+<p>Common manifestations:
+- IDOR: accessing other users' data by changing identifiers
+- Verb tampering and HTTP method abuse
+- Horizontal and vertical privilege escalation via authorization flaws
+- API-specific issues (BOLA, BFLA)</p>
 <h2 id="attack-surface">Attack Surface</h2>
+<ul>
+<li>Any endpoint or parameter that references user-owned objects (user IDs, file IDs, order numbers, etc.)</li>
+<li>Admin vs user functionality</li>
+<li>APIs and AJAX calls that may bypass UI controls</li>
+<li>Multi-tenant applications</li>
+<li>File download/view features</li>
+<li>Update or delete operations that rely on client-supplied identifiers</li>
+</ul>
 <h2 id="identification">Identification</h2>
+<ul>
+<li>Map the application while authenticated as different roles/users.</li>
+<li>Look for IDs, UUIDs, filenames, or other references in URLs, forms, AJAX, cookies, or JWT payloads.</li>
+<li>Compare functionality available to different user roles.</li>
+<li>Test changing identifiers (numeric, hashed, encoded) in requests.</li>
+<li>Look for hidden parameters in requests that control authorization (uid, role, is_admin, etc.).</li>
+<li>Check for predictable patterns in object references (sequential IDs, simple hashes of filenames).</li>
+</ul>
 <h2 id="exploitation">Exploitation</h2>
+<h3 id="http-verb-tampering">HTTP Verb Tampering</h3>
+<p>Applications may only apply security controls to certain HTTP methods (commonly GET).</p>
+<p>Example vulnerable code (only validates on GET):
+<div class="language-php highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><span class="x">$pattern = &quot;/^[A-Za-z\s]+$/&quot;;</span>
+</span><span id="__span-0-2"><span class="x">if(preg_match($pattern, $_GET[&quot;code&quot;])) {</span>
+</span><span id="__span-0-3"><span class="x">    $query = &quot;Select * from ports where port_code like &#39;%&quot; . $_REQUEST[&quot;code&quot;] . &quot;%&#39;&quot;;</span>
+</span><span id="__span-0-4"><span class="x">    ...</span>
+</span><span id="__span-0-5"><span class="x">}</span>
+</span></code></pre></div></td></tr></table></div></p>
+<p>Exploitation:
+- Use Burp to change the verb on intercepted requests (try POST, PUT, DELETE, PATCH, OPTIONS, HEAD).
+- Discover allowed methods: <code>curl -i -X OPTIONS http://target/</code></p>
+<h3 id="insecure-direct-object-referencing-idor">Insecure Direct Object Referencing (IDOR)</h3>
+<p><strong>Finding references:</strong>
+- URL parameters and APIs: <code>?uid=1</code>, <code>?filename=file_1.pdf</code>
+- AJAX calls for privileged functions.
+- Hashed or encoded references (e.g., MD5 of filename or base64 + hash).
+- Predictable naming: <code>/documents/Invoice_1_09_2021.pdf</code></p>
+<p><strong>Mass enumeration example</strong> (adapt to target):
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><span class="ch">#!/bin/bash</span>
+</span><span id="__span-1-2"><span class="nv">url</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span>
+</span><span id="__span-1-3">
+</span><span id="__span-1-4"><span class="k">for</span><span class="w"> </span>i<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="o">{</span><span class="m">1</span>..10<span class="o">}</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
+</span><span id="__span-1-5"><span class="w">    </span><span class="k">for</span><span class="w"> </span>link<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="k">$(</span>curl<span class="w"> </span>-s<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$url</span><span class="s2">/documents.php?uid=</span><span class="nv">$i</span><span class="s2">&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-oP<span class="w"> </span><span class="s2">&quot;\/documents.*?.pdf&quot;</span><span class="k">)</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
+</span><span id="__span-1-6"><span class="w">        </span>wget<span class="w"> </span>-q<span class="w"> </span><span class="nv">$url</span>/<span class="nv">$link</span>
+</span><span id="__span-1-7"><span class="w">    </span><span class="k">done</span>
+</span><span id="__span-1-8"><span class="k">done</span>
+</span></code></pre></div></td></tr></table></div></p>
+<p><strong>Hashed IDOR example:</strong>
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><span class="nb">echo</span><span class="w"> </span>-n<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>base64<span class="w"> </span>-w<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>md5sum
+</span><span id="__span-2-2"><span class="c1"># Then use the hash in requests</span>
+</span></code></pre></div></td></tr></table></div></p>
+<p><strong>Insecure APIs example:</strong>
+APIs often expose more data or actions. Look for hidden fields like uid, uuid, role in JSON or form data. Changing them (even via GET instead of PUT) can allow access to other users' data or admin functions.</p>
+<h3 id="api-specific-broken-access-control">API-Specific Broken Access Control</h3>
+<ul>
+<li><strong>Broken Object Level Authorization (BOLA / IDOR in APIs)</strong>: Authenticate as low-priv user, then iterate object IDs in API calls.</li>
+<li><strong>Broken Function Level Authorization (BFLA)</strong>: Discover admin-only endpoints and call them as a regular user.</li>
+<li><strong>Broken Object Property Level Authorization</strong>: Modify sensitive properties (e.g., <code>isAdmin</code>, <code>role</code>) that should not be controllable by the user.</li>
+</ul>
+<p>Example automation for BOLA:
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><span class="k">for</span><span class="w"> </span><span class="o">((</span><span class="nv">i</span><span class="o">=</span><span class="m">1</span><span class="p">;</span><span class="w"> </span>i&lt;<span class="o">=</span><span class="m">20</span><span class="p">;</span><span class="w"> </span>i++<span class="o">))</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
+</span><span id="__span-3-2"><span class="w">  </span>curl<span class="w"> </span>-s<span class="w"> </span>...<span class="w"> </span>/api/v1/suppliers/quarterly-reports/<span class="nv">$i</span><span class="w"> </span>...
+</span><span id="__span-3-3"><span class="k">done</span>
+</span></code></pre></div></td></tr></table></div></p>
 <h2 id="impact">Impact</h2>
+<ul>
+<li>Unauthorized access to other users' data (PII, financial records, messages)</li>
+<li>Privilege escalation (horizontal and vertical)</li>
+<li>Data modification or deletion belonging to other accounts</li>
+<li>Complete account takeover or administrative control in severe cases</li>
+<li>Compliance violations (GDPR, etc.)</li>
+</ul>
 <h2 id="prevention">Prevention</h2>
+<ul>
+<li>Implement access control checks on every request, on the server side.</li>
+<li>Use indirect object references or GUIDs that cannot be guessed or enumerated.</li>
+<li>Enforce authorization at the object and function level, not just the UI.</li>
+<li>For APIs: validate that the authenticated user owns or is permitted to access the requested object for every operation.</li>
+<li>Avoid exposing internal IDs when possible; use ACLs or capability-based tokens.</li>
+<li>Apply the principle of least privilege.</li>
+<li>Regularly test authorization logic with different user roles.</li>
+</ul>
 <h2 id="tools-payloads">Tools &amp; Payloads</h2>
+<ul>
+<li>Burp Suite Repeater and Intruder for testing ID changes and verb tampering</li>
+<li>curl for quick manual tests and scripting mass access</li>
+<li>jq for parsing JSON API responses</li>
+<li>Hashing/encoding tools: <code>base64</code>, <code>md5sum</code>, CyberChef for recreating client-side transformations</li>
+<li>Scripts for enumeration (see examples above)</li>
+</ul>
+<p><strong>Example hashed IDOR recreation:</strong>
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><span class="nb">echo</span><span class="w"> </span>-n<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>base64<span class="w"> </span>-w<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>md5sum<span class="w"> </span><span class="p">|</span><span class="w"> </span>tr<span class="w"> </span>-d<span class="w"> </span><span class="s1">&#39; -&#39;</span>
+</span></code></pre></div></td></tr></table></div></p>
+<p>See also the dedicated <a href="../broken-authentication/">Authentication</a> page for related session and auth bypass techniques that can compound access control issues.</p>
 
 
 

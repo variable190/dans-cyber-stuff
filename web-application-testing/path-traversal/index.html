@@ -12,14 +12,14 @@
         <link rel="prev" href="../insecure-deserialization/">
       
       
-        <link rel="next" href="../../android-application-testing/android-fundamentals/">
+        <link rel="next" href="../file-inclusion/">
       
       
         
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
@@ -469,6 +469,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../broken-authentication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Broken Authentication
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../broken-access-control/" class="md-nav__link">
         
   
@@ -721,34 +749,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../authentication/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Authentication
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../business-logic-vulnerabilities/" class="md-nav__link">
         
   
@@ -906,6 +906,45 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Exploitation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-testing-techniques" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Basic Testing Techniques
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bypasses-and-variations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bypasses and Variations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#useful-commands-for-confirmation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Useful Commands for Confirmation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -945,6 +984,62 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../file-inclusion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    File Inclusion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../file-upload-attacks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    File Upload Attacks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -1339,6 +1434,45 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Exploitation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-testing-techniques" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Basic Testing Techniques
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bypasses-and-variations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bypasses and Variations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#useful-commands-for-confirmation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Useful Commands for Confirmation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1393,12 +1527,72 @@
 
 <h1 id="path-traversal">Path Traversal</h1>
 <h2 id="overview">Overview</h2>
+<p>Path traversal (also known as directory traversal) vulnerabilities allow an attacker to access files and directories that are stored outside the web root folder. By manipulating variables that reference files with "dot-dot-slash" (<code>../</code>) sequences and similar variations, an attacker can traverse the file system and access sensitive files such as configuration files, source code, or operating system files.</p>
+<p>This can lead to information disclosure and, in some cases, be chained with other flaws for remote code execution.</p>
 <h2 id="attack-surface">Attack Surface</h2>
+<ul>
+<li>File download or view features that accept filenames or paths as parameters (e.g., <code>?file=report.pdf</code>, <code>?image=logo.png</code>)</li>
+<li>Language or theme selectors that include files dynamically</li>
+<li>Logging or report generation features</li>
+<li>Any functionality that constructs file paths from user input without proper sanitization</li>
+</ul>
 <h2 id="identification">Identification</h2>
+<ul>
+<li>Look for parameters that appear to reference files, paths, or resources.</li>
+<li>Test basic traversal payloads against suspected parameters.</li>
+<li>Use fuzzing with dedicated wordlists to discover vulnerable parameters and successful traversals.</li>
+<li>Observe different responses or status codes when requesting non-existent vs. existing files outside the intended directory.</li>
+<li>Check for additional requests in proxy history that might load resources via file paths.</li>
+</ul>
 <h2 id="exploitation">Exploitation</h2>
+<h3 id="basic-testing-techniques">Basic Testing Techniques</h3>
+<ul>
+<li>Try accessing sensitive files without traversal first: <code>/etc/passwd</code> or <code>C:\Windows\win.ini</code></li>
+<li>Test common traversal sequences:</li>
+<li><code>../../../etc/passwd</code> (Linux)</li>
+<li><code>..\..\..\windows\win.ini</code> (Windows equivalent)</li>
+<li>Include the required base folder when the application expects it: <code>filename=/var/www/images/../../../etc/passwd</code></li>
+<li>Use null byte termination (in older systems) to bypass appended extensions: <code>../../../etc/passwd%00.png</code></li>
+</ul>
+<h3 id="bypasses-and-variations">Bypasses and Variations</h3>
+<ul>
+<li>Use multiple traversal sequences or encoding to bypass filters:</li>
+<li><code>....//....//....//....//etc/passwd</code></li>
+<li>URL-encoded versions: <code>%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%65%74%63%2f%70%61%73%73%77%64</code></li>
+<li>Path truncation techniques (less common in modern systems): append many <code>./</code> after a non-existing directory to exceed path limits.</li>
+</ul>
+<h3 id="useful-commands-for-confirmation">Useful Commands for Confirmation</h3>
+<p>After successful traversal:</p>
+<ul>
+<li>On Linux: target <code>/etc/passwd</code>, <code>/etc/shadow</code>, application config files, source code.</li>
+<li>On Windows: <code>C:\Windows\win.ini</code>, <code>C:\boot.ini</code>, web.config, or application binaries.</li>
+</ul>
 <h2 id="impact">Impact</h2>
+<ul>
+<li>Disclosure of sensitive system files, application source code, database credentials, or user data.</li>
+<li>Potential for further exploitation (e.g., reading private keys, configuration that reveals other attack surfaces).</li>
+<li>In combination with file write or other features, could lead to code execution.</li>
+</ul>
 <h2 id="prevention">Prevention</h2>
+<ul>
+<li>Avoid using user-supplied input to construct file paths when possible.</li>
+<li>Use a whitelist of allowed files or directories.</li>
+<li>Canonicalize (normalize) the path and validate that the resulting path is within the intended base directory.</li>
+<li>Implement proper access controls and run the application with the least privileges required.</li>
+<li>Use modern frameworks that handle file serving securely.</li>
+</ul>
 <h2 id="tools-payloads">Tools &amp; Payloads</h2>
+<ul>
+<li>Burp Suite Intruder with path traversal wordlists (e.g., from SecLists Fuzzing/LFI or custom lists)</li>
+<li>ffuf or similar for parameter and payload fuzzing</li>
+<li>Common test files:</li>
+<li>Linux: <code>/etc/passwd</code>, <code>/etc/shadow</code>, application config files</li>
+<li>Windows: <code>win.ini</code>, <code>boot.ini</code></li>
+</ul>
+<p><strong>Example fuzzing command (adapt as needed):</strong>
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1">ffuf<span class="w"> </span>-w<span class="w"> </span>/usr/share/seclists/Fuzzing/LFI/LFI-Jhaddix.txt:FUZZ<span class="w"> </span>-u<span class="w"> </span><span class="s1">&#39;http://target/index.php?file=../../../../FUZZ&#39;</span><span class="w"> </span>-fs<span class="w"> </span><span class="m">2287</span>
+</span></code></pre></div></td></tr></table></div></p>
+<p>See also the dedicated <a href="../file-inclusion/">File Inclusion</a> page for more advanced LFI/RFI techniques and wrappers that often build on path traversal.</p>
 
 
 

@@ -12,14 +12,14 @@
         <link rel="prev" href="../../reporting-and-poc/">
       
       
-        <link rel="next" href="../broken-access-control/">
+        <link rel="next" href="../broken-authentication/">
       
       
         
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
@@ -799,10 +799,49 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#web-fuzzing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Web Fuzzing
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../broken-authentication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Broken Authentication
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -1067,34 +1106,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../authentication/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Authentication
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../business-logic-vulnerabilities/" class="md-nav__link">
         
   
@@ -1159,6 +1170,62 @@
     
   
     Path Traversal
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../file-inclusion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    File Inclusion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../file-upload-attacks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    File Upload Attacks
   
 
     
@@ -1815,6 +1882,17 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#web-fuzzing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Web Fuzzing
+      
+    </span>
+  </a>
   
 </li>
       
@@ -2586,6 +2664,21 @@
 </tr>
 </tbody>
 </table>
+<h2 id="web-fuzzing">Web Fuzzing</h2>
+<p>Fuzzing systematically injects large sets of inputs to discover hidden resources, parameters, or vulnerabilities.</p>
+<p>Common targets:
+- Hidden directories and files
+- Insecure or undocumented API endpoints
+- Injection points (SQLi, XSS, command injection, etc.)</p>
+<p><strong>Tools and Setup:</strong>
+- ffuf, gobuster, wfuzz (install Go, Python, pipx as prerequisites)
+- Use high-quality wordlists from SecLists (Discovery/Web-Content, Fuzzing, etc.)</p>
+<p><strong>Example:</strong>
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1">ffuf<span class="w"> </span>-w<span class="w"> </span>wordlist.txt<span class="w"> </span>-u<span class="w"> </span>http://target/FUZZ
+</span><span id="__span-0-2">ffuf<span class="w"> </span>-w<span class="w"> </span>params.txt<span class="w"> </span>-u<span class="w"> </span><span class="s1">&#39;http://target/page?FUZZ=value&#39;</span>
+</span></code></pre></div></td></tr></table></div></p>
+<p>Fuzzing is used across all testing categories.</p>
 
 
 
