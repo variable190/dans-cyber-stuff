@@ -1513,85 +1513,51 @@
 
 <h1 id="owasp-top-10-2025">OWASP Top 10 2025</h1>
 <h2 id="a012025-broken-access-control">A01:2025 - Broken Access Control</h2>
-<ul>
-<li>Test for IDOR by modifying user IDs, object references in requests</li>
-<li>Check horizontal/vertical privilege escalation (e.g., admin functions as low-priv user)</li>
-<li>Bypass role checks via parameter tampering or forced browsing</li>
-<li>Test direct object references without proper authorisation</li>
-<li>Verify if SSRF or path traversal allows unauthorised access</li>
-</ul>
+<p>Applications fail to properly restrict what authenticated users are allowed to do or access.</p>
+<p><strong>Relevant pages:</strong>
+- <a href="../web-application-testing/broken-access-control/">Broken Access Control</a>
+- <a href="../web-application-testing/business-logic-vulnerabilities/">Business Logic Vulnerabilities</a>
+- <a href="../web-application-testing/path-traversal/">Path Traversal</a>
+- <a href="../web-application-testing/ssrf/">SSRF</a></p>
 <h2 id="a022025-security-misconfiguration">A02:2025 - Security Misconfiguration</h2>
-<ul>
-<li>Scan for default credentials on admin panels, databases, or services</li>
-<li>Check for exposed error messages, stack traces, or debug modes</li>
-<li>Test cloud configs (S3 buckets, IAM roles, CORS policies)</li>
-<li>Look for unnecessary features enabled (directory listing, HTTP methods)</li>
-<li>Verify security headers missing (CSP, HSTS, X-Frame-Options)</li>
-</ul>
+<p>Security settings are incorrectly configured or left at insecure defaults.</p>
+<p><strong>Relevant pages:</strong>
+- <a href="../web-application-testing/security-misconfiguration/">Security Misconfiguration</a></p>
 <h2 id="a032025-software-supply-chain-failures">A03:2025 - Software Supply Chain Failures</h2>
-<ul>
-<li>Identify dependencies via npm, Maven, or package.json files</li>
-<li>Check for vulnerable/outdated libraries using Retire.js or OWASP Dependency-Check</li>
-<li>Test for compromised build pipelines or CI/CD exposure</li>
-<li>Look for untrusted third-party components or malicious updates</li>
-<li>Verify code signing and integrity checks in deployment</li>
-</ul>
+<p>Vulnerabilities are introduced through third-party components or compromised build and deployment processes.</p>
+<p><strong>Relevant pages:</strong>
+- <a href="../reconnaissance/">Reconnaissance</a></p>
 <h2 id="a042025-cryptographic-failures">A04:2025 - Cryptographic Failures</h2>
-<ul>
-<li>Test for weak TLS/SSL configs (expired certs, weak ciphers) with testssl.sh</li>
-<li>Check for sensitive data in transit (HTTP instead of HTTPS)</li>
-<li>Look for weak hashing (MD5, SHA1) or unsalted passwords</li>
-<li>Test client-side crypto (e.g., JWT none algorithm, weak keys)</li>
-<li>Verify proper key management and random number generation</li>
-</ul>
+<p>Sensitive data is not adequately protected due to weak encryption or key management.</p>
 <h2 id="a052025-injection">A05:2025 - Injection</h2>
-<ul>
-<li>Test SQLi in login forms, search fields, and parameters (union, blind)</li>
-<li>Check for command injection in file uploads or system calls</li>
-<li>Test NoSQL injection in MongoDB/JSON endpoints</li>
-<li>Look for LDAP, XPath, or code injection vectors</li>
-<li>Use payloads from SQLMap or Burp Intruder</li>
-</ul>
+<p>User input is not properly validated or sanitised before being processed by an interpreter.</p>
+<p><strong>Relevant pages:</strong>
+- <a href="../web-application-testing/sql-injection/">SQL Injection</a>
+- <a href="../web-application-testing/command-injection/">Command Injection</a>
+- <a href="../web-application-testing/nosql-injection/">NoSQL Injection</a>
+- <a href="../web-application-testing/xxe/">XXE</a>
+- <a href="../web-application-testing/file-inclusion/">File Inclusion</a></p>
 <h2 id="a062025-insecure-design">A06:2025 - Insecure Design</h2>
-<ul>
-<li>Analyse business logic for flaws (e.g., missing rate limits on sensitive actions)</li>
-<li>Test for race conditions or improper workflow enforcement</li>
-<li>Check if design allows insecure defaults or bypassable flows</li>
-<li>Verify lack of threat modelling in features like password reset</li>
-<li>Look for insufficient input validation in multi-step processes</li>
-</ul>
+<p>Fundamental flaws in the application's design and business logic cannot be fixed by secure implementation alone.</p>
+<p><strong>Relevant pages:</strong>
+- <a href="../web-application-testing/business-logic-vulnerabilities/">Business Logic Vulnerabilities</a></p>
 <h2 id="a072025-authentication-failures">A07:2025 - Authentication Failures</h2>
-<ul>
-<li>Test for weak password policies, brute-force, and credential stuffing</li>
-<li>Check session management (fixation, hijacking, improper logout)</li>
-<li>Verify MFA bypass or weak token implementation</li>
-<li>Look for insecure password recovery (predictable tokens)</li>
-<li>Test for broken authentication in APIs or OAuth flows</li>
-</ul>
+<p>Weak authentication and session management allow user accounts to be compromised.</p>
+<p><strong>Relevant pages:</strong>
+- <a href="../web-application-testing/broken-authentication/">Broken Authentication</a></p>
 <h2 id="a082025-software-or-data-integrity-failures">A08:2025 - Software or Data Integrity Failures</h2>
-<ul>
-<li>Test for insecure deserialization (Java, PHP, .NET gadgets)</li>
-<li>Check unsigned or tampered software updates/auto-updates</li>
-<li>Look for CI/CD pipeline tampering or artifact poisoning</li>
-<li>Verify lack of integrity checks on uploads or data in transit</li>
-<li>Test for XML External Entity (XXE) or unsafe file handling</li>
-</ul>
+<p>Critical software and data lack proper integrity verification.</p>
+<p><strong>Relevant pages:</strong>
+- <a href="../web-application-testing/insecure-deserialisation/">Insecure Deserialisation</a>
+- <a href="../web-application-testing/xxe/">XXE</a>
+- <a href="../web-application-testing/file-upload-attacks/">File Upload Attacks</a></p>
 <h2 id="a092025-security-logging-and-alerting-failures">A09:2025 - Security Logging and Alerting Failures</h2>
-<ul>
-<li>Check if actions (logins, failures, changes) are logged properly</li>
-<li>Test for missing or insufficient logging of security events</li>
-<li>Verify rate-limiting or alerts on suspicious activity</li>
-<li>Look for log injection or tampering possibilities</li>
-<li>Check if logs expose sensitive data</li>
-</ul>
+<p>Security-relevant events are not adequately logged, monitored or alerted on.</p>
 <h2 id="a102025-mishandling-of-exceptional-conditions">A10:2025 - Mishandling of Exceptional Conditions</h2>
-<ul>
-<li>Test error handling for information leaks (stack traces, paths)</li>
-<li>Check for improper exception handling leading to DoS or bypasses</li>
-<li>Verify "fail open" scenarios in auth or access controls</li>
-<li>Look for unhandled edge cases in business logic</li>
-<li>Test for resource exhaustion via error loops or infinite exceptions</li>
-</ul>
+<p>Errors and exceptional conditions are handled in ways that create vulnerabilities or leak information.</p>
+<p><strong>Relevant pages:</strong>
+- <a href="../web-application-testing/security-misconfiguration/">Security Misconfiguration</a>
+- <a href="../web-application-testing/business-logic-vulnerabilities/">Business Logic Vulnerabilities</a></p>
 
 
 
