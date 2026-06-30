@@ -71,7 +71,7 @@ done
 
 **Hashed IDOR example:**
 ```bash
-echo -n 1 | base64 -w 0 | md5sum
+echo -n 1 | base64 -w 0 | md5sum | tr -d ' -'
 # Then use the hash in requests
 ```
 
@@ -116,10 +116,5 @@ done
 - jq for parsing JSON API responses
 - Hashing/encoding tools: `base64`, `md5sum`, CyberChef for recreating client-side transformations
 - Scripts for enumeration (see examples above)
-
-**Example hashed IDOR recreation:**
-```bash
-echo -n 1 | base64 -w 0 | md5sum | tr -d ' -'
-```
 
 See also the dedicated [Authentication](broken-authentication.md) page for related session and auth bypass techniques that can compound access control issues.
