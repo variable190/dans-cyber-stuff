@@ -127,15 +127,18 @@ echo -n dXNlcj1odGItc3RkbnQ7cm9sZT11c2Vy | base64 -d
 echo -n 'user=htb-stdnt;role=admin' | base64 # base64 encode
 echo -n 'user=htb-stdnt;role=admin' | xxd -p # hex encode
 ```
-    - XSS can be used to steal session cookies from other users (see related XSS documentation).
-- **[Session Fixation](https://owasp.org/www-community/attacks/Session_fixation)**
-    - Attacker obtains valid session identifier
-    - Attacker coerces victim to use this session identifier (social engineering)
-    - Victim authenticates to the vulnerable web application
-    - Attacker knows the victim's session identifier and can hijack their account
-- **[Improper Session Timeout](https://owasp.org/www-community/Session_Timeout)**
-    - Sessions should expire after an appropriate time interval
-    - Session validity duration depends on the web application
+- XSS can be used to steal session cookies from other users (see related [XSS](docs/web-application-testing/xss.md) documentation).
+
+#### [Session Fixation](https://owasp.org/www-community/attacks/Session_fixation)
+
+- Attacker obtains valid session identifier
+- Attacker coerces victim to use this session identifier (social engineering)
+- Victim authenticates to the vulnerable web application
+- Attacker knows the victim's session identifier and can hijack their account
+
+#### [Improper Session Timeout](https://owasp.org/www-community/Session_Timeout)
+- Sessions should expire after an appropriate time interval
+- Session validity duration depends on the web application
 
 ## Impact
 
