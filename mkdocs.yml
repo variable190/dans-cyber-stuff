@@ -7,82 +7,82 @@ nav:
     - Reporting & POC: reporting-and-poc.md
     - Web Application Testing:
       - Web Fundamentals: web-application-testing/web-fundamentals.md
-      - Broken Authentication: web-application-testing/broken-authentication.md
-      - Broken Authentication Reports:
+      - Broken Authentication:
+        - web-application-testing/broken-authentication.md
         - User Enumeration and Brute Force: web-application-testing/broken-authentication/user-enumeration-brute-force.md
         - Password Reset Attacks: web-application-testing/broken-authentication/password-reset-attacks.md
         - MFA Attacks: web-application-testing/broken-authentication/mfa-attacks.md
         - Authentication Bypasses: web-application-testing/broken-authentication/authentication-bypasses.md
         - Session Attacks: web-application-testing/broken-authentication/session-attacks.md
-      - Broken Access Control: web-application-testing/broken-access-control.md
-      - Broken Access Control Reports:
+      - Broken Access Control:
+        - web-application-testing/broken-access-control.md
         - IDOR: web-application-testing/broken-access-control/idor.md
         - Verb Tampering: web-application-testing/broken-access-control/verb-tampering.md
         - API BOLA / BFLA: web-application-testing/broken-access-control/api-bola.md
-      - SQL Injection: web-application-testing/sql-injection.md
-      - SQL Injection Reports:
+      - SQL Injection:
+        - web-application-testing/sql-injection.md
         - Login Bypass: web-application-testing/sql-injection/login-bypass.md
         - UNION-based: web-application-testing/sql-injection/union-based.md
         - Blind: web-application-testing/sql-injection/blind.md
         - Error-based: web-application-testing/sql-injection/error-based.md
         - Time-based: web-application-testing/sql-injection/time-based.md
         - OAST: web-application-testing/sql-injection/oast.md
-      - Command Injection: web-application-testing/command-injection.md
-      - Command Injection Reports:
+      - Command Injection:
+        - web-application-testing/command-injection.md
         - Basic Injection: web-application-testing/command-injection/basic-injection.md
         - Blind Injection: web-application-testing/command-injection/blind-injection.md
         - Bypass Techniques: web-application-testing/command-injection/bypass-techniques.md
-      - NoSQL Injection: web-application-testing/nosql-injection.md
-      - NoSQL Injection Reports:
+      - NoSQL Injection:
+        - web-application-testing/nosql-injection.md
         - Operator Bypass: web-application-testing/nosql-injection/operator-bypass.md
         - In-band Extraction: web-application-testing/nosql-injection/inband-extraction.md
         - Blind Extraction: web-application-testing/nosql-injection/blind-extraction.md
-      - XSS: web-application-testing/xss.md
-      - XSS Reports:
+      - XSS:
+        - web-application-testing/xss.md
         - Reflected: web-application-testing/xss/reflected.md
         - Stored: web-application-testing/xss/stored.md
         - DOM-based: web-application-testing/xss/dom-based.md
         - Phishing: web-application-testing/xss/phishing.md
         - Blind: web-application-testing/xss/blind.md
-      - CSRF: web-application-testing/csrf.md
-      - CSRF Reports:
+      - CSRF:
+        - web-application-testing/csrf.md
         - Basic CSRF: web-application-testing/csrf/basic-csrf.md
         - Weak Token Bypass: web-application-testing/csrf/weak-token.md
         - Host Header Poisoning: web-application-testing/csrf/host-header.md
-      - SSRF: web-application-testing/ssrf.md
-      - SSRF Reports:
+      - SSRF:
+        - web-application-testing/ssrf.md
         - Basic Internal: web-application-testing/ssrf/basic-internal.md
         - Port Scanning: web-application-testing/ssrf/port-scanning.md
         - Blind and Protocol: web-application-testing/ssrf/blind-and-protocol.md
-      - XXE: web-application-testing/xxe.md
-      - XXE Reports:
+      - XXE:
+        - web-application-testing/xxe.md
         - Basic XXE: web-application-testing/xxe/basic-xxe.md
         - XXE for SSRF: web-application-testing/xxe/xxe-ssrf.md
-      - Security Misconfiguration: web-application-testing/security-misconfiguration.md
-      - Security Misconfiguration Reports:
+      - Security Misconfiguration:
+        - web-application-testing/security-misconfiguration.md
         - Default Credentials: web-application-testing/security-misconfiguration/default-credentials.md
         - Verbose Errors: web-application-testing/security-misconfiguration/verbose-errors.md
         - Headers and Cloud: web-application-testing/security-misconfiguration/headers-cloud.md
-      - Business Logic Vulnerabilities: web-application-testing/business-logic-vulnerabilities.md
-      - Business Logic Vulnerabilities Reports:
+      - Business Logic Vulnerabilities:
+        - web-application-testing/business-logic-vulnerabilities.md
         - Workflow Bypass: web-application-testing/business-logic-vulnerabilities/workflow-bypass.md
         - Price Manipulation: web-application-testing/business-logic-vulnerabilities/price-manipulation.md
         - Race Conditions: web-application-testing/business-logic-vulnerabilities/race-conditions.md
-      - Insecure Deserialisation: web-application-testing/insecure-deserialisation.md
-      - Insecure Deserialisation Reports:
+      - Insecure Deserialisation:
+        - web-application-testing/insecure-deserialisation.md
         - Phar Deserialisation: web-application-testing/insecure-deserialisation/phar-deserialisation.md
         - Java Gadgets: web-application-testing/insecure-deserialisation/java-gadgets.md
-      - Path Traversal: web-application-testing/path-traversal.md
-      - Path Traversal Reports:
+      - Path Traversal:
+        - web-application-testing/path-traversal.md
         - Basic Traversal: web-application-testing/path-traversal/basic-traversal.md
         - LFI to RCE: web-application-testing/path-traversal/lfi-rce.md
-      - File Inclusion: web-application-testing/file-inclusion.md
-      - File Inclusion Reports:
+      - File Inclusion:
+        - web-application-testing/file-inclusion.md
         - LFI: web-application-testing/file-inclusion/lfi.md
         - RFI: web-application-testing/file-inclusion/rfi.md
         - LFI to RCE via Wrappers: web-application-testing/file-inclusion/lfi-rce-wrappers.md
-      - File Upload Attacks: web-application-testing/file-upload-attacks.md
-      - File Upload Attacks Reports:
+      - File Upload Attacks:
+        - web-application-testing/file-upload-attacks.md
         - Web Shell: web-application-testing/file-upload-attacks/web-shell.md
         - Content-Type Bypass: web-application-testing/file-upload-attacks/content-type-bypass.md
         - Chaining to LFI/RCE: web-application-testing/file-upload-attacks/chaining-lfi-rce.md
