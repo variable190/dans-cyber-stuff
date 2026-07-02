@@ -2,14 +2,14 @@
 
 ## Overview
 
-Broken Access Control occurs when users can access resources or perform actions they are not authorised for. This includes Insecure Direct Object References (IDOR), missing function level access control, and broken object/property level authorisation in APIs.
+Broken Access Control occurs when users can access resources or perform actions they are not authorized for. This includes Insecure Direct Object References (IDOR), missing function level access control, and broken object/property level authorization in APIs.
 
 It is distinct from authentication issues: the user may be authenticated, but the application fails to properly enforce what that user is allowed to do.
 
 Common manifestations:
 - IDOR: accessing other users' data by changing identifiers
 - Verb tampering and HTTP method abuse
-- Horizontal and vertical privilege escalation via authorisation flaws
+- Horizontal and vertical privilege escalation via authorization flaws
 - API-specific issues (BOLA, BFLA)
 
 ## Attack Surface
@@ -27,7 +27,7 @@ Common manifestations:
 - Look for IDs, UUIDs, filenames, or other references in URLs, forms, AJAX, cookies, or JWT payloads.
 - Compare functionality available to different user roles.
 - Test changing identifiers (numeric, hashed, encoded) in requests.
-- Look for hidden parameters in requests that control authorisation (uid, role, is_admin, etc.).
+- Look for hidden parameters in requests that control authorization (uid, role, is_admin, etc.).
 - Check for predictable patterns in object references (sequential IDs, simple hashes of filenames).
 
 ## Exploitation
@@ -71,7 +71,7 @@ done
 
 **Hashed IDOR example:**
 ```bash
-echo -n 1 | base64 -w 0 | md5sum | tr -d ' -'
+echo -n 1 | base64 -w 0 | md5sum
 # Then use the hash in requests
 ```
 
@@ -80,9 +80,9 @@ APIs often expose more data or actions. Look for hidden fields like uid, uuid, r
 
 ### API-Specific Broken Access Control
 
-- **Broken Object Level Authorisation (BOLA / IDOR in APIs)**: Authenticate as low-priv user, then iterate object IDs in API calls.
-- **Broken Function Level Authorisation (BFLA)**: Discover admin-only endpoints and call them as a regular user.
-- **Broken Object Property Level Authorisation**: Modify sensitive properties (e.g., `isAdmin`, `role`) that should not be controllable by the user.
+- **Broken Object Level Authorization (BOLA / IDOR in APIs)**: Authenticate as low-priv user, then iterate object IDs in API calls.
+- **Broken Function Level Authorization (BFLA)**: Discover admin-only endpoints and call them as a regular user.
+- **Broken Object Property Level Authorization**: Modify sensitive properties (e.g., `isAdmin`, `role`) that should not be controllable by the user.
 
 Example automation for BOLA:
 ```bash
@@ -93,7 +93,7 @@ done
 
 ## Impact
 
-- Unauthorised access to other users' data (PII, financial records, messages)
+- Unauthorized access to other users' data (PII, financial records, messages)
 - Privilege escalation (horizontal and vertical)
 - Data modification or deletion belonging to other accounts
 - Complete account takeover or administrative control in severe cases
@@ -103,11 +103,11 @@ done
 
 - Implement access control checks on every request, on the server side.
 - Use indirect object references or GUIDs that cannot be guessed or enumerated.
-- Enforce authorisation at the object and function level, not just the UI.
+- Enforce authorization at the object and function level, not just the UI.
 - For APIs: validate that the authenticated user owns or is permitted to access the requested object for every operation.
 - Avoid exposing internal IDs when possible; use ACLs or capability-based tokens.
 - Apply the principle of least privilege.
-- Regularly test authorisation logic with different user roles.
+- Regularly test authorization logic with different user roles.
 
 ## Tools & Payloads
 
@@ -116,5 +116,10 @@ done
 - jq for parsing JSON API responses
 - Hashing/encoding tools: `base64`, `md5sum`, CyberChef for recreating client-side transformations
 - Scripts for enumeration (see examples above)
+
+**Example hashed IDOR recreation:**
+```bash
+echo -n 1 | base64 -w 0 | md5sum | tr -d ' -'
+```
 
 See also the dedicated [Authentication](broken-authentication.md) page for related session and auth bypass techniques that can compound access control issues.

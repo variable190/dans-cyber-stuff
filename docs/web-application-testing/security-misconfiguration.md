@@ -80,7 +80,7 @@ Can be used for information disclosure, LFI, or RCE depending on the processor:
 - Information disclosure (source code, credentials, internal paths)
 - Remote code execution via enabled dangerous features
 - Amplification of other vulnerabilities
-- Unauthorised access to administrative functionality
+- Unauthorized access to administrative functionality
 - Compliance and reputational damage
 
 ## Prevention
@@ -139,11 +139,11 @@ Cheat sheets and specific tool commands for these platforms are included in the 
 
 **Testing Approach**
 - Use introspection to map the API.
-- Look for authorisation bypasses on objects/fields.
+- Look for authorization bypasses on objects/fields.
 - Test for injection in resolvers.
 
 **Other API/Web Service Issues**
-- Broken authentication, object level authorisation, resource consumption limits.
+- Broken authentication, object level authorization, resource consumption limits.
 - Improper inventory (old API versions exposed).
 - Unsafe consumption of downstream APIs.
 

@@ -4,7 +4,7 @@
 
 NoSQL databases (such as MongoDB) use query languages and data models that differ from traditional SQL. Injection vulnerabilities arise when user input is used unsafely in database queries, often through operators that can alter the intended logic of the query (e.g., `$ne`, `$gt`, `$regex`).
 
-These can allow authentication bypass, data exfiltration, and other unauthorised operations without traditional SQL syntax.
+These can allow authentication bypass, data exfiltration, and other unauthorized operations without traditional SQL syntax.
 
 ## Attack Surface
 
@@ -80,7 +80,7 @@ Continue refining the regex to extract data one character at a time.
 ## Impact
 
 - Authentication bypass and account takeover
-- Unauthorised data access or modification
+- Unauthorized data access or modification
 - Full database exfiltration in some cases
 - Potential for further compromise depending on application logic
 
