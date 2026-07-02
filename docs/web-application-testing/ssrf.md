@@ -8,7 +8,7 @@ Server-Side Request Forgery (SSRF) vulnerabilities allow an attacker to make the
 
 - [Basic SSRF to Internal Services](ssrf/basic-internal.md)
 - [SSRF for Port Scanning and Metadata](ssrf/port-scanning.md)
-- [Blind SSRF and Protocol Switching](ssrf/blind-protocol.md)
+- [Blind SSRF and Protocol Abuse](ssrf/blind-and-protocol.md)
 
 ## Impact
 
