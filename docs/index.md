@@ -7,6 +7,7 @@ Welcome to Dan's Cyber Stuff!
 - [OWASP Top 10 2025](owasp-top-10-2025.md)
 - [Reconnaissance](reconnaissance.md)
 - [Reporting & POC](reporting-and-poc.md)
+- [Tech Interview Prep](tech-interview-prep.md)
 
 ### BSCP Study Notes
 
