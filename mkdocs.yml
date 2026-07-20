@@ -5,7 +5,7 @@ nav:
     - OWASP Top 10 2025: owasp-top-10-2025.md
     - Reconnaissance: reconnaissance.md
     - Reporting & POC: reporting-and-poc.md
-    - Tech Interview Prep: tech-interveiw-prep.md
+    - Tech Interview Prep: tech-interview-prep.md
     - BSCP Study Notes:
       - Overview: bscp-study-notes/index.md
       - Authentication Vulnerabilities: bscp-study-notes/authentication-vulnerabilities.md
