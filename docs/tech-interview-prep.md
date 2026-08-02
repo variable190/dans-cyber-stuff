@@ -465,3 +465,216 @@ The browser automatically includes your session cookie, so the target site think
 **Tip**  
 Strongest modern setup:  
 `SameSite=Lax` on session cookie + CSRF token + `Origin`/`Sec-Fetch-Site` check.
+
+---
+
+### Quick Overviews – “Nice to Have” Skills
+
+**Vulnerability Management**
+This is the process of identifying, prioritising, tracking, and remediating vulnerabilities across an organisation’s systems. It usually involves scanning, risk scoring (e.g. CVSS), assigning ownership, tracking remediation progress, and reporting. In a bug bounty triage role it is useful because you already understand how vulnerabilities are prioritised and managed after they are validated.
+
+**Software QA (Quality Assurance)**
+Software QA focuses on finding defects in software through testing (manual and automated). It involves writing test cases, checking edge cases, regression testing, and ensuring software behaves as expected. This experience is valuable in triage because good QA skills help you systematically reproduce issues and spot incomplete or low-quality reports.
+
+**SAST and DAST**
+- **SAST** (Static Application Security Testing) analyses source code or bytecode without running the application. It is good at finding coding issues early but can produce false positives.
+- **DAST** (Dynamic Application Security Testing) tests the running application from the outside (like a black-box scanner). It finds issues that only appear at runtime but has less context about the code.
+
+Both are useful background knowledge because many clients use these tools, and understanding their strengths and limitations helps when triaging reports that may overlap with scanner findings.
+
+--- 
+
+## Questions
+
+**OWASP Top 10 (2025) + Core Vulnerabilities**  
+
+### A01 – Broken Access Control
+
+1. What is the difference between horizontal and vertical privilege escalation?  
+Horizontal privilege escalation is accessing another user’s data at the same privilege level. Vertical privilege escalation is accessing higher-privilege functionality or data (e.g. admin features).
+
+2. How would you test for IDOR / BOLA in an API?  
+Create two accounts, authenticate as one, and try to access the other user’s objects by changing IDs in API requests. Check whether the server enforces ownership or role checks.
+
+3. Why is SSRF now included under Broken Access Control in the 2025 list?  
+SSRF allows an attacker to make the server access internal resources it should not be able to reach, which is fundamentally an access control failure. In 2025 it was therefore moved under Broken Access Control.
+
+### A02 – Security Misconfiguration
+
+1. Give three common examples of security misconfigurations.  
+Default credentials left enabled, unnecessary services or ports open, overly permissive CORS, verbose error messages, and missing security headers.
+
+2. How can default credentials or unnecessary services lead to compromise?  
+Default credentials give attackers an easy entry point. Unnecessary services increase the attack surface and may contain unpatched vulnerabilities.
+
+3. What is the risk of verbose error messages?  
+Verbose error messages can leak stack traces, database details, file paths, or internal IP addresses that help an attacker.
+
+### A03 – Software Supply Chain Failures
+
+1. What does “Software Supply Chain Failures” cover beyond just outdated libraries?  
+It covers vulnerable or malicious third-party libraries, compromised build systems, CI/CD pipelines, and distribution mechanisms — not just outdated packages.
+
+2. How can a compromised CI/CD pipeline be more dangerous than a vulnerable dependency?  
+A compromised CI/CD pipeline can inject malicious code into every build and affect all downstream users, whereas a single vulnerable dependency usually has more limited impact.
+
+3. What controls help reduce supply chain risk?  
+Dependency scanning (SCA), signed packages, locked dependency versions, secure CI/CD practices, and allowlisting of approved components.
+
+### A04 – Cryptographic Failures
+
+1. What is the difference between encryption in transit and encryption at rest?  
+Encryption in transit protects data while it is moving (e.g. TLS). Encryption at rest protects data while it is stored (e.g. database or disk encryption).
+
+2. Why is storing passwords with a weak hashing algorithm a cryptographic failure?  
+Weak hashing (e.g. MD5 or unsalted SHA-1) allows attackers to crack passwords efficiently using rainbow tables or brute force.
+
+3. Give an example of a common cryptographic mistake in web applications.  
+Using outdated algorithms (MD5, SHA-1), hard-coded keys, or transmitting sensitive data over HTTP instead of HTTPS.
+
+### A05 – Injection
+
+1. Why are parameterised queries the strongest defence against SQL injection?  
+Parameterised queries separate the SQL code from the data. The database treats user input strictly as data and never as executable code.
+
+2. What is the difference between error-based, boolean-based, and time-based SQL injection?  
+Error-based returns database errors that leak information. Boolean-based observes true/false differences in responses. Time-based measures delays caused by SLEEP() or similar functions.
+
+3. How can command injection occur even if the application is not directly executing shell commands?  
+If user input is passed into a function that eventually executes a system command (e.g. via a library or OS call), command injection can still occur.
+
+### A06 – Insecure Design
+
+1. What is the main difference between Insecure Design and Implementation flaws?  
+Insecure Design means the application was designed without proper security controls. Implementation flaws mean the design was correct but the code was written incorrectly.
+
+2. Give an example of a business logic flaw that would fall under Insecure Design.  
+Allowing users to apply the same discount code unlimited times, or letting a user complete a multi-step process while skipping important validation steps.
+
+3. How does threat modelling help prevent insecure design issues?  
+Threat modelling identifies potential threats and required controls early in the design phase so they can be built in rather than bolted on later.
+
+### A07 – Authentication Failures
+
+1. What is credential stuffing and how is it different from brute force?  
+Credential stuffing uses previously breached username/password pairs. Brute force systematically guesses passwords, often against a single account.
+
+2. Why is a weak password reset flow a serious authentication failure?  
+A weak password reset flow can allow an attacker to take over accounts by guessing or manipulating reset tokens, or by resetting another user’s password.
+
+3. What risks do poorly implemented JWT authentication introduce?  
+Weaknesses include accepting the “none” algorithm, algorithm confusion attacks, weak secrets, and failing to validate important claims (exp, iss, etc.).
+
+### A08 – Software or Data Integrity Failures
+
+1. What is insecure deserialisation and why is it dangerous?  
+Insecure deserialisation occurs when untrusted data is converted back into objects. Attackers can craft malicious objects that execute code during deserialisation.
+
+2. How can an attacker abuse an unsigned software update mechanism?  
+If updates are not signed or the signature is not properly verified, an attacker can distribute a malicious update that users will trust and install.
+
+3. Why is integrity protection important in CI/CD pipelines?  
+Without integrity controls, an attacker who compromises the pipeline can inject malicious code that is then trusted and deployed.
+
+### A09 – Security Logging & Alerting Failures
+
+1. Why is lack of logging considered a security risk?  
+Without proper logs it is very difficult to detect, investigate, or respond to attacks. Attackers can operate for long periods without being noticed.
+
+2. What should be logged for security-relevant events?  
+Successful and failed logins, access to sensitive data, privilege changes, input validation failures, and administrative actions.
+
+3. How can poor alerting allow attacks to go unnoticed for long periods?  
+If alerts are missing or ignored, active attacks (e.g. brute force or data exfiltration) can continue for days or weeks without response.
+
+### A10 – Mishandling of Exceptional Conditions
+
+1. What kinds of issues fall under “Mishandling of Exceptional Conditions”?  
+Improper error handling, unhandled edge cases, resource exhaustion, and failures that reveal sensitive information or leave the application in an insecure state.
+
+2. How can improper error handling lead to information disclosure?  
+Detailed error messages can disclose stack traces, database structure, file paths, or internal logic that helps an attacker.
+
+3. Give an example of how failing to handle edge cases can create a vulnerability.  
+Failing to handle very large inputs, negative values, or unexpected characters can lead to crashes, logic bypasses, or injection vulnerabilities.
+
+---
+
+### Core Vulnerabilities
+
+**IDOR / Broken Object Level Authorisation**
+
+1. How would you test for IDOR in a multi-user application?  
+Create two accounts. Authenticate as User A and attempt to access User B’s resources by changing object IDs in requests. Observe whether access is granted.
+
+2. Why are sequential IDs particularly risky?  
+Sequential IDs are easy to enumerate, so an attacker can simply increment or decrement the ID to access other users’ data.
+
+3. Can using UUIDs alone prevent IDOR? Why or why not?  
+No. UUIDs only make enumeration harder. Without a proper authorisation check, an attacker who obtains a valid UUID can still access the object.
+
+**SQL Injection**
+
+1. Explain how a parameterised query prevents SQL injection.  
+The query structure is sent separately from the data. User input is bound as parameters and never interpreted as SQL code.
+
+2. What is second-order SQL injection?  
+Second-order SQL injection occurs when malicious input is stored in the database and later used in a different query without proper handling.
+
+3. When would you use time-based blind SQL injection?  
+When the application does not return useful errors or data differences, but you can still detect a delay caused by a time-based payload.
+
+**XSS (Cross-Site Scripting)**
+
+1. What is the difference between Reflected, Stored, and DOM-based XSS?  
+Reflected XSS is returned immediately in the response. Stored XSS is saved and later shown to other users. DOM-based XSS occurs entirely in client-side JavaScript.
+
+2. How does Content Security Policy (CSP) help prevent XSS?  
+CSP restricts which scripts are allowed to run. By blocking inline scripts and untrusted sources, most XSS payloads are prevented from executing.
+
+3. Why does setting the HttpOnly flag on cookies not fully stop XSS impact?  
+HttpOnly stops JavaScript from reading the cookie, but the attacker can still perform actions as the user (e.g. make requests, change data, or display phishing content).
+
+**CSRF**
+
+1. How does the SameSite cookie attribute help prevent CSRF?  
+SameSite=Lax or Strict prevents the browser from sending the cookie on cross-site requests, so the attacker’s forged request has no session.
+
+2. What is the difference between the Origin and Referer headers?  
+Origin only contains the scheme and domain. Referer contains the full URL of the previous page. Origin is more reliable and privacy-friendly.
+
+3. Why can’t an attacker simply remove security headers in a CSRF attack?  
+The browser automatically adds Origin and Sec-Fetch headers. An attacker cannot remove or spoof them from a normal cross-site request.
+
+**SSRF**
+
+1. What makes cloud metadata endpoints such a high-value target in SSRF attacks?  
+Cloud metadata endpoints often contain temporary credentials or sensitive configuration that can give the attacker access to the cloud environment.
+
+2. What is the difference between basic and blind SSRF?  
+Basic SSRF returns the response to the attacker. Blind SSRF does not return the response directly; the attacker must use side channels (DNS, timing, etc.).
+
+3. How would you prevent SSRF in an application that needs to fetch external URLs?  
+Use a strict allowlist of permitted domains or IPs, block internal ranges, and avoid letting user input control the full URL.
+
+**File Upload**
+
+1. Why is checking only the file extension insufficient protection?  
+Attackers can bypass extension checks with double extensions, null bytes, or by changing the Content-Type header. The actual content must also be validated.
+
+2. What is a polyglot file and why is it useful to attackers?  
+A polyglot file is valid as more than one file type (e.g. both an image and a script). It can bypass filters that only check one aspect of the file.
+
+3. What is the safest way to store user-uploaded files?  
+Store uploaded files outside the web root, give them random names, serve them from a separate domain, and never execute user-uploaded content.
+
+**JWT Attacks**
+
+1. What is the “none” algorithm attack?  
+The attacker changes the algorithm to “none” and removes the signature. If the server accepts it, the token is trusted without verification.
+
+2. Explain the algorithm confusion attack (RS256 to HS256).  
+The attacker changes the algorithm from RS256 (asymmetric) to HS256 (symmetric) and signs the token using the public key as the HMAC secret. If the server does not restrict algorithms, it accepts the token.
+
+3. Why should the algorithm not be taken from the JWT header?  
+The algorithm header is controlled by the user. The server must ignore it and enforce a fixed, expected algorithm instead.
