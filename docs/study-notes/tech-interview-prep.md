@@ -394,11 +394,6 @@ Financial loss, data integrity issues, unauthorised actions, privilege escalatio
 
 ---
 
-This level of depth matches the CSRF section.  
-Would you like me to continue with any remaining topics (e.g. Command Injection, Mass Assignment, GraphQL) in the same style, or start turning these into a full revision document?
-
----
-
 ### CSRF Revision Cheat Sheet
 
 **What is it?** 
