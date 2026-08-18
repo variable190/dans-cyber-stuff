@@ -9,26 +9,26 @@
       
       
       
+        <link rel="prev" href="../gobuster/">
       
-        <link rel="next" href="study-notes/owasp-top-10-2025/">
       
       
         
       
       
-      <link rel="icon" href="assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
-        <title>Dan's Cyber Stuff</title>
+        <title>nmap - Dan's Cyber Stuff</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -47,7 +47,7 @@
       
     
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#dans-cyber-stuff" class="md-skip">
+        <a href="#nmap" class="md-skip">
           Skip to content
         </a>
       
@@ -88,7 +88,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="Dan&#39;s Cyber Stuff" class="md-header__button md-logo" aria-label="Dan's Cyber Stuff" data-md-component="logo">
+    <a href="../../.." title="Dan&#39;s Cyber Stuff" class="md-header__button md-logo" aria-label="Dan's Cyber Stuff" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -108,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Home
+              nmap
             
           </span>
         </div>
@@ -212,7 +212,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="Dan&#39;s Cyber Stuff" class="md-nav__button md-logo" aria-label="Dan's Cyber Stuff" data-md-component="logo">
+    <a href="../../.." title="Dan&#39;s Cyber Stuff" class="md-nav__button md-logo" aria-label="Dan's Cyber Stuff" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -227,37 +227,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Home
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="." class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
         
   
   
@@ -273,109 +246,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#study-notes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Study Notes
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Study Notes">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#bug-bounty-hunting" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Bug Bounty Hunting
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#bscp-study-notes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        BSCP Study Notes
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cwee-study-notes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        CWEE Study Notes
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cwes-study-notes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        CWES Study Notes
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#android-application-pentesting" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Android Application Pentesting
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#tools-and-protocols" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Tools and Protocols
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -384,18 +254,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
@@ -416,7 +288,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -481,7 +353,7 @@
   
   
     <li class="md-nav__item">
-      <a href="study-notes/owasp-top-10-2025/" class="md-nav__link">
+      <a href="../../owasp-top-10-2025/" class="md-nav__link">
         
   
   
@@ -509,7 +381,7 @@
   
   
     <li class="md-nav__item">
-      <a href="study-notes/reconnaissance/" class="md-nav__link">
+      <a href="../../reconnaissance/" class="md-nav__link">
         
   
   
@@ -537,7 +409,7 @@
   
   
     <li class="md-nav__item">
-      <a href="study-notes/reporting-and-poc/" class="md-nav__link">
+      <a href="../../reporting-and-poc/" class="md-nav__link">
         
   
   
@@ -565,7 +437,7 @@
   
   
     <li class="md-nav__item">
-      <a href="study-notes/tech-interview-prep/" class="md-nav__link">
+      <a href="../../tech-interview-prep/" class="md-nav__link">
         
   
   
@@ -648,7 +520,7 @@
   
   
     <li class="md-nav__item">
-      <a href="study-notes/bscp-study-notes/" class="md-nav__link">
+      <a href="../../bscp-study-notes/" class="md-nav__link">
         
   
   
@@ -676,7 +548,7 @@
   
   
     <li class="md-nav__item">
-      <a href="study-notes/bscp-study-notes/authentication-vulnerabilities/" class="md-nav__link">
+      <a href="../../bscp-study-notes/authentication-vulnerabilities/" class="md-nav__link">
         
   
   
@@ -704,7 +576,7 @@
   
   
     <li class="md-nav__item">
-      <a href="study-notes/bscp-study-notes/business-logic-vulnerabilities/" class="md-nav__link">
+      <a href="../../bscp-study-notes/business-logic-vulnerabilities/" class="md-nav__link">
         
   
   
@@ -732,7 +604,7 @@
   
   
     <li class="md-nav__item">
-      <a href="study-notes/bscp-study-notes/command-injection/" class="md-nav__link">
+      <a href="../../bscp-study-notes/command-injection/" class="md-nav__link">
         
   
   
@@ -760,7 +632,7 @@
   
   
     <li class="md-nav__item">
-      <a href="study-notes/bscp-study-notes/cross-site-scripting/" class="md-nav__link">
+      <a href="../../bscp-study-notes/cross-site-scripting/" class="md-nav__link">
         
   
   
@@ -788,7 +660,7 @@
   
   
     <li class="md-nav__item">
-      <a href="study-notes/bscp-study-notes/path-traversal/" class="md-nav__link">
+      <a href="../../bscp-study-notes/path-traversal/" class="md-nav__link">
         
   
   
@@ -816,7 +688,7 @@
   
   
     <li class="md-nav__item">
-      <a href="study-notes/bscp-study-notes/sql-injection/" class="md-nav__link">
+      <a href="../../bscp-study-notes/sql-injection/" class="md-nav__link">
         
   
   
@@ -899,7 +771,7 @@
   
   
     <li class="md-nav__item">
-      <a href="study-notes/cwee-study-notes/" class="md-nav__link">
+      <a href="../../cwee-study-notes/" class="md-nav__link">
         
   
   
@@ -927,7 +799,7 @@
   
   
     <li class="md-nav__item">
-      <a href="study-notes/cwee-study-notes/attacking-authentication-mechanisms/" class="md-nav__link">
+      <a href="../../cwee-study-notes/attacking-authentication-mechanisms/" class="md-nav__link">
         
   
   
@@ -955,7 +827,7 @@
   
   
     <li class="md-nav__item">
-      <a href="study-notes/cwee-study-notes/injection-attacks/" class="md-nav__link">
+      <a href="../../cwee-study-notes/injection-attacks/" class="md-nav__link">
         
   
   
@@ -983,7 +855,7 @@
   
   
     <li class="md-nav__item">
-      <a href="study-notes/cwee-study-notes/introduction-to-nosql-injection/" class="md-nav__link">
+      <a href="../../cwee-study-notes/introduction-to-nosql-injection/" class="md-nav__link">
         
   
   
@@ -1011,7 +883,7 @@
   
   
     <li class="md-nav__item">
-      <a href="study-notes/cwee-study-notes/intro-to-whitebox-pentesting/" class="md-nav__link">
+      <a href="../../cwee-study-notes/intro-to-whitebox-pentesting/" class="md-nav__link">
         
   
   
@@ -1094,7 +966,7 @@
   
   
     <li class="md-nav__item">
-      <a href="study-notes/cwes-study-notes/api-attacks/" class="md-nav__link">
+      <a href="../../cwes-study-notes/api-attacks/" class="md-nav__link">
         
   
   
@@ -1122,7 +994,7 @@
   
   
     <li class="md-nav__item">
-      <a href="study-notes/cwes-study-notes/attacking-common-applications/" class="md-nav__link">
+      <a href="../../cwes-study-notes/attacking-common-applications/" class="md-nav__link">
         
   
   
@@ -1150,7 +1022,7 @@
   
   
     <li class="md-nav__item">
-      <a href="study-notes/cwes-study-notes/attacking-graphql/" class="md-nav__link">
+      <a href="../../cwes-study-notes/attacking-graphql/" class="md-nav__link">
         
   
   
@@ -1178,7 +1050,7 @@
   
   
     <li class="md-nav__item">
-      <a href="study-notes/cwes-study-notes/attacking-web-applications-with-ffuf/" class="md-nav__link">
+      <a href="../../cwes-study-notes/attacking-web-applications-with-ffuf/" class="md-nav__link">
         
   
   
@@ -1206,7 +1078,7 @@
   
   
     <li class="md-nav__item">
-      <a href="study-notes/cwes-study-notes/broken-authentication/" class="md-nav__link">
+      <a href="../../cwes-study-notes/broken-authentication/" class="md-nav__link">
         
   
   
@@ -1234,7 +1106,7 @@
   
   
     <li class="md-nav__item">
-      <a href="study-notes/cwes-study-notes/command-injections/" class="md-nav__link">
+      <a href="../../cwes-study-notes/command-injections/" class="md-nav__link">
         
   
   
@@ -1262,7 +1134,7 @@
   
   
     <li class="md-nav__item">
-      <a href="study-notes/cwes-study-notes/cross-site-scripting-%28xss%29/" class="md-nav__link">
+      <a href="../../cwes-study-notes/cross-site-scripting-%28xss%29/" class="md-nav__link">
         
   
   
@@ -1290,7 +1162,7 @@
   
   
     <li class="md-nav__item">
-      <a href="study-notes/cwes-study-notes/file-inclusion/" class="md-nav__link">
+      <a href="../../cwes-study-notes/file-inclusion/" class="md-nav__link">
         
   
   
@@ -1318,7 +1190,7 @@
   
   
     <li class="md-nav__item">
-      <a href="study-notes/cwes-study-notes/file-upload-attacks/" class="md-nav__link">
+      <a href="../../cwes-study-notes/file-upload-attacks/" class="md-nav__link">
         
   
   
@@ -1346,7 +1218,7 @@
   
   
     <li class="md-nav__item">
-      <a href="study-notes/cwes-study-notes/hacking-wordpress/" class="md-nav__link">
+      <a href="../../cwes-study-notes/hacking-wordpress/" class="md-nav__link">
         
   
   
@@ -1374,7 +1246,7 @@
   
   
     <li class="md-nav__item">
-      <a href="study-notes/cwes-study-notes/javascript-deobfuscation/" class="md-nav__link">
+      <a href="../../cwes-study-notes/javascript-deobfuscation/" class="md-nav__link">
         
   
   
@@ -1402,7 +1274,7 @@
   
   
     <li class="md-nav__item">
-      <a href="study-notes/cwes-study-notes/login-brute-forcing/" class="md-nav__link">
+      <a href="../../cwes-study-notes/login-brute-forcing/" class="md-nav__link">
         
   
   
@@ -1430,7 +1302,7 @@
   
   
     <li class="md-nav__item">
-      <a href="study-notes/cwes-study-notes/server-side-attacks/" class="md-nav__link">
+      <a href="../../cwes-study-notes/server-side-attacks/" class="md-nav__link">
         
   
   
@@ -1458,7 +1330,7 @@
   
   
     <li class="md-nav__item">
-      <a href="study-notes/cwes-study-notes/session-security/" class="md-nav__link">
+      <a href="../../cwes-study-notes/session-security/" class="md-nav__link">
         
   
   
@@ -1486,7 +1358,7 @@
   
   
     <li class="md-nav__item">
-      <a href="study-notes/cwes-study-notes/sql-injection-fundamentals/" class="md-nav__link">
+      <a href="../../cwes-study-notes/sql-injection-fundamentals/" class="md-nav__link">
         
   
   
@@ -1514,7 +1386,7 @@
   
   
     <li class="md-nav__item">
-      <a href="study-notes/cwes-study-notes/sqlmap-essentials/" class="md-nav__link">
+      <a href="../../cwes-study-notes/sqlmap-essentials/" class="md-nav__link">
         
   
   
@@ -1542,7 +1414,7 @@
   
   
     <li class="md-nav__item">
-      <a href="study-notes/cwes-study-notes/web-attacks/" class="md-nav__link">
+      <a href="../../cwes-study-notes/web-attacks/" class="md-nav__link">
         
   
   
@@ -1570,7 +1442,7 @@
   
   
     <li class="md-nav__item">
-      <a href="study-notes/cwes-study-notes/web-fuzzing/" class="md-nav__link">
+      <a href="../../cwes-study-notes/web-fuzzing/" class="md-nav__link">
         
   
   
@@ -1598,7 +1470,7 @@
   
   
     <li class="md-nav__item">
-      <a href="study-notes/cwes-study-notes/web-service-and-api-attacks/" class="md-nav__link">
+      <a href="../../cwes-study-notes/web-service-and-api-attacks/" class="md-nav__link">
         
   
   
@@ -1681,7 +1553,7 @@
   
   
     <li class="md-nav__item">
-      <a href="study-notes/android-application-pentesting/" class="md-nav__link">
+      <a href="../../android-application-pentesting/" class="md-nav__link">
         
   
   
@@ -1709,7 +1581,7 @@
   
   
     <li class="md-nav__item">
-      <a href="study-notes/android-application-pentesting/android-fundamentals/" class="md-nav__link">
+      <a href="../../android-application-pentesting/android-fundamentals/" class="md-nav__link">
         
   
   
@@ -1737,7 +1609,7 @@
   
   
     <li class="md-nav__item">
-      <a href="study-notes/android-application-pentesting/android-application-static-analysis/" class="md-nav__link">
+      <a href="../../android-application-pentesting/android-application-static-analysis/" class="md-nav__link">
         
   
   
@@ -1765,7 +1637,7 @@
   
   
     <li class="md-nav__item">
-      <a href="study-notes/android-application-pentesting/android-application-dynamic-analysis/" class="md-nav__link">
+      <a href="../../android-application-pentesting/android-application-dynamic-analysis/" class="md-nav__link">
         
   
   
@@ -1798,18 +1670,20 @@
                 
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" checked>
         
           
           <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
@@ -1830,7 +1704,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_6">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1848,7 +1722,7 @@
   
   
     <li class="md-nav__item">
-      <a href="study-notes/tools-and-protocols/curl/" class="md-nav__link">
+      <a href="../curl/" class="md-nav__link">
         
   
   
@@ -1876,7 +1750,7 @@
   
   
     <li class="md-nav__item">
-      <a href="study-notes/tools-and-protocols/ftp/" class="md-nav__link">
+      <a href="../ftp/" class="md-nav__link">
         
   
   
@@ -1904,7 +1778,7 @@
   
   
     <li class="md-nav__item">
-      <a href="study-notes/tools-and-protocols/gobuster/" class="md-nav__link">
+      <a href="../gobuster/" class="md-nav__link">
         
   
   
@@ -1929,10 +1803,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="study-notes/tools-and-protocols/nmap/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    nmap
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1948,6 +1849,48 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#scan-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scan Types
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commonly-used-flags" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Commonly Used Flags
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1995,85 +1938,24 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#study-notes" class="md-nav__link">
+  <a href="#scan-types" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Study Notes
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Study Notes">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#bug-bounty-hunting" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Bug Bounty Hunting
+        Scan Types
       
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#bscp-study-notes" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#commonly-used-flags" class="md-nav__link">
     <span class="md-ellipsis">
       
-        BSCP Study Notes
+        Commonly Used Flags
       
     </span>
   </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cwee-study-notes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        CWEE Study Notes
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cwes-study-notes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        CWES Study Notes
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#android-application-pentesting" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Android Application Pentesting
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#tools-and-protocols" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Tools and Protocols
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -2094,70 +1976,105 @@
 
 
 
-<h1 id="dans-cyber-stuff">Dan's Cyber Stuff</h1>
-<p>Welcome to Dan's Cyber Stuff!</p>
-<h2 id="study-notes">Study Notes</h2>
-<h3 id="bug-bounty-hunting">Bug Bounty Hunting</h3>
-<ul>
-<li><a href="study-notes/owasp-top-10-2025/">OWASP Top 10 2025</a></li>
-<li><a href="study-notes/reconnaissance/">Reconnaissance</a></li>
-<li><a href="study-notes/reporting-and-poc/">Reporting &amp; POC</a></li>
-<li><a href="study-notes/tech-interview-prep/">Tech Interview Prep</a></li>
-</ul>
-<h3 id="bscp-study-notes">BSCP Study Notes</h3>
-<ul>
-<li><a href="study-notes/bscp-study-notes/">Overview</a></li>
-<li><a href="study-notes/bscp-study-notes/authentication-vulnerabilities/">Authentication Vulnerabilities</a></li>
-<li><a href="study-notes/bscp-study-notes/business-logic-vulnerabilities/">Business Logic Vulnerabilities</a></li>
-<li><a href="study-notes/bscp-study-notes/command-injection/">Command Injection</a></li>
-<li><a href="study-notes/bscp-study-notes/cross-site-scripting/">Cross-Site Scripting</a></li>
-<li><a href="study-notes/bscp-study-notes/path-traversal/">Path Traversal</a></li>
-<li><a href="study-notes/bscp-study-notes/sql-injection/">SQL Injection</a></li>
-</ul>
-<h3 id="cwee-study-notes">CWEE Study Notes</h3>
-<ul>
-<li><a href="study-notes/cwee-study-notes/">Overview</a></li>
-<li><a href="study-notes/cwee-study-notes/attacking-authentication-mechanisms/">Attacking Authentication Mechanisms</a></li>
-<li><a href="study-notes/cwee-study-notes/injection-attacks/">Injection Attacks</a></li>
-<li><a href="study-notes/cwee-study-notes/introduction-to-nosql-injection/">Introduction to NoSQL Injection</a></li>
-<li><a href="study-notes/cwee-study-notes/intro-to-whitebox-pentesting/">Intro to Whitebox Pentesting</a></li>
-</ul>
-<h3 id="cwes-study-notes">CWES Study Notes</h3>
-<ul>
-<li><a href="study-notes/cwes-study-notes/api-attacks/">API Attacks</a></li>
-<li><a href="study-notes/cwes-study-notes/attacking-common-applications/">Attacking Common Applications</a></li>
-<li><a href="study-notes/cwes-study-notes/attacking-graphql/">Attacking GraphQL</a></li>
-<li><a href="study-notes/cwes-study-notes/attacking-web-applications-with-ffuf/">Attacking Web Applications with Ffuf</a></li>
-<li><a href="study-notes/cwes-study-notes/broken-authentication/">Broken Authentication</a></li>
-<li><a href="study-notes/cwes-study-notes/command-injections/">Command Injections</a></li>
-<li><a href="study-notes/cwes-study-notes/cross-site-scripting-%28xss%29/">Cross-Site Scripting (XSS)</a></li>
-<li><a href="study-notes/cwes-study-notes/file-inclusion/">File Inclusion</a></li>
-<li><a href="study-notes/cwes-study-notes/file-upload-attacks/">File Upload Attacks</a></li>
-<li><a href="study-notes/cwes-study-notes/hacking-wordpress/">Hacking WordPress</a></li>
-<li><a href="study-notes/cwes-study-notes/javascript-deobfuscation/">JavaScript Deobfuscation</a></li>
-<li><a href="study-notes/cwes-study-notes/login-brute-forcing/">Login Brute Forcing</a></li>
-<li><a href="study-notes/cwes-study-notes/server-side-attacks/">Server-Side Attacks</a></li>
-<li><a href="study-notes/cwes-study-notes/session-security/">Session Security</a></li>
-<li><a href="study-notes/cwes-study-notes/sql-injection-fundamentals/">SQL Injection Fundamentals</a></li>
-<li><a href="study-notes/cwes-study-notes/sqlmap-essentials/">SQLMap Essentials</a></li>
-<li><a href="study-notes/cwes-study-notes/web-attacks/">Web Attacks</a></li>
-<li><a href="study-notes/cwes-study-notes/web-fuzzing/">Web Fuzzing</a></li>
-<li><a href="study-notes/cwes-study-notes/web-service-and-api-attacks/">Web Service &amp; API Attacks</a></li>
-</ul>
-<h3 id="android-application-pentesting">Android Application Pentesting</h3>
-<ul>
-<li><a href="study-notes/android-application-pentesting/">Overview</a></li>
-<li><a href="study-notes/android-application-pentesting/android-fundamentals/">Android Fundamentals</a></li>
-<li><a href="study-notes/android-application-pentesting/android-application-static-analysis/">Android Application Static Analysis</a></li>
-<li><a href="study-notes/android-application-pentesting/android-application-dynamic-analysis/">Android Application Dynamic Analysis</a></li>
-</ul>
-<h3 id="tools-and-protocols">Tools and Protocols</h3>
-<ul>
-<li><a href="study-notes/tools-and-protocols/curl/">cURL</a></li>
-<li><a href="study-notes/tools-and-protocols/ftp/">ftp</a></li>
-<li><a href="study-notes/tools-and-protocols/gobuster/">gobuster</a></li>
-<li><a href="study-notes/tools-and-protocols/nmap/">nmap</a></li>
-</ul>
+<h1 id="nmap">nmap</h1>
+<h2 id="scan-types">Scan Types</h2>
+<p>Common Nmap scan types and flags with examples:</p>
+<table>
+<thead>
+<tr>
+<th>Scan Type</th>
+<th>Description</th>
+<th>Flag</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TCP SYN Scan</td>
+<td>Stealthy half-open scan for TCP ports. Example: <code>nmap -sS -T4 192.168.1.1</code></td>
+<td>-sS</td>
+</tr>
+<tr>
+<td>TCP Connect Scan</td>
+<td>Full TCP connection scan. Example: <code>nmap -sT -p 1-1000 192.168.1.1</code></td>
+<td>-sT</td>
+</tr>
+<tr>
+<td>UDP Scan</td>
+<td>Scan for UDP ports. Example: <code>nmap -sU -sV 192.168.1.1</code></td>
+<td>-sU</td>
+</tr>
+<tr>
+<td>Ping Scan</td>
+<td>Host discovery without port scanning. Example: <code>nmap -sn 192.168.1.0/24</code></td>
+<td>-sn (or -sP)</td>
+</tr>
+<tr>
+<td>Version Detection</td>
+<td>Identify service versions on open ports. Example: <code>nmap -sV -p 80,443 192.168.1.1</code></td>
+<td>-sV</td>
+</tr>
+<tr>
+<td>OS Detection</td>
+<td>Fingerprint operating system. Example: <code>nmap -O 192.168.1.1</code></td>
+<td>-O</td>
+</tr>
+<tr>
+<td>Script Scan</td>
+<td>Run NSE scripts for additional info. Example: <code>nmap -sC 192.168.1.1</code></td>
+<td>-sC</td>
+</tr>
+<tr>
+<td>Aggressive Scan</td>
+<td>Combines version, OS, script, and traceroute. Example: <code>nmap -A 192.168.1.1</code></td>
+<td>-A</td>
+</tr>
+<tr>
+<td>Idle/Zombie Scan</td>
+<td>Stealth scan using spoofed IP. Example: <code>nmap -sI zombie.host 192.168.1.1</code></td>
+<td>-sI</td>
+</tr>
+</tbody>
+</table>
+<h2 id="commonly-used-flags">Commonly Used Flags</h2>
+<p>Additional flags to customize Nmap scans:</p>
+<table>
+<thead>
+<tr>
+<th>Flag</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-p</code></td>
+<td>Defines a port range or specific ports to scan (e.g., <code>-p 1-1000</code> for ports 1-1000, <code>-p 80,443</code> for specific ports).</td>
+</tr>
+<tr>
+<td><code>-T&lt;0-5&gt;</code></td>
+<td>Sets timing template (0=paranoid to 5=insane) to control scan speed (e.g., <code>-T4</code> for faster scans).</td>
+</tr>
+<tr>
+<td><code>-A</code></td>
+<td>Enables aggressive scan features (version detection, OS detection, scripting, traceroute).</td>
+</tr>
+<tr>
+<td><code>-oN</code></td>
+<td>Outputs scan results to a normal file (e.g., <code>-oN scan.txt</code>).</td>
+</tr>
+<tr>
+<td><code>-v</code></td>
+<td>Increases verbosity for detailed output during the scan.</td>
+</tr>
+<tr>
+<td><code>-Pn</code></td>
+<td>Treats all hosts as online, skipping host discovery (useful for firewalls).</td>
+</tr>
+<tr>
+<td><code>-iL</code></td>
+<td>Reads targets from a file (e.g., <code>-iL targets.txt</code> for a list of IPs).</td>
+</tr>
+</tbody>
+</table>
 
 
 
@@ -2207,10 +2124,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["content.code.copy"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["content.code.copy"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>

