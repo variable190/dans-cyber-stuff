@@ -1,4 +1,4 @@
 # Whitebox Pentesting
 
-- [**Process Overview**](process.md)
+- [**Process Summary**](process.md)
 
