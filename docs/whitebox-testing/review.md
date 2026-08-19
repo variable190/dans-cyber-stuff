@@ -2,10 +2,8 @@
 
 ## Tools
 
-- [VSCode/Codium](../tools/vscode.md)
+- [VSCode/Codium](vscode.md)
 
-## Technologies
-
-### Node/Express
+## Node/Express
 
 - [Code review basics](node-express-code-review.md)
