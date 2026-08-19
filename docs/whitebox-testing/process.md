@@ -1,4 +1,4 @@
-# Whitebox Pentesting Process
+# Whitebox Pentesting Process Summary
 
 1. Code review
 2. Local testing
