@@ -4,6 +4,9 @@ nav:
   - Whitebox Pentesting:
     - Overview: whitebox-testing/whitebox-testing.md
     - Process Summary: whitebox-testing/process.md
+  - Tools:
+    - Contents: tools/index.md
+    - VSCode/Codium: tools/vscode.md
   - Study Notes:
     - Contents: study-notes/index.md
     - Bug Bounty Hunting:
