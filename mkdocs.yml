@@ -1,7 +1,11 @@
 site_name: Dan's Cyber Stuff
 nav:
   - Home: index.md
+  - Whitebox Pentesting:
+    - Overview: whitebox-testing/whitebox-testing.md
+    - Process: whitebox-testing/process.md
   - Study Notes:
+    - Contents: study-notes/index.md
     - Bug Bounty Hunting:
       - OWASP Top 10 2025: study-notes/owasp-top-10-2025.md
       - Reconnaissance: study-notes/reconnaissance.md

@@ -1,0 +1,62 @@
+# Study Notes Contents
+
+## Bug Bounty Hunting
+
+- [OWASP Top 10 2025](study-notes/owasp-top-10-2025.md)
+- [Reconnaissance](study-notes/reconnaissance.md)
+- [Reporting & POC](study-notes/reporting-and-poc.md)
+- [Tech Interview Prep](study-notes/tech-interview-prep.md)
+
+## BSCP Study Notes
+
+- [Overview](study-notes/bscp-study-notes/index.md)
+- [Authentication Vulnerabilities](study-notes/bscp-study-notes/authentication-vulnerabilities.md)
+- [Business Logic Vulnerabilities](study-notes/bscp-study-notes/business-logic-vulnerabilities.md)
+- [Command Injection](study-notes/bscp-study-notes/command-injection.md)
+- [Cross-Site Scripting](study-notes/bscp-study-notes/cross-site-scripting.md)
+- [Path Traversal](study-notes/bscp-study-notes/path-traversal.md)
+- [SQL Injection](study-notes/bscp-study-notes/sql-injection.md)
+
+## CWEE Study Notes
+
+- [Overview](study-notes/cwee-study-notes/index.md)
+- [Attacking Authentication Mechanisms](study-notes/cwee-study-notes/attacking-authentication-mechanisms.md)
+- [Injection Attacks](study-notes/cwee-study-notes/injection-attacks.md)
+- [Introduction to NoSQL Injection](study-notes/cwee-study-notes/introduction-to-nosql-injection.md)
+- [Intro to Whitebox Pentesting](study-notes/cwee-study-notes/intro-to-whitebox-pentesting.md)
+
+## CWES Study Notes
+
+- [API Attacks](study-notes/cwes-study-notes/api-attacks.md)
+- [Attacking Common Applications](study-notes/cwes-study-notes/attacking-common-applications.md)
+- [Attacking GraphQL](study-notes/cwes-study-notes/attacking-graphql.md)
+- [Attacking Web Applications with Ffuf](study-notes/cwes-study-notes/attacking-web-applications-with-ffuf.md)
+- [Broken Authentication](study-notes/cwes-study-notes/broken-authentication.md)
+- [Command Injections](study-notes/cwes-study-notes/command-injections.md)
+- [Cross-Site Scripting (XSS)](study-notes/cwes-study-notes/cross-site-scripting-(xss).md)
+- [File Inclusion](study-notes/cwes-study-notes/file-inclusion.md)
+- [File Upload Attacks](study-notes/cwes-study-notes/file-upload-attacks.md)
+- [Hacking WordPress](study-notes/cwes-study-notes/hacking-wordpress.md)
+- [JavaScript Deobfuscation](study-notes/cwes-study-notes/javascript-deobfuscation.md)
+- [Login Brute Forcing](study-notes/cwes-study-notes/login-brute-forcing.md)
+- [Server-Side Attacks](study-notes/cwes-study-notes/server-side-attacks.md)
+- [Session Security](study-notes/cwes-study-notes/session-security.md)
+- [SQL Injection Fundamentals](study-notes/cwes-study-notes/sql-injection-fundamentals.md)
+- [SQLMap Essentials](study-notes/cwes-study-notes/sqlmap-essentials.md)
+- [Web Attacks](study-notes/cwes-study-notes/web-attacks.md)
+- [Web Fuzzing](study-notes/cwes-study-notes/web-fuzzing.md)
+- [Web Service & API Attacks](study-notes/cwes-study-notes/web-service-and-api-attacks.md)
+
+## Android Application Pentesting
+
+- [Overview](study-notes/android-application-pentesting/index.md)
+- [Android Fundamentals](study-notes/android-application-pentesting/android-fundamentals.md)
+- [Android Application Static Analysis](study-notes/android-application-pentesting/android-application-static-analysis.md)
+- [Android Application Dynamic Analysis](study-notes/android-application-pentesting/android-application-dynamic-analysis.md)
+
+## Tools and Protocols
+
+- [cURL](study-notes/tools-and-protocols/curl.md)
+- [ftp](study-notes/tools-and-protocols/ftp.md)
+- [gobuster](study-notes/tools-and-protocols/gobuster.md)
+- [nmap](study-notes/tools-and-protocols/nmap.md)
