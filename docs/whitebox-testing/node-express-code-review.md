@@ -125,7 +125,8 @@ module.exports = { getUserToken };
 
 ## 4. Shortlist interesting code
 
-Look for dangerous patterns:
+### Some dangerous patterns
+
 ```js
 eval(userInput);                  // code execution
 exec(userInput);                  // command injection
@@ -135,8 +136,44 @@ fs.readFile(userInput);           // path traversal
 db.query(`SELECT * FROM users WHERE id = ${userInput}`);  // SQL injection
 ```
 
+### Search the codebase
+
+In VS Code use CTRL/CMD + SHIFT + F and search for:
+
+| Pattern | Why it matters |
+|---------|----------------|
+| `eval(` | Code execution |
+| `Function(` | Code execution |
+| `exec(`/`execSync(`/`spawn(` | Command injection |
+| `child_process` | Command execution |
+| `JSON.parse(` | Prototype pollution/unsafe deserialisation |
+| `fs.readFile`/`fs.writeFile`/`path.join` | Path traversal |
+| `` `SELECT ``/`` `INSERT ``/`` `UPDATE ``/`` `DELETE `` | SQL via template literals |
+| `.query(`/`.raw(` | Common DB query helpers |
+| `jwt.verify`/`jwt.sign` | Auth logic to review |
+| `password`/`secret`/`apiKey` | Hardcoded secrets |
+
+### For each hit
+
+1. CTRL/CMD + click into the function
+2. Check whether user input reaches it (`req.body`, `req.query`, `req.params`, `req.headers`)
+3. If yes; shortlist it for local testing
+
 ## 5. Check dependencies for vulnerabilities
 
 ```bash
 npm audit
 ```
+Review the output for:
+- Severity (critical/high first)
+- Whether a fix is available (`npm audit fix`)
+- Whether the vulnerable package is actually reachable in the app (if not reachable it may not be exploitable)
+
+Also useful:
+
+```bash
+npm outdated          # packages behind latest
+cat package.json      # show direct dependencies (usually higher priority)
+```
+
+Note any packages that handle auth, cryptography, parsing, or user input as priority
