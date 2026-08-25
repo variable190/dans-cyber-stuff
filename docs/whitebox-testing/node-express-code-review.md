@@ -123,7 +123,14 @@ module.exports = { getUserToken };
 // ===========================
 ```
 
+After tracing each endpoint review any functions that handle user input.
+If required use AI to help understand the code.
+
+We can CTRL/CMD + click on functions to see where they are used in the code.
+
 ## 4. Shortlist interesting code
+
+In a massive codebase it may not be possible to go through every function, in which case we can search for interesting code.
 
 ### Some dangerous patterns
 
