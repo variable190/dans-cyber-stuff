@@ -2,7 +2,10 @@
 
 Welcome to Dan's Cyber Stuff!
 
-## [Whitebox Pentesting](whitebox-testing/whitebox-testing.md)
+## Guides 
+
+- [Whitebox Pentesting](whitebox-testing/whitebox-testing.md)
+- [Subdomain Takeover](subdomain-takeover.md)
 
 ## [Study Notes](study-notes/index.md)
 
