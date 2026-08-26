@@ -13,7 +13,7 @@ Subdomain takeover occurs when a company leaves an orphaned DNS record that poin
 - **Abandoned Resources:** The company deletes the cloud resource but does not delete the corresponding DNS record
 - **Attacker Claim:** The attacker registers the deleted the cloud resource and serves content under the trusted domain
 
-# Impact
+## Impact
 
 - Phishing from a trusted subdomain
 - Session/cookie theft (if cookies are scoped to the parent domain)
