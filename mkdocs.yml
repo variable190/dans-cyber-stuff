@@ -4,6 +4,10 @@ nav:
   - Whitebox Pentesting:
     - Overview: whitebox-testing/whitebox-testing.md
     - Process Summary: whitebox-testing/process.md
+    - Code Review:
+      - Overview: whitebox-testing/code-review/review.md
+      - Node/Express Code Review Basics: whitebox-testing/code-review/node-express-code-review.md
+      - VScode/codium: whitebox-testing/code-review/vscode.md
   - Subdomain Takeover: subdomain-takeover.md
   - Study Notes:
     - Contents: study-notes/index.md
