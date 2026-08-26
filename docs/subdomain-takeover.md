@@ -74,7 +74,7 @@ HTML<!DOCTYPE html>
 - Regular DNS audits
 - Prefer provider domain-verification/ownership checks where available
 
-# References
+## References
 
 - [mdn - Subdomain takeover](https://developer.mozilla.org/en-US/docs/Web/Security/Attacks/Subdomain_takeover)
 - [Microsoft - Prevent dangling DNS entries and avoid subdomain takeover](https://learn.microsoft.com/en-us/azure/security/fundamentals/subdomain-takeover)
