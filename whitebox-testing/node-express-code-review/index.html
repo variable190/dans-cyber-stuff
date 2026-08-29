@@ -534,17 +534,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#5-check-dependencies-for-vulnerabilities" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        5. Check dependencies for vulnerabilities
-      
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -2397,17 +2386,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#5-check-dependencies-for-vulnerabilities" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        5. Check dependencies for vulnerabilities
-      
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -2685,19 +2663,6 @@ If required use AI to help understand the code.</p>
 <li>Check whether user input reaches it (<code>req.body</code>, <code>req.query</code>, <code>req.params</code>, <code>req.headers</code>)</li>
 <li>If yes; shortlist it for local testing</li>
 </ol>
-<h2 id="5-check-dependencies-for-vulnerabilities">5. Check dependencies for vulnerabilities</h2>
-<p><div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1">npm<span class="w"> </span>audit
-</span></code></pre></div></td></tr></table></div>
-Review the output for:
-- Severity (critical/high first)
-- Whether a fix is available (<code>npm audit fix</code>)
-- Whether the vulnerable package is actually reachable in the app (if not reachable it may not be exploitable)</p>
-<p>Also useful:</p>
-<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-6-1">npm<span class="w"> </span>outdated<span class="w">          </span><span class="c1"># packages behind latest</span>
-</span><span id="__span-6-2">cat<span class="w"> </span>package.json<span class="w">      </span><span class="c1"># show direct dependencies (usually higher priority)</span>
-</span></code></pre></div></td></tr></table></div>
-<p>Note any packages that handle auth, cryptography, parsing, or user input as priority</p>
 
 
 
