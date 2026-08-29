@@ -6,7 +6,7 @@ nav:
     - Process Summary: whitebox-testing/process.md
     - Node/Express Code Review Basics: whitebox-testing/node-express-code-review.md
     - VScode/codium: whitebox-testing/vscode.md
-    - Local Testing: whitebox-testing/local-testing.md
+    - Local Testing: whitebox-testing/node-express-local-testing.md
   - Subdomain Takeover: subdomain-takeover.md
   - Study Notes:
     - Contents: study-notes/index.md
