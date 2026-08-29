@@ -166,21 +166,4 @@ In VS Code use CTRL/CMD + SHIFT + F and search for:
 2. Check whether user input reaches it (`req.body`, `req.query`, `req.params`, `req.headers`)
 3. If yes; shortlist it for local testing
 
-## 5. Check dependencies for vulnerabilities
 
-```bash
-npm audit
-```
-Review the output for:
-- Severity (critical/high first)
-- Whether a fix is available (`npm audit fix`)
-- Whether the vulnerable package is actually reachable in the app (if not reachable it may not be exploitable)
-
-Also useful:
-
-```bash
-npm outdated          # packages behind latest
-cat package.json      # show direct dependencies (usually higher priority)
-```
-
-Note any packages that handle auth, cryptography, parsing, or user input as priority
