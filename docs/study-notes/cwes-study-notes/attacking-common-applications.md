@@ -837,4 +837,3 @@ egrep -r ^transf /usr/share/wordlists/* | sed 's/^[^:]*://' > /tmp/list.txt
 ```bash
 gobuster dir -u http://10.129.109.78/ -w /tmp/list.txt -x .aspx,.asp
 ```
-
