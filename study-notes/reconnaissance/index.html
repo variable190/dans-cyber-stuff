@@ -19,7 +19,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -27,7 +27,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -3791,7 +3791,7 @@ This retrieves the A record (hostname to IPv4 address). The output includes the 
 </tbody>
 </table>
 <p><strong>Example:</strong>
-<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-8-1">curl<span class="w"> </span>-s<span class="w"> </span><span class="s2">&quot;https://crt.sh/?q=facebook.com&amp;output=json&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>jq<span class="w"> </span>-r<span class="w"> </span><span class="s1">&#39;.[].name_value&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sed<span class="w"> </span><span class="s1">&#39;s/\*\.//g&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sort<span class="w"> </span>-u
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-8-1">curl<span class="w"> </span>-s<span class="w"> </span><span class="s2">"https://crt.sh/?q=facebook.com&amp;output=json"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>jq<span class="w"> </span>-r<span class="w"> </span><span class="s1">'.[].name_value'</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sed<span class="w"> </span><span class="s1">'s/\*\.//g'</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sort<span class="w"> </span>-u
 </span></code></pre></div></td></tr></table></div></p>
 <h3 id="fingerprinting">Fingerprinting</h3>
 <h4 id="techniques">Techniques</h4>
@@ -3867,7 +3867,7 @@ This retrieves the A record (hostname to IPv4 address). The output includes the 
 <p><div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-9-1">curl<span class="w"> </span>-I<span class="w"> </span>inlanefreight.com
 </span></code></pre></div></td></tr></table></div>
 <strong>Find CMS info:</strong>
-<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-10-1">curl<span class="w"> </span>-s<span class="w"> </span>http://app.inlanefreight.local/index.php<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s1">&#39;&lt;meta name=&quot;generator&quot;&#39;</span>
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-10-1">curl<span class="w"> </span>-s<span class="w"> </span>http://app.inlanefreight.local/index.php<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s1">'&lt;meta name="generator"'</span>
 </span></code></pre></div></td></tr></table></div></p>
 <h4 id="wafw00f">Wafw00f</h4>
 <div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
@@ -4073,8 +4073,8 @@ This retrieves the A record (hostname to IPv4 address). The output includes the 
 </table>
 <p><strong>Searching Results:</strong>
 <div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-14-1">cat<span class="w"> </span>results.json<span class="w"> </span><span class="p">|</span><span class="w"> </span>jq<span class="w"> </span><span class="s1">&#39;.emails&#39;</span>
-</span><span id="__span-14-2">cat<span class="w"> </span>results.json<span class="w"> </span><span class="p">|</span><span class="w"> </span>jq<span class="w"> </span><span class="s1">&#39;.comments&#39;</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-14-1">cat<span class="w"> </span>results.json<span class="w"> </span><span class="p">|</span><span class="w"> </span>jq<span class="w"> </span><span class="s1">'.emails'</span>
+</span><span id="__span-14-2">cat<span class="w"> </span>results.json<span class="w"> </span><span class="p">|</span><span class="w"> </span>jq<span class="w"> </span><span class="s1">'.comments'</span>
 </span></code></pre></div></td></tr></table></div></p>
 <h4 id="spider-code-example">Spider code example</h4>
 <div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
@@ -4091,18 +4091,18 @@ This retrieves the A record (hostname to IPv4 address). The output includes the 
 <span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-15-1"><span class="kn">import</span><span class="w"> </span><span class="nn">scrapy</span>
 </span><span id="__span-15-2">
 </span><span id="__span-15-3"><span class="k">class</span><span class="w"> </span><span class="nc">ExampleSpider</span><span class="p">(</span><span class="n">scrapy</span><span class="o">.</span><span class="n">Spider</span><span class="p">):</span>
-</span><span id="__span-15-4">    <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;example&quot;</span>
-</span><span id="__span-15-5">    <span class="n">start_urls</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;http://example.com/&#39;</span><span class="p">]</span>
+</span><span id="__span-15-4">    <span class="n">name</span> <span class="o">=</span> <span class="s2">"example"</span>
+</span><span id="__span-15-5">    <span class="n">start_urls</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'http://example.com/'</span><span class="p">]</span>
 </span><span id="__span-15-6">
 </span><span id="__span-15-7">    <span class="k">def</span><span class="w"> </span><span class="nf">parse</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">response</span><span class="p">):</span>
-</span><span id="__span-15-8">        <span class="k">for</span> <span class="n">link</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">css</span><span class="p">(</span><span class="s1">&#39;a::attr(href)&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">getall</span><span class="p">():</span>
+</span><span id="__span-15-8">        <span class="k">for</span> <span class="n">link</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">css</span><span class="p">(</span><span class="s1">'a::attr(href)'</span><span class="p">)</span><span class="o">.</span><span class="n">getall</span><span class="p">():</span>
 </span><span id="__span-15-9">            <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="n">link</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="n">ext</span><span class="p">)</span> <span class="k">for</span> <span class="n">ext</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">interesting_extensions</span><span class="p">):</span>
-</span><span id="__span-15-10">                <span class="k">yield</span> <span class="p">{</span><span class="s2">&quot;file&quot;</span><span class="p">:</span> <span class="n">link</span><span class="p">}</span>
-</span><span id="__span-15-11">            <span class="k">elif</span> <span class="ow">not</span> <span class="n">link</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;#&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">link</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;mailto:&quot;</span><span class="p">):</span>
+</span><span id="__span-15-10">                <span class="k">yield</span> <span class="p">{</span><span class="s2">"file"</span><span class="p">:</span> <span class="n">link</span><span class="p">}</span>
+</span><span id="__span-15-11">            <span class="k">elif</span> <span class="ow">not</span> <span class="n">link</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">"#"</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">link</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">"mailto:"</span><span class="p">):</span>
 </span><span id="__span-15-12">                <span class="k">yield</span> <span class="n">response</span><span class="o">.</span><span class="n">follow</span><span class="p">(</span><span class="n">link</span><span class="p">,</span> <span class="n">callback</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">parse</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 <p><strong>Extract links:</strong>
-<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-16-1">jq<span class="w"> </span>-r<span class="w"> </span><span class="s1">&#39;.[] | select(.file != null) | .file&#39;</span><span class="w"> </span>example_data.json<span class="w"> </span><span class="p">|</span><span class="w"> </span>sort<span class="w"> </span>-u
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-16-1">jq<span class="w"> </span>-r<span class="w"> </span><span class="s1">'.[] | select(.file != null) | .file'</span><span class="w"> </span>example_data.json<span class="w"> </span><span class="p">|</span><span class="w"> </span>sort<span class="w"> </span>-u
 </span></code></pre></div></td></tr></table></div></p>
 <h3 id="search-engine-discovery">Search Engine Discovery</h3>
 <h4 id="google-dorking">Google Dorking</h4>
@@ -4438,7 +4438,7 @@ This retrieves the A record (hostname to IPv4 address). The output includes the 
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
     
   </body>

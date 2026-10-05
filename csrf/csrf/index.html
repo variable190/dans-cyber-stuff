@@ -9,28 +9,24 @@
       
       
       
-        <link rel="prev" href="../attacking-web-applications-with-ffuf/">
-      
-      
-        <link rel="next" href="../command-injections/">
       
       
         
       
       
-      <link rel="icon" href="../../../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
-        <title>Broken Authentication - Dan's Cyber Stuff</title>
+        <title>Cross Site Request Forgery (CSRF) - Dan's Cyber Stuff</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -49,7 +45,7 @@
       
     
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -74,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#broken-authentication" class="md-skip">
+        <a href="#cross-site-request-forgery-csrf" class="md-skip">
           Skip to content
         </a>
       
@@ -90,7 +86,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="Dan&#39;s Cyber Stuff" class="md-header__button md-logo" aria-label="Dan's Cyber Stuff" data-md-component="logo">
+    <a href="../.." title="Dan&#39;s Cyber Stuff" class="md-header__button md-logo" aria-label="Dan's Cyber Stuff" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -110,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Broken Authentication
+              Cross Site Request Forgery (CSRF)
             
           </span>
         </div>
@@ -214,7 +210,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="Dan&#39;s Cyber Stuff" class="md-nav__button md-logo" aria-label="Dan's Cyber Stuff" data-md-component="logo">
+    <a href="../.." title="Dan&#39;s Cyber Stuff" class="md-nav__button md-logo" aria-label="Dan's Cyber Stuff" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -232,7 +228,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -306,7 +302,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../whitebox-testing/whitebox-testing/" class="md-nav__link">
+      <a href="../../whitebox-testing/whitebox-testing/" class="md-nav__link">
         
   
   
@@ -334,7 +330,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../whitebox-testing/process/" class="md-nav__link">
+      <a href="../../whitebox-testing/process/" class="md-nav__link">
         
   
   
@@ -362,7 +358,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../whitebox-testing/node-express-code-review/" class="md-nav__link">
+      <a href="../../whitebox-testing/node-express-code-review/" class="md-nav__link">
         
   
   
@@ -390,7 +386,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../whitebox-testing/vscode/" class="md-nav__link">
+      <a href="../../whitebox-testing/vscode/" class="md-nav__link">
         
   
   
@@ -418,7 +414,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../whitebox-testing/node-express-local-testing/" class="md-nav__link">
+      <a href="../../whitebox-testing/node-express-local-testing/" class="md-nav__link">
         
   
   
@@ -453,7 +449,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../subdomain-takeover/" class="md-nav__link">
+      <a href="../../subdomain-takeover/" class="md-nav__link">
         
   
   
@@ -477,20 +473,18 @@
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
           
           <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
@@ -511,7 +505,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             
@@ -529,7 +523,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../" class="md-nav__link">
+      <a href="../../study-notes/" class="md-nav__link">
         
   
   
@@ -604,7 +598,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../owasp-top-10-2025/" class="md-nav__link">
+      <a href="../../study-notes/owasp-top-10-2025/" class="md-nav__link">
         
   
   
@@ -632,7 +626,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../reconnaissance/" class="md-nav__link">
+      <a href="../../study-notes/reconnaissance/" class="md-nav__link">
         
   
   
@@ -660,7 +654,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../reporting-and-poc/" class="md-nav__link">
+      <a href="../../study-notes/reporting-and-poc/" class="md-nav__link">
         
   
   
@@ -688,7 +682,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tech-interview-prep/" class="md-nav__link">
+      <a href="../../study-notes/tech-interview-prep/" class="md-nav__link">
         
   
   
@@ -771,7 +765,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../bscp-study-notes/" class="md-nav__link">
+      <a href="../../study-notes/bscp-study-notes/" class="md-nav__link">
         
   
   
@@ -799,7 +793,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../bscp-study-notes/authentication-vulnerabilities/" class="md-nav__link">
+      <a href="../../study-notes/bscp-study-notes/authentication-vulnerabilities/" class="md-nav__link">
         
   
   
@@ -827,7 +821,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../bscp-study-notes/business-logic-vulnerabilities/" class="md-nav__link">
+      <a href="../../study-notes/bscp-study-notes/business-logic-vulnerabilities/" class="md-nav__link">
         
   
   
@@ -855,7 +849,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../bscp-study-notes/command-injection/" class="md-nav__link">
+      <a href="../../study-notes/bscp-study-notes/command-injection/" class="md-nav__link">
         
   
   
@@ -883,7 +877,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../bscp-study-notes/cross-site-scripting/" class="md-nav__link">
+      <a href="../../study-notes/bscp-study-notes/cross-site-scripting/" class="md-nav__link">
         
   
   
@@ -911,7 +905,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../bscp-study-notes/path-traversal/" class="md-nav__link">
+      <a href="../../study-notes/bscp-study-notes/path-traversal/" class="md-nav__link">
         
   
   
@@ -939,7 +933,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../bscp-study-notes/sql-injection/" class="md-nav__link">
+      <a href="../../study-notes/bscp-study-notes/sql-injection/" class="md-nav__link">
         
   
   
@@ -1022,7 +1016,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cwee-study-notes/" class="md-nav__link">
+      <a href="../../study-notes/cwee-study-notes/" class="md-nav__link">
         
   
   
@@ -1050,7 +1044,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cwee-study-notes/attacking-authentication-mechanisms/" class="md-nav__link">
+      <a href="../../study-notes/cwee-study-notes/attacking-authentication-mechanisms/" class="md-nav__link">
         
   
   
@@ -1078,7 +1072,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cwee-study-notes/injection-attacks/" class="md-nav__link">
+      <a href="../../study-notes/cwee-study-notes/injection-attacks/" class="md-nav__link">
         
   
   
@@ -1106,7 +1100,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cwee-study-notes/introduction-to-nosql-injection/" class="md-nav__link">
+      <a href="../../study-notes/cwee-study-notes/introduction-to-nosql-injection/" class="md-nav__link">
         
   
   
@@ -1134,7 +1128,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cwee-study-notes/intro-to-whitebox-pentesting/" class="md-nav__link">
+      <a href="../../study-notes/cwee-study-notes/intro-to-whitebox-pentesting/" class="md-nav__link">
         
   
   
@@ -1167,20 +1161,18 @@
                 
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
         
           
           <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
@@ -1201,7 +1193,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_5">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1219,7 +1211,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../api-attacks/" class="md-nav__link">
+      <a href="../../study-notes/cwes-study-notes/api-attacks/" class="md-nav__link">
         
   
   
@@ -1247,7 +1239,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../attacking-common-applications/" class="md-nav__link">
+      <a href="../../study-notes/cwes-study-notes/attacking-common-applications/" class="md-nav__link">
         
   
   
@@ -1275,7 +1267,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../attacking-graphql/" class="md-nav__link">
+      <a href="../../study-notes/cwes-study-notes/attacking-graphql/" class="md-nav__link">
         
   
   
@@ -1303,7 +1295,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../attacking-web-applications-with-ffuf/" class="md-nav__link">
+      <a href="../../study-notes/cwes-study-notes/attacking-web-applications-with-ffuf/" class="md-nav__link">
         
   
   
@@ -1328,37 +1320,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Broken Authentication
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../study-notes/cwes-study-notes/broken-authentication/" class="md-nav__link">
         
   
   
@@ -1374,92 +1339,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#categories-of-authentication" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Categories of Authentication
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#brute-force-attacks" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Brute-Force Attacks
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#bypassing-brute-force-protection" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Bypassing Brute-Force Protection
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#password-attacks" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Password Attacks
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#authentication-bypasses" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Authentication Bypasses
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#session-attacks" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Session Attacks
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1472,7 +1351,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../command-injections/" class="md-nav__link">
+      <a href="../../study-notes/cwes-study-notes/command-injections/" class="md-nav__link">
         
   
   
@@ -1500,7 +1379,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cross-site-scripting-%28xss%29/" class="md-nav__link">
+      <a href="../../study-notes/cwes-study-notes/cross-site-scripting-%28xss%29/" class="md-nav__link">
         
   
   
@@ -1528,7 +1407,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../file-inclusion/" class="md-nav__link">
+      <a href="../../study-notes/cwes-study-notes/file-inclusion/" class="md-nav__link">
         
   
   
@@ -1556,7 +1435,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../file-upload-attacks/" class="md-nav__link">
+      <a href="../../study-notes/cwes-study-notes/file-upload-attacks/" class="md-nav__link">
         
   
   
@@ -1584,7 +1463,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../hacking-wordpress/" class="md-nav__link">
+      <a href="../../study-notes/cwes-study-notes/hacking-wordpress/" class="md-nav__link">
         
   
   
@@ -1612,7 +1491,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../javascript-deobfuscation/" class="md-nav__link">
+      <a href="../../study-notes/cwes-study-notes/javascript-deobfuscation/" class="md-nav__link">
         
   
   
@@ -1640,7 +1519,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../login-brute-forcing/" class="md-nav__link">
+      <a href="../../study-notes/cwes-study-notes/login-brute-forcing/" class="md-nav__link">
         
   
   
@@ -1668,7 +1547,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../server-side-attacks/" class="md-nav__link">
+      <a href="../../study-notes/cwes-study-notes/server-side-attacks/" class="md-nav__link">
         
   
   
@@ -1696,7 +1575,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../session-security/" class="md-nav__link">
+      <a href="../../study-notes/cwes-study-notes/session-security/" class="md-nav__link">
         
   
   
@@ -1724,7 +1603,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../sql-injection-fundamentals/" class="md-nav__link">
+      <a href="../../study-notes/cwes-study-notes/sql-injection-fundamentals/" class="md-nav__link">
         
   
   
@@ -1752,7 +1631,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../sqlmap-essentials/" class="md-nav__link">
+      <a href="../../study-notes/cwes-study-notes/sqlmap-essentials/" class="md-nav__link">
         
   
   
@@ -1780,7 +1659,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../web-attacks/" class="md-nav__link">
+      <a href="../../study-notes/cwes-study-notes/web-attacks/" class="md-nav__link">
         
   
   
@@ -1808,7 +1687,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../web-fuzzing/" class="md-nav__link">
+      <a href="../../study-notes/cwes-study-notes/web-fuzzing/" class="md-nav__link">
         
   
   
@@ -1836,7 +1715,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../web-service-and-api-attacks/" class="md-nav__link">
+      <a href="../../study-notes/cwes-study-notes/web-service-and-api-attacks/" class="md-nav__link">
         
   
   
@@ -1919,7 +1798,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../android-application-pentesting/" class="md-nav__link">
+      <a href="../../study-notes/android-application-pentesting/" class="md-nav__link">
         
   
   
@@ -1947,7 +1826,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../android-application-pentesting/android-fundamentals/" class="md-nav__link">
+      <a href="../../study-notes/android-application-pentesting/android-fundamentals/" class="md-nav__link">
         
   
   
@@ -1975,7 +1854,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../android-application-pentesting/android-application-static-analysis/" class="md-nav__link">
+      <a href="../../study-notes/android-application-pentesting/android-application-static-analysis/" class="md-nav__link">
         
   
   
@@ -2003,7 +1882,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../android-application-pentesting/android-application-dynamic-analysis/" class="md-nav__link">
+      <a href="../../study-notes/android-application-pentesting/android-application-dynamic-analysis/" class="md-nav__link">
         
   
   
@@ -2086,7 +1965,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tools-and-protocols/curl/" class="md-nav__link">
+      <a href="../../study-notes/tools-and-protocols/curl/" class="md-nav__link">
         
   
   
@@ -2114,7 +1993,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tools-and-protocols/ftp/" class="md-nav__link">
+      <a href="../../study-notes/tools-and-protocols/ftp/" class="md-nav__link">
         
   
   
@@ -2142,7 +2021,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tools-and-protocols/gobuster/" class="md-nav__link">
+      <a href="../../study-notes/tools-and-protocols/gobuster/" class="md-nav__link">
         
   
   
@@ -2170,7 +2049,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tools-and-protocols/nmap/" class="md-nav__link">
+      <a href="../../study-notes/tools-and-protocols/nmap/" class="md-nav__link">
         
   
   
@@ -2233,10 +2112,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#categories-of-authentication" class="md-nav__link">
+  <a href="#what-is-csrf" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Categories of Authentication
+        What is CSRF?
       
     </span>
   </a>
@@ -2244,10 +2123,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#brute-force-attacks" class="md-nav__link">
+  <a href="#impact" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Brute-Force Attacks
+        Impact
       
     </span>
   </a>
@@ -2255,10 +2134,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#bypassing-brute-force-protection" class="md-nav__link">
+  <a href="#how-does-csrf-work" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Bypassing Brute-Force Protection
+        How does CSRF work?
       
     </span>
   </a>
@@ -2266,10 +2145,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#password-attacks" class="md-nav__link">
+  <a href="#prevention-and-remediation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Password Attacks
+        Prevention and Remediation
       
     </span>
   </a>
@@ -2277,24 +2156,30 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#authentication-bypasses" class="md-nav__link">
+  <a href="#demo" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Authentication Bypasses
+        Demo
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Demo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bypasses" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bypasses
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#session-attacks" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Session Attacks
-      
-    </span>
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2315,92 +2200,36 @@
 
 
 
-<h1 id="broken-authentication">Broken Authentication</h1>
-<h2 id="categories-of-authentication">Categories of Authentication</h2>
-<ul>
-<li>Knowledge: passwords, PINs, Answer to Security Question</li>
-<li>Ownership: ID cards, TOTP, Authenticator App, Security Token</li>
-<li>Inherence: Biometric authentication</li>
-</ul>
-<h2 id="brute-force-attacks">Brute-Force Attacks</h2>
-<ul>
-<li>User Enumeration 
-<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1">ffuf<span class="w"> </span>-w<span class="w"> </span>/usr/share/seclists/Usernames/xato-net-10-million-usernames.txt<span class="w"> </span>-u<span class="w"> </span>http://172.17.0.2/index.php<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>-H<span class="w"> </span><span class="s2">"Content-Type: application/x-www-form-urlencoded"</span><span class="w"> </span>-d<span class="w"> </span><span class="s2">"username=FUZZ&amp;password=invalid"</span><span class="w"> </span>-fr<span class="w"> </span><span class="s2">"Unknown user"</span>
-</span></code></pre></div></td></tr></table></div></li>
-<li>Brute-Forcing Passwords
-<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1">grep<span class="w"> </span><span class="s1">'[[:upper:]]'</span><span class="w"> </span>/usr/share/seclists/Passwords/Leaked-Databases/rockyou.txt<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s1">'[[:lower:]]'</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s1">'[[:digit:]]'</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-E<span class="w"> </span><span class="s1">'.{10}'</span><span class="w"> </span>&gt;<span class="w"> </span>custom_wordlist.txt
-</span><span id="__span-1-2">ffuf<span class="w"> </span>-w<span class="w"> </span>./custom_wordlist.txt<span class="w"> </span>-u<span class="w"> </span>http://172.17.0.2/index.php<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>-H<span class="w"> </span><span class="s2">"Content-Type: application/x-www-form-urlencoded"</span><span class="w"> </span>-d<span class="w"> </span><span class="s2">"username=admin&amp;password=FUZZ"</span><span class="w"> </span>-fr<span class="w"> </span><span class="s2">"Invalid username or password"</span>
-</span></code></pre></div></td></tr></table></div></li>
-<li>Brute-Forcing Password Reset Tokens (example based on weak 4 digit reset token sent via email)
-<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1">seq<span class="w"> </span>-w<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">9999</span><span class="w"> </span>&gt;<span class="w"> </span>tokens.txt<span class="w"> </span><span class="c1"># -w pads numbers with prepending zeros</span>
-</span><span id="__span-2-2">ffuf<span class="w"> </span>-w<span class="w"> </span>./tokens.txt<span class="w"> </span>-u<span class="w"> </span>http://weak_reset.htb/reset_password.php?token<span class="o">=</span>FUZZ<span class="w"> </span>-fr<span class="w"> </span><span class="s2">"The provided token is invalid"</span>
-</span></code></pre></div></td></tr></table></div></li>
-<li>Brute-Forcing 2FA Codes (example based on weak 4 digit TOTP token)
-<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1">seq<span class="w"> </span>-w<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">9999</span><span class="w"> </span>&gt;<span class="w"> </span>tokens.txt
-</span><span id="__span-3-2">ffuf<span class="w"> </span>-w<span class="w"> </span>./tokens.txt<span class="w"> </span>-u<span class="w"> </span>http://bf_2fa.htb/2fa.php<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>-H<span class="w"> </span><span class="s2">"Content-Type: application/x-www-form-urlencoded"</span><span class="w"> </span>-b<span class="w"> </span><span class="s2">"PHPSESSID=fpfcm5b8dh1ibfa7idg0he7l93"</span><span class="w"> </span>-d<span class="w"> </span><span class="s2">"otp=FUZZ"</span><span class="w"> </span>-fr<span class="w"> </span><span class="s2">"Invalid 2FA Code"</span>
-</span></code></pre></div></td></tr></table></div></li>
-</ul>
-<h2 id="bypassing-brute-force-protection">Bypassing Brute-Force Protection</h2>
-<ul>
-<li><strong>Rate Limit</strong>: X-Forwarded-For HTTP Header can be randomised</li>
-<li><strong>CAPTCHAs</strong>: Look for CAPTCHA solution in HTML code</li>
-</ul>
-<h2 id="password-attacks">Password Attacks</h2>
-<ul>
-<li><strong>Default Credentials</strong></li>
-<li><a href="https://cirt.net/passwords/">CIRT.net</a></li>
-<li>SecLists Default Credentials (SecLists\Passwords\Default-Credentials)</li>
-<li><a href="https://github.com/scadastrangelove/SCADAPASS/tree/master">SCADA</a></li>
-<li><strong>Vulnerable Password Reset</strong></li>
-<li>Guessable Security Questions (for example brute force <a href="https://github.com/datasets/world-cities/blob/main/data/world-cities.csv">world cities</a>)
-  <div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1">cat<span class="w"> </span>world-cities.csv<span class="w"> </span><span class="p">|</span><span class="w"> </span>cut<span class="w"> </span>-d<span class="w"> </span><span class="s1">','</span><span class="w"> </span>-f1<span class="w"> </span>&gt;<span class="w"> </span>city_wordlist.txt<span class="w"> </span><span class="c1"># all world cities</span>
-</span><span id="__span-4-2">cat<span class="w"> </span>world-cities.csv<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>Germany<span class="w"> </span><span class="p">|</span><span class="w"> </span>cut<span class="w"> </span>-d<span class="w"> </span><span class="s1">','</span><span class="w"> </span>-f1<span class="w"> </span>&gt;<span class="w"> </span>german_cities.txt<span class="w"> </span><span class="c1"># just german cities</span>
-</span><span id="__span-4-3">ffuf<span class="w"> </span>-w<span class="w"> </span>./city_wordlist.txt<span class="w"> </span>-u<span class="w"> </span>http://pwreset.htb/security_question.php<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>-H<span class="w"> </span><span class="s2">"Content-Type: application/x-www-form-urlencoded"</span><span class="w"> </span>-b<span class="w"> </span><span class="s2">"PHPSESSID=39b54j201u3rhu4tab1pvdb4pv"</span><span class="w"> </span>-d<span class="w"> </span><span class="s2">"security_response=FUZZ"</span><span class="w"> </span>-fr<span class="w"> </span><span class="s2">"Incorrect response."</span>
-</span></code></pre></div></td></tr></table></div></li>
-<li>Username Injection in Password Reset Request (check post parameters in http request)</li>
-</ul>
-<h2 id="authentication-bypasses">Authentication Bypasses</h2>
-<ul>
-<li>Accessing the protected page directly</li>
-<li>go directly to hidden page /admin.ph </li>
-<li>catch the response in burp</li>
-<li>change status code from 302 to 200</li>
-<li>Manipulating HTTP Parameters to access protected pages</li>
-<li>Log in as regular user dirrcts to /admin.php?user_id=183</li>
-<li>guess or bruteforce id parameter
-<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1">seq<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">1000</span><span class="w"> </span>&gt;<span class="w"> </span>user_ids.txt
-</span><span id="__span-5-2">ffuf<span class="w"> </span>-w<span class="w"> </span>user_ids.txt<span class="w"> </span>-u<span class="w"> </span>http://STMIP:STMPO/admin.php?user_id<span class="o">=</span>FUZZ<span class="w"> </span>-fr<span class="w"> </span><span class="s2">"Could not load admin data."</span>
-</span></code></pre></div></td></tr></table></div></li>
-</ul>
-<h2 id="session-attacks">Session Attacks</h2>
-<ul>
-<li>Brute-Forcing cookies with insufficient entropy</li>
-<li>Capture multiple session tokens and compare for similarities</li>
-<li>Session cookie maybe long but most of it is fixed with only a small amount changing with each user</li>
-<li>Session cookies could also increment and not be random thus easy to enumerate passed/future session tokens</li>
-<li>Tokens maybe encoded values of the logon information</li>
-<li>Try decoding session tokens to see if no truly random
-<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-6-1"><span class="nb">echo</span><span class="w"> </span>-n<span class="w"> </span>dXNlcj1odGItc3RkbnQ7cm9sZT11c2Vy<span class="w"> </span><span class="p">|</span><span class="w"> </span>base64<span class="w"> </span>-d
-</span><span id="__span-6-2"><span class="nb">echo</span><span class="w"> </span>-n<span class="w"> </span><span class="s1">'user=htb-stdnt;role=admin'</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>base64<span class="w"> </span><span class="c1"># base64 encode</span>
-</span><span id="__span-6-3"><span class="nb">echo</span><span class="w"> </span>-n<span class="w"> </span><span class="s1">'user=htb-stdnt;role=admin'</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>xxd<span class="w"> </span>-p<span class="w"> </span><span class="c1"># hex encode</span>
-</span></code></pre></div></td></tr></table></div></li>
-<li><strong><a href="https://owasp.org/www-community/attacks/Session_fixation">Session Fixation</a></strong></li>
-<li>Attacker obtains valid session identifier</li>
-<li>Attacker coerces victim to use this session identifier (social engineering)</li>
-<li>Victim authenticates to the vulnerable web application</li>
-<li>Attacker knows the victim's session identifier and can hijack their account</li>
-<li><strong><a href="https://owasp.org/www-community/Session_Timeout">Improper Session Timeout</a></strong></li>
-<li>Sessions should expire after an appropriate time interval</li>
-<li>Session validity duration depends on the web application</li>
-</ul>
+<h1 id="cross-site-request-forgery-csrf">Cross Site Request Forgery (CSRF)</h1>
+<h2 id="what-is-csrf">What is CSRF?</h2>
+<p>Where the attacker causes the victim to perform unintended actions.
+This is a method of circumventing the same orign policy.</p>
+<h2 id="impact">Impact</h2>
+<p>Further compromise; change an email or password.
+Potential financial loss; buy items or services with the victims saved cards or account balance.
+Impersonation; publish messages or comments that look like they came from the victim.
+Admin takeover; take any administrative actions available to the victim.</p>
+<h2 id="how-does-csrf-work">How does CSRF work?</h2>
+<p>Prerequisits:
+- The attacker requires knowledge of what actions the victim can perform.
+- The inteded action relies solely on session cookies for authorisation.
+- The attacker needs to know or beable to guess the request parameters required to take the action.</p>
+<p>Steps:
+- The attacker constructs and serves a web page that contains the malicious request.
+- When the victim visits the malicious page a HTTP request is triggered to take the desired action on behalf of the victim.
+- If the user is logged in to vulnerable service their browser will automatically include their session cookie in the request.
+- The vulnerable website processes the request as if it was made by the victim.</p>
+<p>Can be done with a simple get request.</p>
+<h2 id="prevention-and-remediation">Prevention and Remediation</h2>
+<p>CSRF tokens
+SameSite cookies
+Referer based validation
+integrate session and csrf token cookies</p>
+<h2 id="demo">Demo</h2>
+<h3 id="bypasses">Bypasses</h3>
+<p>Change request type
+Remove csrf token parameter
+Reuse own csrf token</p>
 
 
 
@@ -2450,10 +2279,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["content.code.copy"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
     
   </body>

